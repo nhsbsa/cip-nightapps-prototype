@@ -1,0 +1,13 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 10000,
+    "viewport": {
+      "width": 320,
+      "height": 568
+    }
+  },
+  "urls": [
+    "http://localhost:3000/",
+  ]
+}

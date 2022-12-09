@@ -1,0 +1,121 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  50k Checking - Prescription Services Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ul class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
+      </ul>
+    </div>
+  </nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1>
+        50k Checking
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Used to check a random sample of 50k items from the previous prescription pricing cycle.
+      </p>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/apps/50k/dashboard">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Statistics Dashboard</span>
+        </a>
+      </div>
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="/apps/50k/reports">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Reports</span>
+        </a>
+      </div>
+
+      <h2>
+        December 2022
+      </h2>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+      
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Phase 1
+              </h2>
+              <p class="nhsuk-card__description">X of Y checked</p>
+              <p class="nhsuk-card__description"><a href="/apps/50k/check">Carry out checks > </a></p>
+            </div>
+          </div>
+      
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+      
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Phase 2
+              </h2>
+              <p class="nhsuk-card__description">X of Y checked</p>
+              <p class="nhsuk-card__description"><a href="/apps/50k/check">Carry out checks > </a></p>
+            </div>
+          </div>
+      
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+      
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Phase 3
+              </h2>
+              <p class="nhsuk-card__description">X of Y checked</p>
+              <p class="nhsuk-card__description"><a href="/apps/50k/check">Carry out checks > </a></p>
+            </div>
+          </div>
+      
+        </li>
+      </ul>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

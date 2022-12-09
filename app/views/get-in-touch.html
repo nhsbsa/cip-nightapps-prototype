@@ -1,0 +1,55 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Get in touch - Prescription Services Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ul class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/get-in-touch">Get in touch</a></li>
+      </ul>
+    </div>
+  </nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+            <h1 class="app-page-heading">Get in touch</h1>
+            <p class="nhsuk-lede-text app-lede-text">If you’ve got a question, idea or suggestion, get in touch with CIP application support.</p>
+        
+            <h2>Email</h2>
+            <p>Email the CIP team on <a href="mailto:NHSBSA.cip-application-support@nhs.net">NHSBSA.cip-application-support@nhs.net</a>.</p>
+    
+    
+            <p class="nhsuk-body-s nhsuk-u-secondary-text-color nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-0">Updated: December 2022</p>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
