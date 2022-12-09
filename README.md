@@ -6,7 +6,7 @@ Site serving the CIP Night Applications Prototype.
 ### Cloning the project
 Clone the project using git:
 ```shell
-git clone https://github.com/nhsbsa/medicines-management-prototype.git
+git clone https://github.com/nhsbsa/cip-nightapps-prototype.git
 ```
 or
 ```shell
