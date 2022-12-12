@@ -38,7 +38,6 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-
       <!-- Change the page title here -->
       <h1>
         50k Checking
@@ -48,13 +47,59 @@
         Used to check a random sample of 50k items from the previous prescription pricing cycle.
       </p>
 
+      <h2>
+        December 2022
+      </h2>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Phase 1
+              </h2>
+              <!-- Not currently styled, proof of concept -->
+              <progress id="phase3" value="12" max="100"></progress>
+              <p class="nhsuk-card__description">X of Y checked</p>
+              <p class="nhsuk-card__description"><a href="/apps/50k/check">Carry out checks > </a></p>
+            </div>
+          </div>
+        </li>
+
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Phase 2
+              </h2>
+              <progress id="phase2" value="36" max="100"></progress>
+              <p class="nhsuk-card__description">X of Y checked</p>
+              <p class="nhsuk-card__description"><a href="/apps/50k/check">Carry out checks > </a></p>
+            </div>
+          </div>
+        </li>
+
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Phase 3
+              </h2>
+              <progress id="phase3" value="50" max="100"></progress>
+              <p class="nhsuk-card__description">X of Y checked</p>
+              <p class="nhsuk-card__description"><a href="/apps/50k/check">Carry out checks > </a></p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
       <div class="nhsuk-action-link">
         <a class="nhsuk-action-link__link" href="/apps/50k/dashboard">
           <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
             <path d="M0 0h24v24H0z" fill="none"></path>
             <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
           </svg>
-          <span class="nhsuk-action-link__text">Statistics Dashboard</span>
+          <span class="nhsuk-action-link__text">Go to Statistics Dashboard</span>
         </a>
       </div>
 
@@ -64,58 +109,12 @@
             <path d="M0 0h24v24H0z" fill="none"></path>
             <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
           </svg>
-          <span class="nhsuk-action-link__text">Reports</span>
+          <span class="nhsuk-action-link__text">View Reports</span>
         </a>
       </div>
 
-      <h2>
-        December 2022
-      </h2>
-
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-      
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Phase 1
-              </h2>
-              <p class="nhsuk-card__description">X of Y checked</p>
-              <p class="nhsuk-card__description"><a href="/apps/50k/check">Carry out checks > </a></p>
-            </div>
-          </div>
-      
-        </li>
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-      
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Phase 2
-              </h2>
-              <p class="nhsuk-card__description">X of Y checked</p>
-              <p class="nhsuk-card__description"><a href="/apps/50k/check">Carry out checks > </a></p>
-            </div>
-          </div>
-      
-        </li>
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-      
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Phase 3
-              </h2>
-              <p class="nhsuk-card__description">X of Y checked</p>
-              <p class="nhsuk-card__description"><a href="/apps/50k/check">Carry out checks > </a></p>
-            </div>
-          </div>
-      
-        </li>
-      </ul>
-
       <!-- End of content -->
-
+    
     </div>
   </div>
 {% endblock %}
