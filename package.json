@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Site serving the CIP Night Applications prototype.",
   "main": "app.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "build": "gulp build",
     "postinstall": "npm run build",
