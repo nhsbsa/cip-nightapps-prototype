@@ -35,11 +35,11 @@ Install the live reload plugin for your browser
 ***
 &ensp;
 ## Running the Prototype locally
-To run the prototype locally, use gulp:
+To run the prototype locally, use:
 
 
 ```shell
-gulp
+npm run watch
 ```
 
 The prototype will then open a window in your browser on http://localhost:3000.
