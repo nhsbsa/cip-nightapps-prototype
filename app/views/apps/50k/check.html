@@ -48,23 +48,24 @@
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-
       <div class="nhsuk-grid-column-one-half">
         <img class="nhsuk-image__img" src="/images/dummy_prescription.png" alt="Dummy Prescription Image">
   
         <div class="nhsuk-u-padding-bottom-2"></div>
   
-        <button class="nhsuk-button nhsuk-button--secondary" type="button">Front / Back</button>
-        <button class="nhsuk-button nhsuk-button--secondary" type="button">+</button>
-        <button class="nhsuk-button nhsuk-button--secondary" type="button">-</button>
-        <button class="nhsuk-button nhsuk-button--secondary" type="button" style="float: right;">Notes</button>   
+        <div style="text-align: center;">
+          <button class="nhsuk-button nhsuk-button--secondary" type="button">Front / Back</button>
+          <button class="nhsuk-button nhsuk-button--secondary" type="button">+</button>
+          <button class="nhsuk-button nhsuk-button--secondary" type="button">-</button>
+          <button class="nhsuk-button nhsuk-button--secondary" type="button">Notes</button>  
+        </div> 
       </div>
       <div class="nhsuk-grid-column-one-half">
         <fieldset class="nhsuk-fieldset">
           <!-- Exemption Category -->
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="exemption-category">Exemption Category</label>
-            <input class="nhsuk-input nhsuk-input--width-3" id="exemption-category" name="exemption-category" type="text">  
+            <input class="nhsuk-input nhsuk-input--width-3" id="exemption-category" name="exemption-category" type="text" aria-disabled="true" disabled>  
             <strong class="nhsuk-tag nhsuk-tag--red">
               Example
             </strong>
@@ -73,50 +74,52 @@
           <!-- Prescriber Code -->
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="prescriber-code">Prescriber Code</label>
-            <input class="nhsuk-input nhsuk-input--width-3" id="prescriber-code" name="prescriber-code" type="text">
+            <input class="nhsuk-input nhsuk-input--width-3" id="prescriber-code" name="prescriber-code" type="text" aria-disabled="true" disabled>
           </div>
 
           <!-- Quantity -->
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="quantity">Quantity</label>
-            <input class="nhsuk-input nhsuk-input--width-3" id="quantity" name="quantity" type="text">
+            <input class="nhsuk-input nhsuk-input--width-3" id="quantity" name="quantity" type="text" aria-disabled="true" disabled>
           </div>
 
           <!-- Endorsements -->
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="endorsements">Endorsements</label>
-            <input class="nhsuk-input nhsuk-input--width-3" id="endorsements" name="endorsements" type="text">
+            <input class="nhsuk-input nhsuk-input--width-3" id="endorsements" name="endorsements" type="text" aria-disabled="true" disabled>
           </div>
 
           <!-- Product Description -->
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="product-description">Product Description</label>
-            <input class="nhsuk-input" id="product-description" name="product-description" type="text">
+            <input class="nhsuk-input" id="product-description" name="product-description" type="text" aria-disabled="true" disabled>
           </div>
 
           <!-- ETP Prescribed -->
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="etp-prescribed">ETP Prescribed - QTY</label>
-            <input class="nhsuk-input" id="etp-prescribed" type="text">
+            <input class="nhsuk-input" id="etp-prescribed" type="text" aria-disabled="true" disabled>
           </div>
 
           <!-- ETP Dispensed -->
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="etp-dispensed">ETP Dispensed - QTY</label>
-            <input class="nhsuk-input" id="etp-dispensed" type="text">
+            <input class="nhsuk-input" id="etp-dispensed" type="text" aria-disabled="true" disabled>
           </div>
 
           <!-- Buttons -->
-          <button class="nhsuk-button nhsuk-button--secondary" type="button">
-            Correct
-          </button>
-          <button class="nhsuk-button nhsuk-button--secondary" type="button" style="float: right;">
-            Error
-          </button>
+          <div style="text-align: center;">
+            <button class="nhsuk-button nhsuk-button--secondary" type="button">
+              Correct
+            </button>
+            <button class="nhsuk-button nhsuk-button--secondary" type="button">
+              Error
+            </button>
+          </div>
         </fieldset>
 
         <div style="float: right; text-align: right;">
-          <label class="nhsuk-label" for="checkedprogress">X of Y checked</label>
+          <label class="nhsuk-label" for="checkedprogress">250 of 500 checked</label>
           <progress id="checkedprogress" max="100" value="50"></progress>
         </div>
       </div>
