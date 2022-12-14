@@ -83,6 +83,11 @@ For more information please visit [pa11y](https://www.npmjs.com/package/pa11y-ci
 &ensp;
 ***
 &ensp;
+## Heroku
+
+It is possible for this prototype to be viewed on Heroku. Please contact *[Matt Proctor-Leake](mailto:matthew.proctor-leake@nhs.net)* with queries relating to this.
+
+&ensp;
 ## Procedure for merging branches
 Pull in the latest version of main locally using 
 
@@ -115,5 +120,4 @@ git push origin local-branch-name
 |-|
 <strong>The reviewer will be notified and will review the changes before marking it as being able to be merged. Then it can be merged in to main from the pull request, and thus deployed to Heroku. If the reviewer is able to merge this on their side then they will notify the user who did the pull request that it has been completed. <strong>
 <p>&nbsp;</p>
-
 
