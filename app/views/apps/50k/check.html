@@ -48,18 +48,128 @@
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="text">
-            <span class="nhsuk-u-visually-hidden">Important: </span>
-            Under Construction
-          </span>
-        </h3>
-        <p>Please check back later.</p>
+      <div class="nhsuk-grid-column-one-half" style="height: 850px; overflow-y: hidden;">
+        <img class="nhsuk-image__img" src="/images/E000001NE02_side1.jpg" alt="Prescription Image">
+  
+        <div class="nhsuk-u-padding-bottom-2"></div>
+  
+        <div style="text-align: center;">
+          <button class="nhsuk-button nhsuk-button--secondary" type="button">Front / Back</button>
+          <button class="nhsuk-button nhsuk-button--secondary" type="button">+</button>
+          <button class="nhsuk-button nhsuk-button--secondary" type="button">-</button>
+          <button class="nhsuk-button nhsuk-button--secondary" type="button">Notes</button>  
+        </div> 
+      </div>
+
+      <div class="nhsuk-grid-column-one-half" style="height: 735px; overflow-y: scroll;">
+        <!-- Nested in a div in order to allow easy addition. -->
+        <div>
+          <!-- Account Type -->
+          <label class="nhsuk-label">Account Type</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Account -->
+          <label class="nhsuk-label">Account</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Fragment -->
+          <label class="nhsuk-label">Fragment</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Form Number -->
+          <label class="nhsuk-label">Form Number</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Item Number -->
+          <label class="nhsuk-label">Item Number</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Total Fees -->
+          <label class="nhsuk-label">Total Fees</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Pay NIC -->
+          <label class="nhsuk-label">Pay NIC</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Charge Value -->
+          <label class="nhsuk-label">Charge Value</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- User Input -->
+          <label class="nhsuk-label">User Input</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Division -->
+          <label class="nhsuk-label">Division</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Prescriber Code -->
+          <label class="nhsuk-label">Prescriber Code</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Print Code -->
+          <label class="nhsuk-label">Print Code</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Practice Code -->
+          <label class="nhsuk-label">Practice Code</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Paper Type -->
+          <label class="nhsuk-label">Paper Type</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Prescription Type -->
+          <label class="nhsuk-label">Prescription Type</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Charge Status -->
+          <label class="nhsuk-label">Charge Status</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Exemption Category -->
+          <label class="nhsuk-label">Exemption Category</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Quantity -->
+          <label class="nhsuk-label">Quantity</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Endorsements -->
+          <label class="nhsuk-label">Endorsements</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Product Description -->
+          <label class="nhsuk-label">Product Description</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- ETP Prescribed -->
+          <label class="nhsuk-label">ETP Prescribed - QTY</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- ETP Dispensed -->
+          <label class="nhsuk-label">ETP Dispensed - QTY</label>
+          <p class="nhsuk-body-s">####</p>
+
+          <!-- Buttons -->
+          <div style="text-align: center;">
+            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #007f3b;" type="button">
+              Correct
+            </button>
+            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b;" type="button">
+              Error
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style="float: right; text-align: right;">
+        <label class="nhsuk-label" for="checkedprogress">10 of 50 checked</label>
+        <progress id="checkedprogress" max="50" value="10"></progress>
       </div>
 
       <!-- End of content -->
-
     </div>
   </div>
 {% endblock %}
