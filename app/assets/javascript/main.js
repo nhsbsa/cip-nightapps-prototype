@@ -19,14 +19,34 @@ if (window['web-flow']) {
     // Get the expected parameters - redirect to start if any are missing.
     for (let i = 0; i < expectedParameters.length; i++) {
         let expectedParameter = expectedParameters[i];
-        if (expectedParameter === null || expectedParameter === '') {
+        parameters[expectedParameter] = urlParams.get(expectedParameter);
+        if (parameters[expectedParameter] === null || parameters[expectedParameter] === '') {
             location.replace(root);
         }
-        parameters[expectedParameter] = urlParams.get(expectedParameter);
         parameterString += expectedParameter + '=' + parameters[expectedParameter] + '&';
     }
 
-    // TODO Substitute in human-readable parameters.
+    // Substitute in human-readable parameters (if none supplied then use the value).
+    let webFlowSubElems = document.getElementsByClassName('web-flow-sub');
+    for (let i = 0; i < webFlowSubElems.length; i++) {
+        let eleValue = webFlowSubElems[i].getAttribute('web-flow-sub-value');
+        if (eleValue) {
+            for (let j = 0; j < expectedParameters.length; j++) {
+                if (eleValue == expectedParameters[j]) {
+                    let currentValue = parameters[eleValue];
+                    if (currentValue) {
+                        if (readableReplacements[eleValue]) {
+                            if (readableReplacements[eleValue][currentValue]) {
+                                currentValue = readableReplacements[eleValue][currentValue];
+                            }
+                        }
+                        webFlowSubElems[i].innerHTML = currentValue;   
+                    }           
+                    break;
+                }
+            }
+        }
+    }
 
     // Show error message if required.
     if (isError) {
@@ -41,9 +61,9 @@ if (window['web-flow']) {
      */
     function onWebFlowFormSubmit() {
         let inputElems = document.getElementsByClassName('nhsuk-radios__input');
-        for (let i = inputElems.length - 1; i >= 0; --i) {
+        for (let i = 0; i < inputElems.length; i++) {
             if (inputElems[i].checked) {     
-                location.replace(nextView + '?' + parameterString + '&' + value + '=' + inputElems[i].value);
+                location.replace(nextView + '?' + parameterString + value + '=' + inputElems[i].value);
                 return false;
             }
         }

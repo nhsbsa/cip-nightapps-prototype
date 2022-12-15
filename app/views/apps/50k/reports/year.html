@@ -41,9 +41,18 @@
   <script>
     // Establish web-flow settings for this page.
     window['web-flow'] = {
-      root: "/apps/50k/reports/year",
-        expectedParameters: ['report'],
-        nextView: "/apps/50k/reports/period"
+      root: '/apps/50k/reports',
+      expectedParameters: ['report'],
+      nextView: '/apps/50k/reports/period',
+      readableReplacements: {
+        'report': {
+          'direct-hits': 'Direct Hits report',
+          'information-errors': 'Information Errors report',
+          'operator-errors': 'Operator Errors report',
+          'totals-file': '50k Totals file'
+        }
+      },
+      value: 'year'
     };
   </script>
 
@@ -62,7 +71,7 @@
           <fieldset class="nhsuk-fieldset">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
               <h1 class="nhsuk-fieldset__heading">
-                What year's data do you want to create the report with?
+                What year's data do you want to create the <span class="web-flow-sub" web-flow-sub-value="report"></span> with?
               </h1>
             </legend>
 
