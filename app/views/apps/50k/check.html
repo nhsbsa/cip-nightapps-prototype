@@ -43,7 +43,7 @@
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
       <!-- Page Title -->
-      <h1>
+      <h1 id="page-title">
         Check
       </h1>
 
@@ -57,7 +57,7 @@
         <!-- Prescription Image Controls -->
         <div style="text-align: center;">
           <!-- Side Swap Button -->
-          <button class="nhsuk-button nhsuk-button--secondary" id="swap-sides" type="button" onclick="swapSides()">Show Back</button>
+          <button class="nhsuk-button nhsuk-button--secondary" id="swap-sides" type="button" onclick="swapSides();">Show Back</button>
           
           <!-- Zoom In Button -->
           <button class="nhsuk-button nhsuk-button--secondary" type="button">+</button>
@@ -232,7 +232,6 @@
         <label class="nhsuk-label" for="checkedprogress">10 of 50 checked</label>
         <progress id="checkedprogress" max="50" value="10"></progress>
       </div>
-
       <!-- End of content -->
     </div>
   </div>
