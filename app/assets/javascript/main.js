@@ -94,6 +94,19 @@ if (window['web-flow']) {
         return false;
     }
 
+    /**
+     * Download the corresponding example file for a report creation request.
+     */
+    function downloadReport() {
+        if (parameters['report']) {
+            if (parameters['report'] == 'totals-file') {
+                location.replace('/data/example-totals.csv');
+            } else {
+                window.open('/data/example-report.pdf', '_blank');
+            }
+        }
+    }
+
     // TODO A go back function which can reselect previous values.
     
 }
