@@ -17,3 +17,7 @@ function swapSides() {
 function showCorrections() {
     window.location.href = ("/apps/50k/check-corrections");
 }
+
+function cancelCorrections() {
+    window.location.href = ("/apps/50k/check");
+}

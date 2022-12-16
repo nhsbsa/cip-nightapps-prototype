@@ -57,7 +57,7 @@
         <!-- Prescription Image Controls -->
         <div style="text-align: center;">
           <!-- Side Swap Button -->
-          <button class="nhsuk-button nhsuk-button--secondary" id="swap-sides" type="button" onclick="swapSides()">Show Back</button>
+          <button class="nhsuk-button nhsuk-button--secondary" id="swap-sides" type="button" onclick="swapSides();">Show Back</button>
           
           <!-- Zoom In Button -->
           <button class="nhsuk-button nhsuk-button--secondary" type="button">+</button>
@@ -217,523 +217,531 @@
         <div style="height: 45%; overflow-y: scroll;">
           <div class="nhsuk-card">
             <div class="nhsuk-card__content">
-              <div class="nhsuk-form-group">
-                <!-- Drug & Presentation -->
-                <label class="nhsuk-label" for="drug-and-presentation">Drug & Presentation</label>
-                <select class="nhsuk-select max-width-select" id="drug-and-presentation" name="drug-and-presentation">
-                  <!-- 25k+ Drug Descriptions -->
-                  <!-- Blank Option -->
-                  <option value="0"></option>
-                  <option value="1">####</option>
-                  <option value="2">####</option>
-                  <option value="3">####</option>
-                </select>
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Quantity -->
-                <label class="nhsuk-label" for="corrections-quantity">Quantity</label>
-                <input class="nhsuk-input" id="corrections-quantity" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Pharm Endorsement -->
-                <label class="nhsuk-label" for="pharm-endorsement">Pharm Endorsement</label>
-                <input class="nhsuk-input" id="pharm-endorsement" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- As Processed -->
-                <label class="nhsuk-label" for="processed">As Processed</label>
-                <input class="nhsuk-input" id="processed" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- As Checked -->
-                <label class="nhsuk-label" for="checked">As Checked</label>
-                <input class="nhsuk-input" id="checked" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Comments -->
-                <label class="nhsuk-label" for="comments">Comments</label>
-                <input class="nhsuk-input" id="comments" type="text">
-              
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Root Cause -->
-                <label class="nhsuk-label" for="root-cause">Root Cause</label>
-                <select class="nhsuk-select max-width-select" id="root-cause" name="root-cause">
-                  <!-- Blank Option -->
-                  <option value="0"></option>
-
-                  <!-- Tagged Group -->
-                  <option value="1">Tagged Group</option>
-                  
-                  <!-- Faint Order -->
-                  <option value="2">Faint Order</option>
-                  
-                  <!-- Faint Endorsement -->
-                  <option value="3">Faint Endorsement</option>
-                  
-                  <!-- Misaligned Order -->
-                  <option value="4">Misaligned Order</option>
-                  
-                  <!-- Endorsement Covers Order -->
-                  <option value="5">Endorsement Covers Order</option>
-                </select>
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Error Category -->
-                <label class="nhsuk-label" for="error-category">Error Category</label>
-                <select class="nhsuk-select max-width-select" id="error-category" name="error-category">
-                  <!-- Blank Option -->
-                  <option value="0"></option>
-
-                  <!-- ICR: Addition -->
-                  <option value="1">ICR: Addition</option>
-
-                  <!-- ICR Exemption Class (Others) (1 in 20 only) -->
-                  <option value="2">ICR: Exemption Class (Others) (1 in 20 only)</option>
-
-                  <!-- ICR: Form Type -->
-                  <option value="3">ICR: Form Type</option>
-
-                  <!-- ICR: Incorrect Pharmaceutical Form -->
-                  <option value="4">ICR: Incorrect Pharmaceutical Form</option>
-
-                  <!-- ICR: Incorrect Product -->
-                  <option value="5">ICR: Incorrect Product</option>
-
-                  <!-- ICR: Incorrect Quantity -->
-                  <option value="6">ICR: Incorrect Quantity</option>
-
-                  <!-- ICR: Incorrect Strength -->
-                  <option value="7">ICR: Incorrect Strength</option>
-
-                  <!-- ICR: Not Detected Endorsement -->
-                  <option value="8">ICR: Not Detected Endorsement</option>
-
-                  <!-- ICR: Omission -->
-                  <option value="9">ICR: Omission</option>
-
-                  <!-- ICR: Prescription Number -->
-                  <option value="10">ICR: Prescription Number</option>
-
-                  <!-- ICR: RA Forms -->
-                  <option value="11">ICR: RA Forms</option>
-
-                  <!-- ICR: Supplementary Information (EG Manufacturer, Brand Name, Modification) -->
-                  <option value="12">ICR: Supplementary Information (EG Manufacturer, Brand Name, Modification)</option>
-
-                  <!-- Operator: Addition -->
-                  <option value="13">Operator: Addition</option>
-
-                  <!-- Operator: Alphanumeric / Memory Code Error -->
-                  <option value="14">Operator: Alphanumeric / Memory Code Error</option>
-
-                  <!-- Operator (Ex-Handler): Broken Bulk -->
-                  <option value="15">Operator (Ex-Handler): Broken Bulk</option>
-
-                  <!-- Operator: Calendar Pack -->
-                  <option value="16">Operator: Calendar Pack</option>
-
-                  <!-- Operator: Endorsement Information -->
-                  <option value="17">Operator: Endorsement Information</option>
-
-                  <!-- Operator: Endorsement Monetary -->
-                  <option value="18">Operator: Endorsement Monetary</option>
-
-                  <!-- Operator: Exempt Class (20th Form Only) -->
-                  <option value="19">Operator: Exempt Class (20th Form Only)</option>
-
-                  <!-- Operator: Form Type -->
-                  <option value="20">Operator: Form Type</option>
-
-                  <!-- Operator: Incorrect Applicance / Colostomy Item -->
-                  <option value="21">Operator: Incorrect Appliance / Colostomy Item</option>
-
-                  <!-- Operator: Incorrect Pack -->
-                  <option value="22">Operator: Incorrect Pack</option>
-
-                  <!-- Operator: Incorrect Pharmaceutical Form -->
-                  <option value="23">Operator: Incorrect Pharmaceutical Form</option>
-
-                  <!-- Operator: Incorrect Product -->
-                  <option value="24">Operator: Incorrect Product</option>
-
-                  <!-- Operator: Incorrect Quantity -->
-                  <option value="25">Operator: Incorrect Quantity</option>
-
-                  <!-- Operator: Incorrect Strength -->
-                  <option value="26">Operator: Incorrect Strength</option>
-
-                  <!-- Operator: Multiple Hit -->
-                  <option value="27">Operator: Multiple Hit</option>
-
-                  <!-- Operator: Non Prop Ordered Together With Manufacturer / Brand -->
-                  <option value="28">Operator: Non Prop Ordered Together With Manufacturer / Brand</option>
-
-                  <!-- Operator: Non Prop / Prop Ordered -->
-                  <option value="29">Operator: Non Prop / Prop Ordered</option>
-
-                  <!-- Operator: Not Dispensed -->
-                  <option value="30">Operator: Not Dispensed</option>
-
-                  <!-- Operator: Omission -->
-                  <option value="31">Operator: Omission</option>
-
-                  <!-- Operator: (Other) -->
-                  <option value="32">Operator: (Other)</option>
-
-                  <!-- Operator: Prescription Number -->
-                  <option value="33">Operator: Prescription Number</option>
-
-                  <!-- Operator: Quantity End Less -->
-                  <option value="34">Operator: Quantity End Less</option>
-
-                  <!-- Operator: Quantity Special Container -->
-                  <option value="35">Operator: Quantity Special Container</option>
-
-                  <!-- Operator: RA Forms -->
-                  <option value="36">Operator: RA Forms</option>
-
-                  <!-- Operaetor: Return -->
-                  <option value="37">Operator: Return</option>
-
-                  <!-- Operator: Switching (Exempt To Charge) -->
-                  <option value="38">Operator: Switching (Exempt To Charge)</option>
-
-                  <!-- Operator: Switching (Charge To Exempt) -->
-                  <option value="39">Operator: Switching (Charge To Exempt)</option>
-
-                  <!-- Operator: Unspecified Code / Special Order Code Not Input / Incorrectly Input -->
-                  <option value="40">Operator: Unspecified Code / Special Order Code Not Input / Incorrectly Input</option>
-
-                  <!-- System: Alphanumeric Code Error Generates Incorrect Direct Hit -->
-                  <option value="41">System: Alphanumeric Code Error Generates Incorrect Direct Hit</option>
-
-                  <!-- System: Cal Pack Quantity -->
-                  <option value="42">System: Cal Pack Quantity</option>
-
-                  <!-- Contraceptives -->
-                  <option value="43">Contraceptives</option>
-
-                  <!-- Endorsement: Misaligned -->
-                  <option value="44">Endorsement: Misaligned</option>
-
-                  <!-- System: Form Type -->
-                  <option value="45">System: Form Type</option>
-
-                  <!-- System: Incorrect Pack -->
-                  <option value="46">System: Incorrect Pack</option>
-
-                  <!-- System: Incorrect Product Paid -->
-                  <option value="47">System: Incorrect Product Paid</option>
-
-                  <!-- System: Not Dispensed -->
-                  <option value="48">System: Not Dispensed</option>
-
-                  <!-- System: (Other) -->
-                  <option value="49">System: (Other)</option>
-
-                  <!-- System: Quantity End Less -->
-                  <option value="50">System: Quantity End Less</option>
-
-                  <!-- System: Special Container Quantity -->
-                  <option value="51">System: Special Container Quantity</option>
-
-                  <!-- System: Switching (Incorrectly As Chargeable) -->
-                  <option value="52">System: Switching (Incorrectly As Chargeable)</option>
-
-                  <!-- System: Switching (Incorrectly As Exempt) -->
-                  <option value="53">System: Switching (Incorrectly As Exempt)</option>
-                </select>
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Type -->
-                <label class="nhsuk-label" for="type">Type</label>
-                <select class="nhsuk-select max-width-select" id="type" name="type">
-                  <!-- Blank Option -->
-                  <option value="0"></option>
-
-                  <!-- Type 1 -->
-                  <option value="1">Type 1</option>
-                  
-                  <!-- Type 2 -->
-                  <option value="2">Type 2</option>
-                  
-                  <!-- AIT -->
-                  <option value="3">AIT</option>
-                  
-                  <!-- Support Services -->
-                  <option value="4">Support Services</option>
-                  
-                  <!-- UIP -->
-                  <option value="5">UIP</option>
-                </select>
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- OP ID -->
-                <label class="nhsuk-label" for="op-id">OP ID</label>
-                <select class="nhsuk-select max-width-select" id="op-id" name="op-id">
-                  <!-- 1800+ User Ciphers -->
-                  <!-- Blank Option -->
-                  <option value="0"></option>
-                  <option value="1">####</option>
-                  <option value="2">####</option>
-                  <option value="3">####</option>
-                  <option value="4">####</option>
-                </select>
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Other Streams -->
-                <label class="nhsuk-label" for="other-streams">Other Streams</label>
-                <input class="nhsuk-input" id="other-streams" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Stream -->
-                <label class="nhsuk-label" for="stream">Stream</label>
-                <select class="nhsuk-select max-width-select" id="stream" name="stream">
-                  <!-- Blank Option -->
-                  <option value="0"></option>
-                  
-                  <!-- Account Reconciliation -->
-                  <option value="1">Account Reconciliation</option>
-                  
-                  <!-- Capture Dispensed Pack Size -->
-                  <option value="2">Capture Dispensed Pack Size</option>
-                  
-                  <!-- Charge Status -->
-                  <option value="3">Charge Status</option>
-                  
-                  <!-- Data Capture -->
-                  <option value="4">Data Capture</option>
-                  
-                  <!-- Header Capture -->
-                  <option value="5">Header Capture</option>
-                  
-                  <!-- Header Correction -->
-                  <option value="6">Header Correction</option>
-                  
-                  <!-- IC -->
-                  <option value="7">IC</option>
-                  
-                  <!-- KFP -->
-                  <option value="8">KFP</option>
-                  
-                  <!-- MDA Capture -->
-                  <option value="9">MDA Capture</option>
-                  
-                  <!-- Multiple Hits -->
-                  <option value="10">Multiple Hits</option>
-                  
-                  <!-- NCSO -->
-                  <option value="11">NCSO</option>
-                  
-                  <!-- Pack Selection -->
-                  <option value="12">Pack Selection</option>
-                  
-                  <!-- Personal Errors -->
-                  <option value="13">Personal Errors</option>
-                  
-                  <!-- Product Capture -->
-                  <option value="14">Product Capture</option>
-                  
-                  <!-- Product Capture Account Selection -->
-                  <option value="15">Product Capture Account Selection</option>
-                  
-                  <!-- Quantity Validation -->
-                  <option value="16">Quantity Validation</option>
-                  
-                  <!-- Specialist Accounts -->
-                  <option value="17">Specialist Accounts</option>
-                  
-                  <!-- Tagged -->
-                  <option value="18">Tagged</option>
-                  
-                  <!-- UIP -->
-                  <option value="19">UIP</option>
-                  
-                  <!-- Verification -->
-                  <option value="20">Verification</option>
-                </select>
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Division -->
-                <label class="nhsuk-label" for="division">Division</label>
-                <select class="nhsuk-select max-width-select" id="division" name="division">
-                  <!-- Blank Option -->
-                  <option value="0"></option>
-                  
-                  <!-- NE -->
-                  <option value="1">NE</option>
-                  
-                  <!-- NW -->
-                  <option value="2">NW</option>
-                  
-                  <!-- CN -->
-                  <option value="3">CN</option>
-                </select>
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Evidence Seen -->
-                <label class="nhsuk-label" for="evidence-seen">Evidence Seen</label>
-                <input class="nhsuk-input" id="evidence-seen" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Number Of Errors -->
-                <label class="nhsuk-label" for="number-of-errors">Number Of Errors</label>
-                <input class="nhsuk-input" id="number-of-errors" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Value -->
-                <label class="nhsuk-label" for="value-amount">Value (+ / -)</label>
-                <input class="nhsuk-input" id="value-amount" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Fee Value -->
-                <label class="nhsuk-label" for="fee-value-amount">Fee Value (+ / -)</label>
-                <input class="nhsuk-input" id="fee-value-amount" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- GP2 Items -->
-                <label class="nhsuk-label" for="gp2-items">GP2 Items (+ / -)</label>
-                <input class="nhsuk-input" id="gp2-items" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- GP3 Items -->
-                <label class="nhsuk-label" for="gp3-items">GP3 Items (+ / -)</label>
-                <input class="nhsuk-input" id="gp3-items" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Info Errors -->
-                <label class="nhsuk-label" for="info-errors">Info Errors</label>
-                <input class="nhsuk-input" id="info-errors" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Exp Item -->
-                <label class="nhsuk-label" for="exp-item">Exp Item (+ / -)</label>
-                <input class="nhsuk-input" id="exp-item" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Exp Fee Value -->
-                <label class="nhsuk-label" for="exp-fee-value">Exp Fee Value (+ / -)</label>
-                <input class="nhsuk-input" id="exp-fee-value" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Elas Hos Items -->
-                <label class="nhsuk-label" for="elas-hos-items">Elas Hos Items (+ / -)</label>
-                <input class="nhsuk-input" id="elas-hos-items" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Elas Hos Value -->
-                <label class="nhsuk-label" for="elas-hos-value">Elas Hos Value (+ / -)</label>
-                <input class="nhsuk-input" id="elas-hos-value" type="text">
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Error Type Checkboxes -->
-                <fieldset class="nhsuk-fieldset" aria-describedby="error-type">
-                  <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
-                    <!-- Info Error -->
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="info-error" name="info-error" type="checkbox" value="info-error" aria-controls="info-error-pop-out" aria-expanded="false">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="info-error">Info Error</label>
-                    </div>
+              <form>
+                <div class="nhsuk-form-group">
+                  <!-- Drug & Presentation -->
+                  <label class="nhsuk-label" for="drug-and-presentation">Drug & Presentation</label>
+                  <select class="nhsuk-select max-width-select" id="drug-and-presentation" name="drug-and-presentation">
+                    <!-- 25k+ Drug Descriptions -->
+                    <!-- Blank Option -->
+                    <option value="0"></option>
+                    <option value="1">####</option>
+                    <option value="2">####</option>
+                    <option value="3">####</option>
+                  </select>
   
-                    <!-- Info Error Pop-Out -->
-                    <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="info-error-pop-out">
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Quantity -->
+                  <label class="nhsuk-label" for="corrections-quantity">Quantity</label>
+                  <input class="nhsuk-input" id="corrections-quantity" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Pharm Endorsement -->
+                  <label class="nhsuk-label" for="pharm-endorsement">Pharm Endorsement</label>
+                  <input class="nhsuk-input" id="pharm-endorsement" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- As Processed -->
+                  <label class="nhsuk-label" for="processed">As Processed</label>
+                  <input class="nhsuk-input" id="processed" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- As Checked -->
+                  <label class="nhsuk-label" for="checked">As Checked</label>
+                  <input class="nhsuk-input" id="checked" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Comments -->
+                  <label class="nhsuk-label" for="comments">Comments</label>
+                  <input class="nhsuk-input" id="comments" type="text">
+                
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Root Cause -->
+                  <label class="nhsuk-label" for="root-cause">Root Cause</label>
+                  <select class="nhsuk-select max-width-select" id="root-cause" name="root-cause">
+                    <!-- Blank Option -->
+                    <option value="0"></option>
+  
+                    <!-- Tagged Group -->
+                    <option value="1">Tagged Group</option>
+                    
+                    <!-- Faint Order -->
+                    <option value="2">Faint Order</option>
+                    
+                    <!-- Faint Endorsement -->
+                    <option value="3">Faint Endorsement</option>
+                    
+                    <!-- Misaligned Order -->
+                    <option value="4">Misaligned Order</option>
+                    
+                    <!-- Endorsement Covers Order -->
+                    <option value="5">Endorsement Covers Order</option>
+                  </select>
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Error Category -->
+                  <label class="nhsuk-label" for="error-category">Error Category</label>
+                  <select class="nhsuk-select max-width-select" id="error-category" name="error-category">
+                    <!-- Blank Option -->
+                    <option value="0"></option>
+  
+                    <!-- ICR: Addition -->
+                    <option value="1">ICR: Addition</option>
+  
+                    <!-- ICR Exemption Class (Others) (1 in 20 only) -->
+                    <option value="2">ICR: Exemption Class (Others) (1 in 20 only)</option>
+  
+                    <!-- ICR: Form Type -->
+                    <option value="3">ICR: Form Type</option>
+  
+                    <!-- ICR: Incorrect Pharmaceutical Form -->
+                    <option value="4">ICR: Incorrect Pharmaceutical Form</option>
+  
+                    <!-- ICR: Incorrect Product -->
+                    <option value="5">ICR: Incorrect Product</option>
+  
+                    <!-- ICR: Incorrect Quantity -->
+                    <option value="6">ICR: Incorrect Quantity</option>
+  
+                    <!-- ICR: Incorrect Strength -->
+                    <option value="7">ICR: Incorrect Strength</option>
+  
+                    <!-- ICR: Not Detected Endorsement -->
+                    <option value="8">ICR: Not Detected Endorsement</option>
+  
+                    <!-- ICR: Omission -->
+                    <option value="9">ICR: Omission</option>
+  
+                    <!-- ICR: Prescription Number -->
+                    <option value="10">ICR: Prescription Number</option>
+  
+                    <!-- ICR: RA Forms -->
+                    <option value="11">ICR: RA Forms</option>
+  
+                    <!-- ICR: Supplementary Information (EG Manufacturer, Brand Name, Modification) -->
+                    <option value="12">ICR: Supplementary Information (EG Manufacturer, Brand Name, Modification)</option>
+  
+                    <!-- Operator: Addition -->
+                    <option value="13">Operator: Addition</option>
+  
+                    <!-- Operator: Alphanumeric / Memory Code Error -->
+                    <option value="14">Operator: Alphanumeric / Memory Code Error</option>
+  
+                    <!-- Operator (Ex-Handler): Broken Bulk -->
+                    <option value="15">Operator (Ex-Handler): Broken Bulk</option>
+  
+                    <!-- Operator: Calendar Pack -->
+                    <option value="16">Operator: Calendar Pack</option>
+  
+                    <!-- Operator: Endorsement Information -->
+                    <option value="17">Operator: Endorsement Information</option>
+  
+                    <!-- Operator: Endorsement Monetary -->
+                    <option value="18">Operator: Endorsement Monetary</option>
+  
+                    <!-- Operator: Exempt Class (20th Form Only) -->
+                    <option value="19">Operator: Exempt Class (20th Form Only)</option>
+  
+                    <!-- Operator: Form Type -->
+                    <option value="20">Operator: Form Type</option>
+  
+                    <!-- Operator: Incorrect Applicance / Colostomy Item -->
+                    <option value="21">Operator: Incorrect Appliance / Colostomy Item</option>
+  
+                    <!-- Operator: Incorrect Pack -->
+                    <option value="22">Operator: Incorrect Pack</option>
+  
+                    <!-- Operator: Incorrect Pharmaceutical Form -->
+                    <option value="23">Operator: Incorrect Pharmaceutical Form</option>
+  
+                    <!-- Operator: Incorrect Product -->
+                    <option value="24">Operator: Incorrect Product</option>
+  
+                    <!-- Operator: Incorrect Quantity -->
+                    <option value="25">Operator: Incorrect Quantity</option>
+  
+                    <!-- Operator: Incorrect Strength -->
+                    <option value="26">Operator: Incorrect Strength</option>
+  
+                    <!-- Operator: Multiple Hit -->
+                    <option value="27">Operator: Multiple Hit</option>
+  
+                    <!-- Operator: Non Prop Ordered Together With Manufacturer / Brand -->
+                    <option value="28">Operator: Non Prop Ordered Together With Manufacturer / Brand</option>
+  
+                    <!-- Operator: Non Prop / Prop Ordered -->
+                    <option value="29">Operator: Non Prop / Prop Ordered</option>
+  
+                    <!-- Operator: Not Dispensed -->
+                    <option value="30">Operator: Not Dispensed</option>
+  
+                    <!-- Operator: Omission -->
+                    <option value="31">Operator: Omission</option>
+  
+                    <!-- Operator: (Other) -->
+                    <option value="32">Operator: (Other)</option>
+  
+                    <!-- Operator: Prescription Number -->
+                    <option value="33">Operator: Prescription Number</option>
+  
+                    <!-- Operator: Quantity End Less -->
+                    <option value="34">Operator: Quantity End Less</option>
+  
+                    <!-- Operator: Quantity Special Container -->
+                    <option value="35">Operator: Quantity Special Container</option>
+  
+                    <!-- Operator: RA Forms -->
+                    <option value="36">Operator: RA Forms</option>
+  
+                    <!-- Operaetor: Return -->
+                    <option value="37">Operator: Return</option>
+  
+                    <!-- Operator: Switching (Exempt To Charge) -->
+                    <option value="38">Operator: Switching (Exempt To Charge)</option>
+  
+                    <!-- Operator: Switching (Charge To Exempt) -->
+                    <option value="39">Operator: Switching (Charge To Exempt)</option>
+  
+                    <!-- Operator: Unspecified Code / Special Order Code Not Input / Incorrectly Input -->
+                    <option value="40">Operator: Unspecified Code / Special Order Code Not Input / Incorrectly Input</option>
+  
+                    <!-- System: Alphanumeric Code Error Generates Incorrect Direct Hit -->
+                    <option value="41">System: Alphanumeric Code Error Generates Incorrect Direct Hit</option>
+  
+                    <!-- System: Cal Pack Quantity -->
+                    <option value="42">System: Cal Pack Quantity</option>
+  
+                    <!-- Contraceptives -->
+                    <option value="43">Contraceptives</option>
+  
+                    <!-- Endorsement: Misaligned -->
+                    <option value="44">Endorsement: Misaligned</option>
+  
+                    <!-- System: Form Type -->
+                    <option value="45">System: Form Type</option>
+  
+                    <!-- System: Incorrect Pack -->
+                    <option value="46">System: Incorrect Pack</option>
+  
+                    <!-- System: Incorrect Product Paid -->
+                    <option value="47">System: Incorrect Product Paid</option>
+  
+                    <!-- System: Not Dispensed -->
+                    <option value="48">System: Not Dispensed</option>
+  
+                    <!-- System: (Other) -->
+                    <option value="49">System: (Other)</option>
+  
+                    <!-- System: Quantity End Less -->
+                    <option value="50">System: Quantity End Less</option>
+  
+                    <!-- System: Special Container Quantity -->
+                    <option value="51">System: Special Container Quantity</option>
+  
+                    <!-- System: Switching (Incorrectly As Chargeable) -->
+                    <option value="52">System: Switching (Incorrectly As Chargeable)</option>
+  
+                    <!-- System: Switching (Incorrectly As Exempt) -->
+                    <option value="53">System: Switching (Incorrectly As Exempt)</option>
+                  </select>
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Type -->
+                  <label class="nhsuk-label" for="type">Type</label>
+                  <select class="nhsuk-select max-width-select" id="type" name="type">
+                    <!-- Blank Option -->
+                    <option value="0"></option>
+  
+                    <!-- Type 1 -->
+                    <option value="1">Type 1</option>
+                    
+                    <!-- Type 2 -->
+                    <option value="2">Type 2</option>
+                    
+                    <!-- AIT -->
+                    <option value="3">AIT</option>
+                    
+                    <!-- Support Services -->
+                    <option value="4">Support Services</option>
+                    
+                    <!-- UIP -->
+                    <option value="5">UIP</option>
+                  </select>
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- OP ID -->
+                  <label class="nhsuk-label" for="op-id">OP ID</label>
+                  <select class="nhsuk-select max-width-select" id="op-id" name="op-id">
+                    <!-- 1800+ User Ciphers -->
+                    <!-- Blank Option -->
+                    <option value="0"></option>
+                    <option value="1">####</option>
+                    <option value="2">####</option>
+                    <option value="3">####</option>
+                    <option value="4">####</option>
+                  </select>
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Other Streams -->
+                  <label class="nhsuk-label" for="other-streams">Other Streams</label>
+                  <input class="nhsuk-input" id="other-streams" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Stream -->
+                  <label class="nhsuk-label" for="stream">Stream</label>
+                  <select class="nhsuk-select max-width-select" id="stream" name="stream">
+                    <!-- Blank Option -->
+                    <option value="0"></option>
+                    
+                    <!-- Account Reconciliation -->
+                    <option value="1">Account Reconciliation</option>
+                    
+                    <!-- Capture Dispensed Pack Size -->
+                    <option value="2">Capture Dispensed Pack Size</option>
+                    
+                    <!-- Charge Status -->
+                    <option value="3">Charge Status</option>
+                    
+                    <!-- Data Capture -->
+                    <option value="4">Data Capture</option>
+                    
+                    <!-- Header Capture -->
+                    <option value="5">Header Capture</option>
+                    
+                    <!-- Header Correction -->
+                    <option value="6">Header Correction</option>
+                    
+                    <!-- IC -->
+                    <option value="7">IC</option>
+                    
+                    <!-- KFP -->
+                    <option value="8">KFP</option>
+                    
+                    <!-- MDA Capture -->
+                    <option value="9">MDA Capture</option>
+                    
+                    <!-- Multiple Hits -->
+                    <option value="10">Multiple Hits</option>
+                    
+                    <!-- NCSO -->
+                    <option value="11">NCSO</option>
+                    
+                    <!-- Pack Selection -->
+                    <option value="12">Pack Selection</option>
+                    
+                    <!-- Personal Errors -->
+                    <option value="13">Personal Errors</option>
+                    
+                    <!-- Product Capture -->
+                    <option value="14">Product Capture</option>
+                    
+                    <!-- Product Capture Account Selection -->
+                    <option value="15">Product Capture Account Selection</option>
+                    
+                    <!-- Quantity Validation -->
+                    <option value="16">Quantity Validation</option>
+                    
+                    <!-- Specialist Accounts -->
+                    <option value="17">Specialist Accounts</option>
+                    
+                    <!-- Tagged -->
+                    <option value="18">Tagged</option>
+                    
+                    <!-- UIP -->
+                    <option value="19">UIP</option>
+                    
+                    <!-- Verification -->
+                    <option value="20">Verification</option>
+                  </select>
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Division -->
+                  <label class="nhsuk-label" for="division">Division</label>
+                  <select class="nhsuk-select max-width-select" id="division" name="division">
+                    <!-- Blank Option -->
+                    <option value="0"></option>
+                    
+                    <!-- NE -->
+                    <option value="1">NE</option>
+                    
+                    <!-- NW -->
+                    <option value="2">NW</option>
+                    
+                    <!-- CN -->
+                    <option value="3">CN</option>
+                  </select>
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Evidence Seen -->
+                  <label class="nhsuk-label" for="evidence-seen">Evidence Seen</label>
+                  <input class="nhsuk-input" id="evidence-seen" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Number Of Errors -->
+                  <label class="nhsuk-label" for="number-of-errors">Number Of Errors</label>
+                  <input class="nhsuk-input" id="number-of-errors" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Value -->
+                  <label class="nhsuk-label" for="value-amount">Value (+ / -)</label>
+                  <input class="nhsuk-input" id="value-amount" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Fee Value -->
+                  <label class="nhsuk-label" for="fee-value-amount">Fee Value (+ / -)</label>
+                  <input class="nhsuk-input" id="fee-value-amount" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- GP2 Items -->
+                  <label class="nhsuk-label" for="gp2-items">GP2 Items (+ / -)</label>
+                  <input class="nhsuk-input" id="gp2-items" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- GP3 Items -->
+                  <label class="nhsuk-label" for="gp3-items">GP3 Items (+ / -)</label>
+                  <input class="nhsuk-input" id="gp3-items" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Info Errors -->
+                  <label class="nhsuk-label" for="info-errors">Info Errors</label>
+                  <input class="nhsuk-input" id="info-errors" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Exp Item -->
+                  <label class="nhsuk-label" for="exp-item">Exp Item (+ / -)</label>
+                  <input class="nhsuk-input" id="exp-item" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Exp Fee Value -->
+                  <label class="nhsuk-label" for="exp-fee-value">Exp Fee Value (+ / -)</label>
+                  <input class="nhsuk-input" id="exp-fee-value" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Elas Hos Items -->
+                  <label class="nhsuk-label" for="elas-hos-items">Elas Hos Items (+ / -)</label>
+                  <input class="nhsuk-input" id="elas-hos-items" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Elas Hos Value -->
+                  <label class="nhsuk-label" for="elas-hos-value">Elas Hos Value (+ / -)</label>
+                  <input class="nhsuk-input" id="elas-hos-value" type="text">
+  
+                  <div class="nhsuk-u-padding-bottom-2"></div>
+  
+                  <!-- Error Type Checkboxes -->
+                  <fieldset class="nhsuk-fieldset" aria-describedby="error-type">
+                    <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+                      <!-- Info Error -->
                       <div class="nhsuk-checkboxes__item">
-                        <!-- Info Error Pop-Out Options -->
-                        <div class="nhsuk-checkboxes">
-                            <!-- ICR Exemption Class (1 in 20 only) -->
-                            <div class="nhsuk-checkboxes__item">
-                              <input class="nhsuk-checkboxes__input" id="icr-exemption-class" name="icr-exemption-class" type="checkbox">
-                              <label class="nhsuk-label nhsuk-checkboxes__label" for="icr-exemption-class">ICR Exemption Class (1 in 20 only)</label>
-                            </div>
+                        <input class="nhsuk-checkboxes__input" id="info-error" name="info-error" type="checkbox" value="info-error" aria-controls="info-error-pop-out" aria-expanded="false">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="info-error">Info Error</label>
+                      </div>
+    
+                      <!-- Info Error Pop-Out -->
+                      <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="info-error-pop-out">
+                        <div class="nhsuk-checkboxes__item">
+                          <!-- Info Error Pop-Out Options -->
+                          <div class="nhsuk-checkboxes">
+                              <!-- ICR Exemption Class (1 in 20 only) -->
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="icr-exemption-class" name="icr-exemption-class" type="checkbox">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="icr-exemption-class">ICR Exemption Class (1 in 20 only)</label>
+                              </div>
+    
+                              <!-- Operator Exemption Class (20th Form Only) -->
+                              <div class="nhsuk-checkboxes">
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="operator-exempt-class" name="operator-exempt-class" type="checkbox">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="operator-exempt-class">Operator Exemption Class (20th Form Only)</label>
+                                </div>
+                              </div>
   
-                            <!-- Operator Exemption Class (20th Form Only) -->
-                            <div class="nhsuk-checkboxes">
-                              <div class="nhsuk-checkboxes__item">
-                                <input class="nhsuk-checkboxes__input" id="operator-exempt-class" name="operator-exempt-class" type="checkbox">
-                                <label class="nhsuk-label nhsuk-checkboxes__label" for="operator-exempt-class">Operator Exemption Class (20th Form Only)</label>
+                              <!-- Operator Return (Returned but should have been processed) -->
+                              <div class="nhsuk-checkboxes">
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="operator-return" name="operator-return" type="checkbox">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="operator-return">Operator Return (Returned but should have been processed)</label>
+                                </div>
+                              </div>
+  
+                              <!-- System Switching (Incorrectly as chargeable) -->
+                              <div class="nhsuk-checkboxes">
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="system-switching-chargeable" name="system-switching-chargeable" type="checkbox">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="system-switching-chargeable">System Switching (Incorrectly as chargeable)</label>
+                                </div>
+                              </div>
+  
+                              <!-- System Switching (Incorrectly as exempt) -->
+                              <div class="nhsuk-checkboxes">
+                                <div class="nhsuk-checkboxes__item">
+                                  <input class="nhsuk-checkboxes__input" id="system-switching-exempt" name="system-switching-exempt" type="checkbox">
+                                  <label class="nhsuk-label nhsuk-checkboxes__label" for="system-switching-exempt">System Switching (Incorrectly as exempt)</label>
+                                </div>
                               </div>
                             </div>
-
-                            <!-- Operator Return (Returned but should have been processed) -->
-                            <div class="nhsuk-checkboxes">
-                              <div class="nhsuk-checkboxes__item">
-                                <input class="nhsuk-checkboxes__input" id="operator-return" name="operator-return" type="checkbox">
-                                <label class="nhsuk-label nhsuk-checkboxes__label" for="operator-return">Operator Return (Returned but should have been processed)</label>
-                              </div>
-                            </div>
-
-                            <!-- System Switching (Incorrectly as chargeable) -->
-                            <div class="nhsuk-checkboxes">
-                              <div class="nhsuk-checkboxes__item">
-                                <input class="nhsuk-checkboxes__input" id="system-switching-chargeable" name="system-switching-chargeable" type="checkbox">
-                                <label class="nhsuk-label nhsuk-checkboxes__label" for="system-switching-chargeable">System Switching (Incorrectly as chargeable)</label>
-                              </div>
-                            </div>
-
-                            <!-- System Switching (Incorrectly as exempt) -->
-                            <div class="nhsuk-checkboxes">
-                              <div class="nhsuk-checkboxes__item">
-                                <input class="nhsuk-checkboxes__input" id="system-switching-exempt" name="system-switching-exempt" type="checkbox">
-                                <label class="nhsuk-label nhsuk-checkboxes__label" for="system-switching-exempt">System Switching (Incorrectly as exempt)</label>
-                              </div>
-                            </div>
-                          </div>
+                        </div>
+                      </div>
+    
+                      <div class="nhsuk-u-padding-bottom-1"></div>
+    
+                      <!-- TAG Operator Error -->
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="tag-operator-error" name="tag-operator-error" type="checkbox">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="tag-operator-error">TAG Operator Error</label>
+                      </div>
+    
+                      <div class="nhsuk-u-padding-bottom-1"></div>
+    
+                      <!-- TAG System Error -->
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="tag-system-error" name="tag-system-error" type="checkbox">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="tag-system-error">TAG System Error</label>
                       </div>
                     </div>
+                  </fieldset>
   
-                    <div class="nhsuk-u-padding-bottom-1"></div>
+                  <div class="nhsuk-u-padding-bottom-2"></div>
   
-                    <!-- TAG Operator Error -->
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="tag-operator-error" name="tag-operator-error" type="checkbox">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="tag-operator-error">TAG Operator Error</label>
-                    </div>
+                  <!-- Form Notes -->
+                  <label class="nhsuk-label" for="form-notes">Form Notes</label>
+                  <textarea class="nhsuk-textarea" id="form-notes" name="form-notes" rows="5" aria-describedby="form-notes"></textarea>
   
-                    <div class="nhsuk-u-padding-bottom-1"></div>
+                  <div class="nhsuk-u-padding-bottom-2"></div>
   
-                    <!-- TAG System Error -->
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="tag-system-error" name="tag-system-error" type="checkbox">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="tag-system-error">TAG System Error</label>
-                    </div>
+                  <!-- Buttons -->
+                  <div>
+                    <!-- Cancel -->
+                    <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b;" onclick="cancelCorrections();" type="button">Cancel Error</button>
+  
+                    <!-- Confirm -->
+                    <button class="nhsuk-button nhsuk-button--secondary" style="float: right; background-color: #007f3b;" type="button">Confirm</button>
                   </div>
-                </fieldset>
-
-                <div class="nhsuk-u-padding-bottom-2"></div>
-
-                <!-- Buttons -->
-                <div>
-                  <!-- Cancel -->
-                  <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b;" type="button">Cancel Error</button>
-
-                  <!-- Confirm -->
-                  <button class="nhsuk-button nhsuk-button--secondary" style="float: right; background-color: #007f3b;" type="button">Confirm</button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
