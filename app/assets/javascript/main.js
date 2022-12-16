@@ -2,22 +2,29 @@
 
 ////////// Check Controls //////////
 
+// Set variables for correction views.
 let back = false;
 
+/**
+ * Swaps what side of a prescription scan is shown.
+ */
 function swapSides() {
     if (back) {
-        document.getElementById("prescription-image").src = "/images/E000001NE02_side1.jpg";
-        document.getElementById("swap-sides").innerHTML = "Show Back";
+        document.getElementById('prescription-image').src = '/images/E000001NE02_side1.jpg';
+        document.getElementById('swap-sides').innerHTML = 'Show Back';
     } else {
-        document.getElementById("prescription-image").src = "/images/E000001NE02_side2.jpg";
-        document.getElementById("swap-sides").innerHTML = "Show Front";
+        document.getElementById('prescription-image').src = '/images/E000001NE02_side2.jpg';
+        document.getElementById('swap-sides').innerHTML = 'Show Front';
     }
 
     back = !back;
 }
 
+/**
+ * Redirect to corrections view.
+ */
 function showCorrections() {
-    window.location.href = ("/apps/50k/check-corrections");
+    window.location.href = ('/apps/50k/check-corrections');
 }
 
 
