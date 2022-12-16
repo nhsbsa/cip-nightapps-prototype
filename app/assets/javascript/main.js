@@ -27,6 +27,13 @@ function showCorrections() {
     window.location.href = ('/apps/50k/check-corrections');
 }
 
+/**
+ * Redirect to check view.
+ */
+function cancelCorrections() {
+    window.location.href = ('/apps/50k/check');
+}
+
 
 ////////// Web-flow Emulation //////////
 
