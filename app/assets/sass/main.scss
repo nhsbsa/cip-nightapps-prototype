@@ -15,6 +15,11 @@ progress {
     height: 15px;
 }
 
+.max-width-select {
+    width: 0;
+    min-width: 100%;
+}
+
 .question-continue {
     padding-top: 30px;
 }
