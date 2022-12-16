@@ -33,6 +33,7 @@ if (window['web-flow']) {
     let expectedParameters = parameters['expectedParameters'] || [];
     let readableReplacements = parameters['readableReplacements'] || [];
     let nextView = parameters['nextView'] || '/';
+    let previousView = parameters['previousView'] || '/';
     let parameterString = '';
 
     // Get URL query.
@@ -79,6 +80,17 @@ if (window['web-flow']) {
         }
     }
 
+    // Check previously selected value if required.
+    if (value && urlParams.get(value)) {
+        let inputElems = document.getElementsByClassName('nhsuk-radios__input');
+        for (let i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].value == urlParams.get(value)) {
+                inputElems[i].checked = true;
+                break;
+            }
+        }
+    }
+
     /**
      * Function which redirects on web-flow form submission.
      */
@@ -95,6 +107,13 @@ if (window['web-flow']) {
     }
 
     /**
+     * Redirect to previous question view with selections intact.
+     */
+    function onWebFlowGoBack() {
+        location.replace(previousView + '?' + parameterString);
+    }
+
+    /**
      * Download the corresponding example file for a report creation request.
      */
     function downloadReport() {
@@ -106,7 +125,5 @@ if (window['web-flow']) {
             }
         }
     }
-
-    // TODO A go back function which can reselect previous values.
     
 }
