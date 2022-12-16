@@ -13,3 +13,7 @@ function swapSides() {
 
     back = !back;
 }
+
+function showCorrections() {
+    window.location.href = ("/apps/50k/check-corrections");
+}
