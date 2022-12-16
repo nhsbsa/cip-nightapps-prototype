@@ -1,0 +1,215 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  EPS Check - 50k Checking - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ul class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k/check"> EPS Check</a></li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <!-- Page Title -->
+      <h1 id="page-title">
+        EPS Check
+      </h1>
+
+      <!-- Form -->
+      <div class="nhsuk-grid-column-full" style="height: 850px;">
+        <!-- Nested in a div in order to allow easy addition. -->
+        <div style="height: 90%; overflow-y: scroll;">
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+              <!-- Account Type -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Account Type</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Account -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Account</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Fragment -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Fragment</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Form Number -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Form Number</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Item Number -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Item Number</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Total Fees -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Total Fees</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Pay NIC -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Pay NIC</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Charge Value -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Charge Value</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- User Input -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">User Input</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Division -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Division</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Prescriber Code -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Prescriber Code</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Print Code -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Print Code</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Pracitce Code -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Practice Code</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Paper Type -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Paper Type</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Prescription Type -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Prescription Type</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Charge Status -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Charge Status</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Exemption Category -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Exemption Category</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Quantity -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Quantity</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Endorsements -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Endorsements</td>
+                <td class="nhsuk-table__cell">####</td>
+              </tr>
+
+              <!-- Product Description -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Product Description<br>####</td>
+              </tr>
+
+              <!-- ETP Prescribed - QTY -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">ETP Prescribed - QTY<br>####</td>
+              </tr>
+
+              <!-- ETP Dispensed - QTY -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">ETP Dispensed - QTY<br>####</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Buttons Container. -->
+        <div style="height: 10%; overflow-y: hidden;">
+          <div class="nhsuk-u-padding-bottom-2"></div>
+
+          <!-- Buttons -->
+          <div style="text-align: center;">
+            <!-- Correct -->
+            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #007f3b;" type="button">
+              Correct
+            </button>
+
+            <!-- Error -->
+            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b;" onclick="showEPSCorrections()" type="button">
+              Error
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Checked. -->
+      <div style="float: right; text-align: right;">
+        <label class="nhsuk-label" for="checkedprogress">10 of 50 checked</label>
+        <progress id="checkedprogress" max="50" value="10"></progress>
+      </div>
+      <!-- End of content -->
+    </div>
+  </div>
+{% endblock %}
