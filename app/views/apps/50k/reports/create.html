@@ -1,0 +1,95 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Reports - 50k Checking - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ul class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k/reports">Reports</a></li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <script>
+    // Establish web-flow settings for this page.
+    window['web-flow'] = {
+      root: '/apps/50k/reports',
+      expectedParameters: ['report', 'year', 'period', 'user'],
+      readableReplacements: {
+        'report': {
+          'direct-hits': 'Direct Hits report',
+          'information-errors': 'Information Errors report',
+          'operator-errors': 'Operator Errors report',
+          'totals-file': '50k Totals file'
+        },
+        'user': {
+          'all': 'All Users',
+          'adam-azure': 'Adam Azure',
+          'bryony-black': 'Bryony Black',
+          'charlie-cerulean': 'Charlie Cerulean',
+          'david-denim': 'David Denim'
+        }
+      },
+    };
+  </script>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1>
+        Report Creation
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        The <span class="web-flow-sub" web-flow-sub-value="report"></span> for <span class="web-flow-sub" web-flow-sub-value="user"></span> in <span class="web-flow-sub title-case" web-flow-sub-value="period"></span> <span class="web-flow-sub" web-flow-sub-value="year"></span> is now ready to be created.
+      </p>
+
+      <!-- // TODO Download blank PDF or csv based on report. -->
+      <div class="download-report-button">
+        <button class="nhsuk-button" type="submit">
+          Get the <span class="web-flow-sub" web-flow-sub-value="report"></span>
+        </button>
+      </div>
+
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="/apps/50k/reports/year">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

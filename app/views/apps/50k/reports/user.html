@@ -42,8 +42,8 @@
     // Establish web-flow settings for this page.
     window['web-flow'] = {
       root: '/apps/50k/reports',
-      expectedParameters: ['report', 'year'],
-      nextView: '/apps/50k/reports/user',
+      expectedParameters: ['report', 'year', 'period'],
+      nextView: '/apps/50k/reports/create',
       readableReplacements: {
         'report': {
           'direct-hits': 'Direct Hits report',
@@ -52,7 +52,7 @@
           'totals-file': '50k Totals file'
         }
       },
-      value: 'period'
+      value: 'user'
     };
   </script>
 
@@ -71,97 +71,48 @@
           <fieldset class="nhsuk-fieldset">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
               <h1 class="nhsuk-fieldset__heading">
-                What period do you want to generate the <span class="web-flow-sub" web-flow-sub-value="report"></span> for?
+                Which user(s) in <span class="web-flow-sub title-case" web-flow-sub-value="period"></span> <span class="web-flow-sub" web-flow-sub-value="year"></span> do you want to generate the <span class="web-flow-sub" web-flow-sub-value="report"></span> for?
               </h1>
             </legend>
 
             <span class="nhsuk-error-message hidden-alert" id="alert-message">
-              <span class="nhsuk-u-visually-hidden">Error:</span> Please select a period.
+              <span class="nhsuk-u-visually-hidden">Error:</span> Please pick a user selection.
             </span>
         
             <div class="nhsuk-radios">
         
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="january">
+                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="all">
                 <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  January <span class="web-flow-sub" web-flow-sub-value="year"></span>
+                  All Users
                 </label>
               </div>
         
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="february">
+                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="adam-azure">
                 <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  February <span class="web-flow-sub" web-flow-sub-value="year"></span>
+                  Adam Azure
                 </label>
               </div>
         
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="march">
+                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="bryony-black">
                 <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  March <span class="web-flow-sub" web-flow-sub-value="year"></span>
+                  Bryony Black
                 </label>
               </div>
         
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="april">
+                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="charlie-cerulean">
                 <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  April <span class="web-flow-sub" web-flow-sub-value="year"></span>
+                  Charlie Cerulean
                 </label>
               </div>
         
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="may">
+                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="david-denim">
                 <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  May <span class="web-flow-sub" web-flow-sub-value="year"></span>
-                </label>
-              </div>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="june">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  June <span class="web-flow-sub" web-flow-sub-value="year"></span>
-                </label>
-              </div>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="july">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  July <span class="web-flow-sub" web-flow-sub-value="year"></span>
-                </label>
-              </div>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="august">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  August <span class="web-flow-sub" web-flow-sub-value="year"></span>
-                </label>
-              </div>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="september">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  September <span class="web-flow-sub" web-flow-sub-value="year"></span>
-                </label>
-              </div>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="october">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  October <span class="web-flow-sub" web-flow-sub-value="year"></span>
-                </label>
-              </div>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="november">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  November <span class="web-flow-sub" web-flow-sub-value="year"></span>
-                </label>
-              </div>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="december">
-                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                  December <span class="web-flow-sub" web-flow-sub-value="year"></span>
+                  David Denim
                 </label>
               </div>
         
