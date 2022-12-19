@@ -4,8 +4,8 @@
 
 // Set variables for correction views.
 let back = false;
-let backImage = '/images/E000001NE02_side1.jpg';
-let frontImage = '/images/E000001NE02_side2.jpg';
+const backImage = '/images/E000001NE02_side1.jpg';
+const frontImage = '/images/E000001NE02_side2.jpg';
 
 /**
  * Swaps what side of a prescription scan is shown.
