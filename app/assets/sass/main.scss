@@ -57,3 +57,15 @@ progress {
 .zoom-buttons {
     float: right;
 }
+
+.scan-container {
+    position: relative;
+}
+
+.scan-controls {
+    position: absolute;
+    margin-bottom: 100px;
+    bottom: -100px;
+    left: 0px;
+    right: 0px;
+}
