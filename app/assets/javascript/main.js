@@ -34,7 +34,7 @@ function showCorrections() {
 /**
  * Redirect to check view.
  */
-function cancelCorrections() {
+function redirectToCheck() {
     window.location.href = '/apps/50k/check';
 }
 
@@ -48,7 +48,7 @@ function showEPSCorrections() {
 /**
  * Redirect to check view. (For EPS).
  */
-function cancelEPSCorrections() {
+function redirectToEPS() {
     window.location.href = '/apps/50k/check/eps';
 }
 
