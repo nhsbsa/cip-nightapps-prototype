@@ -43,14 +43,14 @@
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
       <!-- Page Title -->
-      <h1>
+      <h1 id="page-title">
         Check
       </h1>
 
       <!-- Prescription Image Container -->
       <div class="nhsuk-grid-column-one-half" style="height: 850px; overflow-y: hidden;">
         <!-- Prescription Image -->
-        <img class="nhsuk-image__img" id="prescription-image" src="/images/E000001NE02_side1.jpg" alt="Prescription Image" onload="this.scrollIntoView();">
+        <img class="nhsuk-image__img" id="prescription-image" src="/images/E000001NE02_side1.jpg" alt="Prescription Image">
   
         <div class="nhsuk-u-padding-bottom-2"></div>
   
@@ -759,6 +759,9 @@
         <label class="nhsuk-label" for="checkedprogress">10 of 50 checked</label>
         <progress id="checkedprogress" max="50" value="10"></progress>
       </div>
+
+      <!-- Scroll to check. -->
+      <script>document.getElementById('page-title').scrollIntoView();</script>
 
       <!-- End of content -->
     </div>
