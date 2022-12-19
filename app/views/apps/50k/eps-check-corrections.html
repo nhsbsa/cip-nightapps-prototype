@@ -48,7 +48,7 @@
       </h1>
 
       <!-- Form Information -->
-      <div class="nhsuk-grid-column-one-half" style="height: 850px;">
+      <div class="nhsuk-grid-column-one-half" style="height: 850px;"  id="check-container">
         <!-- Nested in a div in order to allow easy addition. -->
         <div style="height: 100%; overflow-y: scroll;">
           <table class="nhsuk-table">
@@ -720,11 +720,16 @@
         </div>  
       </div>
     </div>
+
     <!-- Progress Checked. -->
     <div style="float: right; text-align: right;">
       <label class="nhsuk-label" for="checkedprogress">10 of 50 checked</label>
       <progress id="checkedprogress" max="50" value="10"></progress>
     </div>
+
+    <!-- Scroll to check. -->
+    <script>document.getElementById('check-container').scrollIntoView();</script>
+
     <!-- End of content -->
   </div>
 {% endblock %}

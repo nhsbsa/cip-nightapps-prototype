@@ -51,7 +51,7 @@
       <div class="nhsuk-grid-column-full" style="height: 850px;">
         <!-- Nested in a div in order to allow easy addition. -->
         <div style="height: 90%; overflow-y: scroll;">
-          <table class="nhsuk-table">
+          <table class="nhsuk-table" id="check-container">
             <tbody class="nhsuk-table__body">
               <!-- Account Type -->
               <tr role="row" class="nhsuk-table__row">
@@ -209,6 +209,10 @@
         <label class="nhsuk-label" for="checkedprogress">10 of 50 checked</label>
         <progress id="checkedprogress" max="50" value="10"></progress>
       </div>
+
+      <!-- Scroll to check. -->
+      <script>document.getElementById('check-container').scrollIntoView();</script>
+
       <!-- End of content -->
     </div>
   </div>
