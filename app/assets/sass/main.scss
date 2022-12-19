@@ -17,6 +17,12 @@ progress {
     accent-color: $color_nhsuk-blue;
     border-radius: 0;
 }
+::-webkit-progress-value {
+    background-color: $color_nhsuk-blue;
+}
+::-moz-progress-bar {
+    background-color: $color_nhsuk-blue;
+}
 
 .max-width-select {
     width: 0;
