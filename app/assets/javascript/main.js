@@ -4,21 +4,25 @@
 
 // Set variables for correction views.
 let back = false;
+const backImage = '/images/E000001NE02_side1.jpg';
+const frontImage = '/images/E000001NE02_side2.jpg';
 
 /**
  * Swaps what side of a prescription scan is shown.
  */
 function swapSides() {
     if (back) {
-        document.getElementById('prescription-image').src = '/images/E000001NE02_side1.jpg';
+        document.getElementById('prescription-image').src = backImage;
         document.getElementById('swap-sides').innerHTML = 'Show Back';
     } else {
-        document.getElementById('prescription-image').src = '/images/E000001NE02_side2.jpg';
+        document.getElementById('prescription-image').src = frontImage;
         document.getElementById('swap-sides').innerHTML = 'Show Front';
     }
 
     back = !back;
 }
+
+////////// Navigation Links //////////
 
 /**
  * Redirect to corrections view.
@@ -30,7 +34,7 @@ function showCorrections() {
 /**
  * Redirect to check view.
  */
-function cancelCorrections() {
+function redirectToCheck() {
     window.location.href = '/apps/50k/check';
 }
 
@@ -44,7 +48,7 @@ function showEPSCorrections() {
 /**
  * Redirect to check view. (For EPS).
  */
-function cancelEPSCorrections() {
+function redirectToEPS() {
     window.location.href = '/apps/50k/check/eps';
 }
 
