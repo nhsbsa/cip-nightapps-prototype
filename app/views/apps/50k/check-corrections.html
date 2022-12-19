@@ -43,30 +43,34 @@
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
       <!-- Page Title -->
-      <h1>
+      <h1 id="page-title">
         Check
       </h1>
 
       <!-- Prescription Image Container -->
       <div class="nhsuk-grid-column-one-half" style="height: 850px; overflow-y: hidden;">
         <!-- Prescription Image -->
-        <img class="nhsuk-image__img" id="prescription-image" src="/images/E000001NE02_side1.jpg" alt="Prescription Image" onload="this.scrollIntoView();">
+        <img class="nhsuk-image__img" id="prescription-image" src="/images/E000001NE02_side1.jpg" alt="Prescription Image">
   
         <div class="nhsuk-u-padding-bottom-2"></div>
   
         <!-- Prescription Image Controls -->
         <div style="text-align: center;">
+
           <!-- Side Swap Button -->
-          <button class="nhsuk-button nhsuk-button--secondary" id="swap-sides" type="button" onclick="swapSides();">Show Back</button>
+          <button class="nhsuk-button nhsuk-button--secondary swap-button" id="swap-sides" type="button" onclick="swapSides();">Show Back</button>
+
+          <!-- Zoom buttons container-->
+          <span class="zoom-buttons">
           
-          <!-- Zoom In Button -->
-          <button class="nhsuk-button nhsuk-button--secondary" type="button">+</button>
+            <!-- Zoom In Button -->
+            <button class="nhsuk-button nhsuk-button--secondary" type="button">+</button>
+            
+            <!-- Zoom Out Button -->
+            <button class="nhsuk-button nhsuk-button--secondary" type="button">-</button>
+
+          </span>
           
-          <!-- Zoom Out Button -->
-          <button class="nhsuk-button nhsuk-button--secondary" type="button">-</button>
-          
-          <!-- Notes Button -->
-          <button class="nhsuk-button nhsuk-button--secondary" type="button">Form Notes</button>  
         </div> 
       </div>
 
@@ -204,6 +208,12 @@
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">ETP Dispensed - QTY<br>####</td>
               </tr>
+
+              <!-- Form Notes -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Form Notes<br>####</td>
+              </tr>
+
             </tbody>
           </table>
         </div>
@@ -726,10 +736,7 @@
   
                   <div class="nhsuk-u-padding-bottom-2"></div>
   
-                  <!-- Form Notes -->
-                  <label class="nhsuk-label" for="form-notes">Form Notes</label>
-                  <textarea class="nhsuk-textarea" id="form-notes" name="form-notes" rows="5" aria-describedby="form-notes"></textarea>
-  
+ 
                   <div class="nhsuk-u-padding-bottom-2"></div>
   
                   <!-- Buttons -->
@@ -752,6 +759,9 @@
         <label class="nhsuk-label" for="checkedprogress">10 of 50 checked</label>
         <progress id="checkedprogress" max="50" value="10"></progress>
       </div>
+
+      <!-- Scroll to check. -->
+      <script>document.getElementById('page-title').scrollIntoView();</script>
 
       <!-- End of content -->
     </div>

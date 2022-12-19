@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Check - 50k Checking - Prescription Service Applications
+  EPS Check - 50k Checking - Prescription Service Applications
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -23,7 +23,7 @@
     <ul class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k/check">Check</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k/eps-check"> EPS Check</a></li>
     </ul>
   </div>
 </nav>
@@ -44,38 +44,11 @@
 
       <!-- Page Title -->
       <h1 id="page-title">
-        Check
+        EPS Check
       </h1>
 
-      <!-- Prescription Image Container -->
-      <div class="nhsuk-grid-column-one-half" style="height: 850px; overflow-y: hidden;">
-        <!-- Prescription Image -->
-        <img class="nhsuk-image__img" id="prescription-image" src="/images/E000001NE02_side1.jpg" alt="Prescription Image">
-  
-        <div class="nhsuk-u-padding-bottom-2"></div>
-  
-        <!-- Prescription Image Controls -->
-        <div style="text-align: center;">
-
-          <!-- Side Swap Button -->
-          <button class="nhsuk-button nhsuk-button--secondary swap-button" id="swap-sides" type="button" onclick="swapSides();">Show Back</button>
-
-          <!-- Zoom buttons container-->
-          <span class="zoom-buttons">
-          
-            <!-- Zoom In Button -->
-            <button class="nhsuk-button nhsuk-button--secondary" type="button">+</button>
-            
-            <!-- Zoom Out Button -->
-            <button class="nhsuk-button nhsuk-button--secondary" type="button">-</button>
-
-          </span>
-          
-        </div> 
-      </div>
-
-      <!-- Right Side -->
-      <div class="nhsuk-grid-column-one-half" style="height: 850px;">
+      <!-- Form -->
+      <div class="nhsuk-grid-column-full" style="height: 850px;">
         <!-- Nested in a div in order to allow easy addition. -->
         <div style="height: 90%; overflow-y: scroll;">
           <table class="nhsuk-table">
@@ -208,12 +181,6 @@
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">ETP Dispensed - QTY<br>####</td>
               </tr>
-
-              <!-- Form Notes -->
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Form Notes<br>####</td>
-              </tr>
-              
             </tbody>
           </table>
         </div>
@@ -230,7 +197,7 @@
             </button>
 
             <!-- Error -->
-            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b;" onclick="showCorrections()" type="button">
+            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b;" onclick="showEPSCorrections()" type="button">
               Error
             </button>
           </div>

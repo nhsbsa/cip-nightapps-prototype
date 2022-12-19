@@ -24,16 +24,29 @@ function swapSides() {
  * Redirect to corrections view.
  */
 function showCorrections() {
-    window.location.href = ('/apps/50k/check-corrections');
+    window.location.href = '/apps/50k/check-corrections';
 }
 
 /**
  * Redirect to check view.
  */
 function cancelCorrections() {
-    window.location.href = ('/apps/50k/check');
+    window.location.href = '/apps/50k/check';
 }
 
+/**
+ * Redirect to corrections view. (For EPS).
+ */
+function showEPSCorrections() {
+    window.location.href = '/apps/50k/eps-check-corrections';
+}
+
+/**
+ * Redirect to check view. (For EPS).
+ */
+function cancelEPSCorrections() {
+    window.location.href = '/apps/50k/eps-check';
+}
 
 ////////// Web-flow Emulation //////////
 
