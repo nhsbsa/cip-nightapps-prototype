@@ -23,6 +23,11 @@ progress {
 ::-moz-progress-bar {
     background-color: $color_nhsuk-blue;
 }
+.percentage-text {
+    float: right;
+    padding-bottom: -10px;
+    font-size: 15px;
+}
 
 .max-width-select {
     width: 0;
