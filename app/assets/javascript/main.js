@@ -24,7 +24,7 @@ function swapSides() {
  * Redirect to corrections view.
  */
 function showCorrections() {
-    window.location.href = '/apps/50k/check-corrections';
+    window.location.href = '/apps/50k/check/corrections';
 }
 
 /**
@@ -38,14 +38,14 @@ function cancelCorrections() {
  * Redirect to corrections view. (For EPS).
  */
 function showEPSCorrections() {
-    window.location.href = '/apps/50k/eps-check-corrections';
+    window.location.href = '/apps/50k/check/eps/corrections';
 }
 
 /**
  * Redirect to check view. (For EPS).
  */
 function cancelEPSCorrections() {
-    window.location.href = '/apps/50k/eps-check';
+    window.location.href = '/apps/50k/check/eps';
 }
 
 ////////// Web-flow Emulation //////////
