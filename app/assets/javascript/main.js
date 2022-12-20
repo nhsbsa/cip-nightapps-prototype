@@ -1,5 +1,9 @@
 // ES6 or Vanilla JavaScript
 
+const urlParams = new URLSearchParams(window.location.search);
+const checkNumber = urlParams.get('check');
+const totalChecks = urlParams.get('total'); 
+
 ////////// Check Controls //////////
 
 // Set variables for correction views.
@@ -22,34 +26,66 @@ function swapSides() {
     back = !back;
 }
 
+
+////////// Counter //////////
+
+/*
+ * Looks at the URL arguments and updates the counter.
+ */
+if (window['check']) {   
+    if (checkNumber && totalChecks) {
+        document.getElementById('checked-label').innerHTML = checkNumber + " of " + totalChecks + " checked";
+        document.getElementById('checkedprogress').value = checkNumber;
+        document.getElementById('checkedprogress').max = totalChecks;
+    }
+}
+
 ////////// Navigation Links //////////
 
 /**
  * Redirect to corrections view.
  */
 function showCorrections() {
-    window.location.href = '/apps/50k/check/corrections';
+    window.location.href = '/apps/50k/check/corrections?check=' + checkNumber + '&total=' + totalChecks;
 }
 
 /**
  * Redirect to check view.
  */
 function redirectToCheck() {
-    window.location.href = '/apps/50k/check';
+    window.location.href = '/apps/50k/check?check=' + checkNumber + '&total=' + totalChecks;
 }
 
 /**
  * Redirect to corrections view. (For EPS).
  */
 function showEPSCorrections() {
-    window.location.href = '/apps/50k/check/eps/corrections';
+    window.location.href = '/apps/50k/check/eps/corrections?check=' + checkNumber + '&total=' + totalChecks;
 }
 
 /**
  * Redirect to check view. (For EPS).
  */
 function redirectToEPS() {
-    window.location.href = '/apps/50k/check/eps';
+    window.location.href = '/apps/50k/check/eps?check=' + checkNumber + '&total=' + totalChecks;
+}
+
+/**
+ * Redirect to check view while increasing check value.
+ */
+function nextCheck() {
+    if (checkNumber && totalChecks) {
+        window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks;
+    }
+}
+
+/**
+ * Redirect to EPS check view while increasing check value.
+ */
+function nextEPS() {
+    if (checkNumber && totalChecks) {
+        window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks;
+    }
 }
 
 ////////// Web-flow Emulation //////////
@@ -68,7 +104,6 @@ if (window['web-flow']) {
     let parameterString = '';
 
     // Get URL query.
-    const urlParams = new URLSearchParams(window.location.search);
     const isError = urlParams.get('isError');
 
     // Get the expected parameters - redirect to start if any are missing.

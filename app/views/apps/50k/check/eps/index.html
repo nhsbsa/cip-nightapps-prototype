@@ -37,6 +37,11 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+  <!-- Mark the page as a check so that JS can update the counter. -->
+  <script>
+    window['check'] = true;
+  </script>
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
       <!-- Add your content here -->
@@ -197,7 +202,7 @@
             </button>
             
             <!-- Correct -->
-            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #007f3b;" onclick="redirectToCheck()" type="button">
+            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #007f3b;" onclick="nextCheck()" type="button">
               Correct
             </button>
           </div>
@@ -206,7 +211,7 @@
 
       <!-- Progress Checked. -->
       <div style="float: right; text-align: right;">
-        <label class="nhsuk-label" for="checkedprogress">10 of 500 checked</label>
+        <label class="nhsuk-label" for="checkedprogress" id="checked-label">10 of 500 checked</label>
         <progress id="checkedprogress" max="50" value="10"></progress>
       </div>
 
