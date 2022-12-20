@@ -54,8 +54,11 @@
 
       <!-- Prescription Image Container -->
       <div class="nhsuk-grid-column-one-half scan-container" style="height: 850px; overflow-y: hidden;">
+
         <!-- Prescription Image -->
-        <img class="nhsuk-image__img" id="prescription-image" src="/images/E000001NE02_side1.jpg" alt="Prescription Image">
+        <div class="scan-container">
+          <img class="nhsuk-image__img" id="prescription-image" src="/images/E000001NE02_side1.jpg" alt="Prescription Image">
+        </div>
   
         <!-- Prescription Image Controls -->
         <div style="text-align: center;" class="scan-controls">
@@ -67,10 +70,10 @@
           <span class="zoom-buttons">
           
             <!-- Zoom In Button -->
-            <button class="nhsuk-button nhsuk-button--secondary" type="button">+</button>
+            <button class="nhsuk-button nhsuk-button--secondary" type="button" onclick="zoomScanIn();">+</button>
             
             <!-- Zoom Out Button -->
-            <button class="nhsuk-button nhsuk-button--secondary" type="button">-</button>
+            <button class="nhsuk-button nhsuk-button--secondary" type="button" onclick="zoomScanOut();">-</button>
 
           </span>
           

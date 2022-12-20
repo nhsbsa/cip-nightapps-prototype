@@ -69,3 +69,13 @@ progress {
     left: 0px;
     right: 0px;
 }
+
+.scan-container {
+    overflow: auto;
+}
+
+#prescription-image {
+    transform-origin: left top 0px;
+    transition: scale 0.5s;
+    transition-timing-function: ease;
+}
