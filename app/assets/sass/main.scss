@@ -71,9 +71,11 @@ progress {
 }
 
 .scan-container {
-    overflow: hidden;
+    overflow: auto;
 }
 
 #prescription-image {
     transform-origin: left top 0px;
+    transition: scale 0.5s;
+    transition-timing-function: ease;
 }

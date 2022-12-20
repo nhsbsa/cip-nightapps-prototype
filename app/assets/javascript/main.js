@@ -36,27 +36,12 @@ function swapSides() {
  * Increases the zoom on the scan.
  */
 function zoomScanIn() {
-
-    // Get scan elements.
     let scanEle = document.getElementById('prescription-image');
-    if (scanEle) {
-        let scanContainer = scanEle.parentElement;   
-
-        // Decrease scale of scan element.        
-        scanContainer.style.overflow = 'hidden';
+    if (scanEle) {   
         let newScale = (+scanEle.style.scale || 1) + zoomStep;
         if (newScale <= maxZoom) {
             scanEle.style.scale = newScale;
-        }
-
-        // Force update of scroll bars.
-        setTimeout(
-            function(){
-                scanContainer.style.overflow = 'scroll';
-            },
-            1
-        );
-        
+        }        
     }
 }
 
@@ -64,29 +49,12 @@ function zoomScanIn() {
  * Decreases the zoom on the scan.
  */
 function zoomScanOut() {
-
-    // Get scan elements.
     let scanEle = document.getElementById('prescription-image');
-    if (scanEle) {
-        let scanContainer = scanEle.parentElement; 
-
-        // Decrease scale of scan element.       
-        scanContainer.style.overflow = 'hidden';
+    if (scanEle) {  
         let newScale = (+scanEle.style.scale || 1) - zoomStep;
         if (newScale >= minZoom) {
             scanEle.style.scale = newScale;
         }
-
-        // Force update of scroll bars.
-        setTimeout(
-            function(){
-                if (newScale > 1) {
-                    scanContainer.style.overflow = 'scroll';
-                }
-            },
-            1
-        );
-
     }
 }
 
