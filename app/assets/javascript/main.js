@@ -1,5 +1,11 @@
 // ES6 or Vanilla JavaScript
 
+// Set zoom limits.
+const minZoom = 1;
+const maxZoom = 3;
+const zoomStep = 0.3;
+
+// Get Url Parameters.
 const urlParams = new URLSearchParams(window.location.search);
 const checkNumber = urlParams.get('check');
 const totalChecks = urlParams.get('total'); 
@@ -26,6 +32,64 @@ function swapSides() {
     back = !back;
 }
 
+/**
+ * Increases the zoom on the scan.
+ */
+function zoomScanIn() {
+
+    // Get scan elements.
+    let scanEle = document.getElementById('prescription-image');
+    if (scanEle) {
+        let scanContainer = scanEle.parentElement;   
+
+        // Decrease scale of scan element.        
+        scanContainer.style.overflow = 'hidden';
+        let newScale = (+scanEle.style.scale || 1) + zoomStep;
+        if (newScale <= maxZoom) {
+            scanEle.style.scale = newScale;
+        }
+
+        // Force update of scroll bars.
+        setTimeout(
+            function(){
+                scanContainer.style.overflow = 'scroll';
+            },
+            1
+        );
+        
+    }
+}
+
+/**
+ * Decreases the zoom on the scan.
+ */
+function zoomScanOut() {
+
+    // Get scan elements.
+    let scanEle = document.getElementById('prescription-image');
+    if (scanEle) {
+        let scanContainer = scanEle.parentElement; 
+
+        // Decrease scale of scan element.       
+        scanContainer.style.overflow = 'hidden';
+        let newScale = (+scanEle.style.scale || 1) - zoomStep;
+        if (newScale >= minZoom) {
+            scanEle.style.scale = newScale;
+        }
+
+        // Force update of scroll bars.
+        setTimeout(
+            function(){
+                if (newScale > 1) {
+                    scanContainer.style.overflow = 'scroll';
+                }
+            },
+            1
+        );
+
+    }
+}
+
 
 ////////// Counter //////////
 
@@ -34,7 +98,7 @@ function swapSides() {
  */
 if (window['check']) {   
     if (checkNumber && totalChecks) {
-        document.getElementById('checked-label').innerHTML = checkNumber + " of " + totalChecks + " checked";
+        document.getElementById('checked-label').innerHTML = checkNumber + ' of ' + totalChecks + ' checked';
         document.getElementById('checkedprogress').value = checkNumber;
         document.getElementById('checkedprogress').max = totalChecks;
     }

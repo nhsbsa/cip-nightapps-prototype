@@ -69,3 +69,11 @@ progress {
     left: 0px;
     right: 0px;
 }
+
+.scan-container {
+    overflow: hidden;
+}
+
+#prescription-image {
+    transform-origin: left top 0px;
+}
