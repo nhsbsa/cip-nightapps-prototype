@@ -122,6 +122,25 @@ function nextEPS() {
     }
 }
 
+/**
+ * Redirect to Part 2-3 check view while increasing check value.
+ */
+function nextCheck2_3() {
+    if (checkNumber && totalChecks) {
+        window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+    }
+}
+
+/**
+ * Redirect to EPS Part 2-3 check view while increasing check value.
+ */
+function nextEPS2_3() {
+    if (checkNumber && totalChecks) {
+        window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+    }
+}
+
+
 ////////// Web-flow Emulation //////////
 
 // See if a web-flow object has been established.
