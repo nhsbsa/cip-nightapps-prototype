@@ -9,6 +9,7 @@ const zoomStep = 0.3;
 const urlParams = new URLSearchParams(window.location.search);
 const checkNumber = urlParams.get('check');
 const totalChecks = urlParams.get('total'); 
+const currentPart = urlParams.get('part'); 
 
 ////////// Check Controls //////////
 
@@ -69,6 +70,7 @@ if (window['check']) {
         document.getElementById('checked-label').innerHTML = checkNumber + ' of ' + totalChecks + ' checked';
         document.getElementById('checkedprogress').value = checkNumber;
         document.getElementById('checkedprogress').max = totalChecks;
+        document.getElementById('current-part').innerHTML = currentPart;
     }
 }
 
@@ -78,28 +80,28 @@ if (window['check']) {
  * Redirect to corrections view.
  */
 function showCorrections() {
-    window.location.href = '/apps/50k/check/corrections?check=' + checkNumber + '&total=' + totalChecks;
+    window.location.href = '/apps/50k/check/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
 }
 
 /**
  * Redirect to check view.
  */
 function redirectToCheck() {
-    window.location.href = '/apps/50k/check?check=' + checkNumber + '&total=' + totalChecks;
+    window.location.href = '/apps/50k/check?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
 }
 
 /**
  * Redirect to corrections view. (For EPS).
  */
 function showEPSCorrections() {
-    window.location.href = '/apps/50k/check/eps/corrections?check=' + checkNumber + '&total=' + totalChecks;
+    window.location.href = '/apps/50k/check/eps/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
 }
 
 /**
  * Redirect to check view. (For EPS).
  */
 function redirectToEPS() {
-    window.location.href = '/apps/50k/check/eps?check=' + checkNumber + '&total=' + totalChecks;
+    window.location.href = '/apps/50k/check/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
 }
 
 /**
@@ -107,7 +109,7 @@ function redirectToEPS() {
  */
 function nextCheck() {
     if (checkNumber && totalChecks) {
-        window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks;
+        window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
     }
 }
 
@@ -116,7 +118,7 @@ function nextCheck() {
  */
 function nextEPS() {
     if (checkNumber && totalChecks) {
-        window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks;
+        window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
     }
 }
 
