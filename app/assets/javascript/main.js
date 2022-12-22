@@ -87,7 +87,11 @@ function showCorrections() {
  * Redirect to check view.
  */
 function redirectToCheck() {
-    window.location.href = '/apps/50k/check?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    if (currentPart === '2' || currentPart == '3') {
+        window.location.href = '/apps/50k/check/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    } else {
+        window.location.href = '/apps/50k/check?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    }
 }
 
 /**
@@ -101,7 +105,11 @@ function showEPSCorrections() {
  * Redirect to check view. (For EPS).
  */
 function redirectToEPS() {
-    window.location.href = '/apps/50k/check/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    if (currentPart === '2' || currentPart == '3') {
+        window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    } else {
+        window.location.href = '/apps/50k/check/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    }
 }
 
 /**
@@ -109,7 +117,11 @@ function redirectToEPS() {
  */
 function nextCheck() {
     if (checkNumber && totalChecks) {
-        window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        if (currentPart === '2' || currentPart == '3') {
+            window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        } else {
+            window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        }
     }
 }
 
@@ -118,9 +130,14 @@ function nextCheck() {
  */
 function nextEPS() {
     if (checkNumber && totalChecks) {
-        window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        if (currentPart === '2' || currentPart == '3') {
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        } else {
+            window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        }
     }
 }
+
 
 ////////// Web-flow Emulation //////////
 
