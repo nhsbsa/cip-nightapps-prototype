@@ -105,7 +105,7 @@ function showEPSCorrections() {
  * Redirect to check view. (For EPS).
  */
 function redirectToEPS() {
-    if (currentPart === '2' || currentPart == '3') {
+    if (currentPart === '2' || currentPart === '3') {
         window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
     } else {
         window.location.href = '/apps/50k/check/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
@@ -117,7 +117,7 @@ function redirectToEPS() {
  */
 function nextCheck() {
     if (checkNumber && totalChecks) {
-        if (currentPart === '2' || currentPart == '3') {
+        if (currentPart === '2' || currentPart === '3') {
             window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
             window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
@@ -130,7 +130,7 @@ function nextCheck() {
  */
 function nextEPS() {
     if (checkNumber && totalChecks) {
-        if (currentPart === '2' || currentPart == '3') {
+        if (currentPart === '2' || currentPart === '3') {
             window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
             window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
