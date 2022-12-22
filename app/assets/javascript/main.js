@@ -108,7 +108,7 @@ function redirectToEPS() {
     if (currentPart === '2' || currentPart == '3') {
         window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
     } else {
-        window.location.href = '/apps/50k/eps/check?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+        window.location.href = '/apps/50k/check/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
     }
 }
 
