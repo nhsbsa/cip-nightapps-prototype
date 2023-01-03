@@ -282,7 +282,7 @@
               <!-- Product Description -->
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell table-body-full-width">
-                  <div class="nhsuk-u-font-weight-bold">Product Description</div>
+                  <label class="nhsuk-u-font-weight-bold" for="product-description">Product Description</div>
                   <textarea class="nhsuk-textarea" id="product-description" name="product-description" rows="1" style="resize: none;" aria-describedby="product-description" disabled aria-disabled="true"></textarea>                    
                 </td>
               </tr>
@@ -290,7 +290,7 @@
               <!-- Form Notes -->
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell table-body-full-width">
-                  <div class="nhsuk-u-font-weight-bold">Form Notes</div>
+                  <label class="nhsuk-u-font-weight-bold" for="form-notes">Form Notes</div>
                   <textarea class="nhsuk-textarea" id="form-notes" name="form-notes" rows="1" style="resize: none;" aria-describedby="form-notes" disabled aria-disabled="true"></textarea>                    
                 </td>
               </tr>
@@ -789,7 +789,17 @@
                 <div class="nhsuk-u-padding-bottom-2"></div>
 
                 <!-- Error Type Checkboxes -->
-                <fieldset class="nhsuk-fieldset" aria-describedby="error-type">
+                <fieldset class="nhsuk-fieldset" aria-describedby="corrections-error-type">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-fieldset__heading">
+                      Error type
+                    </h1>
+                  </legend>
+
+                  <div class="nhsuk-hint" id="corrections-error-type">
+                    Select a relevant error type.
+                  </div>
+
                   <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
                     <!-- Info Error -->
                     <div class="nhsuk-checkboxes__item">
