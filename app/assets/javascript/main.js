@@ -11,6 +11,56 @@ const checkNumber = urlParams.get('check');
 const totalChecks = urlParams.get('total'); 
 const currentPart = urlParams.get('part'); 
 
+////////// Dragable Modal //////////
+
+/*
+ * Enable dragging for an element.
+ */
+function enableDrag(element) {
+    // Mouse X and Y variables.
+    let mouseX = 0;
+    let mouseY = 0;
+
+    // Event listener for on mouse down.
+    const mouseDown = function(e) {
+        // Get the current mouse x and y and assign them to their respective variables.
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        // Add event listeners for mouseMove and mouseUp for the document.
+        document.addEventListener('mousemove', mouseMove);
+        document.addEventListener('mouseup', mouseUp);
+    }
+    // Event listener for on mouse move.
+    const mouseMove = function(e) {
+        // Get the amount we should offset the position of the pop over.
+        const offsetX = e.clientX - mouseX;
+        const offsetY = e.clientY - mouseY;
+
+        // Set the style of the pop over in order to move it.
+        element.style.top = `${element.offsetTop + offsetY}px`;
+        element.style.left = `${element.offsetLeft + offsetX}px`;
+        
+        // Get the current mouse x and y and assign them to their respective variables.
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    }
+    // Event listener for on mouse up.
+    const mouseUp = function(e) {
+        // Remove the unneeded event listeners from the document.
+        document.removeEventListener('mousemove', mouseMove);
+        document.removeEventListener('mouseup', mouseUp);
+    }
+    // Add event listener for mouseDown on the pop over.
+    element.addEventListener('mousedown', mouseDown);
+}
+
+// Check if the window should enable dragging for a pop over.
+if (window['hasmodal']) {
+    enableDrag(document.getElementById("draggable-modal"));
+}
+
+
 ////////// Check Controls //////////
 
 // Set variables for correction views.
