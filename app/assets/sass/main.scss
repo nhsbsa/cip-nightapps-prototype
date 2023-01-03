@@ -81,3 +81,18 @@ progress {
     transition: scale 0.5s;
     transition-timing-function: ease;
 }
+
+.table-title {
+    font-size: 15px;
+    padding-bottom: 0;
+    padding-right: 5px;
+    text-align: center;
+}
+.table-body {
+    font-size: 15px;
+    padding-right: 5px;
+    text-align: center;
+}
+.table-body-full-width {
+    font-size: 15px;
+}
