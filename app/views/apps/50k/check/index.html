@@ -42,6 +42,21 @@
     window['check'] = true;
   </script>
 
+  <div class="notes-background" id="notes-background" hidden="true" aria-hidden="true">
+    <div class="notes-card">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <label class="nhsuk-u-font-weight-bold" for="form-notes">Form Notes</label>
+          <textarea class="nhsuk-textarea" id="form-notes" name="form-notes" rows="1" style="resize: none;" aria-describedby="form-notes" disabled aria-disabled="true"></textarea>                    
+        
+          <div class="nhsuk-u-padding-bottom-2"></div>
+
+          <button class="nhsuk-button nhsuk-button--secondary" onclick="hideFormNotes();" style="background-color: #d5281b;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
       <!-- Add your content here -->
@@ -64,7 +79,10 @@
         <div style="text-align: center;" class="scan-controls">
 
           <!-- Side Swap Button -->
-          <button class="nhsuk-button nhsuk-button--secondary swap-button" id="swap-sides" type="button" onclick="swapSides();">Show Back</button>
+          <button class="nhsuk-button nhsuk-button--secondary swap-button" id="swap-sides" type="button" onclick="swapSides();">Back</button>
+
+          <!-- Show Form Notes Button -->
+          <button class="nhsuk-button nhsuk-button--secondary" type="button" onclick="showFormNotes();" disabled>Notes</button>
 
           <!-- Zoom buttons container -->
           <span class="zoom-buttons">
@@ -283,14 +301,6 @@
                 <td class="nhsuk-table__cell table-body-full-width">
                   <label class="nhsuk-u-font-weight-bold" for="product-description">Product Description</div>
                   <textarea class="nhsuk-textarea" id="product-description" name="product-description" rows="1" style="resize: none;" aria-describedby="product-description" disabled aria-disabled="true"></textarea>                    
-                </td>
-              </tr>
-
-              <!-- Form Notes -->
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell table-body-full-width">
-                  <label class="nhsuk-u-font-weight-bold" for="form-notes">Form Notes</div>
-                  <textarea class="nhsuk-textarea" id="form-notes" name="form-notes" rows="1" style="resize: none;" aria-describedby="form-notes" disabled aria-disabled="true"></textarea>                    
                 </td>
               </tr>
             </tbody>

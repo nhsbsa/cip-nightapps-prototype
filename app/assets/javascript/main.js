@@ -73,13 +73,28 @@ const frontImage = '/images/E000001NE02_side2.jpg';
 function swapSides() {
     if (back) {
         document.getElementById('prescription-image').src = backImage;
-        document.getElementById('swap-sides').innerHTML = 'Show Back';
+        document.getElementById('swap-sides').innerHTML = 'Back';
     } else {
         document.getElementById('prescription-image').src = frontImage;
-        document.getElementById('swap-sides').innerHTML = 'Show Front';
+        document.getElementById('swap-sides').innerHTML = 'Front';
     }
 
     back = !back;
+}
+
+/**
+ * Show form notes.
+ */
+function showFormNotes() {
+    document.getElementById('notes-background').removeAttribute('hidden');
+    document.getElementById('notes-background').removeAttribute('aria-hidden');
+}
+/**
+ * Hide form notes.
+ */
+function hideFormNotes() {
+    document.getElementById('notes-background').setAttribute('hidden', 'true');
+    document.getElementById('notes-background').setAttribute('aria-hidden', true);
 }
 
 /**
