@@ -12,7 +12,6 @@ const totalChecks = urlParams.get('total');
 const currentPart = urlParams.get('part'); 
 
 ////////// Dragable Modal //////////
-
 /*
  * Enable dragging for an element.
  */
@@ -185,6 +184,35 @@ function nextEPS() {
         } else {
             window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         }
+    }
+}
+
+////////// Error Category //////////
+
+// Establish variables for the various elements needed.
+const errorCategory = document.getElementById('error-category');
+const hiddenFields = document.getElementById('hidden-fields');
+
+// Ensure that the elements needed exist.
+if (errorCategory != null && hiddenFields != null) {
+    // Add an event listener to listen to the change of the input.
+    errorCategory.addEventListener('change', updateHiddenFields);
+
+    // Update the selection of the input at the start to make sure saved states are accounted for.
+    updateHiddenFields();
+}
+
+// Function to update the hidden fields
+function updateHiddenFields() {
+    // Check if the correct item is selected.
+    if (errorCategory.selectedIndex == 41) {
+        // Show the hidden fields to both the browser and to screen readers.
+        hiddenFields.removeAttribute('hidden');
+        hiddenFields.removeAttribute('aria-hidden');
+    } else {
+        // Hide the hidden fields to both the browser and to screen readers.
+        hiddenFields.setAttribute('hidden', 'true');
+        hiddenFields.setAttribute('aria-hidden', 'true');
     }
 }
 
