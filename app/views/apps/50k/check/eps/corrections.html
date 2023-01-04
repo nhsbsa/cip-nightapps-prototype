@@ -370,7 +370,6 @@
                 </div>
               
                 <div class="nhsuk-u-padding-bottom-2"></div>
-
                 <div class="nhsuk-grid-row">
                   <div class="nhsuk-grid-column-one-half">
                     <!-- Root Cause -->
@@ -399,168 +398,170 @@
                   <div class="nhsuk-grid-column-one-half">
                     <!-- Error Category -->
                     <label class="nhsuk-label" for="error-category">Error Category</label>
-                    <select class="nhsuk-select max-width-select" id="error-category" name="error-category">
+                    <!--  class="nhsuk-select max-width-select" id="error-category" name="error-category" -->
+                    <input class="nhsuk-select max-width-select" id="error-category" name="error-category" type="text" list="error-descriptions">
+                    <datalist id="error-descriptions">
                       <!-- Blank Option -->
-                      <option value="0"></option>
+                      <option value=""></option>
 
                       <!-- ICR: Addition -->
-                      <option value="1">ICR: Addition</option>
+                      <option value="ICR: Addition">ICR: Addition</option>
 
                       <!-- ICR Exemption Class (Others) (1 in 20 only) -->
-                      <option value="2">ICR: Exemption Class (Others) (1 in 20 only)</option>
+                      <option value="ICR: Exemption Class (Others) (1 in 20 only)">ICR: Exemption Class (Others) (1 in 20 only)</option>
 
                       <!-- ICR: Form Type -->
-                      <option value="3">ICR: Form Type</option>
+                      <option value="ICR: Form Type">ICR: Form Type</option>
 
                       <!-- ICR: Incorrect Pharmaceutical Form -->
-                      <option value="4">ICR: Incorrect Pharmaceutical Form</option>
+                      <option value="ICR: Incorrect Pharmaceutical Form">ICR: Incorrect Pharmaceutical Form</option>
 
                       <!-- ICR: Incorrect Product -->
-                      <option value="5">ICR: Incorrect Product</option>
+                      <option value="ICR: Incorrect Product">ICR: Incorrect Product</option>
 
                       <!-- ICR: Incorrect Quantity -->
-                      <option value="6">ICR: Incorrect Quantity</option>
+                      <option value="ICR: Incorrect Quantity">ICR: Incorrect Quantity</option>
 
                       <!-- ICR: Incorrect Strength -->
-                      <option value="7">ICR: Incorrect Strength</option>
+                      <option value="ICR: Incorrect Strength">ICR: Incorrect Strength</option>
 
                       <!-- ICR: Not Detected Endorsement -->
-                      <option value="8">ICR: Not Detected Endorsement</option>
+                      <option value="ICR: Not Detected Endorsement">ICR: Not Detected Endorsement</option>
 
                       <!-- ICR: Omission -->
-                      <option value="9">ICR: Omission</option>
+                      <option value="ICR: Omission">ICR: Omission</option>
 
                       <!-- ICR: Prescription Number -->
-                      <option value="10">ICR: Prescription Number</option>
+                      <option value="ICR: Prescription Number">ICR: Prescription Number</option>
 
                       <!-- ICR: RA Forms -->
-                      <option value="11">ICR: RA Forms</option>
+                      <option value="ICR: RA Forms">ICR: RA Forms</option>
 
                       <!-- ICR: Supplementary Information (EG Manufacturer, Brand Name, Modification) -->
-                      <option value="12">ICR: Supplementary Information (EG Manufacturer, Brand Name, Modification)</option>
+                      <option value="ICR: Supplementary Information (EG Manufacturer, Brand Name, Modification)">ICR: Supplementary Information (EG Manufacturer, Brand Name, Modification)</option>
 
                       <!-- Operator: Addition -->
-                      <option value="13">Operator: Addition</option>
+                      <option value="Operator: Addition">Operator: Addition</option>
 
                       <!-- Operator: Alphanumeric / Memory Code Error -->
-                      <option value="14">Operator: Alphanumeric / Memory Code Error</option>
+                      <option value="Operator: Alphanumeric / Memory Code Error">Operator: Alphanumeric / Memory Code Error</option>
 
                       <!-- Operator (Ex-Handler): Broken Bulk -->
-                      <option value="15">Operator (Ex-Handler): Broken Bulk</option>
+                      <option value="Operator (Ex-Handler): Broken Bulk">Operator (Ex-Handler): Broken Bulk</option>
 
                       <!-- Operator: Calendar Pack -->
-                      <option value="16">Operator: Calendar Pack</option>
+                      <option value="Operator: Calendar Pack">Operator: Calendar Pack</option>
 
                       <!-- Operator: Endorsement Information -->
-                      <option value="17">Operator: Endorsement Information</option>
+                      <option value="Operator: Endorsement Information">Operator: Endorsement Information</option>
 
                       <!-- Operator: Endorsement Monetary -->
-                      <option value="18">Operator: Endorsement Monetary</option>
+                      <option value="Operator: Endorsement Monetary">Operator: Endorsement Monetary</option>
 
                       <!-- Operator: Exempt Class (20th Form Only) -->
-                      <option value="19">Operator: Exempt Class (20th Form Only)</option>
+                      <option value="Exempt Class (20th Form Only)">Operator: Exempt Class (20th Form Only)</option>
 
                       <!-- Operator: Form Type -->
-                      <option value="20">Operator: Form Type</option>
+                      <option value="Operator Form Type">Operator: Form Type</option>
 
-                      <!-- Operator: Incorrect Applicance / Colostomy Item -->
-                      <option value="21">Operator: Incorrect Appliance / Colostomy Item</option>
+                      <!-- Operator: Incorrect Appliance / Colostomy Item -->
+                      <option value="Operator: Incorrect Appliance / Colostomy Item">Operator: Incorrect Appliance / Colostomy Item</option>
 
                       <!-- Operator: Incorrect Pack -->
-                      <option value="22">Operator: Incorrect Pack</option>
+                      <option value="Operator: Incorrect Pack">Operator: Incorrect Pack</option>
 
                       <!-- Operator: Incorrect Pharmaceutical Form -->
-                      <option value="23">Operator: Incorrect Pharmaceutical Form</option>
+                      <option value="Operator: Incorrect Pharmaceutical Form">Operator: Incorrect Pharmaceutical Form</option>
 
                       <!-- Operator: Incorrect Product -->
-                      <option value="24">Operator: Incorrect Product</option>
+                      <option value="Operator: Incorrect Product">Operator: Incorrect Product</option>
 
                       <!-- Operator: Incorrect Quantity -->
-                      <option value="25">Operator: Incorrect Quantity</option>
+                      <option value="Operator: Incorrect Quantity">Operator: Incorrect Quantity</option>
 
                       <!-- Operator: Incorrect Strength -->
-                      <option value="26">Operator: Incorrect Strength</option>
+                      <option value="Operator: Incorrect Strength">Operator: Incorrect Strength</option>
 
                       <!-- Operator: Multiple Hit -->
-                      <option value="27">Operator: Multiple Hit</option>
+                      <option value="Operator: Multiple Hit">Operator: Multiple Hit</option>
 
                       <!-- Operator: Non Prop Ordered Together With Manufacturer / Brand -->
-                      <option value="28">Operator: Non Prop Ordered Together With Manufacturer / Brand</option>
+                      <option value="Operator: Non Prop Ordered Together With Manufacturer / Brand">Operator: Non Prop Ordered Together With Manufacturer / Brand</option>
 
                       <!-- Operator: Non Prop / Prop Ordered -->
-                      <option value="29">Operator: Non Prop / Prop Ordered</option>
+                      <option value="Operator: Non Prop / Prop Ordered">Operator: Non Prop / Prop Ordered</option>
 
                       <!-- Operator: Not Dispensed -->
-                      <option value="30">Operator: Not Dispensed</option>
+                      <option value="Operator: Not Dispensed">Operator: Not Dispensed</option>
 
                       <!-- Operator: Omission -->
-                      <option value="31">Operator: Omission</option>
+                      <option value="Operator: Omission">Operator: Omission</option>
 
                       <!-- Operator: (Other) -->
-                      <option value="32">Operator: (Other)</option>
+                      <option value="Operator: (Other)">Operator: (Other)</option>
 
                       <!-- Operator: Prescription Number -->
-                      <option value="33">Operator: Prescription Number</option>
+                      <option value="Operator: Prescription Number">Operator: Prescription Number</option>
 
                       <!-- Operator: Quantity End Less -->
-                      <option value="34">Operator: Quantity End Less</option>
+                      <option value="Operator: Quantity End Less">Operator: Quantity End Less</option>
 
                       <!-- Operator: Quantity Special Container -->
-                      <option value="35">Operator: Quantity Special Container</option>
+                      <option value="Operator: Quantity Special Container">Operator: Quantity Special Container</option>
 
                       <!-- Operator: RA Forms -->
-                      <option value="36">Operator: RA Forms</option>
+                      <option value="Operator: RA Forms">Operator: RA Forms</option>
 
-                      <!-- Operaetor: Return -->
-                      <option value="37">Operator: Return</option>
+                      <!-- Operator: Return -->
+                      <option value="Operator: Return">Operator: Return</option>
 
                       <!-- Operator: Switching (Exempt To Charge) -->
-                      <option value="38">Operator: Switching (Exempt To Charge)</option>
+                      <option value="Operator: Switching (Exempt To Charge)">Operator: Switching (Exempt To Charge)</option>
 
                       <!-- Operator: Switching (Charge To Exempt) -->
-                      <option value="39">Operator: Switching (Charge To Exempt)</option>
+                      <option value="Operator: Switching (Charge To Exempt)">Operator: Switching (Charge To Exempt)</option>
 
                       <!-- Operator: Unspecified Code / Special Order Code Not Input / Incorrectly Input -->
-                      <option value="40">Operator: Unspecified Code / Special Order Code Not Input / Incorrectly Input</option>
+                      <option value="Operator: Unspecified Code / Special Order Code Not Input / Incorrectly Input">Operator: Unspecified Code / Special Order Code Not Input / Incorrectly Input</option>
 
                       <!-- System: Alphanumeric Code Error Generates Incorrect Direct Hit -->
-                      <option value="41">System: Alphanumeric Code Error Generates Incorrect Direct Hit</option>
+                      <option value="System: Alphanumeric Code Error Generates Incorrect Direct Hit">System: Alphanumeric Code Error Generates Incorrect Direct Hit</option>
 
                       <!-- System: Cal Pack Quantity -->
-                      <option value="42">System: Cal Pack Quantity</option>
+                      <option value="System: Cal Pack Quantity">System: Cal Pack Quantity</option>
 
                       <!-- Contraceptives -->
-                      <option value="43">Contraceptives</option>
+                      <option value="Contraceptives">Contraceptives</option>
 
                       <!-- Endorsement: Misaligned -->
-                      <option value="44">Endorsement: Misaligned</option>
+                      <option value="Endorsement: Misaligned">Endorsement: Misaligned</option>
 
                       <!-- System: Form Type -->
-                      <option value="45">System: Form Type</option>
+                      <option value="System: Form Type">System: Form Type</option>
 
                       <!-- System: Incorrect Pack -->
-                      <option value="46">System: Incorrect Pack</option>
+                      <option value="System: Incorrect Pack">System: Incorrect Pack</option>
 
                       <!-- System: Incorrect Product Paid -->
-                      <option value="47">System: Incorrect Product Paid</option>
+                      <option value="System: Incorrect Product Paid">System: Incorrect Product Paid</option>
 
                       <!-- System: Not Dispensed -->
-                      <option value="48">System: Not Dispensed</option>
+                      <option value="System: Not Dispensed">System: Not Dispensed</option>
 
                       <!-- System: (Other) -->
-                      <option value="49">System: (Other)</option>
+                      <option value="System: (Other)">System: (Other)</option>
 
                       <!-- System: Quantity End Less -->
-                      <option value="50">System: Quantity End Less</option>
+                      <option value="System: Quantity End Less">System: Quantity End Less</option>
 
                       <!-- System: Special Container Quantity -->
-                      <option value="51">System: Special Container Quantity</option>
+                      <option value="System: Special Container Quantity">System: Special Container Quantity</option>
 
                       <!-- System: Switching (Incorrectly As Chargeable) -->
-                      <option value="52">System: Switching (Incorrectly As Chargeable)</option>
+                      <option value="System: Switching (Incorrectly As Chargeable)">System: Switching (Incorrectly As Chargeable)</option>
 
                       <!-- System: Switching (Incorrectly As Exempt) -->
-                      <option value="53">System: Switching (Incorrectly As Exempt)</option>
+                      <option value="System: Switching (Incorrectly As Exempt)">System: Switching (Incorrectly As Exempt)</option>
                     </select>
                   </div>
                 </div>

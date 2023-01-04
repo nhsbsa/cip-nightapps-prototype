@@ -205,7 +205,7 @@ if (errorCategory != null && hiddenFields != null) {
 // Function to update the hidden fields
 function updateHiddenFields() {
     // Check if the correct item is selected.
-    if (errorCategory.selectedIndex == 41) {
+    if (errorCategory.value == "System: Alphanumeric Code Error Generates Incorrect Direct Hit") {
         // Show the hidden fields to both the browser and to screen readers.
         hiddenFields.removeAttribute('hidden');
         hiddenFields.removeAttribute('aria-hidden');
