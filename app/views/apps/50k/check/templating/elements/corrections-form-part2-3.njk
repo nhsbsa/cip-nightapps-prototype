@@ -1,11 +1,11 @@
-{% macro correctionsForm() %} 
+{% macro correctionsForm(drugPresentation, quantity, checked, processed, evidenceSeen, value, feeVal, gp2, gp3, expItem, expFeeValue, elasHosItems, elasHosValue) %} 
     <form>
         <div class="nhsuk-form-group">
         <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-one-half">
             <!-- Drug & Presentation -->
             <label class="nhsuk-label" for="drug-and-presentation">Drug & Presentation</label>
-            <input class="nhsuk-select max-width-select" id="drug-and-presentation" name="drug-and-presentation" type="text" list="drug-descriptions" disabled="true" aria-disabled="true" value="Salbutamol 100micrograms/dose inhaler CFC free">
+            <input class="nhsuk-select max-width-select" id="drug-and-presentation" name="drug-and-presentation" type="text" list="drug-descriptions" disabled="true" aria-disabled="true" value="{{ drugPresentation }}">
             <datalist id="drug-descriptions">
                 <!-- 25k+ Drug Descriptions -->
                 <option value="Abnoba Viscum A 200micrograms/1ml solution for injection ampoules (P)">Abnoba Viscum A 200micrograms/1ml solution for injection ampoules (P)</option>
@@ -54,7 +54,7 @@
             <div class="nhsuk-grid-column-one-half">
             <!-- Quantity -->
             <label class="nhsuk-label" for="corrections-quantity">Quantity</label>
-            <input class="nhsuk-input" id="corrections-quantity" type="text" disabled="true" aria-disabled="true" value="1">
+            <input class="nhsuk-input" id="corrections-quantity" type="text" disabled="true" aria-disabled="true" value={{ quantity }}>
             </div>
         </div>
 
@@ -64,12 +64,12 @@
             <div class="nhsuk-grid-column-one-half">
             <!-- As Checked -->
             <label class="nhsuk-label" for="checked">As Checked</label>
-            <input class="nhsuk-input" id="checked" type="text" disabled="true" aria-disabled="true" value="Accord">
+            <input class="nhsuk-input" id="checked" type="text" disabled="true" aria-disabled="true" value={{ checked }}>
             </div>
             <div class="nhsuk-grid-column-one-half">
             <!-- As Processed -->
             <label class="nhsuk-label" for="processed">As Processed</label>
-            <input class="nhsuk-input" id="processed" type="text" disabled="true" aria-disabled="true" value="Generic">
+            <input class="nhsuk-input" id="processed" type="text" disabled="true" aria-disabled="true" value={{ processed }}>
             </div>
         </div>               
 
@@ -429,7 +429,7 @@
             <div class="nhsuk-grid-column-one-half">
             <!-- Evidence Seen -->
             <label class="nhsuk-label" for="evidence-seen">Evidence Seen</label>
-            <input class="nhsuk-input" id="evidence-seen" type="text" disabled="true" aria-disabled="true" value="Yes">
+            <input class="nhsuk-input" id="evidence-seen" type="text" disabled="true" aria-disabled="true" value={{ evidenceSeen }}>
             </div>
             <div class="nhsuk-grid-column-one-half">
             <!-- Number Of Errors -->
@@ -444,25 +444,25 @@
             <div class="nhsuk-grid-column-one-quarter">
             <!-- Value -->
             <label class="nhsuk-label" for="value-amount">Value (+/-)</label>
-            <input class="nhsuk-input" id="value-amount" type="text" disabled="true" aria-disabled="true" value="121">
+            <input class="nhsuk-input" id="value-amount" type="text" disabled="true" aria-disabled="true" value={{ value }}>
             </div>
 
             <div class="nhsuk-grid-column-one-quarter">
             <!-- Fee Value -->
             <label class="nhsuk-label" for="fee-value-amount">Fee Val (+/-)</label>
-            <input class="nhsuk-input" id="fee-value-amount" type="text" disabled="true" aria-disabled="true" value="0">
+            <input class="nhsuk-input" id="fee-value-amount" type="text" disabled="true" aria-disabled="true" value={{ feeVal }}>
             </div>
 
             <div class="nhsuk-grid-column-one-quarter">
             <!-- GP2 Items -->
             <label class="nhsuk-label" for="gp2-items">GP2 (+/-)</label>
-            <input class="nhsuk-input" id="gp2-items" type="text" disabled="true" aria-disabled="true" value="0">
+            <input class="nhsuk-input" id="gp2-items" type="text" disabled="true" aria-disabled="true" value={{ gp2 }}>
             </div>
 
             <div class="nhsuk-grid-column-one-quarter">
             <!-- GP3 Items -->
             <label class="nhsuk-label" for="gp3-items">GP3 (+/-)</label>
-            <input class="nhsuk-input" id="gp3-items" type="text" disabled="true" aria-disabled="true" value="0">
+            <input class="nhsuk-input" id="gp3-items" type="text" disabled="true" aria-disabled="true" value={{ gp3 }}>
             </div>
         </div>
 
@@ -478,13 +478,13 @@
             <div class="nhsuk-grid-column-one-half">
             <!-- Exp Item -->
             <label class="nhsuk-label" for="exp-item">Exp Item (+ / -)</label>
-            <input class="nhsuk-input" id="exp-item" type="text" disabled="true" aria-disabled="true" value="0">
+            <input class="nhsuk-input" id="exp-item" type="text" disabled="true" aria-disabled="true" value={{ expItem }}>
             </div>
 
             <div class="nhsuk-grid-column-one-half">
             <!-- Exp Fee Value -->
             <label class="nhsuk-label" for="exp-fee-value">Exp Fee Value (+ / -)</label>
-            <input class="nhsuk-input" id="exp-fee-value" type="text" disabled="true" aria-disabled="true" value="0">
+            <input class="nhsuk-input" id="exp-fee-value" type="text" disabled="true" aria-disabled="true" value={{ expFeeValue }}>
             </div>
         </div>              
 
@@ -494,13 +494,13 @@
             <div class="nhsuk-grid-column-one-half">
             <!-- Elas Hos Items -->
             <label class="nhsuk-label" for="elas-hos-items">Elas Hos Items (+ / -)</label>
-            <input class="nhsuk-input" id="elas-hos-items" type="text" disabled="true" aria-disabled="true" value="0">
+            <input class="nhsuk-input" id="elas-hos-items" type="text" disabled="true" aria-disabled="true" value={{ elasHosItems }}>
             </div>
 
             <div class="nhsuk-grid-column-one-half">
             <!-- Elas Hos Value -->
             <label class="nhsuk-label" for="elas-hos-value">Elas Hos Value (+ / -)</label>
-            <input class="nhsuk-input" id="elas-hos-value" type="text" disabled="true" aria-disabled="true" value="0">
+            <input class="nhsuk-input" id="elas-hos-value" type="text" disabled="true" aria-disabled="true" value={{ elasHosValue }}>
             </div>
         </div>
 

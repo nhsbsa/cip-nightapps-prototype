@@ -1,4 +1,4 @@
-{% macro informationTable(accountType, account, fragment, formNumber, itemNumber, totalFees, payNIC, chargeValue, userInput, division, prescriberCode, parentCode, practiceCode, paperType, prescriptionType, chargeStatus, exemptionCategory, quantity, endorsements) %}
+{% macro informationTable(accountTypeClass, accountType, account, fragment, formNumber, itemNumber, totalFees, payNIC, chargeValue, userInput, division, prescriberCode, parentCode, practiceCode, paperType, prescriptionType, chargeStatus, exemptionCategory, quantity, endorsements) %}
     <table class="nhsuk-table" style="margin-bottom: 0;">
         <!-- Title Group 1 -->
         <thead role="rowgroup" class="nhsuk-table__head">
@@ -39,7 +39,7 @@
             <tr role="row" class="nhsuk-table__row">
                 <!-- Account Type Value -->
                 <td role="cell" class="nhsuk-table__row table-body">
-                    <strong class="nhsuk-tag nhsuk-tag--red">{{ accountType }}</strong>
+                    <strong class="{{ accountTypeClass }}">{{ accountType }}</strong>
                 </td>
                 <!-- Account Value -->
                 <td role="cell" class="nhsuk-table__row table-body">

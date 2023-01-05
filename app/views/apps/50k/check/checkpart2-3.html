@@ -72,6 +72,7 @@
                 {% from 'check-controls.njk' import checkControls %}
 
                 {{ informationTable(
+                    'nhsuk-tag nhsuk-tag--red',
                     'EDDR', 'AA111', 'A', '1493', '1', '215.6', '150',
                     '0', 'N', 'NW', '111111', '-', '-', 'FP10SS',
                     '-', '-', 'F', '1', '-'
@@ -90,7 +91,14 @@
                         {% from 'corrections-form-part2-3.njk' import correctionsForm %}
                         {% from 'corrections-controls-part2-3.njk' import correctionsControls %}
 
-                        {{ correctionsForm() }}
+                        {{ correctionsForm(
+                          'Salbutamol 100micrograms/dose inhaler CFC free', '1',
+                          'Accord', 'Generic',
+                          'Yes',
+                          '121', '0', '0', '0',
+                          '0', '0',
+                          '0', '0'
+                        ) }}
                         {{ correctionsControls(
                             'nextEPS()', 'showCorrections()'
                         ) }}
