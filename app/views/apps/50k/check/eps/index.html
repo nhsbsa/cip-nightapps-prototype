@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  EPS Check - 50k Checking - Prescription Service Applications
+  Check - 50k Checking - Prescription Service Applications
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -23,7 +23,7 @@
     <ul class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
-      <li class="nhsuk-breadcrumb__item">EPS Check</li>
+      <li class="nhsuk-breadcrumb__item">Check</li>
     </ul>
   </div>
 </nav>
@@ -37,283 +37,57 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-  <!-- Mark the page as a check so that JS can update the counter. -->
   <script>
     window['check'] = true;
   </script>
 
-  <div class="notes-background" id="notes-background" hidden="true" aria-hidden="true">
-    <div class="notes-card">
-      <div class="nhsuk-card">
-        <div class="nhsuk-card__content">
-          <label class="nhsuk-u-font-weight-bold" for="form-notes">Form Notes</label>
-          <textarea class="nhsuk-textarea" id="form-notes" name="form-notes" rows="1" style="resize: none;" aria-describedby="form-notes" disabled aria-disabled="true"></textarea>                    
-        
-          <div class="nhsuk-u-padding-bottom-2"></div>
-
-          <button class="nhsuk-button nhsuk-button--secondary" onclick="hideFormNotes();" style="background-color: #d5281b;">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% from 'notes-card.njk' import notesCard %}
+  {{ notesCard(
+    ''
+  ) }}
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+        <!-- Page Title -->
+        <h1 id="page-title">
+            Part <span id="current-part"></span> Check
+        </h1>
 
-      <!-- Page Title -->
-      <h1 id="page-title">
-        Part <span id="current-part"></span> EPS Check
-      </h1>
+        <!-- Right Side -->
+        <div class="nhsuk-grid-column-full" style="height: 580px;">
+            {% from 'information-table.njk' import informationTable %}
+            {% from 'information-fields.njk' import informationFieldsEPS %}
+            {% from 'check-controls.njk' import checkControls %}
 
-      <!-- Form -->
-      <div class="nhsuk-grid-column-full">
-        <!-- Nested in a div. -->
-        <div style="height: 100%; overflow: hidden;">
-          <!-- Information Grid -->
-          <table class="nhsuk-table" style="margin-bottom: 0;">
-            <!-- Title Group 1 -->
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <!-- Account Type Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Account Type    
-                </th>
-                <!-- Account Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Account
-                </th>
-                <!-- Fragment Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Fragment
-                </th>
-                <!-- Form Number Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Form Number
-                </th>
-                <!-- Item Number Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Item Number
-                </th>
-                <!-- Total Fees Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Total Fees
-                </th>
-                <!-- Pay NIC Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Pay NIC
-                </th>
-              </tr>
-            </thead>
+            {{ informationTable(
+                'nhsuk-tag nhsuk-tag--green',
+                'EPHM', 'ABC11', 'Z', '1416', '3', '127', '2580',
+                '0', 'N', 'CN', '222222', '-', '-', 'FP10SS',
+                '-', 'E', 'C', '1', '-'
+            ) }}
 
-            <!-- Value Group 1 -->
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <!-- Account Type Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  <strong class="nhsuk-tag nhsuk-tag--green">EPHM</strong>
-                </td>
-                <!-- Account Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  ABC11
-                </td>
-                <!-- Fragment Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  Z
-                </td>
-                <!-- Form Number Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  1416
-                </td>
-                <!-- Item Number Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  3
-                </td>
-                <!-- Total Fees Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  127
-                </td>
-                <!-- Pay NIC Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  2580
-                </td>
-              </tr>
-            </tbody>
+            {{ informationFieldsEPS(
+                'Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd)-30', 'Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd) 30 capsule 30.0-30',
+                'Braltus 10microgram inhalation powder capsules with Zonda inhaler [Teva UK Ltd] (30)' 
+            ) }}
 
-            <!-- Title Group 2 -->
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <!-- Charge Value Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Charge Value
-                </th>
-                <!-- User Input Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  User Input
-                </th>
-                <!-- Division Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Division
-                </th>
-                <!-- Prescriber Code Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Prescriber Code
-                </th>
-                <!-- Parent Code Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Parent Code
-                </th>
-                <!-- Practice Code Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Practice Code
-                </th>
-                <!-- Paper Type Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Paper Type
-                </th>
-              </tr>
-            </thead>
+            <div class="nhsuk-u-padding-bottom-2"></div>
 
-            <!-- Value Group 2 -->
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <!-- Charge Value Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  0
-                </td>
-                <!-- User Input Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  N
-                </td>
-                <!-- Division Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  CN
-                </td>
-                <!-- Prescriber Code Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  222222
-                </td>
-                <!-- Parent Code Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  -
-                </td>
-                <!-- Practice Code Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  -
-                </td>
-                <!-- Paper Type Title -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  FP10SS
-                </td>
-              </tr>
-            </tbody>
-
-            <!-- Title Group 3 -->
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <!-- Prescription Type Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Prescription Type
-                </th>
-                <!-- Charge Status Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Charge Status
-                </th>
-                <!-- Exemption Category Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Exemption Category
-                </th>
-                <!-- Quantity Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Quantity
-                </th>
-                <!-- Endorsements Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                  Endorsements
-                </th>
-              </tr>
-            </thead>
-
-            <!-- Value Group 3 -->
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <!-- Prescription Type Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  -
-                </td>
-                <!-- Charge Status Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  E
-                </td>
-                <!-- Exemption Category Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  C
-                </td>
-                <!-- Quantity Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  1
-                </td>
-                <!-- Endorsement Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                  -
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="nhsuk-u-padding-bottom-2"></div>
-          
-          <!-- ETP -->
-          <div class="nhsuk-grid-row">
-            <!-- ETP Prescribed - QTY -->
-            <div class="nhsuk-grid-column-one-half">
-              <label class="nhsuk-u-font-weight-bold" for="etp-prescribed">ETP Prescribed - QTY</label>
-              <textarea class="nhsuk-textarea" id="etp-prescribed" name="etp-prescribed" rows="1" style="resize: none;" aria-describedby="etp-prescribed" disabled aria-disabled="true">Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd)-30</textarea>                             
-            </div>
-            <!-- ETP Dispensed - QTY -->
-            <div class="nhsuk-grid-column-one-half">
-              <label class="nhsuk-u-font-weight-bold" for="etp-dispensed">ETP Dispensed - QTY</label>
-              <textarea class="nhsuk-textarea" id="etp-dispensed" name="etp-dispensed" rows="1" style="resize: none;" aria-describedby="etp-dispensed" disabled aria-disabled="true">Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd) 30 capsule 30.0-30</textarea>                    
-            </div>
-          </div>
-
-          <!-- Product Description -->
-          <label class="nhsuk-u-font-weight-bold" for="product-description">Product Description</label>
-          <textarea class="nhsuk-textarea" id="product-description" name="product-description" rows="1" style="resize: none;" aria-describedby="product-description" disabled aria-disabled="true">Braltus 10microgram inhalation powder capsules with Zonda inhaler [Teva UK Ltd] (30)</textarea>                    
-        
-          <div class="nhsuk-u-padding-bottom-2"></div>
-
-          <!-- Buttons -->
-          <div style="text-align: center;">
-            <!-- Error -->
-            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b;" onclick="showEPSCorrections()" type="button">
-              Error
-            </button>
-
-            <!-- Show Form Notes Button -->
-            <button class="nhsuk-button nhsuk-button--secondary" type="button" onclick="showFormNotes();">
-              Notes
-            </button>
-
-            <!-- Correct -->
-            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #007f3b;" type="button" onclick="nextCheck()">
-              Correct
-            </button>
-          </div>
+            {{ checkControls(
+                'showEPSCorrections();', 'nextCheck()'
+            ) }}
         </div>
-      </div>
 
-      <!-- Progress Checked. -->
-      <div style="float: right; text-align: right;">
-        <label class="nhsuk-label" for="checkedprogress" id="checked-label">10 of 500 checked</label>
-        <progress id="checkedprogress" max="50" value="10"></progress>
-      </div>
+        <!-- Progress Checked. -->
+        <div style="float: right; text-align: right;">
+            <label class="nhsuk-label" for="checkedprogress" id="checked-label">? of ? checked</label>
+            <progress id="checkedprogress" max="50" value="10"></progress>
+        </div>
 
-      <!-- Scroll to check. -->
-      <script>document.getElementById('page-title').scrollIntoView();</script>
+        <!-- Scroll to check. -->
+        <script>document.getElementById('page-title').scrollIntoView();</script>
 
-      <!-- End of content -->
+        <!-- End of content -->
     </div>
   </div>
 {% endblock %}
