@@ -1,0 +1,21 @@
+{% macro informationFieldsScanned(productDescription) %}
+    <label class="nhsuk-u-font-weight-bold" for="product-description">Product Description</label>
+    <textarea class="nhsuk-textarea" id="product-description" name="product-description" rows="1" style="resize: none;" aria-describedby="product-description" disabled aria-disabled="true">{{ productDescription }}</textarea>      
+{% endmacro %}
+
+{% macro informationFieldsEPS(etpPrescribed, etpDispensed, productDescription) %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+            <label class="nhsuk-u-font-weight-bold" for="etp-prescribed">ETP Prescribed - QTY</label>
+            <textarea class="nhsuk-textarea" id="etp-prescribed" name="etp-prescribed" rows="1" style="resize: none;" aria-describedby="etp-prescribed" disabled aria-disabled="true">{{ etpPrescribed }}</textarea>                             
+        </div>
+    
+        <div class="nhsuk-grid-column-one-half">
+            <label class="nhsuk-u-font-weight-bold" for="etp-dispensed">ETP Dispensed - QTY</label>
+            <textarea class="nhsuk-textarea" id="etp-dispensed" name="etp-dispensed" rows="1" style="resize: none;" aria-describedby="etp-dispensed" disabled aria-disabled="true">{{ etpDispensed }}</textarea>                    
+        </div>
+    </div>
+
+    <label class="nhsuk-u-font-weight-bold" for="product-description">Product Description</label>
+    <textarea class="nhsuk-textarea" id="product-description" name="product-description" rows="1" style="resize: none;" aria-describedby="product-description" disabled aria-disabled="true">{{ productDescription }}</textarea>                
+{% endmacro %}
