@@ -1,191 +1,176 @@
 {% macro informationTable(accountTypeClass, accountType, account, fragment, formNumber, itemNumber, totalFees, payNIC, chargeValue, userInput, division, prescriberCode, parentCode, practiceCode, paperType, prescriptionType, chargeStatus, exemptionCategory, quantity, endorsements) %}
     <table class="nhsuk-table" style="margin-bottom: 0;">
-        <!-- Title Group 1 -->
-        <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-                <!-- Account Type Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Account Type    
-                </th>
-                <!-- Account Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Account
-                </th>
-                <!-- Fragment Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Fragment
-                </th>
-                <!-- Form Number Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Form Number
-                </th>
-                <!-- Item Number Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Item Number
-                </th>
-                <!-- Total Fees Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Total Fees
-                </th>
-                <!-- Pay NIC Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Pay NIC
-                </th>
-            </tr>
-        </thead>
+        <tr role="row">
+            <!-- Account Type Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Account Type    
+            </th>
+            <!-- Account Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Account
+            </th>
+            <!-- Fragment Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Fragment
+            </th>
+            <!-- Form Number Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Form Number
+            </th>
+            <!-- Item Number Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Item Number
+            </th>
+            <!-- Total Fees Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Total Fees
+            </th>
+            <!-- Pay NIC Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Pay NIC
+            </th>
+        </tr>
 
-        <!-- Value Group 1 -->
-        <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-                <!-- Account Type Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    <strong class="{{ accountTypeClass }}">{{ accountType }}</strong>
-                </td>
-                <!-- Account Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ account }}
-                </td>
-                <!-- Fragment Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ fragment }}
-                </td>
-                <!-- Form Number Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ formNumber }}
-                </td>
-                <!-- Item Number Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ itemNumber }}
-                </td>
-                <!-- Total Fees Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ totalFees }}
-                </td>
-                <!-- Pay NIC Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ payNIC }}
-                </td>
-            </tr>
-        </tbody>
+        <tr role="row" class="nhsuk-table__row">
+            <!-- Account Type Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                <strong class="{{ accountTypeClass }}">{{ accountType }}</strong>
+            </td>
+            <!-- Account Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ account }}
+            </td>
+            <!-- Fragment Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ fragment }}
+            </td>
+            <!-- Form Number Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ formNumber }}
+            </td>
+            <!-- Item Number Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ itemNumber }}
+            </td>
+            <!-- Total Fees Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ totalFees }}
+            </td>
+            <!-- Pay NIC Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ payNIC }}
+            </td>
+        </tr>
 
-        <!-- Title Group 2 -->
-        <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-                <!-- Charge Value Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Charge Value
-                </th>
-                <!-- User Input Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    User Input
-                </th>
-                <!-- Division Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Division
-                </th>
-                <!-- Prescription Code Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Prescriber Code
-                </th>
-                <!-- Parent Code Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Parent Code
-                </th>
-                <!-- Practice Code Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Practice Code
-                </th>
-                <!-- Paper Type Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Paper Type
-                </th>
-            </tr>
-        </thead>
+        <tr role="row">
+            <!-- Charge Value Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Charge Value
+            </th>
+            <!-- User Input Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                User Input
+            </th>
+            <!-- Division Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Division
+            </th>
+            <!-- Prescriber Code Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Presc Code
+            </th>
+            <!-- Parent Code Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Parent Code
+            </th>
+            <!-- Practice Code Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Prac Code
+            </th>
+            <!-- Paper Type Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Paper
+            </th>
+        </tr>
 
-        <!-- Value Group 2 -->
-        <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-                <!-- Charge Value Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ chargeValue }}
-                </td>
-                <!-- User Input Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ userInput }}
-                </td>
-                <!-- Division Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ division }}
-                </td>
-                <!-- Prescriber Code Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ prescriberCode }}
-                </td>
-                <!-- Parent Code Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ parentCode }}
-                </td>
-                <!-- Practice Code Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ practiceCode }}
-                </td>
-                <!-- Paper Type Title -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ paperType }}
-                </td>
-            </tr>
-        </tbody>
+        <tr role="row" class="nhsuk-table__row">
+            <!-- Charge Value Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ chargeValue }}
+            </td>
+            <!-- User Input Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ userInput }}
+            </td>
+            <!-- Division Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ division }}
+            </td>
+            <!-- Prescriber Code Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ prescriberCode }}
+            </td>
+            <!-- Parent Code Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ parentCode }}
+            </td>
+            <!-- Practice Code Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ practiceCode }}
+            </td>
+            <!-- Paper Type Title -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ paperType }}
+            </td>
+        </tr>
 
-        <!-- Title Group 3 -->
-        <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-                <!-- Prescription Type Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Prescription Type
-                </th>
-                <!-- Charge Status Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Charge Status
-                </th>
-                <!-- Exemption Category Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Exemption Category
-                </th>
-                <!-- Quantity Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Quantity
-                </th>
-                <!-- Endorsements Title -->
-                <th role="columnheader" class="table-title" scope="col">
-                    Endorsements
-                </th>
-            </tr>
-        </thead>
+        <tr role="row">
+            <!-- Prescription Type Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Presc Type
+            </th>
+            <!-- Charge Status Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Charge Status
+            </th>
+            <!-- Exemption Category Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Exemp Cat
+            </th>
+            <!-- Quantity Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Quantity
+            </th>
+            <!-- Endorsements Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Endorsements
+            </th>
+            <th role="columnheader" scope="col" rowspan="2" colspan="2">
+                <button class="nhsuk-button nhsuk-button--secondary notes-button" type="button" style="background-color: #ffeb3b; color: black;" onclick="showFormNotes();">Notes</button>
+            </th>
+        </tr>
 
-        <!-- Value Group 3 -->
-        <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-                <!-- Prescription Type Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ prescriptionType }}
-                </td>
-                <!-- Charge Status Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ chargeStatus }}
-                </td>
-                <!-- Exemption Category Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ exemptionCategory }}
-                </td>
-                <!-- Quantity Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ quantity }}
-                </td>
-                <!-- Endorsement Value -->
-                <td role="cell" class="nhsuk-table__row table-body">
-                    {{ endorsements }}
-                </td>
-            </tr>
-        </tbody>
-  </table>
+        <tr role="row" class="nhsuk-table__row">
+            <!-- Prescription Type Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ prescriptionType }}
+            </td>
+            <!-- Charge Status Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ chargeStatus }}
+            </td>
+            <!-- Exemption Category Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ exemptionCategory }}
+            </td>
+            <!-- Quantity Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ quantity }}
+            </td>
+            <!-- Endorsement Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ endorsements }}
+            </td>
+        </tr>
+  </table>  
 {% endmacro %}
