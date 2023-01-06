@@ -61,25 +61,32 @@ if (window['hasmodal']) {
 
 
 ////////// Check Controls //////////
-
 // Set variables for correction views.
-let back = false;
-const backImage = '/images/E000001NE02_side1.jpg';
-const frontImage = '/images/E000001NE02_side2.jpg';
+let front = true;
+const frontImage = '/images/E000001NE02_side1.jpg';
+const backImage = '/images/E000001NE02_side2.jpg';
+
+/**
+ * Pretend to load image.
+ */
+if (document.getElementById('prescription-image') != null) {
+    document.getElementById('prescription-image').src = frontImage;
+}
+
 
 /**
  * Swaps what side of a prescription scan is shown.
  */
 function swapSides() {
-    if (back) {
+    if (front) {
         document.getElementById('prescription-image').src = backImage;
-        document.getElementById('swap-sides').innerHTML = 'Back';
+        document.getElementById('swap-sides').innerHTML = 'Show Front';
     } else {
         document.getElementById('prescription-image').src = frontImage;
-        document.getElementById('swap-sides').innerHTML = 'Front';
+        document.getElementById('swap-sides').innerHTML = 'Show Back';
     }
 
-    back = !back;
+    front = !front;
 }
 
 /**
