@@ -1,6 +1,13 @@
 {% macro checkControls(errorLink, correctLink) %}
-    <!-- Buttons -->
-    <div style="text-align: center;">
+    <!-- Navigation Buttons -->
+    <div style="float: left;">
+        <button class="nhsuk-button nhsuk-button--secondary">
+            Back
+        </button>
+    </div>
+
+    <!-- Check Buttons -->
+    <div style="float: right;">
         <!-- Error -->
         <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b;" onclick={{ errorLink }} type="button">
             Error
