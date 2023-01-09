@@ -42,6 +42,11 @@
     window['check'] = true;
   </script>
 
+  {% from 'notes-card.njk' import notesCard %}
+  {{ notesCard(
+    'This is an example note.'
+  ) }}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
       <!-- Add your content here -->
@@ -58,10 +63,56 @@
         <div style="height: 100%; overflow-y: scroll;">
           <table class="nhsuk-table">
             <tbody class="nhsuk-table__body">
+              <!-- Product Description -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  <div class="nhsuk-u-font-weight-bold">Product Description</div>
+                  <strong class="nhsuk-tag nhsuk-tag--blue">
+                    Braltus 10microgram inhalation powder capsules with Zonda inhaler [Teva UK Ltd]  (30)
+                  </strong>
+                </td>
+              </tr>
+
+              <!-- ETP Prescribed - QTY -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  <div class="nhsuk-u-font-weight-bold">ETP Prescribed - QTY</div>
+                  <strong class="nhsuk-tag nhsuk-tag--blue">
+                    Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd)-30
+                  </strong>
+                </td>
+              </tr>
+
+              <!-- ETP Dispensed - QTY -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  <div class="nhsuk-u-font-weight-bold">ETP Dispensed - QTY</div>
+                  <strong class="nhsuk-tag nhsuk-tag--blue">
+                    Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd) 30 capsule 30.0-30
+                  </strong>                
+                </td>
+              </tr>
+
+              <!-- Quantity -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Quantity</td>
+                <td class="nhsuk-table__cell">1</td>
+              </tr>
+
+              <!-- Endorsements -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Endorsements</td>
+                <td class="nhsuk-table__cell">-</td>
+              </tr>
+
               <!-- Account Type -->
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Account Type</td>
-                <td class="nhsuk-table__cell">EPHM</td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--yellow">
+                    EPHM
+                  </strong>
+                </td>
               </tr>
 
               <!-- Account -->
@@ -85,7 +136,11 @@
               <!-- Item Number -->
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Item Number</td>
-                <td class="nhsuk-table__cell">3</td>
+                <td class="nhsuk-table__cell">
+                  <strong class="nhsuk-tag nhsuk-tag--blue">
+                    3
+                  </strong>
+                </td>
               </tr>
 
               <!-- Total Fees -->
@@ -160,39 +215,9 @@
                 <td class="nhsuk-table__cell">C</td>
               </tr>
 
-              <!-- Quantity -->
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Quantity</td>
-                <td class="nhsuk-table__cell">1</td>
-              </tr>
-
-              <!-- Endorsements -->
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Endorsements</td>
-                <td class="nhsuk-table__cell">-</td>
-              </tr>
-
-              <!-- Product Description -->
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">
-                  <div class="nhsuk-u-font-weight-bold">Product Description</div>
-                  <div>Braltus 10microgram inhalation powder capsules with Zonda inhaler [Teva UK Ltd]  (30)</div>
-                </td>
-              </tr>
-
-              <!-- ETP Prescribed - QTY -->
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                  <div class="nhsuk-u-font-weight-bold">ETP Prescribed - QTY</div>
-                  <div>Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd)-30</div>
-                </td>
-              </tr>
-
-              <!-- ETP Dispensed - QTY -->
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                  <div class="nhsuk-u-font-weight-bold">ETP Dispensed - QTY</div>
-                  <div>Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd) 30 capsule 30.0-30</div>                    
+                  <button class="nhsuk-button nhsuk-button--secondary notes-button" type="button" style="background-color: #fff59d; color: black;" onclick="showFormNotes();">Notes</button>
                 </td>
               </tr>
             </tbody>
@@ -761,8 +786,10 @@
                   <!-- New Error -->
                   <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b; width: 49%;" onclick="showV1EPSCorrections();" type="button">New Error</button>
 
+                  <button class="nhsuk-button nhsuk-button--secondary" style="width: 49%;" type="button">Back</button>
+
                   <!-- Confirm Error -->
-                  <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #007f3b; width: 100%;" type="button" onclick="nextV1Check()">Confirm Error</button>
+                  <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #007f3b; width: 49%;" type="button" onclick="nextV1Check()">Confirm Error</button>
                 </div>
               </div>
             </form>
