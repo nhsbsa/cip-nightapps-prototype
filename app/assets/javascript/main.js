@@ -59,6 +59,13 @@ if (window['hasmodal']) {
     enableDrag(document.getElementById("draggable-modal"));
 }
 
+////////// Version Selector //////////
+function directToVersionOne() {
+    redirectToV1Check();
+}
+function directToVersionTwo() {
+    redirectToCheck();
+}
 
 ////////// Check Controls //////////
 // Set variables for correction views.
@@ -205,6 +212,69 @@ function nextEPS() {
             window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
             window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        }
+    }
+}
+
+// V1
+/**
+ * Redirect to corrections view.
+ */
+function showV1Corrections() {
+    window.location.href = '/apps/50k/check/v1/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+}
+
+/**
+ * Redirect to check view.
+ */
+function redirectToV1Check() {
+    if (currentPart === '2' || currentPart == '3') {
+        window.location.href = '/apps/50k/check/v1/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    } else {
+        window.location.href = '/apps/50k/check/v1?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    }
+}
+
+/**
+ * Redirect to corrections view. (For EPS).
+ */
+function showV1EPSCorrections() {
+    window.location.href = '/apps/50k/check/v1/eps/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+}
+
+/**
+ * Redirect to check view. (For EPS).
+ */
+function redirectToV1EPS() {
+    if (currentPart === '2' || currentPart === '3') {
+        window.location.href = '/apps/50k/check/v1/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    } else {
+        window.location.href = '/apps/50k/check/v1/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    }
+}
+
+/**
+ * Redirect to check view while increasing check value.
+ */
+function nextV1Check() {
+    if (checkNumber && totalChecks) {
+        if (currentPart === '2' || currentPart === '3') {
+            window.location.href = '/apps/50k/check/v1/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        } else {
+            window.location.href = '/apps/50k/check/v1?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        }
+    }
+}
+
+/**
+ * Redirect to EPS check view while increasing check value.
+ */
+function nextV1EPS() {
+    if (checkNumber && totalChecks) {
+        if (currentPart === '2' || currentPart === '3') {
+            window.location.href = '/apps/50k/check/v1/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        } else {
+            window.location.href = '/apps/50k/check/v1/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         }
     }
 }

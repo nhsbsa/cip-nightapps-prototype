@@ -1,0 +1,269 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Check - 50k Checking - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ul class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
+      <li class="nhsuk-breadcrumb__item">Checking</li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <!-- Mark the page as a check so that JS can update the counter. -->
+  <script>
+    window['check'] = true;
+  </script>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <!-- Page Title -->
+      <h1 id="page-title">
+        Part <span id="current-part"></span> Check
+      </h1>
+
+      <!-- Prescription Image Container -->
+      <div class="nhsuk-grid-column-one-half scan-container" style="height: 850px; overflow-y: hidden;">
+
+        <!-- Prescription Image -->
+        <div class="scan-container">
+          <img class="nhsuk-image__img" id="prescription-image" src="/images/E000001NE02_side1.jpg" alt="Prescription Image">
+        </div>
+  
+        <!-- Prescription Image Controls -->
+        <div style="text-align: center;" class="scan-controls">
+
+          <!-- Side Swap Button -->
+          <button class="nhsuk-button nhsuk-button--secondary swap-button" id="swap-sides" type="button" onclick="swapSides();">Show Back</button>
+
+          <!-- Zoom buttons container-->
+          <span class="zoom-buttons">
+          
+            <!-- Zoom In Button -->
+            <button class="nhsuk-button nhsuk-button--secondary" type="button" onclick="zoomScanIn();">+</button>
+            
+            <!-- Zoom Out Button -->
+            <button class="nhsuk-button nhsuk-button--secondary" type="button" onclick="zoomScanOut();">-</button>
+
+          </span>
+          
+        </div> 
+      </div>
+
+      <!-- Right Side -->
+      <div class="nhsuk-grid-column-one-half" style="height: 850px;">
+        <!-- Nested in a div in order to allow easy addition. -->
+        <div style="height: 90%; overflow-y: scroll;">
+          <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+              <!-- Account Type -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Account Type</td>
+                <td class="nhsuk-table__cell">EDDR</td>
+              </tr>
+
+              <!-- Account -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Account</td>
+                <td class="nhsuk-table__cell">AA1111</td>
+              </tr>
+
+              <!-- Fragment -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Fragment</td>
+                <td class="nhsuk-table__cell">A</td>
+              </tr>
+
+              <!-- Form Number -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Form Number</td>
+                <td class="nhsuk-table__cell">1493</td>
+              </tr>
+
+              <!-- Item Number -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Item Number</td>
+                <td class="nhsuk-table__cell">1</td>
+              </tr>
+
+              <!-- Total Fees -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Total Fees</td>
+                <td class="nhsuk-table__cell">215.6</td>
+              </tr>
+
+              <!-- Pay NIC -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Pay NIC</td>
+                <td class="nhsuk-table__cell">150</td>
+              </tr>
+
+              <!-- Charge Value -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Charge Value</td>
+                <td class="nhsuk-table__cell">0</td>
+              </tr>
+
+              <!-- User Input -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">User Input</td>
+                <td class="nhsuk-table__cell">N</td>
+              </tr>
+
+              <!-- Division -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Division</td>
+                <td class="nhsuk-table__cell">NW</td>
+              </tr>
+
+              <!-- Prescriber Code -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Prescriber Code</td>
+                <td class="nhsuk-table__cell">111111</td>
+              </tr>
+
+              <!-- Parent Code -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Parent Code</td>
+                <td class="nhsuk-table__cell">-</td>
+              </tr>
+
+              <!-- Pracitce Code -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Practice Code</td>
+                <td class="nhsuk-table__cell">-</td>
+              </tr>
+
+              <!-- Paper Type -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Paper Type</td>
+                <td class="nhsuk-table__cell">FP10SS</td>
+              </tr>
+
+              <!-- Prescription Type -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Prescription Type</td>
+                <td class="nhsuk-table__cell">-</td>
+              </tr>
+
+              <!-- Charge Status -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Charge Status</td>
+                <td class="nhsuk-table__cell">-</td>
+              </tr>
+
+              <!-- Exemption Category -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Exemption Category</td>
+                <td class="nhsuk-table__cell">F</td>
+              </tr>
+
+              <!-- Quantity -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Quantity</td>
+                <td class="nhsuk-table__cell">1</td>
+              </tr>
+
+              <!-- Endorsements -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell nhsuk-u-font-weight-bold">Endorsements</td>
+                <td class="nhsuk-table__cell">-</td>
+              </tr>
+
+              <!-- Product Description -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  <div class="nhsuk-u-font-weight-bold">Product Description</div>
+                  <div>Salbutamol 100micrograms/dose inhaler CFC free (200)</div>
+                </td>
+              </tr>
+
+              <!-- ETP Prescribed - QTY -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  <div class="nhsuk-u-font-weight-bold">ETP Prescribed - QTY</div>
+                  <div>-</div>
+                </td>
+              </tr>
+
+              <!-- ETP Dispensed - QTY -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  <div class="nhsuk-u-font-weight-bold">ETP Dispensed - QTY</div>
+                  <div>-</div>                    
+                </td>
+              </tr>
+
+              <!-- Form Notes -->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  <div class="nhsuk-u-font-weight-bold">Form Notes</div>
+                  <div>-</div>                    
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Buttons Container. -->
+        <div style="height: 10%; overflow-y: hidden;">
+          <div class="nhsuk-u-padding-bottom-2"></div>
+
+          <!-- Buttons -->
+          <div style="text-align: center;">
+            <!-- Error -->
+            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b;" onclick="showV1Corrections()" type="button">
+              Error
+            </button>
+
+            <!-- Correct -->
+            <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #007f3b;" type="button" onclick="nextV1EPS()">
+              Correct
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Checked. -->
+      <div style="float: right; text-align: right;">
+        <label class="nhsuk-label" for="checkedprogress" id="checked-label">10 of 500 checked</label>
+        <progress id="checkedprogress" max="50" value="10"></progress>
+      </div>
+
+      <!-- Scroll to check. -->
+      <script>document.getElementById('page-title').scrollIntoView();</script>
+
+      <!-- End of content -->
+    </div>
+  </div>
+{% endblock %}
