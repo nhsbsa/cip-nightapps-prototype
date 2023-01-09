@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Prescription Services Applications
+  50k Checking - Select a version
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -20,9 +20,11 @@
 {% block beforeContent %}
   <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container">
-      <ul class="nhsuk-breadcrumb__list">
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
-      </ul>
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
+            <li class="nhsuk-breadcrumb__item">Select a version</li>
+        </ul>
     </div>
   </nav>
 {% endblock %}
@@ -35,58 +37,35 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+            <h1 id="page-title">
+                Select a version
+            </h1>
 
-      <!-- Change the page title here -->
-      <h1>
-        Prescription Services Applications
-      </h1>
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-half">
+                    <div class="nhsuk-card nhsuk-card--clickable">
+                        <div class="nhsuk-card__content">
+                            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                                <a class="nhsuk-card__link" onclick="directToVersionOne()">Version 1</a>
+                            </h2>
+                            <p>Information is laid out vertically in a scrolling layout.</p>
+                        </div>
+                    </div>
+                </div>
 
-      <p class="nhsuk-lede-text">
-        Below are description and links to the Prescription Services Applications you have access to.
-      </p>
-
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-full nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="/apps/50k">50k Checking</a>
-              </h2>
-              <p class="nhsuk-card__description">Used to check a random sample of 50k items from the previous prescription pricing cycle.</p>
+                <div class="nhsuk-grid-column-one-half">
+                    <div class="nhsuk-card nhsuk-card--clickable">
+                        <div class="nhsuk-card__content">
+                            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                                <a class="nhsuk-card__link" onclick="directToVersionTwo()">Version 2</a>
+                            </h2>
+                            <p>Information is laid out in a grid, more similar to existing 50k system.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </li>
-
-        <li class="nhsuk-grid-column-full nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="/apps/cspt">Customer Services Payment Team Checking</a>
-              </h2>
-              <p class="nhsuk-card__description">Used to confirm information captured in previously completed/paid English Pharmacy accounts is correct and any differences captured for information and pricing variances to determine if an adjustment is required.</p>
-            </div>
-          </div>
-        </li>
-
-        <li class="nhsuk-grid-column-full nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="/apps/quality">Quality Checking</a>
-              </h2>
-              <p class="nhsuk-card__description">Used to check and monitor the accuracy of inputting carried out by processing staff. Accuracy is checked against standards and used in staff performance monitoring.</p>
-            </div>
-          </div>
-        </li>
-      </ul>
-
-      <!-- End of content -->
-
+        </div>
     </div>
-  </div>
 {% endblock %}

@@ -1,0 +1,279 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Dashboard - 50k Checking - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ul class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k/dashboard">Dashboard</a></li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1>
+        Statistics Dashboard
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Information on overall and individual progress for the current period.
+      </p>
+
+      <h2>
+        December 2022
+      </h2>
+
+      <h3>
+        Overall Statistics
+      </h3>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Part 1
+              </h2>
+              <div class="percentage-text">17%</div>
+              <progress id="part3" value="8500" max="50000"></progress>
+              <p class="nhsuk-card__description">8,500 of 50,000 checked</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Part 2
+              </h2>
+              <p class="nhsuk-card__description">55 of 100 checked</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Part 3
+              </h2>
+              <p class="nhsuk-card__description">10 of 50 checked</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <h3>
+        Individual Statistics
+      </h3>
+
+      <h4>
+        Adam Azure
+      </h4>
+      
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Part 1
+              </h2>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Checked</div>
+                <div>4,000</div>
+              </p>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                <div>16:35:00</div>
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Part 2
+              </h2>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Checked</div>
+                <div>30</div>
+              </p>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                <div>00:07:30</div>
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Part 3
+              </h2>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Checked</div>
+                <div>3</div>
+              </p>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                <div>00:02:50</div>
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <p>
+        Total checks completed: 4,033
+        <br>
+        Total time spent (hh:mm:ss): 16:45:20
+      </p>
+
+      <h4>
+        Bryony Black
+      </h4>
+      
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Part 1
+              </h2>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Checked</div>
+                <div>4,500</div>
+              </p>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                <div>15:25:45</div>
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <p>
+        Total checks completed: 4,500
+        <br>
+        Total time spent (hh:mm:ss): 15:25:45
+      </p>
+
+      <h4>
+        Charlie Cerulean
+      </h4>
+      
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Part 2
+              </h2>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Checked</div>
+                <div>25</div>
+              </p>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                <div>00:05:43</div>
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Part 3
+              </h2>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Checked</div>
+                <div>7</div>
+              </p>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                <div>00:11:15</div>
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <p>
+        Total checks completed: 32
+        <br>
+        Total time spent (hh:mm:ss): 00:16:58
+      </p>
+
+      <h4>
+        David Denim
+      </h4>
+      
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                Part 1
+              </h2>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Checked</div>
+                <div>0</div>
+              </p>
+              <p>
+                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                <div>00:00:00</div>
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <p>
+        Total checks completed: 0
+        <br>
+        Total time spent (hh:mm:ss): 00:00:00
+      </p>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

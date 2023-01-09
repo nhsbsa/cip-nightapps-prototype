@@ -1,0 +1,7 @@
+{% macro correctionsControls(cancelLink, confirmLink) %}
+    <div>
+        <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b; margin-bottom: 0;" onclick={{ cancelLink }} type="button">Cancel Error</button>
+
+        <button class="nhsuk-button nhsuk-button--secondary" style="float: right; background-color: #007f3b; margin-bottom: 0;" type="button" onclick={{ confirmLink }}>Confirm</button>
+    </div>
+{% endmacro %}
