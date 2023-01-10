@@ -48,7 +48,6 @@ const appViews = [
   path.join(__dirname, 'app/views/v2/apps/50k/check/templating/elements/')
 ];
 
-// TODO Need to version JS.
 // TODO Need to version nunjucks.
 // TODO Replace v1 with main branch contents.
 
