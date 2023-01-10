@@ -148,7 +148,7 @@ if (window['check']) {
  * Redirect to corrections view.
  */
 function showCorrections() {
-    window.location.href = '/apps/50k/check/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    window.location.href = '/v2/apps/50k/check/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
 }
 
 /**
@@ -156,9 +156,9 @@ function showCorrections() {
  */
 function redirectToCheck() {
     if (currentPart === '2' || currentPart == '3') {
-        window.location.href = '/apps/50k/check/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+        window.location.href = '/v2/apps/50k/check/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
     } else {
-        window.location.href = '/apps/50k/check?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+        window.location.href = '/v2/apps/50k/check?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
     }
 }
 
@@ -166,7 +166,7 @@ function redirectToCheck() {
  * Redirect to corrections view. (For EPS).
  */
 function showEPSCorrections() {
-    window.location.href = '/apps/50k/check/eps/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    window.location.href = '/v2/apps/50k/check/eps/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
 }
 
 /**
@@ -174,9 +174,9 @@ function showEPSCorrections() {
  */
 function redirectToEPS() {
     if (currentPart === '2' || currentPart === '3') {
-        window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+        window.location.href = '/v2/apps/50k/check/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
     } else {
-        window.location.href = '/apps/50k/check/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+        window.location.href = '/v2/apps/50k/check/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
     }
 }
 
@@ -186,9 +186,9 @@ function redirectToEPS() {
 function nextCheck() {
     if (checkNumber && totalChecks) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/v2/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
-            window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/v2/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         }
     }
 }
@@ -199,27 +199,11 @@ function nextCheck() {
 function nextEPS() {
     if (checkNumber && totalChecks) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/v2/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
-            window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/v2/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         }
     }
-}
-
-// TODO Remove?
-// V1
-/**
- * Redirect to corrections view.
- */
-function showV1Corrections() {
-    window.location.href = '/apps/50k/check/v1/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-}
-
-/**
- * Redirect to corrections view. (For EPS).
- */
-function showV1EPSCorrections() {
-    window.location.href = '/apps/50k/check/v1/eps/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
 }
 
 /**
@@ -227,9 +211,9 @@ function showV1EPSCorrections() {
  */
 function redirectToV1EPS() {
     if (currentPart === '2' || currentPart === '3') {
-        window.location.href = '/apps/50k/check/v1/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+        window.location.href = '/v2/apps/50k/check/v1/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
     } else {
-        window.location.href = '/apps/50k/check/v1/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+        window.location.href = '/v2/apps/50k/check/v1/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
     }
 }
 
@@ -239,9 +223,9 @@ function redirectToV1EPS() {
 function nextV1Check() {
     if (checkNumber && totalChecks) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/v1/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/v2/apps/50k/check/v1/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
-            window.location.href = '/apps/50k/check/v1?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/v2/apps/50k/check/v1?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         }
     }
 }
@@ -252,9 +236,9 @@ function nextV1Check() {
 function nextV1EPS() {
     if (checkNumber && totalChecks) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/v1/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/v2/apps/50k/check/v1/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
-            window.location.href = '/apps/50k/check/v1/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/v2/apps/50k/check/v1/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         }
     }
 }
