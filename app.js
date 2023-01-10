@@ -44,11 +44,9 @@ app.locals.serviceName = config.serviceName;
 const appViews = [
   path.join(__dirname, 'app/views/'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
-  path.join(__dirname, 'app/views/v1/apps/50k/check/templating/elements/'),
-  path.join(__dirname, 'app/views/v2/apps/50k/check/templating/elements/')
+  path.join(__dirname, 'app/templating/elements')
 ];
 
-// TODO Need to version nunjucks.
 // TODO Replace v1 with main branch contents.
 
 const nunjucksConfig = {

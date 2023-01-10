@@ -41,7 +41,7 @@
     window['check'] = true;
   </script>
 
-  {% from 'notes-card.njk' import notesCard %}
+  {% from 'v2-notes-card.njk' import notesCard %}
   {{ notesCard(
     'This is an example note.'
   ) }}
@@ -60,16 +60,16 @@
                 <img class="nhsuk-image__img" id="prescription-image" src="/images/loading.jpg" alt="Prescription Image">
             </div>
             
-            {% from 'image-controls.njk' import imageControls %}
+            {% from 'v2-image-controls.njk' import imageControls %}
             {{ imageControls() }}
         </div>
 
         <!-- Right Side -->
         <div class="nhsuk-grid-column-two-thirds" style="height: 580px;">
             <div style="height: 54%;">
-                {% from 'information-table.njk' import informationTable %}
-                {% from 'information-fields.njk' import informationFieldsScanned %}
-                {% from 'check-controls.njk' import checkControls %}
+                {% from 'v2-information-table.njk' import informationTable %}
+                {% from 'v2-information-fields.njk' import informationFieldsScanned %}
+                {% from 'v2-check-controls.njk' import checkControls %}
 
                 {{ informationTable(
                     'nhsuk-tag nhsuk-tag--blue',
@@ -88,8 +88,8 @@
             <div style="height: 44%; overflow-y: scroll;">
                 <div class="nhsuk-card">
                     <div class="nhsuk-card__content">
-                        {% from 'corrections-form.njk' import correctionsForm %}
-                        {% from 'corrections-controls.njk' import correctionsControls %}
+                        {% from 'v2-corrections-form.njk' import correctionsForm %}
+                        {% from 'v2-corrections-controls.njk' import correctionsControls %}
 
                         {{ correctionsForm() }}
                         {{ correctionsControls(

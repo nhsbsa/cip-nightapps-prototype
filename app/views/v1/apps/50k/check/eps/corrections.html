@@ -41,7 +41,7 @@
     window['check'] = true;
   </script>
 
-  {% from 'notes-card.njk' import notesCard %}
+  {% from 'v2-notes-card.njk' import notesCard %}
   {{ notesCard(
     'This is an example note.'
   ) }}
@@ -55,9 +55,9 @@
 
         <!-- Right Side -->
         <div class="nhsuk-grid-column-full" style="height: 580px;">
-            {% from 'information-table.njk' import informationTable %}
-            {% from 'information-fields.njk' import informationFieldsEPS %}
-            {% from 'check-controls.njk' import checkControls %}
+            {% from 'v2-information-table.njk' import informationTable %}
+            {% from 'v2-information-fields.njk' import informationFieldsEPS %}
+            {% from 'v2-check-controls.njk' import checkControls %}
 
             <div style="height: 54%; overflow-y: scroll; overflow-x: hidden;"> 
                 {{ informationFieldsEPS(
@@ -78,8 +78,8 @@
             <div style="height: 44%; overflow-y: scroll;">
                 <div class="nhsuk-card">
                     <div class="nhsuk-card__content">
-                        {% from 'corrections-form.njk' import correctionsForm %}
-                        {% from 'corrections-controls.njk' import correctionsControls %}
+                        {% from 'v2-corrections-form.njk' import correctionsForm %}
+                        {% from 'v2-corrections-controls.njk' import correctionsControls %}
 
                         {{ correctionsForm() }}
                         {{ correctionsControls(
