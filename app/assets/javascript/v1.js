@@ -57,6 +57,21 @@ function zoomScanOut() {
     }
 }
 
+/**
+ * Show form notes.
+ */
+function showFormNotes() {
+    document.getElementById('notes-background').removeAttribute('hidden');
+    document.getElementById('notes-background').removeAttribute('aria-hidden');
+}
+/**
+ * Hide form notes.
+ */
+function hideFormNotes() {
+    document.getElementById('notes-background').setAttribute('hidden', 'true');
+    document.getElementById('notes-background').setAttribute('aria-hidden', true);
+}
+
 
 ////////// Counter //////////
 

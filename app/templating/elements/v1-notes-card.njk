@@ -1,0 +1,16 @@
+{% macro notesCard(formNotes) %}
+    <div class="notes-background" id="notes-background" hidden="true" aria-hidden="true">
+    <div class="notes-card">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <label class="nhsuk-u-font-weight-bold" for="form-notes">Form Notes</label>
+          <textarea class="nhsuk-textarea" id="form-notes" name="form-notes" rows="1" style="resize: none;" aria-describedby="form-notes" disabled aria-disabled="true">{{ formNotes }}</textarea>                    
+        
+          <div class="nhsuk-u-padding-bottom-2"></div>
+
+          <button class="nhsuk-button nhsuk-button--secondary" onclick="hideFormNotes();" style="background-color: #d5281b;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
