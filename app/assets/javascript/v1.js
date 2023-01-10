@@ -1,5 +1,3 @@
-// ES6 or Vanilla JavaScript
-
 // Set zoom limits.
 const minZoom = 1;
 const maxZoom = 3;
