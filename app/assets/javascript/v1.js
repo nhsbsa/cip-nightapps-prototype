@@ -1,3 +1,5 @@
+// ES6 or Vanilla JavaScript
+
 // Set zoom limits.
 const minZoom = 1;
 const maxZoom = 3;
@@ -9,96 +11,26 @@ const checkNumber = urlParams.get('check');
 const totalChecks = urlParams.get('total'); 
 const currentPart = urlParams.get('part'); 
 
-////////// Dragable Modal //////////
-/*
- * Enable dragging for an element.
- */
-function enableDrag(element) {
-    // Mouse X and Y variables.
-    let mouseX = 0;
-    let mouseY = 0;
-
-    // Event listener for on mouse down.
-    const mouseDown = function(e) {
-        // Get the current mouse x and y and assign them to their respective variables.
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        // Add event listeners for mouseMove and mouseUp for the document.
-        document.addEventListener('mousemove', mouseMove);
-        document.addEventListener('mouseup', mouseUp);
-    }
-    // Event listener for on mouse move.
-    const mouseMove = function(e) {
-        // Get the amount we should offset the position of the pop over.
-        const offsetX = e.clientX - mouseX;
-        const offsetY = e.clientY - mouseY;
-
-        // Set the style of the pop over in order to move it.
-        element.style.top = `${element.offsetTop + offsetY}px`;
-        element.style.left = `${element.offsetLeft + offsetX}px`;
-        
-        // Get the current mouse x and y and assign them to their respective variables.
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    }
-    // Event listener for on mouse up.
-    const mouseUp = function(e) {
-        // Remove the unneeded event listeners from the document.
-        document.removeEventListener('mousemove', mouseMove);
-        document.removeEventListener('mouseup', mouseUp);
-    }
-    // Add event listener for mouseDown on the pop over.
-    element.addEventListener('mousedown', mouseDown);
-}
-
-// Check if the window should enable dragging for a pop over.
-if (window['hasmodal']) {
-    enableDrag(document.getElementById("draggable-modal"));
-}
-
 ////////// Check Controls //////////
+
 // Set variables for correction views.
-let front = true;
-const frontImage = '/images/E000001NE02_side1.jpg';
-const backImage = '/images/E000001NE02_side2.jpg';
-
-/**
- * Pretend to load image.
- */
-if (document.getElementById('prescription-image') != null) {
-    document.getElementById('prescription-image').src = frontImage;
-}
-
+let back = false;
+const backImage = '/images/E000001NE02_side1.jpg';
+const frontImage = '/images/E000001NE02_side2.jpg';
 
 /**
  * Swaps what side of a prescription scan is shown.
  */
 function swapSides() {
-    if (front) {
+    if (back) {
         document.getElementById('prescription-image').src = backImage;
-        document.getElementById('swap-sides').innerHTML = 'Show Front';
+        document.getElementById('swap-sides').innerHTML = 'Show Back';
     } else {
         document.getElementById('prescription-image').src = frontImage;
-        document.getElementById('swap-sides').innerHTML = 'Show Back';
+        document.getElementById('swap-sides').innerHTML = 'Show Front';
     }
 
-    front = !front;
-}
-
-/**
- * Show form notes.
- */
-function showFormNotes() {
-    document.getElementById('notes-background').removeAttribute('hidden');
-    document.getElementById('notes-background').removeAttribute('aria-hidden');
-}
-/**
- * Hide form notes.
- */
-function hideFormNotes() {
-    document.getElementById('notes-background').setAttribute('hidden', 'true');
-    document.getElementById('notes-background').setAttribute('aria-hidden', true);
+    back = !back;
 }
 
 /**
@@ -203,87 +135,6 @@ function nextEPS() {
         } else {
             window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         }
-    }
-}
-
-// V1
-/**
- * Redirect to corrections view.
- */
-function showV1Corrections() {
-    window.location.href = '/apps/50k/check/v1/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-}
-
-/**
- * Redirect to corrections view. (For EPS).
- */
-function showV1EPSCorrections() {
-    window.location.href = '/apps/50k/check/v1/eps/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-}
-
-/**
- * Redirect to check view. (For EPS).
- */
-function redirectToV1EPS() {
-    if (currentPart === '2' || currentPart === '3') {
-        window.location.href = '/apps/50k/check/v1/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-    } else {
-        window.location.href = '/apps/50k/check/v1/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-    }
-}
-
-/**
- * Redirect to check view while increasing check value.
- */
-function nextV1Check() {
-    if (checkNumber && totalChecks) {
-        if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/v1/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
-        } else {
-            window.location.href = '/apps/50k/check/v1?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
-        }
-    }
-}
-
-/**
- * Redirect to EPS check view while increasing check value.
- */
-function nextV1EPS() {
-    if (checkNumber && totalChecks) {
-        if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/v1/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
-        } else {
-            window.location.href = '/apps/50k/check/v1/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
-        }
-    }
-}
-
-////////// Error Category //////////
-
-// Establish variables for the various elements needed.
-const errorCategory = document.getElementById('error-category');
-const hiddenFields = document.getElementById('hidden-fields');
-
-// Ensure that the elements needed exist.
-if (errorCategory != null && hiddenFields != null) {
-    // Add an event listener to listen to the change of the input.
-    errorCategory.addEventListener('change', updateHiddenFields);
-
-    // Update the selection of the input at the start to make sure saved states are accounted for.
-    updateHiddenFields();
-}
-
-// Function to update the hidden fields
-function updateHiddenFields() {
-    // Check if the correct item is selected.
-    if (errorCategory.value == "System: Alphanumeric Code Error Generates Incorrect Direct Hit") {
-        // Show the hidden fields to both the browser and to screen readers.
-        hiddenFields.removeAttribute('hidden');
-        hiddenFields.removeAttribute('aria-hidden');
-    } else {
-        // Hide the hidden fields to both the browser and to screen readers.
-        hiddenFields.setAttribute('hidden', 'true');
-        hiddenFields.setAttribute('aria-hidden', 'true');
     }
 }
 

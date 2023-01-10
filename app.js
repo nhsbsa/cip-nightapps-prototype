@@ -47,8 +47,6 @@ const appViews = [
   path.join(__dirname, 'app/templating/elements')
 ];
 
-// TODO Replace v1 with main branch contents.
-
 const nunjucksConfig = {
   autoescape: true,
 };
