@@ -121,5 +121,3 @@ git push origin local-branch-name
 <strong>The reviewer will be notified and will review the changes before marking it as being able to be merged. Then it can be merged in to main from the pull request, and thus deployed to Heroku. If the reviewer is able to merge this on their side then they will notify the user who did the pull request that it has been completed. <strong>
 <p>&nbsp;</p>
 
-// TODO Links need to be updated to reflect
-

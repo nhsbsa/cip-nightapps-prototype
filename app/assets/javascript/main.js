@@ -59,14 +59,6 @@ if (window['hasmodal']) {
     enableDrag(document.getElementById("draggable-modal"));
 }
 
-////////// Version Selector //////////
-function directToVersionOne() {
-    redirectToV1Check();
-}
-function directToVersionTwo() {
-    redirectToCheck();
-}
-
 ////////// Check Controls //////////
 // Set variables for correction views.
 let front = true;
@@ -222,17 +214,6 @@ function nextEPS() {
  */
 function showV1Corrections() {
     window.location.href = '/apps/50k/check/v1/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-}
-
-/**
- * Redirect to check view.
- */
-function redirectToV1Check() {
-    if (currentPart === '2' || currentPart == '3') {
-        window.location.href = '/apps/50k/check/v1/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-    } else {
-        window.location.href = '/apps/50k/check/v1?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-    }
 }
 
 /**

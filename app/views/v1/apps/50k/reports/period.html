@@ -21,9 +21,9 @@
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
     <ul class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k/reports">Reports</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/v1/">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/v1/apps/50k">50k Checking</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/v1/apps/50k/reports">Reports</a></li>
     </ul>
   </div>
 </nav>
@@ -41,10 +41,10 @@
   <script>
     // Establish web-flow settings for this page.
     window['web-flow'] = {
-      root: '/apps/50k/reports',
+      root: '/v1/apps/50k/reports',
       expectedParameters: ['report', 'year'],
-      nextView: '/apps/50k/reports/user',
-      previousView: '/apps/50k/reports/year',
+      nextView: '/v1/apps/50k/reports/user',
+      previousView: '/v1/apps/50k/reports/year',
       readableReplacements: {
         'report': {
           'direct-hits': 'Direct Hits report',
