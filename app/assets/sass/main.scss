@@ -111,15 +111,19 @@ progress {
     transform: translate(-50%, -40%);
 }
 .notes-button {
-    background-color: #fff59d;
-    color: black; 
-    margin: 0;
-    height: 100%;
+    background-color: #4c6272;
+    color: white;
+    font-weight: bold;
+    height: 60px;
     width: 100%;
-    padding: 0;
-    left: 50%;
-    -ms-transform: translate(-50%, 0%);
-    transform: translate(-50%, 0%);
+    border: 0;
+}
+.notes-button:hover {
+    background-color: #ffeb3b;
+}
+.notes-button__highlighted {
+    background-color: #fff59d;
+    color: black;
 }
 .notes-background {
     z-index: 1000;

@@ -83,13 +83,13 @@
             <th role="columnheader" class="table-title" scope="col">
                 Parent Code
             </th>
-            <!-- Practice Code Title -->
-            <th role="columnheader" class="table-title" scope="col">
-                Prac Code
-            </th>
             <!-- Paper Type Title -->
             <th role="columnheader" class="table-title" scope="col">
                 Paper
+            </th>
+            <!-- Pay NIC Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Pay NIC
             </th>
         </tr>
 
@@ -114,20 +114,20 @@
             <td role="cell" class="nhsuk-table__row table-body">
                 {{ parentCode }}
             </td>
-            <!-- Practice Code Value -->
-            <td role="cell" class="nhsuk-table__row table-body">
-                {{ practiceCode }}
-            </td>
             <!-- Paper Type Title -->
             <td role="cell" class="nhsuk-table__row table-body">
                 {{ paperType }}
+            </td>
+            <!-- Pay NIC Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ payNIC }}
             </td>
         </tr>
 
         <tr role="row">
             <!-- Prescription Type Title -->
             <th role="columnheader" class="table-title" scope="col">
-                Presc Type
+                Prescription Type
             </th>
             <!-- Charge Status Title -->
             <th role="columnheader" class="table-title" scope="col">
@@ -135,18 +135,14 @@
             </th>
             <!-- Exemption Category Title -->
             <th role="columnheader" class="table-title" scope="col">
-                Exemp Cat
+                Exemption Category
             </th>
             <!-- Endorsements Title -->
             <th role="columnheader" class="table-title" scope="col">
                 Endorsements
             </th>
-            <!-- Pay NIC Title -->
-            <th role="columnheader" class="table-title" scope="col">
-                Pay NIC
-            </th>
-            <th role="columnheader" scope="col" rowspan="2" colspan="2">
-                <button class="nhsuk-button nhsuk-button--secondary notes-button" type="button" onclick="showFormNotes();">Notes</button>
+            <th role="columnheader" scope="col" rowspan="2" colspan="3" style="padding: 0;">
+                <button class="notes-button" type="button" onclick="showFormNotes();">Notes</button>
             </th>
         </tr>
 
@@ -166,10 +162,6 @@
             <!-- Endorsement Value -->
             <td role="cell" class="nhsuk-table__row table-body">
                 {{ endorsements }}
-            </td>
-            <!-- Pay NIC Value -->
-            <td role="cell" class="nhsuk-table__row table-body">
-                {{ payNIC }}
             </td>
         </tr>
   </table>  
