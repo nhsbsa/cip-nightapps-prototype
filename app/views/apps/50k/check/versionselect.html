@@ -1,0 +1,71 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  50k Checking - Select a version
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+            <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
+            <li class="nhsuk-breadcrumb__item">Select a version</li>
+        </ul>
+    </div>
+  </nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+            <h1 id="page-title">
+                Select a version
+            </h1>
+
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-half">
+                    <div class="nhsuk-card nhsuk-card--clickable">
+                        <div class="nhsuk-card__content">
+                            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                                <a class="nhsuk-card__link" onclick="directToVersionOne()">Version 1</a>
+                            </h2>
+                            <p>Information is laid out vertically in a scrolling layout.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nhsuk-grid-column-one-half">
+                    <div class="nhsuk-card nhsuk-card--clickable">
+                        <div class="nhsuk-card__content">
+                            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                                <a class="nhsuk-card__link" onclick="directToVersionTwo()">Version 2</a>
+                            </h2>
+                            <p>Information is laid out in a grid, more similar to existing 50k system.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

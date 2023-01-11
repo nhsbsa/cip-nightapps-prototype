@@ -81,3 +81,54 @@ progress {
     transition: scale 0.5s;
     transition-timing-function: ease;
 }
+
+.table-title {
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    text-align: center;
+}
+.table-body {
+    font-size: 15px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+.table-body-full-width {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+.notes-card {
+    z-index: 1001;
+    width: 400px;
+    height: 50px;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
+}
+.notes-background {
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background-color: rgba(0,0,0,0.4);
+}
+.popout-card {
+    z-index: 1000;
+    position: absolute;
+    width: 650px;
+    height: 400px;
+    overflow-y: scroll;
+    -webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.75);  
+}
+  

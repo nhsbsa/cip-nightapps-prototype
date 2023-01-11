@@ -1,0 +1,9 @@
+{% macro correctionsControls(continueLink, correctionsLink) %}
+    <div>
+        <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b; width: 49%;" onclick={{ continueLink }} type="button">No Error</button>
+    
+        <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #d5281b; width: 49%;" onclick={{ continueLink }} type="button">Amend Error</button>
+
+        <button class="nhsuk-button nhsuk-button--secondary" style="background-color: #007f3b; width: 100%; margin-bottom: 0;" type="button" onclick={{ continueLink }}>Confirm Error</button>
+    </div>
+{% endmacro %}

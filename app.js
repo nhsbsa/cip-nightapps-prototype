@@ -43,7 +43,8 @@ app.locals.serviceName = config.serviceName;
 // Nunjucks configuration for application
 const appViews = [
   path.join(__dirname, 'app/views/'),
-  path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components')
+  path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
+  path.join(__dirname, 'app/views/apps/50k/check/templating/elements/')
 ];
 
 const nunjucksConfig = {
