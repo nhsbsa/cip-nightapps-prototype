@@ -1,6 +1,17 @@
 {% macro informationFieldsScanned(productDescription) %}
-    <label class="nhsuk-u-font-weight-bold" for="product-description">Product Description</label>
-    <textarea class="nhsuk-textarea" id="product-description" name="product-description" rows="1" style="resize: none;" aria-describedby="product-description" disabled aria-disabled="true">{{ productDescription }}</textarea>      
+    <table class="nhsuk-table" style="margin-bottom: 0;">
+        <tr role="row">
+            <th role="columnheader" class="table-title" scope="col" style="text-align: left;">
+                Product Description
+            </th>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__row table-body" style="text-align: left;" rowspan="2" colspan="2">
+                {{ productDescription }}
+            </td>
+        </tr>
+    </table>
 {% endmacro %}
 
 {% macro informationFieldsEPS(etpPrescribed, etpDispensed, productDescription) %}

@@ -39,6 +39,7 @@
 {% block content %}
   <script>
     window['check'] = true;
+    window['full-width'] = true;
   </script>
 
   {% from 'notes-card.njk' import notesCard %}
@@ -46,15 +47,15 @@
     'This is an example note.'
   ) }}
 
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
+  <div class="nhsuk-grid-row" style="max-width: 100%;">
+    <div class="nhsuk-grid-column-full" style="max-width: 100%;">
         <!-- Page Title -->
         <h1 id="page-title">
             Part <span id="current-part"></span> Check
         </h1>
 
         <!-- Prescription Image Container -->
-        <div class="nhsuk-grid-column-one-third scan-container" style="height: 580px; overflow-y: hidden;">
+        <div class="nhsuk-grid-column-one-third scan-container" style="height: 660px; overflow-y: hidden;">
             <!-- Prescription Image -->
             <div class="scan-container">
                 <img class="nhsuk-image__img" id="prescription-image" src="/images/loading.jpg" alt="Prescription Image">

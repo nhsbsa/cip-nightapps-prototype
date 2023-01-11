@@ -11,6 +11,12 @@ const checkNumber = urlParams.get('check');
 const totalChecks = urlParams.get('total'); 
 const currentPart = urlParams.get('part'); 
 
+////////// Patch Width //////////
+if (window['full-width']) {
+    const widthContainer = document.getElementsByClassName('nhsuk-width-container ')[2];
+    widthContainer.setAttribute('style', 'max-width: 1150px;');
+}
+
 ////////// Dragable Modal //////////
 /*
  * Enable dragging for an element.
