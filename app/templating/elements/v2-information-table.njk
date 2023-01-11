@@ -25,9 +25,9 @@
             <th role="columnheader" class="table-title" scope="col">
                 Total Fees
             </th>
-            <!-- Pay NIC Title -->
+            <!-- Quantity Title -->
             <th role="columnheader" class="table-title" scope="col">
-                Pay NIC
+                Quantity
             </th>
         </tr>
 
@@ -56,9 +56,9 @@
             <td role="cell" class="nhsuk-table__row table-body">
                 {{ totalFees }}
             </td>
-            <!-- Pay NIC Value -->
+            <!-- Quantity Value -->
             <td role="cell" class="nhsuk-table__row table-body">
-                {{ payNIC }}
+                {{ quantity }}
             </td>
         </tr>
 
@@ -137,13 +137,13 @@
             <th role="columnheader" class="table-title" scope="col">
                 Exemp Cat
             </th>
-            <!-- Quantity Title -->
-            <th role="columnheader" class="table-title" scope="col">
-                Quantity
-            </th>
             <!-- Endorsements Title -->
             <th role="columnheader" class="table-title" scope="col">
                 Endorsements
+            </th>
+            <!-- Pay NIC Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Pay NIC
             </th>
             <th role="columnheader" scope="col" rowspan="2" colspan="2">
                 <button class="nhsuk-button nhsuk-button--secondary notes-button" type="button" style="background-color: #fff59d; color: black;" onclick="showFormNotes();">Notes</button>
@@ -163,13 +163,13 @@
             <td role="cell" class="nhsuk-table__row table-body">
                 {{ exemptionCategory }}
             </td>
-            <!-- Quantity Value -->
-            <td role="cell" class="nhsuk-table__row table-body">
-                {{ quantity }}
-            </td>
             <!-- Endorsement Value -->
             <td role="cell" class="nhsuk-table__row table-body">
                 {{ endorsements }}
+            </td>
+            <!-- Pay NIC Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ payNIC }}
             </td>
         </tr>
   </table>  
