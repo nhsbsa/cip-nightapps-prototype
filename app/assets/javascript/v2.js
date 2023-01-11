@@ -206,7 +206,6 @@ function nextEPS() {
     }
 }
 
-}
 ////////// Error Category //////////
 
 // Establish variables for the various elements needed.
