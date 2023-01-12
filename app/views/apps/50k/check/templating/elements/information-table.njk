@@ -138,11 +138,13 @@
                 Exemption Category
             </th>
             <!-- Endorsements Title -->
-            <th role="columnheader" class="table-title" scope="col">
+            <th role="columnheader" class="table-title" scope="col" colspan="2">
                 Endorsements
             </th>
-            <th role="columnheader" scope="col" rowspan="2" colspan="3" style="padding: 0;">
-                <button class="notes-button" type="button" onclick="showFormNotes();">Notes</button>
+            <th role="columnheader" class="table-notes-space" scope="col" rowspan="2" colspan="2" style="padding: 0;">
+                <button class="notes-button" type="button" onclick="showFormNotes();">
+                    Notes
+                </button>
             </th>
         </tr>
 
@@ -160,7 +162,7 @@
                 {{ exemptionCategory }}
             </td>
             <!-- Endorsement Value -->
-            <td role="cell" class="nhsuk-table__row table-body">
+            <td role="cell" class="nhsuk-table__row table-body" colspan="2">
                 {{ endorsements }}
             </td>
         </tr>

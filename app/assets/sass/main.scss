@@ -84,20 +84,46 @@ progress {
 
 .table-title {
     font-size: 12px;
-    padding-bottom: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+    padding-left: 4px;
+    padding-top: 8px;
+    border: none;
+    border-left: 2px solid #f0f4f5;
+    border-right: 2px solid #f0f4f5;
+    border-top: 2px solid #f0f4f5;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #E8EDEE;
 }
 .table-body {
     font-size: 15px;
     padding-right: 5px;
+    padding-left: 4px;
     padding-top: 5px;
     padding-bottom: 5px;
+    border: none;
+    border-left: 2px solid #f0f4f5;
+    border-right: 2px solid #f0f4f5;
+    border-bottom: 2px solid #f0f4f5;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #E8EDEE;
 }
-.table-body-full-width {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 15px;
+.nhsuk-table__row:hover {
+    background-color: #E8EDEE;
+}
+.table-notes-space {
+    font-size: 12px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+    padding-left: 4px;
+    padding-top: 8px;
+    border: none;
+    border-left: 2px solid #f0f4f5;
+    border-right: 2px solid #f0f4f5;
+    border-top: 2px solid #f0f4f5;
+    border-bottom: 2px solid #f0f4f5;
 }
 .notes-card {
     z-index: 1001;
@@ -111,19 +137,23 @@ progress {
     transform: translate(-50%, -40%);
 }
 .notes-button {
-    background-color: #4c6272;
-    color: white;
-    font-weight: bold;
-    height: 60px;
+    font-size: 12px;
+    background-color: #E8EDEE;
+    color: black;
+    height: 66px;
     width: 100%;
     border: 0;
+    border-radius: 4px;
+    font-weight: 600;
 }
 .notes-button:hover {
     background-color: #ffeb3b;
+    color: black;
 }
 .notes-button__highlighted {
-    background-color: #fff59d;
-    color: black;
+    background-color: #ccdff1;
+    color: #004281;
+    border: 1px solid #004281;
 }
 .notes-background {
     z-index: 1000;
