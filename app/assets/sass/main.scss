@@ -82,12 +82,15 @@ progress {
     transition-timing-function: ease;
 }
 
+.nhsuk-tag__full-width {
+    min-width: 100%;
+}
 .table-title {
     font-size: 12px;
     padding-bottom: 8px;
-    padding-right: 8px;
     padding-left: 4px;
     padding-top: 8px;
+    padding-right: 8px !important;
     border: none;
     border-left: 2px solid #f0f4f5;
     border-right: 2px solid #f0f4f5;
@@ -98,10 +101,10 @@ progress {
 }
 .table-body {
     font-size: 15px;
-    padding-right: 5px;
     padding-left: 4px;
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-right: 5px;
     border: none;
     border-left: 2px solid #f0f4f5;
     border-right: 2px solid #f0f4f5;
@@ -112,6 +115,9 @@ progress {
 }
 .nhsuk-table__row:hover {
     background-color: #E8EDEE;
+}
+th:last-child, td:last-child {
+    padding-right: 5px;
 }
 .table-notes-space {
     font-size: 12px;

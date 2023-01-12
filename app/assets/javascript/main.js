@@ -14,7 +14,7 @@ const currentPart = urlParams.get('part');
 ////////// Patch Width //////////
 if (window['full-width']) {
     const widthContainer = document.getElementsByClassName('nhsuk-width-container ')[2];
-    widthContainer.setAttribute('style', 'max-width: 1150px;');
+    widthContainer.setAttribute('style', 'max-width: 1200px;');
 }
 
 ////////// Dragable Modal //////////

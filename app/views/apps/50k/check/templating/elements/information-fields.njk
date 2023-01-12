@@ -15,18 +15,41 @@
 {% endmacro %}
 
 {% macro informationFieldsEPS(etpPrescribed, etpDispensed, productDescription) %}
-    <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-one-half">
-            <label class="nhsuk-u-font-weight-bold" for="etp-prescribed">ETP Prescribed - QTY</label>
-            <textarea class="nhsuk-textarea" id="etp-prescribed" name="etp-prescribed" rows="1" style="resize: none;" aria-describedby="etp-prescribed" disabled aria-disabled="true">{{ etpPrescribed }}</textarea>                             
-        </div>
-    
-        <div class="nhsuk-grid-column-one-half">
-            <label class="nhsuk-u-font-weight-bold" for="etp-dispensed">ETP Dispensed - QTY</label>
-            <textarea class="nhsuk-textarea" id="etp-dispensed" name="etp-dispensed" rows="1" style="resize: none;" aria-describedby="etp-dispensed" disabled aria-disabled="true">{{ etpDispensed }}</textarea>                    
-        </div>
-    </div>
+    <table class="nhsuk-table" style="margin-bottom: 0;">
+        <tr role="row">
+            <th role="columnheader" class="table-title" scope="col" style="text-align: left;">
+                Product Description
+            </th>
+        </tr>
 
-    <label class="nhsuk-u-font-weight-bold" for="product-description">Product Description</label>
-    <textarea class="nhsuk-textarea" id="product-description" name="product-description" rows="1" style="resize: none; background-color: #ccdff1; text-color: black;" aria-describedby="product-description" disabled aria-disabled="true">{{ productDescription }}</textarea>                
+        <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__row table-body" style="text-align: left;" rowspan="2" colspan="2">
+                <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-tag__full-width">
+                    {{ productDescription }}
+                </strong>
+            </td>
+        </tr>
+    </table>
+
+    <table class="nhsuk-table" style="margin-bottom: 0;">
+        <tr role="row">
+            <th role="columnheader" class="table-title" scope="col" style="text-align: left;">
+                ETP Prescribed - QTY
+            </th>
+
+            <th role="columnheader" class="table-title" scope="col" style="text-align: left;">
+                ETP Dispensed - QTY
+            </th>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__row table-body" style="text-align: left;" rowspan="2">
+                {{ etpPrescribed }}
+            </td>
+
+            <td role="cell" class="nhsuk-table__row table-body" style="text-align: left;" rowspan="2">
+                {{ etpDispensed }}
+            </td>
+        </tr>
+    </table>
 {% endmacro %}
