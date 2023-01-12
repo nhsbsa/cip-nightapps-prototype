@@ -138,19 +138,26 @@ progress {
 }
 .notes-button {
     font-size: 12px;
-    background-color: #E8EDEE;
-    color: black;
     height: 66px;
     width: 100%;
     border: 0;
     border-radius: 4px;
     font-weight: 600;
+    background-color: #ccdff1;
+    color: #004281;
+    border: 1px solid #004281;
 }
 .notes-button:hover {
-    background-color: #ffeb3b;
-    color: black;
+    background-color: #004281;
+    color: #ccdff1;
+    border: 1px solid #ccdff1;
 }
 .notes-button__highlighted {
+    background-color: #004281;
+    color: #ccdff1;
+    border: 1px solid #ccdff1;
+}
+.notes-button__highlighted:hover {
     background-color: #ccdff1;
     color: #004281;
     border: 1px solid #004281;
