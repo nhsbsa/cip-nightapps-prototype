@@ -75,7 +75,7 @@
                 <div class="nhsuk-grid-column-one-quarter">
                     <!-- As Checked -->
                     <label class="nhsuk-label corrections-label" for="checked">As Checked</label>
-                    <input class="nhsuk-input corrections-label" id="checked" type="text">
+                    <input class="nhsuk-input" id="checked" type="text">
                 </div>
             </div>
 
@@ -86,9 +86,51 @@
             <input class="nhsuk-input" id="comments" type="text">
             <div class="nhsuk-u-padding-bottom-2"></div>
 
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-third">
+                    <!-- Type -->
+                    <label class="nhsuk-label corrections-label" for="type">Type</label>
+                    <select class="nhsuk-select max-width-select" id="type" name="type">
+                    <!-- Blank Option -->
+                    <option value="0"></option>
+                    <!-- Type 1 -->
+                    <option value="1">Type 1</option>
+                    <!-- Type 2 -->
+                    <option value="2">Type 2</option>
+                    <!-- AIT -->
+                    <option value="3">AIT</option>
+                    <!-- Support Services -->
+                    <option value="4">Support Services</option>
+                    <!-- UIP -->
+                    <option value="5">UIP</option>
+                    </select>
+                </div>
+
+                <div class="nhsuk-grid-column-one-third">
+                    <!-- OP ID -->
+                    <label class="nhsuk-label corrections-label" for="op-id">OP ID</label>
+                    <select class="nhsuk-select max-width-select" id="op-id" name="op-id">
+                    <!-- 1800+ User Ciphers -->
+                    <!-- Blank Option -->
+                    <option value="0"></option>
+                    <option value="1">####</option>
+                    <option value="2">####</option>
+                    <option value="3">####</option>
+                    <option value="4">####</option>
+                    </select>
+                </div>
+
+                <div class="nhsuk-grid-column-one-third">
+                    <!-- Other Streams -->
+                    <label class="nhsuk-label corrections-label" for="other-streams">Other Streams</label>
+                    <input class="nhsuk-input" id="other-streams" type="text">
+                </div>
+            </div>
+
+            <div class="nhsuk-u-padding-bottom-2"></div>
 
             <div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-one-fifth">
+                <div class="nhsuk-grid-column-one-half">
                     <!-- Root Cause -->
                     <label class="nhsuk-label corrections-label" for="root-cause">Root Cause</label>
                     <select class="nhsuk-select max-width-select" id="root-cause" name="root-cause">
@@ -107,7 +149,7 @@
                     </select>
                 </div>
 
-                <div class="nhsuk-grid-column-one-fifth">
+                <div class="nhsuk-grid-column-one-half">
                     <!-- Error Category -->
                     <label class="nhsuk-label corrections-label" for="error-category">Error Category</label>
                     <!--  class="nhsuk-select max-width-select" id="error-category" name="error-category" -->
@@ -223,67 +265,35 @@
                         <option value="System: Switching (Incorrectly As Exempt)">System: Switching (Incorrectly As Exempt)</option>
                     </datalist>
                 </div>
-
-                <div class="nhsuk-grid-column-one-fifth">
-                    <!-- Type -->
-                    <label class="nhsuk-label corrections-label" for="type">Type</label>
-                    <select class="nhsuk-select max-width-select" id="type" name="type">
-                    <!-- Blank Option -->
-                    <option value="0"></option>
-                    <!-- Type 1 -->
-                    <option value="1">Type 1</option>
-                    <!-- Type 2 -->
-                    <option value="2">Type 2</option>
-                    <!-- AIT -->
-                    <option value="3">AIT</option>
-                    <!-- Support Services -->
-                    <option value="4">Support Services</option>
-                    <!-- UIP -->
-                    <option value="5">UIP</option>
-                    </select>
-                </div>
-
-                <div class="nhsuk-grid-column-one-fifth">
-                    <!-- OP ID -->
-                    <label class="nhsuk-label corrections-label" for="op-id">OP ID</label>
-                    <select class="nhsuk-select max-width-select" id="op-id" name="op-id">
-                    <!-- 1800+ User Ciphers -->
-                    <!-- Blank Option -->
-                    <option value="0"></option>
-                    <option value="1">####</option>
-                    <option value="2">####</option>
-                    <option value="3">####</option>
-                    <option value="4">####</option>
-                    </select>
-                </div>
-
-                <div class="nhsuk-grid-column-one-fifth">
-                    <!-- Other Streams -->
-                    <label class="nhsuk-label corrections-label" for="other-streams">Other Streams</label>
-                    <input class="nhsuk-input" id="other-streams" type="text">
-                </div>
             </div>
 
             <div id="hidden-fields" hidden="true" aria-hidden="true">
                 <div class="nhsuk-u-padding-bottom-2"></div>
-                <!-- Alpha/Numeric Code -->
-                <label class="nhsuk-label corrections-label" for="alpha-numeric-code">Alpha/Numeric Code</label>
-                <input class="nhsuk-input" id="alpha-numberic-code" type="text">
-                <div class="nhsuk-u-padding-bottom-2"></div>
-                <!-- Drug Paid -->
-                <label class="nhsuk-label corrections-label" for="drug-paid">Drug Paid</label>
-                <input class="nhsuk-input" id="drug-paid" type="text">
-                <div class="nhsuk-u-padding-bottom-2"></div>
-                <!-- Drug Should Be Paid -->
-                <label class="nhsuk-label corrections-label" for="drug-should-paid">Drug Should Be Paid</label>
-                <input class="nhsuk-input" id="drug-should-paid" type="text">
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-one-third">
+                        <!-- Alpha/Numeric Code -->
+                        <label class="nhsuk-label corrections-label" for="alpha-numeric-code">Alpha/Numeric Code</label>
+                        <input class="nhsuk-input" id="alpha-numberic-code" type="text">
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-third">
+                        <!-- Drug Paid -->
+                        <label class="nhsuk-label corrections-label" for="drug-paid">Drug Paid</label>
+                        <input class="nhsuk-input" id="drug-paid" type="text">
+                    </div>
+
+                    <div class="nhsuk-grid-column-one-third">
+                        <!-- Drug Should Be Paid -->
+                        <label class="nhsuk-label corrections-label" for="drug-should-paid">Drug Should Be Paid</label>
+                        <input class="nhsuk-input" id="drug-should-paid" type="text">
+                    </div>
+                </div>
             </div>
 
             <div class="nhsuk-u-padding-bottom-2"></div>
 
             <div class="nhsuk-grid-row">
-                
-
                 <div class="nhsuk-grid-column-one-half">
                     <!-- Stream -->
                     <label class="nhsuk-label corrections-label" for="stream">Stream</label>
@@ -407,7 +417,7 @@
                 <div class="nhsuk-grid-column-one-quarter">
                     <!-- Elas Hos Items -->
                     <label class="nhsuk-label corrections-label" for="elas-hos-items">Elas Hos Items (+ / -)</label>
-                    <input class="nhsuk-input corrections-label" id="elas-hos-items" type="text">
+                    <input class="nhsuk-input" id="elas-hos-items" type="text">
                 </div>
 
                 <div class="nhsuk-grid-column-one-quarter">
@@ -422,10 +432,10 @@
             <!-- Error Type Checkboxes -->
             <fieldset class="nhsuk-fieldset" aria-describedby="corrections-error-type">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                    <h1 class="nhsuk-fieldset__heading"> Error type </h1>
+                    <h1 class="nhsuk-fieldset__heading" style="font-size: 24px;"> Error type </h1>
                 </legend>
 
-                <div class="nhsuk-hint" id="corrections-error-type"> Select a relevant error type. </div>
+                <div class="nhsuk-hint" id="corrections-error-type" style="font-size: 16px;"> Select a relevant error type. </div>
                 
                 <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
                     <!-- Info Error -->
