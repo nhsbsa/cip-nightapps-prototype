@@ -60,16 +60,26 @@ progress {
 
 .scan-container {
     position: relative;
+    padding-left: 0;
 }
 
 .scan-controls {
-    position: absolute;
-    margin-bottom: 100px;
-    bottom: -100px;
-    left: 0px;
-    right: 0px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-top: 10px;
+}
+.scan-controls-button {
+    border: none;
+    background-color: #4c6272;
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.scan-controls-button:hover {
+    background-color: #384853;
+}
+.scan-controls-button:active {
+    background-color: #263139;
 }
 
 .scan-container {
@@ -178,11 +188,14 @@ th:last-child, td:last-child {
     background-color: rgba(0,0,0,0.4);
 }
 .corrections-label {
-    font-size: 15px;
+    font-size: 13px;
 }
 .nhsuk-grid-column-one-fifth {
     float: left;
     width: 20%;
     box-sizing: border-box;
     padding: 0 16px;
+}
+.nhsuk-width-container {
+    max-width: 1024px !important;
 }
