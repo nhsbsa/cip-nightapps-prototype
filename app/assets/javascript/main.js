@@ -216,6 +216,31 @@ function nextEPS() {
     }
 }
 
+/**
+ * Redirect to check view while decreasing check value.
+ */
+function backCheck() {
+    if (checkNumber && totalChecks) {
+        if (currentPart === '2' || currentPart === '3') {
+            window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
+        } else {
+            window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
+        }
+    }
+}
+/**
+ * Redirect to EPS check view while decreasing check value.
+ */
+function backEPS() {
+    if (checkNumber && totalChecks) {
+        if (currentPart === '2' || currentPart === '3') {
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
+        } else {
+            window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
+        }
+    }
+}
+
 ////////// Error Category //////////
 
 // Establish variables for the various elements needed.
