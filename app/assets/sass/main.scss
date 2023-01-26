@@ -206,3 +206,14 @@ th:last-child, td:last-child {
 .nhsuk-width-container {
     max-width: 1024px !important;
 }
+/* Phase Banner */
+.psa-phase-banner {
+    background-color: #fff; /* #f0f4f5; */
+}
+.psa-phase-banner__content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.psa-phase-banner__text {
+    padding-left: 5px;
+}
