@@ -157,7 +157,7 @@ if (window['check']) {
  * Randomly decide if the next check should be an EPS or a scanned check.
 */
 function isNextEPS() {
-    var randomValue = Math.random() < 0.4; // Adjust '0.4' to adjust the probability of displaying a scanned check. 
+    var randomValue = Math.random() < 0.9; // Adjust '0.4' to adjust the probability of displaying a scanned check. 
     return !randomValue;
 }
 
