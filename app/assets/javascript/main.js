@@ -152,6 +152,15 @@ if (window['check']) {
     }
 }
 
+////////// RNG //////////
+/**
+ * Randomly decide if the next check should be an EPS or a scanned check.
+*/
+function isNextEPS() {
+    var randomValue = Math.random() < 0.4; // Adjust '0.4' to adjust the probability of displaying a scanned check. 
+    return !randomValue;
+}
+
 ////////// Navigation Links //////////
 
 /**
@@ -195,11 +204,7 @@ function redirectToEPS() {
  */
 function nextCheck() {
     if (checkNumber && totalChecks) {
-        if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
-        } else {
-            window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
-        }
+       processNextCheck();
     }
 }
 
@@ -208,10 +213,27 @@ function nextCheck() {
  */
 function nextEPS() {
     if (checkNumber && totalChecks) {
+        processNextCheck();
+    }
+}
+
+/**
+ * Use RNG to randomly select the next check type.
+ */
+function processNextCheck() {
+    var isEPS = isNextEPS();
+
+    if (isEPS) {
         if (currentPart === '2' || currentPart === '3') {
             window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
             window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        }
+    } else {
+        if (currentPart === '2' || currentPart === '3') {
+            window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        } else {
+            window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         }
     }
 }
