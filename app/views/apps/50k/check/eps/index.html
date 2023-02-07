@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Check - 50k Checking - Prescription Service Applications
+  Check - Sample Checking - Prescription Service Applications
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -22,7 +22,7 @@
   <div class="nhsuk-width-container">
     <ul class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">Sample Checking</a></li>
       <li class="nhsuk-breadcrumb__item">Check</li>
     </ul>
   </div>
@@ -74,7 +74,7 @@
             <div class="nhsuk-u-padding-bottom-2"></div>
 
             {{ checkControls(
-                'showEPSCorrections();', 'nextCheck()'
+                'showEPSCorrections();', 'nextCheck()', 'backCheck()'
             ) }}
         </div>
 

@@ -152,6 +152,15 @@ if (window['check']) {
     }
 }
 
+////////// RNG //////////
+/**
+ * Randomly decide if the next check should be an EPS or a scanned check.
+*/
+function isNextEPS() {
+    var randomValue = Math.random() < 0.9; // Adjust '0.9' to adjust the probability of displaying a scanned check. 
+    return randomValue;
+}
+
 ////////// Navigation Links //////////
 
 /**
@@ -195,6 +204,32 @@ function redirectToEPS() {
  */
 function nextCheck() {
     if (checkNumber && totalChecks) {
+       processNextCheck();
+    }
+}
+
+/**
+ * Redirect to EPS check view while increasing check value.
+ */
+function nextEPS() {
+    if (checkNumber && totalChecks) {
+        processNextCheck();
+    }
+}
+
+/**
+ * Use RNG to randomly select the next check type.
+ */
+function processNextCheck() {
+    var isEPS = isNextEPS();
+
+    if (isEPS) {
+        if (currentPart === '2' || currentPart === '3') {
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        } else {
+            window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+        }
+    } else {
         if (currentPart === '2' || currentPart === '3') {
             window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
@@ -204,77 +239,26 @@ function nextCheck() {
 }
 
 /**
- * Redirect to EPS check view while increasing check value.
+ * Redirect to check view while decreasing check value.
  */
-function nextEPS() {
+function backCheck() {
     if (checkNumber && totalChecks) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
-            window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
         }
     }
 }
-
-// V1
 /**
- * Redirect to corrections view.
+ * Redirect to EPS check view while decreasing check value.
  */
-function showV1Corrections() {
-    window.location.href = '/apps/50k/check/v1/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-}
-
-/**
- * Redirect to check view.
- */
-function redirectToV1Check() {
-    if (currentPart === '2' || currentPart == '3') {
-        window.location.href = '/apps/50k/check/v1/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-    } else {
-        window.location.href = '/apps/50k/check/v1?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-    }
-}
-
-/**
- * Redirect to corrections view. (For EPS).
- */
-function showV1EPSCorrections() {
-    window.location.href = '/apps/50k/check/v1/eps/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-}
-
-/**
- * Redirect to check view. (For EPS).
- */
-function redirectToV1EPS() {
-    if (currentPart === '2' || currentPart === '3') {
-        window.location.href = '/apps/50k/check/v1/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-    } else {
-        window.location.href = '/apps/50k/check/v1/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-    }
-}
-
-/**
- * Redirect to check view while increasing check value.
- */
-function nextV1Check() {
+function backEPS() {
     if (checkNumber && totalChecks) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/v1/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
         } else {
-            window.location.href = '/apps/50k/check/v1?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
-        }
-    }
-}
-
-/**
- * Redirect to EPS check view while increasing check value.
- */
-function nextV1EPS() {
-    if (checkNumber && totalChecks) {
-        if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/v1/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
-        } else {
-            window.location.href = '/apps/50k/check/v1/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
         }
     }
 }

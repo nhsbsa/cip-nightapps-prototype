@@ -1,16 +1,16 @@
 {% macro imageControls() %}
     <!-- Prescription Image Controls -->
-    <div style="text-align: center;" class="scan-controls">
+    <div class="scan-controls">
         <!-- Side Swap Button -->
-        <button class="nhsuk-button nhsuk-button--secondary swap-button" id="swap-sides" type="button" onclick="swapSides();">Show Back</button>
+        <button class="scan-controls-button swap-button" id="swap-sides" type="button" onclick="swapSides();">Show Back</button>
 
         <!-- Zoom buttons container -->
         <span class="zoom-buttons">
             <!-- Zoom In Button -->
-            <button class="nhsuk-button nhsuk-button--secondary" type="button" onclick="zoomScanIn();">+</button>
+            <button class="scan-controls-button" type="button" onclick="zoomScanIn();">+</button>
         
             <!-- Zoom Out Button -->
-            <button class="nhsuk-button nhsuk-button--secondary" type="button" onclick="zoomScanOut();">-</button>
+            <button class="scan-controls-button" type="button" onclick="zoomScanOut();">-</button>
         </span>
     </div> 
 {% endmacro %}

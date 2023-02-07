@@ -1,7 +1,7 @@
-{% macro checkControls(errorLink, correctLink) %}
+{% macro checkControls(errorLink, correctLink, backLink) %}
     <!-- Navigation Buttons -->
     <div style="float: left;">
-        <button class="nhsuk-button nhsuk-button--secondary">
+        <button class="nhsuk-button nhsuk-button--secondary" onclick={{ backLink }}>
             Back
         </button>
     </div>

@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Check - 50k Checking - Prescription Service Applications
+  Check - Sample Checking - Prescription Service Applications
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -22,7 +22,7 @@
   <div class="nhsuk-width-container">
     <ul class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">Sample Checking</a></li>
       <li class="nhsuk-breadcrumb__item">Check</li>
     </ul>
   </div>
@@ -46,26 +46,26 @@
     'This is an example note.'
   ) }}
 
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
+  <div class="nhsuk-grid-row" style="max-width: 100%;">
+    <div class="nhsuk-grid-column-full" style="max-width: 100%;">
         <!-- Page Title -->
         <h1 id="page-title">
             Part <span id="current-part"></span> Check
         </h1>
 
         <!-- Prescription Image Container -->
-        <div class="nhsuk-grid-column-one-third scan-container" style="height: 580px; overflow-y: hidden;">
-            <!-- Prescription Image -->
-            <div class="scan-container">
-                <img class="nhsuk-image__img" id="prescription-image" src="/images/loading.jpg" alt="Prescription Image">
-            </div>
-            
-            {% from 'image-controls.njk' import imageControls %}
-            {{ imageControls() }}
+        <div class="nhsuk-grid-column-one-third" style="height: fit-content;">
+          <!-- Prescription Image -->
+          <div class="scan-container">
+              <img class="nhsuk-image__img" id="prescription-image" src="/images/loading.jpg" alt="Prescription Image">
+          </div>
+
+          {% from 'image-controls.njk' import imageControls %}
+          {{ imageControls() }}
         </div>
 
         <!-- Right Side -->
-        <div class="nhsuk-grid-column-two-thirds" style="height: 580px;">
+        <div class="nhsuk-grid-column-two-thirds" style="height: fit-content; overflow-x: auto;">
             {% from 'information-table.njk' import informationTable %}
             {% from 'information-fields.njk' import informationFieldsScanned %}
             {% from 'check-controls.njk' import checkControls %}
@@ -84,12 +84,12 @@
             <div class="nhsuk-u-padding-bottom-2"></div>
 
             {{ checkControls(
-                'showCorrections();', 'nextEPS()'
+                'showCorrections()', 'nextEPS()', 'backEPS()'
             ) }}
         </div>
 
         <!-- Progress Checked. -->
-        <div style="float: right; text-align: right;">
+        <div style="float: right; text-align: right; bottom: 0;">
             <label class="nhsuk-label" for="checkedprogress" id="checked-label">? of ? checked</label>
             <progress id="checkedprogress" max="50" value="10"></progress>
         </div>

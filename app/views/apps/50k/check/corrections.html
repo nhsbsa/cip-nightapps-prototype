@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Check - 50k Checking - Prescription Service Applications
+  Check - Sample Checking - Prescription Service Applications
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -22,7 +22,7 @@
   <div class="nhsuk-width-container">
     <ul class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">50k Checking</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">Sample Checking</a></li>
       <li class="nhsuk-breadcrumb__item">Check</li>
     </ul>
   </div>
@@ -39,6 +39,7 @@
 {% block content %}
   <script>
     window['check'] = true;
+    window['full-width'] = true;
   </script>
 
   {% from 'notes-card.njk' import notesCard %}
@@ -54,10 +55,10 @@
         </h1>
 
         <!-- Prescription Image Container -->
-        <div class="nhsuk-grid-column-one-third scan-container" style="height: 580px; overflow-y: hidden;">
+        <div class="nhsuk-grid-column-one-third scan-container" style="height: fit-content;">
             <!-- Prescription Image -->
             <div class="scan-container">
-                <img class="nhsuk-image__img" id="prescription-image" src="/images/loading.jpg" alt="Prescription Image">
+              <img class="nhsuk-image__img" id="prescription-image" src="/images/loading.jpg" alt="Prescription Image">
             </div>
             
             {% from 'image-controls.njk' import imageControls %}
@@ -65,8 +66,8 @@
         </div>
 
         <!-- Right Side -->
-        <div class="nhsuk-grid-column-two-thirds" style="height: 580px;">
-            <div style="height: 54%;">
+        <div class="nhsuk-grid-column-two-thirds" style="height: fit-content;">
+            <div>
                 {% from 'information-table.njk' import informationTable %}
                 {% from 'information-fields.njk' import informationFieldsScanned %}
                 {% from 'check-controls.njk' import checkControls %}
@@ -83,17 +84,15 @@
                 ) }}
             </div>
 
-            <div class="nhsuk-u-padding-bottom-2"></div>
-
-            <div style="height: 44%; overflow-y: scroll;">
-                <div class="nhsuk-card">
+            <div>
+                <div class="nhsuk-card" style="border-radius: 6px;">
                     <div class="nhsuk-card__content">
                         {% from 'corrections-form.njk' import correctionsForm %}
                         {% from 'corrections-controls.njk' import correctionsControls %}
 
                         {{ correctionsForm() }}
                         {{ correctionsControls(
-                            'redirectToCheck()', 'nextEPS()'
+                            'redirectToCheck()', 'nextEPS()', 'backEPS()'
                         ) }}
                     </div>
                 </div>
