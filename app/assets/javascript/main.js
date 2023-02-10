@@ -84,7 +84,7 @@ function zoomScanOut() {
 /*
  * Looks at the URL arguments and updates the counter.
  */
-if (currentPart) {
+if (currentPart && document.getElementById('current-part')) {
     document.getElementById('current-part').innerHTML = currentPart;
 }
 
