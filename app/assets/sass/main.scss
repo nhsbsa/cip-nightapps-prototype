@@ -152,6 +152,17 @@ th:last-child, td:last-child {
     -ms-transform: translate(-50%, -40%);
     transform: translate(-50%, -40%);
 }
+.confirm-card {
+    z-index: 1001;
+    width: 550px;
+    height: 75px;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
+}
 .notes-button {
     font-size: 12px;
     height: 66px;

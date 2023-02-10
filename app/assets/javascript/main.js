@@ -46,11 +46,27 @@ function showFormNotes() {
 }
 
 /**
+ * Show confirm.
+ */
+function showConfirm() {
+    document.getElementById('confirm-background').removeAttribute('hidden');
+    document.getElementById('confirm-background').removeAttribute('aria-hidden');
+}
+
+/**
  * Hide form notes.
  */
 function hideFormNotes() {
     document.getElementById('notes-background').setAttribute('hidden', 'true');
     document.getElementById('notes-background').setAttribute('aria-hidden', true);
+}
+
+/**
+ * Hide confirm.
+ */
+function hideConfirm() {
+    document.getElementById('confirm-background').setAttribute('hidden', 'true');
+    document.getElementById('confirm-background').setAttribute('aria-hidden', true);
 }
 
 /**

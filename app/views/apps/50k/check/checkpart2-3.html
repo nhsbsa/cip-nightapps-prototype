@@ -47,6 +47,9 @@
     'This is an example note.'
   ) }}
 
+  {% from 'confirm-card.njk' import confirmCard %}
+  {{ confirmCard() }}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <!-- Page Title -->
@@ -99,7 +102,7 @@
                           '0', '0'
                         ) }}
                         {{ correctionsControls(
-                            'processNextCheck()', 'redirectToConfirmation()'
+                            'processNextCheck()', 'showConfirm()'
                         ) }}
                     </div>
                 </div>
