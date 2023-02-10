@@ -84,14 +84,8 @@
             <div class="nhsuk-u-padding-bottom-2"></div>
 
             {{ checkControls(
-                'showCorrections()', 'nextEPS()', 'backEPS()'
+                'showCorrections()', 'processNextCheck()', 'backEPS()'
             ) }}
-        </div>
-
-        <!-- Progress Checked. -->
-        <div style="float: right; text-align: right; bottom: 0;">
-            <label class="nhsuk-label" for="checkedprogress" id="checked-label">? of ? checked</label>
-            <progress id="checkedprogress" max="50" value="10"></progress>
         </div>
 
         <!-- Scroll to check. -->
@@ -99,5 +93,13 @@
 
         <!-- End of content -->
     </div>
+    
+    <div class="nhsuk-grid-column-full" style="margin-top: 20px;">
+      <!-- Total Progress Checked. -->
+      <div style="float: right; text-align: right; bottom: 0;">
+        250 Checked Today
+      </div>
+    </div>
+
   </div>
 {% endblock %}

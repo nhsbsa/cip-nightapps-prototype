@@ -1,77 +1,19 @@
 // ES6 or Vanilla JavaScript
 
 // Set zoom limits.
-const minZoom = 1;
-const maxZoom = 3;
+const minZoom  = 1;
+const maxZoom  = 3;
 const zoomStep = 0.3;
 
 // Get Url Parameters.
-const urlParams = new URLSearchParams(window.location.search);
-const checkNumber = urlParams.get('check');
-const totalChecks = urlParams.get('total'); 
+const urlParams   = new URLSearchParams(window.location.search);
 const currentPart = urlParams.get('part'); 
-
-////////// Dragable Modal //////////
-/*
- * Enable dragging for an element.
- */
-function enableDrag(element) {
-    // Mouse X and Y variables.
-    let mouseX = 0;
-    let mouseY = 0;
-
-    // Event listener for on mouse down.
-    const mouseDown = function(e) {
-        // Get the current mouse x and y and assign them to their respective variables.
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        // Add event listeners for mouseMove and mouseUp for the document.
-        document.addEventListener('mousemove', mouseMove);
-        document.addEventListener('mouseup', mouseUp);
-    }
-    // Event listener for on mouse move.
-    const mouseMove = function(e) {
-        // Get the amount we should offset the position of the pop over.
-        const offsetX = e.clientX - mouseX;
-        const offsetY = e.clientY - mouseY;
-
-        // Set the style of the pop over in order to move it.
-        element.style.top = `${element.offsetTop + offsetY}px`;
-        element.style.left = `${element.offsetLeft + offsetX}px`;
-        
-        // Get the current mouse x and y and assign them to their respective variables.
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    }
-    // Event listener for on mouse up.
-    const mouseUp = function(e) {
-        // Remove the unneeded event listeners from the document.
-        document.removeEventListener('mousemove', mouseMove);
-        document.removeEventListener('mouseup', mouseUp);
-    }
-    // Add event listener for mouseDown on the pop over.
-    element.addEventListener('mousedown', mouseDown);
-}
-
-// Check if the window should enable dragging for a pop over.
-if (window['hasmodal']) {
-    enableDrag(document.getElementById("draggable-modal"));
-}
-
-////////// Version Selector //////////
-function directToVersionOne() {
-    redirectToV1Check();
-}
-function directToVersionTwo() {
-    redirectToCheck();
-}
 
 ////////// Check Controls //////////
 // Set variables for correction views.
-let front = true;
+let front        = true;
 const frontImage = '/images/E000001NE02_side1.jpg';
-const backImage = '/images/E000001NE02_side2.jpg';
+const backImage  = '/images/E000001NE02_side2.jpg';
 
 /**
  * Pretend to load image.
@@ -80,17 +22,16 @@ if (document.getElementById('prescription-image') != null) {
     document.getElementById('prescription-image').src = frontImage;
 }
 
-
 /**
  * Swaps what side of a prescription scan is shown.
  */
 function swapSides() {
     if (front) {
         document.getElementById('prescription-image').src = backImage;
-        document.getElementById('swap-sides').innerHTML = 'Show Front';
+        document.getElementById('swap-sides').innerHTML   = 'Show Front';
     } else {
         document.getElementById('prescription-image').src = frontImage;
-        document.getElementById('swap-sides').innerHTML = 'Show Back';
+        document.getElementById('swap-sides').innerHTML   = 'Show Back';
     }
 
     front = !front;
@@ -103,6 +44,7 @@ function showFormNotes() {
     document.getElementById('notes-background').removeAttribute('hidden');
     document.getElementById('notes-background').removeAttribute('aria-hidden');
 }
+
 /**
  * Hide form notes.
  */
@@ -139,18 +81,15 @@ function zoomScanOut() {
 
 
 ////////// Counter //////////
-
 /*
  * Looks at the URL arguments and updates the counter.
  */
 if (window['check']) {   
     if (checkNumber && totalChecks) {
-        document.getElementById('checked-label').innerHTML = checkNumber + ' of ' + totalChecks + ' checked';
-        document.getElementById('checkedprogress').value = checkNumber;
-        document.getElementById('checkedprogress').max = totalChecks;
         document.getElementById('current-part').innerHTML = currentPart;
     }
 }
+
 
 ////////// RNG //////////
 /**
@@ -161,13 +100,13 @@ function isNextEPS() {
     return randomValue;
 }
 
-////////// Navigation Links //////////
 
+////////// Navigation Links //////////
 /**
  * Redirect to corrections view.
  */
 function showCorrections() {
-    window.location.href = '/apps/50k/check/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    window.location.href = '/apps/50k/check/corrections?part=' + currentPart;
 }
 
 /**
@@ -175,9 +114,9 @@ function showCorrections() {
  */
 function redirectToCheck() {
     if (currentPart === '2' || currentPart == '3') {
-        window.location.href = '/apps/50k/check/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+        window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart;
     } else {
-        window.location.href = '/apps/50k/check?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+        window.location.href = '/apps/50k/check?part=' + currentPart;
     }
 }
 
@@ -185,7 +124,7 @@ function redirectToCheck() {
  * Redirect to corrections view. (For EPS).
  */
 function showEPSCorrections() {
-    window.location.href = '/apps/50k/check/eps/corrections?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+    window.location.href = '/apps/50k/check/eps/corrections?part=' + currentPart;
 }
 
 /**
@@ -193,27 +132,9 @@ function showEPSCorrections() {
  */
 function redirectToEPS() {
     if (currentPart === '2' || currentPart === '3') {
-        window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
+        window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart;
     } else {
-        window.location.href = '/apps/50k/check/eps?check=' + checkNumber + '&total=' + totalChecks + '&part=' + currentPart;
-    }
-}
-
-/**
- * Redirect to check view while increasing check value.
- */
-function nextCheck() {
-    if (checkNumber && totalChecks) {
-       processNextCheck();
-    }
-}
-
-/**
- * Redirect to EPS check view while increasing check value.
- */
-function nextEPS() {
-    if (checkNumber && totalChecks) {
-        processNextCheck();
+        window.location.href = '/apps/50k/check/eps?part=' + currentPart;
     }
 }
 
@@ -225,15 +146,15 @@ function processNextCheck() {
 
     if (isEPS) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart;
         } else {
-            window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check/eps?part=' + currentPart;
         }
     } else {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart;
         } else {
-            window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)+1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check?part=' + currentPart;
         }
     }
 }
@@ -244,33 +165,41 @@ function processNextCheck() {
 function backCheck() {
     if (checkNumber && totalChecks) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/checkpart2-3?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart;
         } else {
-            window.location.href = '/apps/50k/check?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check?part=' + currentPart;
         }
     }
 }
+
 /**
  * Redirect to EPS check view while decreasing check value.
  */
 function backEPS() {
     if (checkNumber && totalChecks) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/eps/checkpart2-3?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart;
         } else {
-            window.location.href = '/apps/50k/check/eps?check=' + (Number(checkNumber)-1) + '&total=' + totalChecks + '&part=' + currentPart;
+            window.location.href = '/apps/50k/check/eps?part=' + currentPart;
         }
     }
 }
 
-////////// Error Category //////////
+/**
+ * Redirect to confirmation screen.
+ */
+function redirectToConfirmation() {
+    window.location.href = '/apps/50k/check/confirmation?part=' + currentPart;
+}
 
+
+////////// Error Category //////////
 // Establish variables for the various elements needed.
 const errorCategory = document.getElementById('error-category');
-const hiddenFields = document.getElementById('hidden-fields');
+const hiddenFields  = document.getElementById('hidden-fields');
 
 // Ensure that the elements needed exist.
-if (errorCategory != null && hiddenFields != null) {
+if (errorCategory !== null && hiddenFields !== null) {
     // Add an event listener to listen to the change of the input.
     errorCategory.addEventListener('change', updateHiddenFields);
 
@@ -281,7 +210,7 @@ if (errorCategory != null && hiddenFields != null) {
 // Function to update the hidden fields
 function updateHiddenFields() {
     // Check if the correct item is selected.
-    if (errorCategory.value == "System: Alphanumeric Code Error Generates Incorrect Direct Hit") {
+    if (errorCategory.value === "System: Alphanumeric Code Error Generates Incorrect Direct Hit") {
         // Show the hidden fields to both the browser and to screen readers.
         hiddenFields.removeAttribute('hidden');
         hiddenFields.removeAttribute('aria-hidden');
@@ -294,19 +223,17 @@ function updateHiddenFields() {
 
 
 ////////// Web-flow Emulation //////////
-
 // See if a web-flow object has been established.
 if (window['web-flow']) {
-
     // Establish variables for substituting into global functions.
-    let parameters = window['web-flow'];
-    let root = parameters['root'] || '/';
-    let value = parameters['value'] || 'value';
-    let expectedParameters = parameters['expectedParameters'] || [];
+    let parameters           = window['web-flow'];
+    let root                 = parameters['root'] || '/';
+    let value                = parameters['value'] || 'value';
+    let expectedParameters   = parameters['expectedParameters'] || [];
     let readableReplacements = parameters['readableReplacements'] || [];
-    let nextView = parameters['nextView'] || '/';
-    let previousView = parameters['previousView'] || '/';
-    let parameterString = '';
+    let nextView             = parameters['nextView'] || '/';
+    let previousView         = parameters['previousView'] || '/';
+    let parameterString      = '';
 
     // Get URL query.
     const isError = urlParams.get('isError');
@@ -327,7 +254,7 @@ if (window['web-flow']) {
         let eleValue = webFlowSubElems[i].getAttribute('web-flow-sub-value');
         if (eleValue) {
             for (let j = 0; j < expectedParameters.length; j++) {
-                if (eleValue == expectedParameters[j]) {
+                if (eleValue === expectedParameters[j]) {
                     let currentValue = parameters[eleValue];
                     if (currentValue) {
                         if (readableReplacements[eleValue]) {
@@ -389,12 +316,11 @@ if (window['web-flow']) {
      */
     function downloadReport() {
         if (parameters['report']) {
-            if (parameters['report'] == 'totals-file') {
+            if (parameters['report'] === 'totals-file') {
                 location.replace('/data/example-totals.csv');
             } else {
                 window.open('/data/example-report.pdf', '_blank');
             }
         }
-    }
-    
+    } 
 }

@@ -51,7 +51,7 @@
     <div class="nhsuk-grid-column-full">
         <!-- Page Title -->
         <h1 id="page-title">
-            Part <span id="current-part"></span> Corrections
+            Part <span id="current-part"></span> Check
         </h1>
 
         <!-- Prescription Image Container -->
@@ -99,23 +99,24 @@
                           '0', '0'
                         ) }}
                         {{ correctionsControls(
-                            'nextEPS()', 'showCorrections()', 'backEPS()'
+                            'processNextCheck()', 'redirectToConfirmation()'
                         ) }}
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Progress Checked. -->
-        <div style="float: right; text-align: right;">
-            <label class="nhsuk-label" for="checkedprogress" id="checked-label">? of ? checked</label>
-            <progress id="checkedprogress" max="50" value="10"></progress>
-        </div>
-
         <!-- Scroll to check. -->
         <script>document.getElementById('page-title').scrollIntoView();</script>
 
         <!-- End of content -->
+    </div>
+
+    <div class="nhsuk-grid-column-full" style="margin-top: 20px;">
+      <!-- Total Progress Checked. -->
+      <div style="float: right; text-align: right; bottom: 0;">
+        250 Checked Today
+      </div>
     </div>
   </div>
 {% endblock %}

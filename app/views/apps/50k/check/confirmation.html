@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Confirmation - Sample Checking - Prescription Service Applications
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ul class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k">Sample Checking</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/50k/check">Check</a></li>
+      <li class="nhsuk-breadcrumb__item">Confirmation</li>
+    </ul>
+  </div>
+</nav> 
+{% endblock %}
+
+{% block content %}
+
+<h1>Here's what you've changed</h1>
+
+<dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Drug & Presentation
+        </dt>
+
+        <dd class="nhsuk-summary-list__value">
+            Salbutamol 100micrograms/dose inhaler CFC free
+        </dd>
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Type
+        </dt>
+
+        <dd class="nhsuk-summary-list__value">
+            Type 1
+        </dd>
+    </div>
+</dl>
+
+<button class="nhsuk-button" data-module="nhsuk-button" type="submit" onclick="processNextCheck()">
+    Confirm
+</button>
+
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="#">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    
+    Go back
+  </a>
+</div>
+
+{% endblock %}
