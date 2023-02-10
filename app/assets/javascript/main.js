@@ -84,10 +84,8 @@ function zoomScanOut() {
 /*
  * Looks at the URL arguments and updates the counter.
  */
-if (window['check']) {   
-    if (checkNumber && totalChecks) {
-        document.getElementById('current-part').innerHTML = currentPart;
-    }
+if (currentPart) {
+    document.getElementById('current-part').innerHTML = currentPart;
 }
 
 
