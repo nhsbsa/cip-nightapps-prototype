@@ -1,23 +1,25 @@
 {% macro confirmCard() %}
     <div class="notes-background" id="confirm-background" hidden="true" aria-hidden="true">
         <div class="confirm-card">
-        <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
-            <h2>Are you sure?</h2>
+            <div class="nhsuk-card">
+                <div class="nhsuk-card__content">
+                <h2>Are you sure?</h2>
 
-            <div class="nhsuk-inset-text">
-                <span class="nhsuk-u-visually-hidden">Information: </span>
-                
                 <p>This check will be moved to the next part.</p>
-            </div>
-            
-            <div>
-                <button class="nhsuk-button nhsuk-button--secondary" onclick="hideConfirm();" style="background-color: #d5281b; margin: 0;">Cancel</button>
 
-                <button class="nhsuk-button nhsuk-button--secondary" onclick="processNextCheck();" style="background-color: #007f3b; float: right; margin: 0;">Confirm</button>
+                <div class="nhsuk-inset-text" style="margin-bottom: 12px; margin-top: 12px;">
+                    <span class="nhsuk-u-visually-hidden">Information: </span>
+                    
+                    <p>You won't be able to make any more changes to this check.</p>
+                </div>
+                
+                <div>
+                    <button class="nhsuk-button nhsuk-button--secondary" onclick="hideConfirm();" style="background-color: #d5281b; margin: 0;">Cancel</button>
+
+                    <button class="nhsuk-button nhsuk-button--secondary" onclick="processNextCheck();" style="background-color: #007f3b; float: right; margin: 0;">Confirm</button>
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
     </div>
 {% endmacro %}
