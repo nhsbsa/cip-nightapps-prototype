@@ -58,7 +58,7 @@
 
         <!-- Right Side -->
         <div class="nhsuk-grid-column-full" style="padding: 0;">
-            {% from 'information-table.njk' import informationTableEPS %}
+            {% from 'information-table.njk' import informationTable %}
             {% from 'information-fields.njk' import informationFieldsEPS %}
             {% from 'check-controls.njk' import checkControls %}
 
@@ -85,7 +85,7 @@
                 </tr>
               </table>  
               
-              {{ informationTableEPS(
+              {{ informationTable(
                 'nhsuk-tag nhsuk-tag--yellow',
                 'EPHM', 'ABC11', 'Z', '1416', '3', '127', '2580',
                 '0', 'N', 'CN', '222222', '-', '-', 'FP10SS',
