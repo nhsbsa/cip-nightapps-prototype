@@ -186,8 +186,6 @@ function processNextCheck() {
  */
 function backCheck() {
     if (currentPart && checkedToday) {
-        checkedToday --;
-
         if (currentPart === '2' || currentPart === '3') {
             window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
         } else {
@@ -201,8 +199,6 @@ function backCheck() {
  */
 function backEPS() {
     if (currentPart && checkedToday) {
-        checkedToday--;
-
         if (currentPart === '2' || currentPart === '3') {
             window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
         } else {
