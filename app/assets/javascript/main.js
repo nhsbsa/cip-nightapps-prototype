@@ -6,8 +6,9 @@ const maxZoom  = 3;
 const zoomStep = 0.3;
 
 // Get Url Parameters.
-const urlParams   = new URLSearchParams(window.location.search);
-const currentPart = urlParams.get('part'); 
+const urlParams    = new URLSearchParams(window.location.search);
+const currentPart  = urlParams.get('part'); 
+let checkedToday   = urlParams.get('checkedToday');
 
 ////////// Check Controls //////////
 // Set variables for correction views.
@@ -103,6 +104,9 @@ function zoomScanOut() {
 if (currentPart && document.getElementById('current-part')) {
     document.getElementById('current-part').innerHTML = currentPart;
 }
+if (checkedToday && document.getElementById('checked-today')) {
+    document.getElementById('checked-today').innerHTML = checkedToday + " Checked Today";
+}
 
 
 ////////// RNG //////////
@@ -120,7 +124,7 @@ function isNextEPS() {
  * Redirect to corrections view.
  */
 function showCorrections() {
-    window.location.href = '/apps/50k/check/corrections?part=' + currentPart;
+    window.location.href = '/apps/50k/check/corrections?part=' + currentPart + "&checkedToday=" + checkedToday;
 }
 
 /**
@@ -128,9 +132,9 @@ function showCorrections() {
  */
 function redirectToCheck() {
     if (currentPart === '2' || currentPart == '3') {
-        window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart;
+        window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart+ "&checkedToday=" + checkedToday;
     } else {
-        window.location.href = '/apps/50k/check?part=' + currentPart;
+        window.location.href = '/apps/50k/check?part=' + currentPart + "&checkedToday=" + checkedToday;
     }
 }
 
@@ -138,7 +142,7 @@ function redirectToCheck() {
  * Redirect to corrections view. (For EPS).
  */
 function showEPSCorrections() {
-    window.location.href = '/apps/50k/check/eps/corrections?part=' + currentPart;
+    window.location.href = '/apps/50k/check/eps/corrections?part=' + currentPart + "&checkedToday=" + checkedToday;
 }
 
 /**
@@ -146,9 +150,9 @@ function showEPSCorrections() {
  */
 function redirectToEPS() {
     if (currentPart === '2' || currentPart === '3') {
-        window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart;
+        window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
     } else {
-        window.location.href = '/apps/50k/check/eps?part=' + currentPart;
+        window.location.href = '/apps/50k/check/eps?part=' + currentPart + "&checkedToday=" + checkedToday;
     }
 }
 
@@ -158,17 +162,21 @@ function redirectToEPS() {
 function processNextCheck() {
     var isEPS = isNextEPS();
 
+    if (checkedToday) {
+        checkedToday++;
+    }
+
     if (isEPS) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart;
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check/eps?part=' + currentPart;
+            window.location.href = '/apps/50k/check/eps?part=' + currentPart + "&checkedToday=" + checkedToday;
         }
     } else {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart;
+            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check?part=' + currentPart;
+            window.location.href = '/apps/50k/check?part=' + currentPart + "&checkedToday=" + checkedToday;
         }
     }
 }
@@ -177,11 +185,13 @@ function processNextCheck() {
  * Redirect to check view while decreasing check value.
  */
 function backCheck() {
-    if (checkNumber && totalChecks) {
+    if (currentPart && checkedToday) {
+        checkedToday --;
+
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart;
+            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check?part=' + currentPart;
+            window.location.href = '/apps/50k/check?part=' + currentPart + "&checkedToday=" + checkedToday;
         }
     }
 }
@@ -190,11 +200,13 @@ function backCheck() {
  * Redirect to EPS check view while decreasing check value.
  */
 function backEPS() {
-    if (checkNumber && totalChecks) {
+    if (currentPart && checkedToday) {
+        checkedToday--;
+
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart;
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check/eps?part=' + currentPart;
+            window.location.href = '/apps/50k/check/eps?part=' + currentPart + "&checkedToday=" + checkedToday;
         }
     }
 }
@@ -203,7 +215,7 @@ function backEPS() {
  * Redirect to confirmation screen.
  */
 function redirectToConfirmation() {
-    window.location.href = '/apps/50k/check/confirmation?part=' + currentPart;
+    window.location.href = '/apps/50k/check/confirmation?part=' + currentPart + "&checkedToday=" + checkedToday;
 }
 
 
