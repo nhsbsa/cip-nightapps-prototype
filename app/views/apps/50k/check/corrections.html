@@ -47,6 +47,9 @@
     'This is an example note.'
   ) }}
 
+  {% from 'confirm-card.njk' import confirmCard %}
+  {{ confirmCard() }}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
         <!-- Page Title -->
@@ -55,7 +58,7 @@
         </h1>
 
         <!-- Prescription Image Container -->
-        <div class="nhsuk-grid-column-one-third scan-container" style="height: fit-content;">
+        <div class="nhsuk-grid-column-one-third scan-container" style="height: fit-content; padding-left: 0;">
             <!-- Prescription Image -->
             <div class="scan-container">
               <img class="nhsuk-image__img" id="prescription-image" src="/images/loading.jpg" alt="Prescription Image">
@@ -66,7 +69,7 @@
         </div>
 
         <!-- Right Side -->
-        <div class="nhsuk-grid-column-two-thirds" style="height: fit-content;">
+        <div class="nhsuk-grid-column-two-thirds" style="height: fit-content; padding: 0;">
             <div>
                 {% from 'information-table.njk' import informationTable %}
                 {% from 'information-fields.njk' import informationFieldsScanned %}
@@ -92,23 +95,24 @@
 
                         {{ correctionsForm() }}
                         {{ correctionsControls(
-                            'redirectToCheck()', 'nextEPS()', 'backEPS()'
+                            'redirectToCheck()', 'showConfirm()', 'backEPS()'
                         ) }}
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Progress Checked. -->
-        <div style="float: right; text-align: right;">
-            <label class="nhsuk-label" for="checkedprogress" id="checked-label">? of ? checked</label>
-            <progress id="checkedprogress" max="50" value="10"></progress>
-        </div>
-
         <!-- Scroll to check. -->
         <script>document.getElementById('page-title').scrollIntoView();</script>
 
         <!-- End of content -->
+    </div>
+
+    <div class="nhsuk-grid-column-full" style="margin-top: 20px;">
+      <!-- Total Progress Checked. -->
+      <div style="float: right; text-align: right; bottom: 0;" id="checked-today">
+        250 Checked Today
+      </div>
     </div>
   </div>
 {% endblock %}

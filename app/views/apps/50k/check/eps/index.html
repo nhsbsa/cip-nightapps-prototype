@@ -54,15 +54,10 @@
         </h1>
 
         <!-- Right Side -->
-        <div class="nhsuk-grid-column-full" style="height: 580px;">
+        <div class="nhsuk-grid-column-full" style="height: 580px; padding: 0;">
             {% from 'information-table.njk' import informationTable %}
             {% from 'information-fields.njk' import informationFieldsEPS %}
             {% from 'check-controls.njk' import checkControls %}
-
-            {{ informationFieldsEPS(
-              'Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd)-30', 'Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd) 30 capsule 30.0-30',
-              'Braltus 10microgram inhalation powder capsules with Zonda inhaler [Teva UK Ltd] (30)' 
-            ) }}
 
             {{ informationTable(
                 'nhsuk-tag nhsuk-tag--yellow',
@@ -71,23 +66,29 @@
                 '-', 'E', 'C', '1', '-'
             ) }}
 
+            {{ informationFieldsEPS(
+              'Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd)-30', 'Braltus 10microgram inhalation powder capsules with Zonda inhaler (Teva UK Ltd) 30 capsule 30.0-30',
+              'Braltus 10microgram inhalation powder capsules with Zonda inhaler [Teva UK Ltd] (30)' 
+            ) }}
+
             <div class="nhsuk-u-padding-bottom-2"></div>
 
             {{ checkControls(
-                'showEPSCorrections();', 'nextCheck()', 'backCheck()'
+                'showEPSCorrections();', 'processNextCheck()', 'backCheck()'
             ) }}
-        </div>
-
-        <!-- Progress Checked. -->
-        <div style="float: right; text-align: right;">
-            <label class="nhsuk-label" for="checkedprogress" id="checked-label">? of ? checked</label>
-            <progress id="checkedprogress" max="50" value="10"></progress>
         </div>
 
         <!-- Scroll to check. -->
         <script>document.getElementById('page-title').scrollIntoView();</script>
 
         <!-- End of content -->
+    </div>
+
+    <div class="nhsuk-grid-column-full" style="margin-top: 20px;">
+      <!-- Total Progress Checked. -->
+      <div style="float: right; text-align: right; bottom: 0;" id="checked-today">
+        250 Checked Today
+      </div>
     </div>
   </div>
 {% endblock %}
