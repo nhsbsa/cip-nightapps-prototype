@@ -94,183 +94,265 @@
         </li>
       </ul>
 
-      <h3>
+      <h3 id="individual-stats">
         Individual Statistics
       </h3>
 
-      <h4>
-        Adam Azure
-      </h4>
-      
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Part 1
-              </h2>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Checked</div>
-                <div>4,000</div>
-              </p>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
-                <div>16:35:00</div>
-              </p>
+      <form id="filter-stats">
+        
+        <label for="users">Show stats for:</label>
+
+        <select name="users" id="users">
+          <option value="all">All Users</option>
+          <option value="adam-azure">Adam Azure</option>
+          <option value="bryony-black">Bryony Black</option>
+          <option value="charlie-cerulean">Charlie Cerulean</option>
+          <option value="david-denim">David Denim</option>
+        </select> 
+
+        <input type="submit"></input>
+
+      </form>
+
+      <div id="adam-azure-stats" class="hide-stats">
+
+        <h4>
+          Adam Azure
+        </h4>
+        
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+          <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 1
+                </h2>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Checked</div>
+                  <div>4,000</div>
+                </p>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                  <div>16:35:00</div>
+                </p>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Part 2
-              </h2>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Checked</div>
-                <div>30</div>
-              </p>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
-                <div>00:07:30</div>
-              </p>
+          <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 2
+                </h2>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Checked</div>
+                  <div>30</div>
+                </p>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                  <div>00:07:30</div>
+                </p>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Part 3
-              </h2>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Checked</div>
-                <div>3</div>
-              </p>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
-                <div>00:02:50</div>
-              </p>
+          <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 3
+                </h2>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Checked</div>
+                  <div>3</div>
+                </p>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                  <div>00:02:50</div>
+                </p>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
 
-      <p>
-        Total checks completed: 4,033
-        <br>
-        Total time spent (hh:mm:ss): 16:45:20
-      </p>
+        <p>
+          Total checks completed: 4,033
+          <br>
+          Total time spent (hh:mm:ss): 16:45:20
+        </p>
 
-      <h4>
-        Bryony Black
-      </h4>
-      
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Part 1
-              </h2>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Checked</div>
-                <div>4,500</div>
-              </p>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
-                <div>15:25:45</div>
-              </p>
+      </div>
+
+      <div id="bryony-black-stats" class="hide-stats">
+
+        <h4>
+          Bryony Black
+        </h4>
+        
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+          <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 1
+                </h2>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Checked</div>
+                  <div>4,500</div>
+                </p>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                  <div>15:25:45</div>
+                </p>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
 
-      <p>
-        Total checks completed: 4,500
-        <br>
-        Total time spent (hh:mm:ss): 15:25:45
-      </p>
+        <p>
+          Total checks completed: 4,500
+          <br>
+          Total time spent (hh:mm:ss): 15:25:45
+        </p>
 
-      <h4>
-        Charlie Cerulean
-      </h4>
-      
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Part 2
-              </h2>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Checked</div>
-                <div>25</div>
-              </p>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
-                <div>00:05:43</div>
-              </p>
+      </div>
+
+      <div id="charlie-cerulean-stats" class="hide-stats">
+
+        <h4>
+          Charlie Cerulean
+        </h4>
+        
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+          <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 2
+                </h2>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Checked</div>
+                  <div>25</div>
+                </p>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                  <div>00:05:43</div>
+                </p>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Part 3
-              </h2>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Checked</div>
-                <div>7</div>
-              </p>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
-                <div>00:11:15</div>
-              </p>
+          <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 3
+                </h2>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Checked</div>
+                  <div>7</div>
+                </p>
+                <p>
+                  <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                  <div>00:11:15</div>
+                </p>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
 
-      <p>
-        Total checks completed: 32
-        <br>
-        Total time spent (hh:mm:ss): 00:16:58
-      </p>
+        <p>
+          Total checks completed: 32
+          <br>
+          Total time spent (hh:mm:ss): 00:16:58
+        </p>
 
-      <h4>
-        David Denim
-      </h4>
-      
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Part 1
-              </h2>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Checked</div>
-                <div>0</div>
-              </p>
-              <p>
-                <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
-                <div>00:00:00</div>
-              </p>
-            </div>
-          </div>
-        </li>
-      </ul>
+      </div>
 
-      <p>
-        Total checks completed: 0
-        <br>
-        Total time spent (hh:mm:ss): 00:00:00
-      </p>
+      <div id="david-denim-stats" class="hide-stats">
+
+        <h4>
+          David Denim
+        </h4>
+        
+          <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+              <div class="nhsuk-card nhsuk-card">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    Part 1
+                  </h2>
+                  <p>
+                    <div class="nhsuk-u-font-weight-bold">Checked</div>
+                    <div>1</div>
+                  </p>
+                  <p>
+                    <div class="nhsuk-u-font-weight-bold">Time spent (hh:mm:ss)</div>
+                    <div>00:00:10</div>
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+        <p>
+          Total checks completed: 0
+          <br>
+          Total time spent (hh:mm:ss): 00:00:00
+        </p>
+
+      </div>
+
+      <script>
+
+        // TODO Apply NHS Styling.
+
+        // TODO Switch to tables which show user stats.
+
+        // Apply filter functionality.
+        var filterForm = document.getElementById('filter-stats');
+        var userSelect = document.getElementById('users');
+        if (filterForm && userSelect) {
+
+          // Set filter value.
+          var urlParams = new URLSearchParams(window.location.search);
+          var userParam = urlParams.get('users');
+          if (userParam) {
+            userSelect.value = userParam;
+          } else {
+            userSelect.value = 'all';
+          }
+
+          // Add redirect to filter application.
+          filterForm.addEventListener('submit', function(event) {
+            var user = userSelect.value;
+            if (userParam){
+              if (userParam == user) {
+                return false;
+              }
+            }
+            window.location.replace(location.protocol + '//' + location.host + location.pathname + '#individual-stats'); 
+          });
+
+          // Show the relevant content.
+          if (userParam && userParam != "all") {
+            var statsToShow = document.getElementById(userParam + "-stats");
+            if (statsToShow) {
+              statsToShow.classList.remove("hide-stats");
+            }
+          } else {
+            for (i = 0; i < userSelect.length; i++) {
+              var statsToShow = document.getElementById(userSelect.options[i].value + "-stats");
+              if (statsToShow) {
+                statsToShow.classList.remove("hide-stats");
+              }
+            }
+          }
+
+        }
+
+      </script>
 
       <!-- End of content -->
 
