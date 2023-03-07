@@ -98,19 +98,39 @@
         Individual Statistics
       </h3>
 
-      <form id="filter-stats">
+      <form id="filter-stats" class="nhsuk-inset-text">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h4>
+            Which user, or users, do you wish to see information for?
+          </h4>
+        </legend>
+
+        <div class="nhsuk-hint" id="contact-hint">
+          Select the user you wish to see information for, or select 'All Users' to see totals across all the users.
+        </div>
+
+        <div class="nhsuk-form-group">
         
-        <label for="users">Show stats for:</label>
+          <label class="nhsuk-label" for="users">Select user:</label>
 
-        <select name="users" id="users">
-          <option value="all">All Users</option>
-          <option value="adam-azure">Adam Azure</option>
-          <option value="bryony-black">Bryony Black</option>
-          <option value="charlie-cerulean">Charlie Cerulean</option>
-          <option value="david-denim">David Denim</option>
-        </select> 
+          <select class="nhsuk-select" name="users" id="users">
+            <option value="all">All Users</option>
+            <option value="adam-azure">Adam Azure</option>
+            <option value="bryony-black">Bryony Black</option>
+            <option value="charlie-cerulean">Charlie Cerulean</option>
+            <option value="david-denim">David Denim</option>
+          </select> 
 
-        <input type="submit"></input>
+        </div>
+
+        <div class="nhsuk-form-group">
+
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Update Dashboard
+          </button>
+
+        </div>
 
       </form>
 
@@ -305,8 +325,6 @@
       </div>
 
       <script>
-
-        // TODO Apply NHS Styling.
 
         // TODO Switch to tables which show user stats.
 
