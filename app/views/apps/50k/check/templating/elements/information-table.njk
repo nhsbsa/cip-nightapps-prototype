@@ -21,13 +21,13 @@
             <th role="columnheader" class="table-title" scope="col">
                 Item Number
             </th>
-            <!-- Total Fees Title -->
+            <!-- Charge Status Title -->
             <th role="columnheader" class="table-title" scope="col">
-                Total Fees
+                Charge Status
             </th>
-            <!-- Quantity Title -->
+            <!-- Exemption Title -->
             <th role="columnheader" class="table-title" scope="col">
-                Quantity
+                Exemption
             </th>
         </tr>
 
@@ -52,13 +52,13 @@
             <td role="cell" class="nhsuk-table__row table-body">
                 <strong class="nhsuk-tag nhsuk-tag--blue">{{ itemNumber }}</strong>
             </td>
-            <!-- Total Fees Value -->
+            <!-- Charge Status Value -->
             <td role="cell" class="nhsuk-table__row table-body">
-                {{ totalFees }}
+                {{ chargeStatus }}
             </td>
-            <!-- Quantity Value -->
+            <!-- Exemption Value -->
             <td role="cell" class="nhsuk-table__row table-body">
-                {{ quantity }}
+                {{ exemptionCategory }}
             </td>
         </tr>
 
@@ -75,6 +75,14 @@
             <th role="columnheader" class="table-title" scope="col">
                 Division
             </th>
+            <!-- Paper Type Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Paper
+            </th>
+            <!-- Prescribing Type Title -->
+            <th role="columnheader" class="table-title" scope="col">
+                Prescribing Type
+            </th>
             <!-- Prescriber Code Title -->
             <th role="columnheader" class="table-title" scope="col">
                 Presc Code
@@ -82,14 +90,6 @@
             <!-- Parent Code Title -->
             <th role="columnheader" class="table-title" scope="col">
                 Parent Code
-            </th>
-            <!-- Paper Type Title -->
-            <th role="columnheader" class="table-title" scope="col">
-                Paper
-            </th>
-            <!-- Pay NIC Title -->
-            <th role="columnheader" class="table-title" scope="col">
-                Pay NIC
             </th>
         </tr>
 
@@ -106,6 +106,14 @@
             <td role="cell" class="nhsuk-table__row table-body">
                 {{ division }}
             </td>
+            <!-- Paper Type Title -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ paperType }}
+            </td>
+            <!-- Prescribing Type Value -->
+            <td role="cell" class="nhsuk-table__row table-body">
+                {{ prescriptionType }}
+            </td>
             <!-- Prescriber Code Value -->
             <td role="cell" class="nhsuk-table__row table-body">
                 {{ prescriberCode }}
@@ -114,28 +122,20 @@
             <td role="cell" class="nhsuk-table__row table-body">
                 {{ parentCode }}
             </td>
-            <!-- Paper Type Title -->
-            <td role="cell" class="nhsuk-table__row table-body">
-                {{ paperType }}
-            </td>
-            <!-- Pay NIC Value -->
-            <td role="cell" class="nhsuk-table__row table-body">
-                {{ payNIC }}
-            </td>
         </tr>
 
         <tr role="row">
-            <!-- Prescription Type Title -->
+            <!-- Pay NIC Title -->
             <th role="columnheader" class="table-title" scope="col">
-                Prescribing Type
+                Pay NIC
             </th>
-            <!-- Charge Status Title -->
+            <!-- Total Fees Title -->
             <th role="columnheader" class="table-title" scope="col">
-                Charge Status
+                Total Fees
             </th>
-            <!-- Exemption Category Title -->
+            <!-- Quantity Title -->
             <th role="columnheader" class="table-title" scope="col">
-                Exemption
+                Quantity
             </th>
             <!-- Endorsements Title -->
             <th role="columnheader" class="table-title" scope="col" colspan="2">
@@ -149,17 +149,17 @@
         </tr>
 
         <tr role="row" class="nhsuk-table__row">
-            <!-- Prescription Type Value -->
+            <!-- Pay NIC Value -->
             <td role="cell" class="nhsuk-table__row table-body">
-                {{ prescriptionType }}
+                {{ payNIC }}
             </td>
-            <!-- Charge Status Value -->
+            <!-- Total Fees Value -->
             <td role="cell" class="nhsuk-table__row table-body">
-                {{ chargeStatus }}
+                {{ totalFees }}
             </td>
-            <!-- Exemption Category Value -->
+            <!-- Quantity Value -->
             <td role="cell" class="nhsuk-table__row table-body">
-                {{ exemptionCategory }}
+                {{ quantity }}
             </td>
             <!-- Endorsement Value -->
             <td role="cell" class="nhsuk-table__row table-body" colspan="2">

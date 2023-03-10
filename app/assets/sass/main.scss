@@ -152,6 +152,17 @@ th:last-child, td:last-child {
     -ms-transform: translate(-50%, -40%);
     transform: translate(-50%, -40%);
 }
+.confirm-card {
+    z-index: 1001;
+    width: 550px;
+    height: 75px;
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
+}
 .notes-button {
     font-size: 12px;
     height: 66px;
@@ -162,14 +173,6 @@ th:last-child, td:last-child {
     background-color: #ccdff1;
     color: #004281;
     border: 1px solid #004281;
-}
-.notes-button:hover {
-    background-color: #004281;
-    color: #ccdff1;
-    border: 1px solid #ccdff1;
-}
-.notes-button:active {
-    background-color: rgb(14, 0, 63);
 }
 .notes-button__highlighted {
     background-color: #004281;
@@ -216,4 +219,7 @@ th:last-child, td:last-child {
 }
 .psa-phase-banner__text {
     padding-left: 5px;
+}
+.hide-stats {
+    display: none;
 }
