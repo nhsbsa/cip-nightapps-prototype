@@ -346,3 +346,49 @@ if (window['web-flow']) {
         }
     } 
 }
+
+////////// Dashboard //////////
+
+if (window['50k-dashboard']) {
+
+    // Apply filter functionality.
+    var filterForm = document.getElementById('filter-stats');
+    var userSelect = document.getElementById('users');
+    if (filterForm && userSelect) {
+
+      // Set filter value.
+      var urlParameters = new URLSearchParams(window.location.search);
+      var userParam = urlParameters.get('users');
+      if (userParam) {
+        userSelect.value = userParam;
+      } else {
+        userSelect.value = 'all';
+      }
+
+      // Add redirect to filter application.
+      filterForm.addEventListener('submit', function(event) {
+        var user = userSelect.value;
+        if (userParam){
+          if (userParam == user) {
+            return false;
+          }
+        }
+        window.location.replace(location.protocol + '//' + location.host + location.pathname + '#individual-stats');
+      });
+
+      // Show the relevant content.
+      if (userParam && userParam != "all") {
+        var statsToShow = document.getElementById(userParam + "-stats");
+        if (statsToShow) {
+          statsToShow.classList.remove("hide-stats");
+        }
+      } else {
+        var statsToShow = document.getElementById("all-stats");
+        if (statsToShow) {
+          statsToShow.classList.remove("hide-stats");
+        }
+      }
+
+    }
+
+}
