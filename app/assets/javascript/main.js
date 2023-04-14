@@ -338,10 +338,17 @@ if (window['web-flow']) {
      */
     function downloadReport() {
         if (parameters['report']) {
-            if (parameters['report'] === 'totals-file') {
-                location.replace('/data/example-totals.csv');
-            } else {
-                window.open('/data/example-report.pdf', '_blank');
+            var files = {
+                'totals': 'yyyy_10k.zip',
+                'direct-hits': 'yyyymmDirectHits.xlsx',
+                'errors': 'yyymmErrors.xlsx',
+                'information-errors': 'yyymmInfoErrors.xlsx',
+                'operator-errors': 'yyyymmTagOperatorErrors.xlsx',
+                'system-errors': 'yyyymmTagSystemErrors.xlsx',
+                'parts': 'yyyymmPart.zip'
+            }
+            if (files[parameters['report']]) {
+                location.replace('/data/' + files[parameters['report']]);
             }
         }
     } 
