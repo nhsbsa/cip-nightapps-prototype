@@ -348,46 +348,81 @@ if (window['web-flow']) {
 }
 
 ////////// Dashboard //////////
-
 if (window['50k-dashboard']) {
 
     // Apply filter functionality.
-    var filterForm = document.getElementById('filter-stats');
+    var userForm = document.getElementById('filter-users');
     var userSelect = document.getElementById('users');
-    if (filterForm && userSelect) {
+    var periodForm = document.getElementById('filter-periods');
+    var periodSelect = document.getElementById('period');
+    if (userForm && userSelect && periodForm && periodSelect) {
 
-      // Set filter value.
-      var urlParameters = new URLSearchParams(window.location.search);
-      var userParam = urlParameters.get('users');
-      if (userParam) {
-        userSelect.value = userParam;
-      } else {
-        userSelect.value = 'all';
-      }
+        // Get parameters.
+        var urlParameters = new URLSearchParams(window.location.search);
+        var periodParam = urlParameters.get('period');
+        var usersParam = urlParameters.get('users');
+        if (!usersParam) {
+            usersParam = "all";
+        }
+        if (!periodParam) {
+            periodParam = "202212";
+        }
 
-      // Add redirect to filter application.
-      filterForm.addEventListener('submit', function(event) {
-        var user = userSelect.value;
-        if (userParam){
-          if (userParam == user) {
-            return false;
-          }
+        // Add user options based on year.
+        var addUser = function (value, display) {
+            var opt = document.createElement('option');
+            opt.value = value;
+            opt.innerHTML = display;
+            userSelect.appendChild(opt);
         }
-        window.location.replace(location.protocol + '//' + location.host + location.pathname + '#individual-stats');
-      });
+        if (periodParam == "202212") {
+            addUser("adam-azure", "Adam Azure");
+            addUser("bryony-black", "Bryony Black");
+            addUser("charlie-cerulean", "Charlie Cerulean");
+            addUser("david-denim", "David Denim");
+        } else if (periodParam == "202211") {
+            addUser("adam-azure", "Adam Azure");
+            addUser("bryony-black", "Bryony Black");
+            if (usersParam == "charlie-cerulean" || usersParam == "david-denim") {
+                usersParam = "all";
+            }
+       }
 
-      // Show the relevant content.
-      if (userParam && userParam != "all") {
-        var statsToShow = document.getElementById(userParam + "-stats");
-        if (statsToShow) {
-          statsToShow.classList.remove("hide-stats");
+        // Set filter values.
+        periodSelect.value = periodParam;
+        userSelect.value = usersParam;
+
+        // Redirect function.
+        var redirect = function(event, individualStats) {
+            event.preventDefault();
+            var paramsToSend = "?period=" + periodParam + "&users=" + usersParam;
+            if (individualStats) {
+                paramsToSend += "#individual-stats"
+            }
+            window.location.replace(location.protocol + '//' + location.host + location.pathname + paramsToSend);
+       };
+
+        // Add redirect to period filter.
+        periodForm.addEventListener('submit', function(event) {
+            periodParam = periodSelect.value;
+            redirect(event, false);
+        });
+
+        // Add redirect to user filter application.
+        userForm.addEventListener('submit', function(event) {
+            usersParam = userSelect.value;
+            redirect(event, true);
+        });
+
+        // Show the relevant content.
+        var overallStatsToShow = document.getElementsByClassName(periodParam + "-overall");
+        for (var i = 0; i < overallStatsToShow.length; i++) {
+          overallStatsToShow[i].classList.remove("hide-stats");
         }
-      } else {
-        var statsToShow = document.getElementById("all-stats");
-        if (statsToShow) {
-          statsToShow.classList.remove("hide-stats");
+        var statsToShow = document.getElementsByClassName(usersParam + "-stats " + periodParam + "-period");
+        for (var i = 0; i < statsToShow.length; i++) {
+          statsToShow[i].classList.remove("hide-stats");
         }
-      }
 
     }
 
