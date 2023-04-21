@@ -49,56 +49,142 @@
         Information on overall and individual progress for the current period.
       </p>
 
-      <h2>
-        December 2022
-      </h2>
+      <form id="filter-periods" class="nhsuk-inset-text">
 
-      <h3>
-        Overall Statistics
-      </h3>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h4>
+            Which period do you wish to see information for?
+          </h4>
+        </legend>
 
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-full nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Part 1
-              </h2>
-              <div class="percentage-text">17%</div>
-              <progress id="part3" value="8500" max="50000"></progress>
-              <p class="nhsuk-card__description">8,500 of 50,000 checked</p>
+        <div class="nhsuk-hint" id="period-contact-hint">
+          Select the period you wish to see information for.
+        </div>
+
+        <div class="nhsuk-form-group">
+
+          <label class="nhsuk-label" for="period">Select period:</label>
+
+          <select class="nhsuk-select" name="period" id="period">
+            <option value="202212">December 2022</option>
+            <option value="202211">November 2022</option>
+          </select>
+
+        </div>
+
+        <div class="nhsuk-form-group">
+
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Update Dashboard
+          </button>
+
+        </div>
+
+      </form>
+
+      <div class="hide-stats 202211-overall">
+
+        <h2>
+          November 2022
+        </h2>
+
+        <h3>
+          Overall Statistics
+        </h3>
+
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+          <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 1
+                </h2>
+                <div class="percentage-text">100%</div>
+                <progress id="part1-202211" value="50000" max="50000"></progress>
+                <p class="nhsuk-card__description">50,000 of 50,000 checked</p>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Part 2
-              </h2>
-              <p class="nhsuk-card__description">55 of 100 checked</p>
+          <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 2
+                </h2>
+                <p class="nhsuk-card__description">100 of 100 checked</p>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                Part 3
-              </h2>
-              <p class="nhsuk-card__description">10 of 50 checked</p>
+          <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 3
+                </h2>
+                <p class="nhsuk-card__description">50 of 50 checked</p>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="hide-stats 202212-overall">
+
+        <h2>
+          December 2022
+        </h2>
+
+        <h3>
+          Overall Statistics
+        </h3>
+
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+          <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 1
+                </h2>
+                <div class="percentage-text">17%</div>
+                <progress id="part1-202212" value="8500" max="50000"></progress>
+                <p class="nhsuk-card__description">8,500 of 50,000 checked</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 2
+                </h2>
+                <p class="nhsuk-card__description">55 of 100 checked</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Part 3
+                </h2>
+                <p class="nhsuk-card__description">10 of 50 checked</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
 
       <h3 id="individual-stats">
         Individual Statistics
       </h3>
 
-      <form id="filter-stats" class="nhsuk-inset-text">
+      <form id="filter-users" class="nhsuk-inset-text">
 
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
           <h4>
@@ -116,10 +202,6 @@
 
           <select class="nhsuk-select" name="users" id="users">
             <option value="all">All Users</option>
-            <option value="adam-azure">Adam Azure</option>
-            <option value="bryony-black">Bryony Black</option>
-            <option value="charlie-cerulean">Charlie Cerulean</option>
-            <option value="david-denim">David Denim</option>
           </select> 
 
         </div>
@@ -134,10 +216,10 @@
 
       </form>
 
-      <div id="all-stats" class="hide-stats">
+      <div class="hide-stats all-stats 202211-period">
 
-        <table role="table" class="nhsuk-table-responsive">
-          <caption class="nhsuk-table__caption">Totals</caption>
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Totals (November 2022 by day)</caption>
           <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
               <th role="columnheader" class="" scope="col">
@@ -157,16 +239,16 @@
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell" rowspan="3">
-                <span class="nhsuk-table-responsive__heading">Date </span>10/12/2022
+                <span class="nhsuk-table-responsive__heading">Date </span>10/11/2022
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Part </span>1
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>4,001
+                <span class="nhsuk-table-responsive__heading">Checked </span>25,000
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>08:35:10
+                <span class="nhsuk-table-responsive__heading">Time Spent </span>02:50:00
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
@@ -174,35 +256,169 @@
                 <span class="nhsuk-table-responsive__heading">Part </span>2
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>10
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:02:00
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>3
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>1
+                <span class="nhsuk-table-responsive__heading">Checked </span>100
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Time Spent </span>00:01:00
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Part </span>3
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Checked </span>50
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:50
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell" rowspan="3">
-                <span class="nhsuk-table-responsive__heading">Date </span>09/12/2022
+                <span class="nhsuk-table-responsive__heading">Date </span>08/11/2022
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Part </span>1
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>3,000
+                <span class="nhsuk-table-responsive__heading">Checked </span>25,000
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>04:00:00
+                <span class="nhsuk-table-responsive__heading">Time Spent </span>02:50:00
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Totals (November 2022 by part)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>50,000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>05:40:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>100
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:01:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>50
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:50
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Totals (November 2022 by user)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              User
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">User </span>Adam Azure
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Checked </span>25,150
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Time Spent </span>02:51:50
+              </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">User </span>Bryony Black
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Checked </span>25,000
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Time Spent </span>02:50:00
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+      </div>
+
+      <div class="hide-stats adam-azure-stats 202211-period">
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Adam Azure (November 2022 by day)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Part
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Checked
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Time Spent (hh:mm:ss)
+              </th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell" rowspan="3">
+                <span class="nhsuk-table-responsive__heading">Date </span>10/11/2022
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Part </span>1
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Checked </span>25,000
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Time Spent </span>02:50:00
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
@@ -210,54 +426,18 @@
                 <span class="nhsuk-table-responsive__heading">Part </span>2
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>10
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:02:00
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>3
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>1
+                <span class="nhsuk-table-responsive__heading">Checked </span>100
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Time Spent </span>00:01:00
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell" rowspan="3">
-                <span class="nhsuk-table-responsive__heading">Date </span>08/12/2022
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>1
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>1,500
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>04:00:00
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>2
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>10
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:03:30
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Part </span>3
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>1
+                <span class="nhsuk-table-responsive__heading">Checked </span>50
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:50
@@ -266,41 +446,31 @@
           </tbody>
         </table>
 
-      </div>
-
-      <div id="adam-azure-stats" class="hide-stats">
-
-        <table role="table" class="nhsuk-table-responsive">
-          <caption class="nhsuk-table__caption">Adam Azure</caption>
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Adam Azure (November 2022 by part)</caption>
           <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-              <th role="columnheader" class="" scope="col">
-                Date
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Part
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Checked
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Time Spent (hh:mm:ss)
-              </th>
-            </tr>
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
           </thead>
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell" rowspan="3">
-                <span class="nhsuk-table-responsive__heading">Date </span>10/12/2022
-              </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Part </span>1
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>2,000
+                <span class="nhsuk-table-responsive__heading">Checked </span>25,000
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>08:35:00
+                <span class="nhsuk-table-responsive__heading">Time Spent </span>02:50:00
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
@@ -308,90 +478,18 @@
                 <span class="nhsuk-table-responsive__heading">Part </span>2
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>25
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:05:00
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>3
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>1
+                <span class="nhsuk-table-responsive__heading">Checked </span>100
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Time Spent </span>00:01:00
               </td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell" rowspan="3">
-                <span class="nhsuk-table-responsive__heading">Date </span>09/12/2022
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>1
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>1,000
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>04:00:00
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>2
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>20
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:04:45
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Part </span>3
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>8
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:12:15
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell" rowspan="3">
-                <span class="nhsuk-table-responsive__heading">Date </span>08/12/2022
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>1
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>1,000
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>04:00:00
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>2
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>10
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:03:30
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>3
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>1
+                <span class="nhsuk-table-responsive__heading">Checked </span>50
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:50
@@ -400,69 +498,25 @@
           </tbody>
         </table>
 
-      </div>
-
-      <div id="bryony-black-stats" class="hide-stats">
-
-        <table role="table" class="nhsuk-table-responsive">
-          <caption class="nhsuk-table__caption">Bryony Black</caption>
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Adam Azure (November 2022 overall)</caption>
           <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-              <th role="columnheader" class="" scope="col">
-                Date
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Part
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Checked
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Time Spent (hh:mm:ss)
-              </th>
-            </tr>
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
           </thead>
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Date </span>10/12/2022
+                <span class="nhsuk-table-responsive__heading">Checked </span>25,150
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>1
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>2,000
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>05:00:00
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Date </span>09/12/2022
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>1
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>2,000
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>05:00:45
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Date </span>08/12/2022
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>1
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>500
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>05:25:00
+                <span class="nhsuk-table-responsive__heading">Time Spent </span>02:51:50
               </td>
             </tr>
           </tbody>
@@ -470,10 +524,10 @@
 
       </div>
 
-      <div id="charlie-cerulean-stats" class="hide-stats">
+      <div class="hide-stats bryony-black-stats 202211-period">
 
-        <table role="table" class="nhsuk-table-responsive">
-          <caption class="nhsuk-table__caption">Charlie Cerulean</caption>
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Bryony Black (November 2022 by day)</caption>
           <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
               <th role="columnheader" class="" scope="col">
@@ -493,130 +547,885 @@
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Date </span>10/12/2022
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>2
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>15
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:03:00
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell" rowspan="2">
-                <span class="nhsuk-table-responsive__heading">Date </span>09/12/2022
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>2
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>10
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:02:45
-              </td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Part </span>3
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>7
-              </td>
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:11:15
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-
-      <div id="david-denim-stats" class="hide-stats">
-
-        <table role="table" class="nhsuk-table-responsive">
-          <caption class="nhsuk-table__caption">David Denim</caption>
-          <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-              <th role="columnheader" class="" scope="col">
-                Date
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Part
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Checked
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Time Spent (hh:mm:ss)
-              </th>
-            </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-              <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Date </span>10/12/2022
+                <span class="nhsuk-table-responsive__heading">Date </span>08/11/2022
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Part </span>1
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Checked </span>1
+                <span class="nhsuk-table-responsive__heading">Checked </span>25,000
               </td>
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:10
+                <span class="nhsuk-table-responsive__heading">Time Spent </span>02:50:00
               </td>
             </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Bryony Black (November 2022 by part)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>25,000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>02:50:00
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Bryony Black (November 2022 overall)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>25,000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>02:50:00
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="hide-stats all-stats 202212-period">
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Totals (December 2022 by day)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Date
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell" rowspan="3">
+              <span class="nhsuk-table-responsive__heading">Date </span>10/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>4,001
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>08:35:10
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>10
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:02:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:01:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell" rowspan="3">
+              <span class="nhsuk-table-responsive__heading">Date </span>09/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>3,000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>04:00:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>10
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:02:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:01:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell" rowspan="3">
+              <span class="nhsuk-table-responsive__heading">Date </span>08/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1,500
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>04:00:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>10
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:03:30
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:50
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Totals (December 2022 by part)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>8,501
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>16:35:10
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>30
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:07:30
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:02:50
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Totals (December 2022 by user)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              User
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">User </span>Adam Azure
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>4,065
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>17:02:20
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">User </span>Bryony Black
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>4,500
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>15:25:45
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">User </span>Charlie Cerulean
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>32
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:17:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">User </span>David Denim
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:10
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+
+      </div>
+
+      <div class="hide-stats adam-azure-stats 202212-period">
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Adam Azure (December 2022 by day)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Date
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell" rowspan="3">
+              <span class="nhsuk-table-responsive__heading">Date </span>10/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>2,000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>08:35:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>25
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:05:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:01:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell" rowspan="3">
+              <span class="nhsuk-table-responsive__heading">Date </span>09/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1,000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>04:00:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>20
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:04:45
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>8
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:12:15
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell" rowspan="3">
+              <span class="nhsuk-table-responsive__heading">Date </span>08/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1,000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>04:00:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>10
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:03:30
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:50
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Adam Azure (December 2022 by part)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>4,000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>16:35:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>55
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:13:15
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>10
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:14:05
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Adam Azure (December 2022 overall)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>4,065
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>17:02:20
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="hide-stats bryony-black-stats 202212-period">
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Bryony Black (December 2022 by day)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Date
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Date </span>10/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>2,000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>05:00:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Date </span>09/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>2,000
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>05:00:45
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Date </span>08/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>500
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>05:25:00
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Bryony Black (December 2022 by part)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>4,500
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>15:25:45
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Bryony Black (December 2022 overall)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>4,500
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>15:25:45
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="hide-stats charlie-cerulean-stats 202212-period">
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Charlie Cerulean (December 2022 by day)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Date
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Date </span>10/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>15
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:03:00
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell" rowspan="2">
+              <span class="nhsuk-table-responsive__heading">Date </span>09/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>10
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:02:45
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>7
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:11:15
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Charlie Cerulean (December 2022 by part)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>2
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>25
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:05:45
+            </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>3
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>7
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:11:15
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">Charlie Cerulean (December 2022 overall)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>32
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:17:00
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="hide-stats david-denim-stats 202212-period">
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">David Denim (December 2022 by day)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Date
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Date </span>10/12/2022
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:10
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">David Denim (December 2022 by part)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Part
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Part </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:10
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table role="table" class="nhsuk-table-responsive stats-table">
+          <caption class="nhsuk-table__caption">David Denim (December 2022 overall)</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Checked
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Time Spent (hh:mm:ss)
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Checked </span>1
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Time Spent </span>00:00:10
+            </td>
+          </tr>
           </tbody>
         </table>
 
       </div>
 
       <script>
-
-        // Apply filter functionality.
-        var filterForm = document.getElementById('filter-stats');
-        var userSelect = document.getElementById('users');
-        if (filterForm && userSelect) {
-
-          // Set filter value.
-          var urlParams = new URLSearchParams(window.location.search);
-          var userParam = urlParams.get('users');
-          if (userParam) {
-            userSelect.value = userParam;
-          } else {
-            userSelect.value = 'all';
-          }
-
-          // Add redirect to filter application.
-          filterForm.addEventListener('submit', function(event) {
-            var user = userSelect.value;
-            if (userParam){
-              if (userParam == user) {
-                return false;
-              }
-            }
-            window.location.replace(location.protocol + '//' + location.host + location.pathname + '#individual-stats'); 
-          });
-
-          // Show the relevant content.
-          if (userParam && userParam != "all") {
-            var statsToShow = document.getElementById(userParam + "-stats");
-            if (statsToShow) {
-              statsToShow.classList.remove("hide-stats");
-            }
-          } else {
-            var statsToShow = document.getElementById("all-stats");
-            if (statsToShow) {
-              statsToShow.classList.remove("hide-stats");
-            }
-          }
-
-        }
-
+        window['50k-dashboard'] = true;
       </script>
 
       <!-- End of content -->
