@@ -1,0 +1,84 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  All Staff - Prescription Service Applications
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ul class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/apps/cspt">Staff Checking</a></li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<h2>Perform bulk action</h2> 
+  <p>Edit or report on multiple staff members together.</p> </br>
+
+<p>Select what action you wish to perform on the selected users:</p>
+
+<div class = "nhsuk-form-group">
+  <div >
+    <div class="nhsuk-radios__item">
+    <input class="nhsuk-radios__input" id = "example-2" name="example" type="radio" value="no">
+    <label class="nhsuk-label nhsuk-radios__label" for="example-2"> Download details </label>
+  </div>
+  <div >
+    <div class="nhsuk-radios__item">
+    <input class="nhsuk-radios__input" id = "example-2" name="example" type="radio" value="no">
+    <label class="nhsuk-label nhsuk-radios__label" for="example-2">Edit details </label>
+  </div>
+  <div >
+    <div class="nhsuk-radios__item">
+    <input class="nhsuk-radios__input" id = "example-2" name="example" type="radio" value="no">
+    <label class="nhsuk-label nhsuk-radios__label" for="example-2">Edit Management </label>
+  </div>
+  <div >
+    <div class="nhsuk-radios__item">
+    <input class="nhsuk-radios__input" id = "example-2" name="example" type="radio" value="no">
+    <label class="nhsuk-label nhsuk-radios__label" for="example-2">Edit role </label>
+  </div>
+  <div >
+    <div class="nhsuk-radios__item">
+    <input class="nhsuk-radios__input" id = "example-2" name="example" type="radio" value="no">
+    <label class="nhsuk-label nhsuk-radios__label" for="example-2">Edit working patterns </label>
+  </div>
+  <div >
+    <div class="nhsuk-radios__item">
+    <input class="nhsuk-radios__input" id = "example-2" name="example" type="radio" value="no">
+    <label class="nhsuk-label nhsuk-radios__label" for="example-2">Edit Streams </label>
+  </div>
+  <div >
+    <div class="nhsuk-radios__item">
+    <input class="nhsuk-radios__input" id = "example-2" name="example" type="radio" value="no">
+    <label class="nhsuk-label nhsuk-radios__label" for="example-2">Disable </label>
+  </div>
+
+  <a class="nhsuk-button nhsuk-u-margin-bottom-7 nhsuk-u-margin-top-3" id="continue-button" type="submit" href="/apps/staffChecker/bulkActionConfirmation">
+    Continue
+    <span class="nhsuk-u-visually-hidden">Continue</span>
+</a>
+  
+<script>
+  localStorage.clear();
+</script>
+{% endblock %}
