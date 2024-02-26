@@ -37,6 +37,8 @@ Staff Checking - Prescription Service Applications
 {% block outerContent %}
 {% endblock %}
 
+<!-- TODO JS on page load to add in users based on filter. -->
+
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
@@ -51,6 +53,7 @@ Staff Checking - Prescription Service Applications
         <!-- Add your content here -->
         <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
+        <!-- TODO Reload page with user filter. -->
         <div class="nhsuk-inset-text nhsuk-u-margin-top-5">
             <h2>Find Staff Member</h2>
             <p class>Enter the details of the staff member you wish to see information for.</p>
@@ -83,10 +86,11 @@ Staff Checking - Prescription Service Applications
             </a>
         </div>
 
+        <!-- TODO Create view user details page (with disable button and edit links). -->
         <h2 class="nhsuk-u-margin-top-5" id="skip-to-table"> Staff Members </h2>
         <span class="nhsuk-details__summary-text">
 
-            <a href="/apps/staffChecker/allStaff"> + Add New Staff Member </a>
+            <a href="/apps/staffChecker/allStaff"> + Add New Staff Member </a> <!-- TODO Create Add/Edit pages.-->
    
             <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
                 <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
@@ -156,6 +160,7 @@ Staff Checking - Prescription Service Applications
             <a class="nhsuk-button nhsuk-u-margin-top-4" href="add-user/add-supplier-first-name">Select All</a>
             <a class="nhsuk-button nhsuk-u-margin-top-4" href="add-user/add-supplier-first-name">Select None</a>
 
+            <!-- TODO Pass on selected users to new URL. -->
             <div>
                 <a href="/apps/staffChecker/bulkActionForm"> > Perform Bulk Action on Selected Staff </a>
             </div>
