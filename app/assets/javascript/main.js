@@ -434,3 +434,114 @@ if (window['50k-dashboard']) {
     }
 
 }
+
+////////// All Staff Amender Home //////////
+if (window['all-staff-amender-home']) {
+
+    // Establish users.
+    let users = [
+        {
+            id: "paul-smith",
+            staffName: "Paul Smith",
+            managerName: "Ruth Jones",
+            email: "paul.smith@nhs.net"
+        },
+        {
+            id: "paul-jones",
+            staffName: "Paul Jones",
+            managerName: "Reg Brown",
+            email: "paul.jones@nhs.net"
+        },
+        {
+            id: "tony-robinson",
+            staffName: "Tony Robinson",
+            managerName: "Paula Davies",
+            email: "tony.robinson@nhs.net"
+        }
+    ];
+
+    // Filter down users based on search query.
+    const urlParams = new URLSearchParams(window.location.search);
+    let filterParam = urlParams.get('name');
+    const filterType = urlParams.get('filterType');
+    if (filterParam != null && filterParam != "") {
+        filterParam = decodeURIComponent(filterParam);
+        let newUsers = [];
+        for (i = 0; i < users.length; i++) {
+            let user = users[i];
+            let relevantName = user[filterType];
+            if (relevantName.toLowerCase().includes(filterParam.toLowerCase())) {
+                newUsers.push(user);
+            }
+        }
+        users = newUsers;
+        document.getElementById("name").value = filterParam;
+    }
+    let selectByStaff = true;
+    if (filterType != null) {
+        selectByStaff = filterType !== "managerName";
+    }
+    document.getElementById("managerName").checked = !selectByStaff;
+    document.getElementById("staffName").checked = selectByStaff;
+
+    // Populate table with users.
+    let staffTable = document.getElementById("staff-table");
+    for (let user of users) {
+        const row = document.createElement("tr");
+        row.className = "nhsuk-table__row";
+        let rowContents = `
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <input class="staff-member" type="checkbox" id="{{id}}" name="scales"/>
+                                <label for="{{id}}"> <span class="nhsuk-table-responsive__heading">User Name </span> {{staffName}}  </label>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">User Email </span>{{email}}
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Manager </span>{{manager}}
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading select-tag">Action </span>
+                                <p class="nhsuk-u-margin-bottom-0"><a class="nhsuk-link nhsuk-link--no-visited-state"
+                                                                      href="all-staff-amender/details?staffId={{id}}">View Details</a></p>
+                            </td>
+        `;
+        rowContents = rowContents.replaceAll("{{id}}", user.id);
+        rowContents = rowContents.replaceAll("{{staffName}}", user.staffName);
+        rowContents = rowContents.replaceAll("{{email}}", user.email);
+        rowContents = rowContents.replaceAll("{{manager}}", user.managerName);
+        row.innerHTML = rowContents;
+        staffTable.appendChild(row);
+    }
+
+    // Function for unchecking all staff boxes.
+    function staffSelectNone() {
+        let checkboxes = document.getElementsByClassName('staff-member');
+        for(let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+        }
+    }
+
+    // Function for checking all staff boxes.
+    function staffSelectAll() {
+        let checkboxes = document.getElementsByClassName('staff-member');
+        for(let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = true;
+        }
+    }
+
+    // Function for passing on selected staff to bulk action page.
+    function staffBulkAction() {
+
+        // TODO Get all selected staff.
+        let staff= "";
+
+        // Redirect to bulk action form.
+        window.location.href = '/apps/all-staff-amender/bulk-action/form?staff=' + staff;
+
+
+    }
+
+}
+
+
