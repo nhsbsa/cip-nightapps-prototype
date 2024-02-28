@@ -1,0 +1,91 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Staff Checking - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">Staff Checking</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                Disable Staff Member Account(s)
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Change the page title here -->
+        <h1>
+            Disable Staff Member Account(s)
+        </h1>
+
+        <p>
+            Are you sure you want to disable the following staff member account(s)?
+        </p>
+
+
+        <p>
+            <ul>
+                <li>
+                    Selected User
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            When a staff member leaves their account should be disabled.
+            Proceeding with this action <- Original name kept in audit log will remove them from the pool of
+            active staff and anonomise any references to them in all of the Prescription Services Applications reports.
+        </p>
+
+        <!--TODO Link back to summary page if bulk action. -->
+
+        <a class="nhsuk-button" type="submit"
+           href="/apps/all-staff-amender">
+            Confirm
+            <span class="nhsuk-u-visually-hidden">Confirm</span>
+        </a>
+
+        <a class="nhsuk-button nhsuk-button--secondary" type="submit"
+           href="/apps/all-staff-amender">
+            Cancel
+            <span class="nhsuk-u-visually-hidden">Cancel</span>
+        </a>
+
+
+        <!-- End of content -->
+    </div>
+</div>
+{% endblock %}
