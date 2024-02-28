@@ -525,21 +525,9 @@ if (window['all-staff-amender-home']) {
     // Function for checking all staff boxes.
     function staffSelectAll() {
         let checkboxes = document.getElementsByClassName('staff-member');
-        for(let i = 0; i < checkboxes.length; i++) {
+        for (let i = 0; i < checkboxes.length; i++) {
             checkboxes[i].checked = true;
         }
-    }
-
-    // Function for passing on selected staff to bulk action page.
-    function staffBulkAction() {
-
-        // TODO Get all selected staff.
-        let staff= "";
-
-        // Redirect to bulk action form.
-        window.location.href = '/apps/all-staff-amender/bulk-action/form?staff=' + staff;
-
-
     }
 
 }
