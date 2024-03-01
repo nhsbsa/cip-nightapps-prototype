@@ -105,7 +105,7 @@ if (currentPart && document.getElementById('current-part')) {
     document.getElementById('current-part').innerHTML = currentPart;
 }
 if (checkedToday && document.getElementById('checked-today')) {
-    document.getElementById('checked-today').innerHTML = checkedToday + " Checked Today";
+    document.getElementById('checked-today').innerHTML = checkedToday + ' Checked Today';
 }
 
 
@@ -124,7 +124,7 @@ function isNextEPS() {
  * Redirect to corrections view.
  */
 function showCorrections() {
-    window.location.href = '/apps/50k/check/corrections?part=' + currentPart + "&checkedToday=" + checkedToday;
+    window.location.href = '/apps/50k/check/corrections?part=' + currentPart + '&checkedToday=' + checkedToday;
 }
 
 /**
@@ -132,9 +132,9 @@ function showCorrections() {
  */
 function redirectToCheck() {
     if (currentPart === '2' || currentPart == '3') {
-        window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart+ "&checkedToday=" + checkedToday;
+        window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart+ '&checkedToday=' + checkedToday;
     } else {
-        window.location.href = '/apps/50k/check?part=' + currentPart + "&checkedToday=" + checkedToday;
+        window.location.href = '/apps/50k/check?part=' + currentPart + '&checkedToday=' + checkedToday;
     }
 }
 
@@ -142,7 +142,7 @@ function redirectToCheck() {
  * Redirect to corrections view. (For EPS).
  */
 function showEPSCorrections() {
-    window.location.href = '/apps/50k/check/eps/corrections?part=' + currentPart + "&checkedToday=" + checkedToday;
+    window.location.href = '/apps/50k/check/eps/corrections?part=' + currentPart + '&checkedToday=' + checkedToday;
 }
 
 /**
@@ -150,9 +150,9 @@ function showEPSCorrections() {
  */
 function redirectToEPS() {
     if (currentPart === '2' || currentPart === '3') {
-        window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
+        window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + '&checkedToday=' + checkedToday;
     } else {
-        window.location.href = '/apps/50k/check/eps?part=' + currentPart + "&checkedToday=" + checkedToday;
+        window.location.href = '/apps/50k/check/eps?part=' + currentPart + '&checkedToday=' + checkedToday;
     }
 }
 
@@ -168,15 +168,15 @@ function processNextCheck() {
 
     if (isEPS) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + '&checkedToday=' + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check/eps?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/eps?part=' + currentPart + '&checkedToday=' + checkedToday;
         }
     } else {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + '&checkedToday=' + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check?part=' + currentPart + '&checkedToday=' + checkedToday;
         }
     }
 }
@@ -187,9 +187,9 @@ function processNextCheck() {
 function backCheck() {
     if (currentPart && checkedToday) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + '&checkedToday=' + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check?part=' + currentPart + '&checkedToday=' + checkedToday;
         }
     }
 }
@@ -200,9 +200,9 @@ function backCheck() {
 function backEPS() {
     if (currentPart && checkedToday) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + '&checkedToday=' + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check/eps?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/eps?part=' + currentPart + '&checkedToday=' + checkedToday;
         }
     }
 }
@@ -211,7 +211,7 @@ function backEPS() {
  * Redirect to confirmation screen.
  */
 function redirectToConfirmation() {
-    window.location.href = '/apps/50k/check/confirmation?part=' + currentPart + "&checkedToday=" + checkedToday;
+    window.location.href = '/apps/50k/check/confirmation?part=' + currentPart + '&checkedToday=' + checkedToday;
 }
 
 
@@ -232,7 +232,7 @@ if (errorCategory !== null && hiddenFields !== null) {
 // Function to update the hidden fields
 function updateHiddenFields() {
     // Check if the correct item is selected.
-    if (errorCategory.value === "System: Alphanumeric Code Error Generates Incorrect Direct Hit") {
+    if (errorCategory.value === 'System: Alphanumeric Code Error Generates Incorrect Direct Hit') {
         // Show the hidden fields to both the browser and to screen readers.
         hiddenFields.removeAttribute('hidden');
         hiddenFields.removeAttribute('aria-hidden');
@@ -369,10 +369,10 @@ if (window['50k-dashboard']) {
         var periodParam = urlParameters.get('period');
         var usersParam = urlParameters.get('users');
         if (!usersParam) {
-            usersParam = "all";
+            usersParam = 'all';
         }
         if (!periodParam) {
-            periodParam = "202212";
+            periodParam = '202212';
         }
 
         // Add user options based on year.
@@ -382,16 +382,16 @@ if (window['50k-dashboard']) {
             opt.innerHTML = display;
             userSelect.appendChild(opt);
         }
-        if (periodParam == "202212") {
-            addUser("adam-azure", "Adam Azure");
-            addUser("bryony-black", "Bryony Black");
-            addUser("charlie-cerulean", "Charlie Cerulean");
-            addUser("david-denim", "David Denim");
-        } else if (periodParam == "202211") {
-            addUser("adam-azure", "Adam Azure");
-            addUser("bryony-black", "Bryony Black");
-            if (usersParam == "charlie-cerulean" || usersParam == "david-denim") {
-                usersParam = "all";
+        if (periodParam == '202212') {
+            addUser('adam-azure', 'Adam Azure');
+            addUser('bryony-black', 'Bryony Black');
+            addUser('charlie-cerulean', 'Charlie Cerulean');
+            addUser('david-denim', 'David Denim');
+        } else if (periodParam == '202211') {
+            addUser('adam-azure', 'Adam Azure');
+            addUser('bryony-black', 'Bryony Black');
+            if (usersParam == 'charlie-cerulean' || usersParam == 'david-denim') {
+                usersParam = 'all';
             }
        }
 
@@ -402,9 +402,9 @@ if (window['50k-dashboard']) {
         // Redirect function.
         var redirect = function(event, individualStats) {
             event.preventDefault();
-            var paramsToSend = "?period=" + periodParam + "&users=" + usersParam;
+            var paramsToSend = '?period=' + periodParam + '&users=' + usersParam;
             if (individualStats) {
-                paramsToSend += "#individual-stats"
+                paramsToSend += '#individual-stats'
             }
             window.location.replace(location.protocol + '//' + location.host + location.pathname + paramsToSend);
        };
@@ -422,13 +422,13 @@ if (window['50k-dashboard']) {
         });
 
         // Show the relevant content.
-        var overallStatsToShow = document.getElementsByClassName(periodParam + "-overall");
+        var overallStatsToShow = document.getElementsByClassName(periodParam + '-overall');
         for (var i = 0; i < overallStatsToShow.length; i++) {
-          overallStatsToShow[i].classList.remove("hide-stats");
+          overallStatsToShow[i].classList.remove('hide-stats');
         }
-        var statsToShow = document.getElementsByClassName(usersParam + "-stats " + periodParam + "-period");
+        var statsToShow = document.getElementsByClassName(usersParam + '-stats ' + periodParam + '-period');
         for (var i = 0; i < statsToShow.length; i++) {
-          statsToShow[i].classList.remove("hide-stats");
+          statsToShow[i].classList.remove('hide-stats');
         }
 
     }
@@ -441,22 +441,22 @@ if (window['all-staff-amender-home']) {
     // Establish users.
     let users = [
         {
-            id: "paul-smith",
-            staffName: "Paul Smith",
-            managerName: "Ruth Jones",
-            email: "paul.smith@nhs.net"
+            id: 'paul-smith',
+            staffName: 'Paul Smith',
+            managerName: 'Ruth Jones',
+            email: 'paul.smith@nhs.net'
         },
         {
-            id: "paul-jones",
-            staffName: "Paul Jones",
-            managerName: "Reg Brown",
-            email: "paul.jones@nhs.net"
+            id: 'paul-jones',
+            staffName: 'Paul Jones',
+            managerName: 'Reg Brown',
+            email: 'paul.jones@nhs.net'
         },
         {
-            id: "tony-robinson",
-            staffName: "Tony Robinson",
-            managerName: "Paula Davies",
-            email: "tony.robinson@nhs.net"
+            id: 'tony-robinson',
+            staffName: 'Tony Robinson',
+            managerName: 'Paula Davies',
+            email: 'tony.robinson@nhs.net'
         }
     ];
 
@@ -464,7 +464,7 @@ if (window['all-staff-amender-home']) {
     const urlParams = new URLSearchParams(window.location.search);
     let filterParam = urlParams.get('name');
     const filterType = urlParams.get('filterType');
-    if (filterParam != null && filterParam != "") {
+    if (filterParam != null && filterParam != '') {
         filterParam = decodeURIComponent(filterParam);
         let newUsers = [];
         for (i = 0; i < users.length; i++) {
@@ -475,41 +475,41 @@ if (window['all-staff-amender-home']) {
             }
         }
         users = newUsers;
-        document.getElementById("name").value = filterParam;
+        document.getElementById('name').value = filterParam;
     }
     let selectByStaff = true;
     if (filterType != null) {
-        selectByStaff = filterType !== "managerName";
+        selectByStaff = filterType !== 'managerName';
     }
-    document.getElementById("managerName").checked = !selectByStaff;
-    document.getElementById("staffName").checked = selectByStaff;
+    document.getElementById('managerName').checked = !selectByStaff;
+    document.getElementById('staffName').checked = selectByStaff;
 
     // Populate table with users.
-    let staffTable = document.getElementById("staff-table");
+    let staffTable = document.getElementById('staff-table');
     for (let user of users) {
-        const row = document.createElement("tr");
-        row.className = "nhsuk-table__row";
+        const row = document.createElement('tr');
+        row.className = 'nhsuk-table__row';
         let rowContents = `
-                            <td role="cell" class="nhsuk-table__cell center-table-row">
-                                <input class="staff-member" type="checkbox" id="{{id}}" name="scales"/>
-                                <label for="{{id}}"> <span class="nhsuk-table-responsive__heading">User Name </span> {{staffName}}  </label>
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <input class='staff-member' type='checkbox' id='{{id}}' name='scales'/>
+                                <label for='{{id}}'> <span class='nhsuk-table-responsive__heading'>User Name </span> {{staffName}}  </label>
                             </td>
-                            <td role="cell" class="nhsuk-table__cell center-table-row">
-                                <span class="nhsuk-table-responsive__heading">User Email </span>{{email}}
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading'>User Email </span>{{email}}
                             </td>
-                            <td role="cell" class="nhsuk-table__cell center-table-row">
-                                <span class="nhsuk-table-responsive__heading">Manager </span>{{manager}}
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading'>Manager </span>{{manager}}
                             </td>
-                            <td role="cell" class="nhsuk-table__cell center-table-row">
-                                <span class="nhsuk-table-responsive__heading select-tag">Action </span>
-                                <p class="nhsuk-u-margin-bottom-0"><a class="nhsuk-link nhsuk-link--no-visited-state"
-                                                                      href="all-staff-amender/details?staffId={{id}}">View Details</a></p>
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading select-tag'>Action </span>
+                                <p class='nhsuk-u-margin-bottom-0'><a class='nhsuk-link nhsuk-link--no-visited-state'
+                                                                      href='all-staff-amender/details?staffId={{id}}'>View Details</a></p>
                             </td>
         `;
-        rowContents = rowContents.replaceAll("{{id}}", user.id);
-        rowContents = rowContents.replaceAll("{{staffName}}", user.staffName);
-        rowContents = rowContents.replaceAll("{{email}}", user.email);
-        rowContents = rowContents.replaceAll("{{manager}}", user.managerName);
+        rowContents = rowContents.replaceAll('{{id}}', user.id);
+        rowContents = rowContents.replaceAll('{{staffName}}', user.staffName);
+        rowContents = rowContents.replaceAll('{{email}}', user.email);
+        rowContents = rowContents.replaceAll('{{manager}}', user.managerName);
         row.innerHTML = rowContents;
         staffTable.appendChild(row);
     }
@@ -532,4 +532,48 @@ if (window['all-staff-amender-home']) {
 
 }
 
+////////// All Staff Amender Edit Page //////////
+if (window['all-staff-amender-edit']) {
 
+    // Check if add param is present.
+    const urlParams = new URLSearchParams(window.location.search);
+    let addParam = urlParams.get('add');
+    if (addParam != null) {
+
+        // Edit to Add
+        let addBoxes = document.getElementsByClassName('add-box');
+        for (let addBox of addBoxes) {
+            addBox.innerHTML = 'Add New User';
+        }
+
+        // Change Save to Continue.
+        let saveBoxes = document.getElementsByClassName('save-box');
+        for (let saveBox of saveBoxes) {
+            saveBox.innerHTML = window['add-action'];
+        }
+
+        // Change the URL of the button to be the next page (with ?add=true parameter).
+        let editStaffButton = document.getElementById('edit-staff-button');
+        editStaffButton.href = window['add-next-page'];
+
+    }
+
+    // TODO Accommodate if batch change.
+
+    /**
+     * Set the standard working pattern values.
+     */
+    function setStandardWorkingPattern() {
+        let weekDays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+        let weekEndDays = ['saturday', 'sunday'];
+        for (let weekDay of weekDays) {
+            let weekDayEle = document.getElementById(weekDay);
+            weekDayEle.value = 7.5;
+        }
+        for (let weekEndDay of weekEndDays) {
+            let weekEndDayEle = document.getElementById(weekEndDay);
+            weekEndDayEle.value = 0;
+        }
+    }
+
+}

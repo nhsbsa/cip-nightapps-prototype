@@ -85,34 +85,31 @@ Staff Checking - Prescription Service Applications
 
         <h2 class="nhsuk-u-margin-top-5" id="skip-to-table"> Staff Members </h2>
 
-        <!-- TODO Create Add/Edit pages.-->
         {{ actionLink({
           "text": "Add New Staff Member",
-          "href": "/apps/all-staff-amender/add-staff-member"
+          "href": "/apps/all-staff-amender/edit/details?add=true"
         }) }}
 
-        <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
-            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
-                <thead role="rowgroup" class="nhsuk-table__head">
-                    <tr role="row">
-                        <th role="columnheader" class="" scope="col">
-                            User Name
-                        </th>
-                        <th role="columnheader" class="" scope="col">
-                            User Email
-                        </th>
-                        <th role="columnheader" class="" scope="col">
-                            Manager
-                        </th>
-                        <th role="columnheader" class="" scope="col">
+        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+            <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        User Name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        User Email
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Manager
+                    </th>
+                    <th role="columnheader" class="" scope="col">
 
-                        </th>
-                    </tr>
-                </thead>
-                <tbody class="nhsuk-table__body" id="staff-table">
-                </tbody>
-            </table>
-        </fieldset>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body" id="staff-table">
+            </tbody>
+        </table>
 
         <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" onclick="staffSelectAll()">
             Select All

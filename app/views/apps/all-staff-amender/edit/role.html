@@ -1,0 +1,199 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Staff Checking - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">Staff Checking</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <span class="add-box">Edit Selected User</span>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Change the page title here -->
+        <h1>
+            <span class="add-box">Edit Selected User</span>
+        </h1>
+
+        <h2>
+            Role
+        </h2>
+
+        <!-- Add your content here -->
+        <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+        <form>
+
+            <div class="staff-details-section">
+
+                <div class="nhsuk-form-group">
+                    <div class="nhsuk-label staff-details-prompt">Start Date</div>
+                    {{ dateInput({
+                    "id": "start-date",
+                    "namePrefix": "start-date",
+                    "items": [
+                    {
+                    "name": "day",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "month",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "year",
+                    "classes": "nhsuk-input--width-4"
+                    }
+                    ]
+                    }) }}
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="wte">WTE</label>
+                    <input class="nhsuk-label" id="wte" name="wte" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <div class="nhsuk-label staff-details-prompt">Leaving Date</div>
+                    {{ dateInput({
+                    "id": "leaving-date",
+                    "namePrefix": "leaving-date",
+                    "items": [
+                    {
+                    "name": "day",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "month",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "year",
+                    "classes": "nhsuk-input--width-4"
+                    }
+                    ]
+                    }) }}
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
+                        <div class="nhsuk-label staff-details-prompt">Quality Check Required?</div>
+                        <div class="nhsuk-radios nhsuk-radios--inline">
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="quality-check-yes" name="quality-check" type="radio"
+                                       value="standard">
+                                <label class="nhsuk-label nhsuk-radios__label" for="quality-check-yes">Yes</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="quality-check-no" name="quality-check" type="radio"
+                                       value="standard">
+                                <label class="nhsuk-label nhsuk-radios__label" for="quality-check-no">No</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
+                        <div class="nhsuk-label staff-details-prompt">Quality Checker?</div>
+                        <div class="nhsuk-radios nhsuk-radios--inline">
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="quality-checker-yes" name="quality-checker" type="radio"
+                                       value="standard">
+                                <label class="nhsuk-label nhsuk-radios__label" for="quality-checker-yes">Yes</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="quality-checker-no" name="quality-checker" type="radio"
+                                       value="standard">
+                                <label class="nhsuk-label nhsuk-radios__label" for="quality-checker-no">No</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
+                        <div class="nhsuk-label staff-details-prompt">Phone Call Type</div>
+                        <div class="nhsuk-radios nhsuk-radios--inline">
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="phone-call-type-no-group" name="phone-call-type" type="radio"
+                                       value="standard">
+                                <label class="nhsuk-label nhsuk-radios__label" for="phone-call-type-no-group">No Group</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="phone-call-type-standard" name="phone-call-type" type="radio"
+                                       value="standard">
+                                <label class="nhsuk-label nhsuk-radios__label" for="phone-call-type-standard">Standard calls</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="phone-call-type-ppv" name="phone-call-type" type="radio"
+                                       value="standard">
+                                <label class="nhsuk-label nhsuk-radios__label" for="phone-call-type-ppv">PPV calls</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+            </div>
+
+            <a class="nhsuk-button" type="submit" id="edit-staff-button" href="/apps/all-staff-amender/details">
+                <span class="save-box">Save</span>
+                <span class="nhsuk-u-visually-hidden"><span class="save-box">Save</span></span>
+            </a>
+
+        </form>
+
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="#" onclick="window.history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                    <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+                </svg>
+                Go back</a>
+        </div>
+
+        <script>
+            window['all-staff-amender-edit'] = true;
+            window['add-next-page'] = "/apps/all-staff-amender/edit/working-pattern?add=true";
+            window['add-action'] = "Continue";
+        </script>
+
+        <!-- End of content -->
+    </div>
+</div>
+{% endblock %}
