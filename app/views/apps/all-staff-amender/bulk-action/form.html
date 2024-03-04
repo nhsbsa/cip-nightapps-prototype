@@ -47,54 +47,52 @@ All Staff - Prescription Service Applications
 <div class="nhsuk-form-group">
 
     <div>
-        <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2"> Download details </label>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="download">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1"> Download details </label>
         </div>
     </div>
     <div>
-        <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="edit-details">
             <label class="nhsuk-label nhsuk-radios__label" for="example-2">Edit details </label>
         </div>
     </div>
     <div>
-        <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">Edit Management </label>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="edit-management">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-3">Edit Management </label>
         </div>
     </div>
     <div>
-        <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-4" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">Edit role </label>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-4" name="example" type="radio" value="edit-role">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-4">Edit role </label>
         </div>
     </div>
     <div>
-        <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-5" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">Edit working patterns </label>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-5" name="example" type="radio" value="edit-working-patterns">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-5">Edit working patterns </label>
         </div>
     </div>
     <div>
-        <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-6" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">Edit Streams </label>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-6" name="example" type="radio" value="edit-streams">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-6">Edit Streams </label>
         </div>
     </div>
     <div>
-        <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-7" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">Disable </label>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-7" name="example" type="radio" value="disable">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-7">Disable </label>
         </div>
     </div>
 
-    <!-- TODO Link to appropriate page. -->
-    <a class="nhsuk-button nhsuk-u-margin-bottom-7 nhsuk-u-margin-top-3" id="continue-button" type="submit"
-       href="/apps/all-staff-amender/bulk-action/confirmation">
+    <button class="nhsuk-button nhsuk-u-margin-bottom-7 nhsuk-u-margin-top-3" id="continue-button" onclick="bulkActionRedirect()">
         Continue
         <span class="nhsuk-u-visually-hidden">Continue</span>
-    </a>
+    </button>
 
     <p>
         <a href="/apps/all-staff-amender"> < Back to All Staff Amender Home </a>
@@ -102,6 +100,7 @@ All Staff - Prescription Service Applications
 
     <script>
         localStorage.clear();
+        window['all-staff-amender-bulk-action-form'] = true;
     </script>
 
 </div>

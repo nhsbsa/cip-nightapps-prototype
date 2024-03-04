@@ -558,8 +558,6 @@ if (window['all-staff-amender-edit']) {
 
     }
 
-    // TODO Accommodate if batch change.
-
     /**
      * Set the standard working pattern values.
      */
@@ -625,5 +623,46 @@ if (window['all-staff-amender-edit']) {
         }
     }
     updateStreamCount();
+
+}
+
+////////// All Staff Amender Edit Page //////////
+if (window['all-staff-amender-bulk-action-form']) {
+
+    /**
+     * Redirect to the appropriate bulk action page.
+     */
+    function bulkActionRedirect() {
+
+        // Get selected action.
+        let action = "";
+        let radioButtons = document.getElementsByTagName("input");
+        for (let radioButton of radioButtons){
+            if (radioButton.checked){
+                action = radioButton.value;
+                break;
+            }
+        }
+
+        // Redirect to appropriate page with the correct query.
+        if (action === "download") {
+            window.location.href = '/apps/all-staff-amender/bulk-action/result?download=true';
+        } else if (action === "edit-details") {
+            window.location.href = '/apps/all-staff-amender/edit/details?bulk=true';
+        } else if (action === "edit-management") {
+            window.location.href = '/apps/all-staff-amender/edit/management?bulk=true';
+        } else if (action === "edit-role") {
+            window.location.href = '/apps/all-staff-amender/edit/role?bulk=true';
+        } else if (action === "edit-working-patterns") {
+            window.location.href = '/apps/all-staff-amender/edit/working-pattern?bulk=true';
+        } else if (action === "edit-streams") {
+            window.location.href = '/apps/all-staff-amender/edit/current-streams?bulk=true';
+        } else if (action === "disable") {
+            window.location.href = '/apps/all-staff-amender/disable?bulk=true';
+        }
+
+        // TODO Change all linked pages to redirect to confirm page when bulk = true.
+
+    }
 
 }
