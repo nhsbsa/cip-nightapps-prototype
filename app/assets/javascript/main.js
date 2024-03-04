@@ -576,4 +576,54 @@ if (window['all-staff-amender-edit']) {
         }
     }
 
+    /**
+     * Move stream(s) between fields.
+     *
+     * @param leftToRight True if moving streams from left to right.
+     * @param all  True if moving all streams.
+     */
+    function transferStream(leftToRight, all) {
+        let availableStreamsEle = document.getElementById("available-streams");
+        let currentStreamsEle = document.getElementById("current-streams");
+
+        if (leftToRight) {
+            let toTransfer = [];
+            for (let option of availableStreamsEle.options) {
+                if (all || option.selected) {
+                    toTransfer.push(option);
+                }
+            }
+            for (let option of toTransfer) {
+                availableStreamsEle.removeChild(option);
+                currentStreamsEle.appendChild(option);
+            }
+        } else {
+            let toTransfer = [];
+            for (let option of currentStreamsEle.options) {
+                if (all || option.selected) {
+                    toTransfer.push(option);
+                }
+            }
+            for (let option of toTransfer) {
+                currentStreamsEle.removeChild(option);
+                availableStreamsEle.appendChild(option);
+            }
+        }
+
+        updateStreamCount();
+        return false;
+    }
+
+    /**
+     * Update the stream count.
+     */
+    function updateStreamCount() {
+        let availableStreamsEle = document.getElementById("available-streams");
+        if (availableStreamsEle !== null) {
+            let optionsCount = availableStreamsEle.options.length;
+            document.getElementById("stream-count").innerHTML = optionsCount;
+        }
+    }
+    updateStreamCount();
+
 }

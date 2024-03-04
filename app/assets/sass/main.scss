@@ -244,3 +244,21 @@ th:last-child, td:last-child {
 .staff-details-prompt {
     font-weight: bold;
 }
+
+.stream-select {
+    height: 200px;
+    width: 250px;
+    max-width: unset;
+}
+
+.stream-change-button {
+    margin: unset;
+    height: 5px;
+    line-height: 5px;
+}
+
+.stream-change-paragraph {
+    margin: unset;
+    height: 37px;
+    padding-left: 50px;
+}
