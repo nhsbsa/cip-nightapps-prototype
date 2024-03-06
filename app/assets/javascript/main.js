@@ -696,3 +696,23 @@ if (window['all-staff-amender-disable']) {
     }
 
 }
+
+////////// All Staff Amender Bulk Action Confirm Page //////////
+if (window['all-staff-amender-bulk-confirm']) {
+
+    // Change content to match bulk confirm.
+    const urlParams = new URLSearchParams(window.location.search);
+    let actionParam = urlParams.get('action');
+    if (actionParam != null) {
+
+        // Show relevant changes.
+        let changeDiv = document.getElementById('changes-' + actionParam);
+        changeDiv.classList.remove('bulk-hidden');
+
+        // Edit links.
+        let confirmButton = document.getElementById('bulk-confirm');
+        confirmButton.href = '/apps/all-staff-amender/bulk-action/result?action=' + actionParam;
+
+    }
+
+}

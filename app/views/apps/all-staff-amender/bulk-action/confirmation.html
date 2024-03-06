@@ -30,8 +30,6 @@ All Staff Amender - Prescription Service Applications
 {% endblock %}
 
 
-<!-- TODO Show content based on action selected. -->
-
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
@@ -43,84 +41,55 @@ All Staff Amender - Prescription Service Applications
             Confirm bulk action
         </h2>
 
-        <div>
-            <p>The following changes will be made:</p>
-            <p><strong>Division C </strong> </br>
-                <strong>Managed by Division C </strong></p>
+        <h3>Changes to be made</h3>
+
+        <div id="changes-management" class="bulk-hidden">
+            <ul>
+                <li><strong>Division:</strong> C</li>
+                <li><strong>Managed by Division:</strong> C</li>
+                <li><strong>Work Group:</strong> Standard</li>
+                <li><strong>Shift Pattern:</strong> Evening</li>
+            </ul>
         </div>
 
-        <div>
-            <p>A CSV of the following users will be created: / </br>
-                Proceeding with this action will remove the following users from the </br>
-                pool of active staff and anonomise any references to them in all of </br>
-                the Prescription Services Applications reports: / </br>
-                The following staff members will be affected/included:</p>
+        <div id="changes-role" class="bulk-hidden">
+            <ul>
+                <li><strong>Quality Check Required?</strong> No</li>
+                <li><strong>Quality Checker:</strong> No</li>
+                <li><strong>Phone Call Type:</strong> Standard Calls</li>
+            </ul>
         </div>
-        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
-            <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                    <th role="columnheader" class="" scope="col">
-                        User Name
-                    </th>
-                    <th role="columnheader" class="" scope="col">
-                        User Email
-                    </th>
-                    <th role="columnheader" class="" scope="col">
-                        Status
-                    </th>
-            </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell center-table-row">
-                        <span class="nhsuk-table-responsive__heading">User Name </span> Paul Smith
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell center-table-row">
-                        <span class="nhsuk-table-responsive__heading">User Email </span>paul.smith@nhs.net
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell center-table-row">
-                        <span class="nhsuk-table-responsive__heading select-tag">Status </span>
-                        <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
-                            Active
-                        </strong>
-                    </td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
 
-                <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell center-table-row">
-                        <span class="nhsuk-table-responsive__heading">User Name </span> Paul Gutierrez
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell center-table-row">
-                        <span class="nhsuk-table-responsive__heading">User Email </span>paul.gutierrez@nhs.net
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell center-table-row">
-                        <span class="nhsuk-table-responsive__heading select-tag">Status </span>
-                        <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
-                            Active
-                        </strong>
-                    </td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
+        <div id="changes-working-pattern" class="bulk-hidden">
+            <ul>
+                <li><strong>Sunday:</strong> 7.5 hours</li>
+            </ul>
+        </div>
 
-                    <td role="cell" class="nhsuk-table__cell center-table-row">
-                        <span class="nhsuk-table-responsive__heading">User Name </span> Paul Ponce
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell center-table-row">
-                        <span class="nhsuk-table-responsive__heading">User Email </span>paul.ponce@nhs.net
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell center-table-row">
-                        <span class="nhsuk-table-responsive__heading select-tag">Status </span>
-                        <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
-                            Active
-                        </strong>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="changes-current-streams" class="bulk-hidden">
+            <ul>
+                <li><strong>Available Streams:</strong>
+                    <ul>
+                        <li>Item confirmation</li>
+                        <li>Multiple Hits</li>
+                        <li>Errors</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <h3>Users to be affected</h3>
+
+        <ul>
+            <li>Paul Smith (paul.smith@nhs.net)</li>
+            <li>Paul Jones (paul.jones@nhs.net)</li>
+            <li>Tony Robinson (tony.robinson@nhs.net)</li>
+        </ul>
 
         <div>
-            <a class="nhsuk-button nhsuk-u-margin-top-4" href="/apps/all-staff-amender/bulk-action/result"> Confirm </a>
+            <a class="nhsuk-button nhsuk-u-margin-top-4" id="bulk-confirm" href="/apps/all-staff-amender/bulk-action/result">
+                Confirm
+            </a>
         </div>
 
         <div class="nhsuk-back-link">
@@ -130,6 +99,10 @@ All Staff Amender - Prescription Service Applications
                 </svg>
                 Go back</a>
         </div>
+
+        <script>
+            window['all-staff-amender-bulk-confirm'] = true;
+        </script>
 
     </div>
 </div>
