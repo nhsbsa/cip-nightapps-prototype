@@ -535,26 +535,42 @@ if (window['all-staff-amender-home']) {
 ////////// All Staff Amender Edit Page //////////
 if (window['all-staff-amender-edit']) {
 
+    // Get elements to edit.
+    let editStaffButton = document.getElementById('edit-staff-button');
+    let addBoxes = document.getElementsByClassName('add-box');
+    let saveBoxes = document.getElementsByClassName('save-box');
+
     // Check if add param is present.
     const urlParams = new URLSearchParams(window.location.search);
     let addParam = urlParams.get('add');
     if (addParam != null) {
 
         // Edit to Add
-        let addBoxes = document.getElementsByClassName('add-box');
         for (let addBox of addBoxes) {
             addBox.innerHTML = 'Add New User';
         }
 
         // Change Save to Continue.
-        let saveBoxes = document.getElementsByClassName('save-box');
         for (let saveBox of saveBoxes) {
             saveBox.innerHTML = window['add-action'];
         }
 
         // Change the URL of the button to be the next page (with ?add=true parameter).
-        let editStaffButton = document.getElementById('edit-staff-button');
         editStaffButton.href = window['add-next-page'];
+
+    }
+
+    // Change all linked pages to redirect to confirm page when bulk param is set.
+    let bulkParam = urlParams.get('bulk');
+    if (bulkParam != null) {
+
+        // Change instances of 'Selected User' to 'Selected Users'.
+        for (let addBox of addBoxes) {
+            addBox.innerHTML = 'Edit Selected User(s)';
+        }
+
+        // Change the URL of the button to be the bulk confirm page (with the appropriate action parameter).
+        editStaffButton.href = '/apps/all-staff-amender/bulk-action/confirmation?action=' + window['bulk-action'];
 
     }
 
@@ -581,8 +597,8 @@ if (window['all-staff-amender-edit']) {
      * @param all  True if moving all streams.
      */
     function transferStream(leftToRight, all) {
-        let availableStreamsEle = document.getElementById("available-streams");
-        let currentStreamsEle = document.getElementById("current-streams");
+        let availableStreamsEle = document.getElementById('available-streams');
+        let currentStreamsEle = document.getElementById('current-streams');
 
         if (leftToRight) {
             let toTransfer = [];
@@ -616,10 +632,10 @@ if (window['all-staff-amender-edit']) {
      * Update the stream count.
      */
     function updateStreamCount() {
-        let availableStreamsEle = document.getElementById("available-streams");
+        let availableStreamsEle = document.getElementById('available-streams');
         if (availableStreamsEle !== null) {
             let optionsCount = availableStreamsEle.options.length;
-            document.getElementById("stream-count").innerHTML = optionsCount;
+            document.getElementById('stream-count').innerHTML = optionsCount;
         }
     }
     updateStreamCount();
@@ -635,8 +651,8 @@ if (window['all-staff-amender-bulk-action-form']) {
     function bulkActionRedirect() {
 
         // Get selected action.
-        let action = "";
-        let radioButtons = document.getElementsByTagName("input");
+        let action = '';
+        let radioButtons = document.getElementsByTagName('input');
         for (let radioButton of radioButtons){
             if (radioButton.checked){
                 action = radioButton.value;
@@ -645,23 +661,37 @@ if (window['all-staff-amender-bulk-action-form']) {
         }
 
         // Redirect to appropriate page with the correct query.
-        if (action === "download") {
+        if (action === 'download') {
             window.location.href = '/apps/all-staff-amender/bulk-action/result?download=true';
-        } else if (action === "edit-details") {
+        } else if (action === 'edit-details') {
             window.location.href = '/apps/all-staff-amender/edit/details?bulk=true';
-        } else if (action === "edit-management") {
+        } else if (action === 'edit-management') {
             window.location.href = '/apps/all-staff-amender/edit/management?bulk=true';
-        } else if (action === "edit-role") {
+        } else if (action === 'edit-role') {
             window.location.href = '/apps/all-staff-amender/edit/role?bulk=true';
-        } else if (action === "edit-working-patterns") {
+        } else if (action === 'edit-working-patterns') {
             window.location.href = '/apps/all-staff-amender/edit/working-pattern?bulk=true';
-        } else if (action === "edit-streams") {
+        } else if (action === 'edit-streams') {
             window.location.href = '/apps/all-staff-amender/edit/current-streams?bulk=true';
-        } else if (action === "disable") {
+        } else if (action === 'disable') {
             window.location.href = '/apps/all-staff-amender/disable?bulk=true';
         }
 
-        // TODO Change all linked pages to redirect to confirm page when bulk = true.
+    }
+
+}
+
+////////// All Staff Amender Disable Page //////////
+if (window['all-staff-amender-disable']) {
+
+    // Change content if this is a bulk disable.
+    const urlParams = new URLSearchParams(window.location.search);
+    let bulkParam = urlParams.get('bulk');
+    if (bulkParam != null) {
+            
+        // Edit links.
+        let confirmButton = document.getElementById('disable-confirm');
+        confirmButton.href = '/apps/all-staff-amender/bulk-action/result?action=disable';
 
     }
 
