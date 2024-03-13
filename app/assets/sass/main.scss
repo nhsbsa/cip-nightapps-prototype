@@ -227,3 +227,46 @@ th:last-child, td:last-child {
 .stats-table {
     padding-bottom: 30px;
 }
+
+#staff-disable-button {
+    float: right;
+}
+
+.staff-detail-field-label {
+    font-weight: bold;
+}
+
+.staff-details-section {
+    top: 50px;
+    padding-bottom: 75px;
+}
+
+.staff-details-prompt {
+    font-weight: bold;
+}
+
+.stream-select {
+    height: 200px;
+    width: 250px;
+    max-width: unset;
+}
+
+.stream-change-button {
+    margin: unset;
+    height: 5px;
+    line-height: 5px;
+}
+
+.stream-change-paragraph {
+    margin: unset;
+    height: 37px;
+    padding-left: 50px;
+}
+
+.bulk-action-option {
+    padding-bottom: 15px;
+}
+
+.bulk-hidden {
+    display: none;
+}

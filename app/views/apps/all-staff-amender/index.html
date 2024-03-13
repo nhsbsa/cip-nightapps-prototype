@@ -1,0 +1,139 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+All Staff Amender - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">All Staff Amender</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Change the page title here -->
+        <h1>
+            All Staff Amender
+        </h1>
+
+        <!-- Add your content here -->
+        <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+        <!-- Reload page with user filter. -->
+        <form class="nhsuk-inset-text nhsuk-u-margin-top-5">
+            <h2>Find Staff Member</h2>
+            <p class>Enter the details of the staff member you wish to see information for.</p>
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
+                    <h3>Search By</h3>
+                    <div class="nhsuk-radios nhsuk-radios--inline">
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="staffName" name="filterType" type="radio"
+                                   value="staffName">
+                            <label class="nhsuk-label nhsuk-radios__label" for="staffName">Staff Name</label>
+                        </div>
+                        <div class="nhsuk-radios nhsuk-radios--inline">
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="managerName" name="filterType" type="radio"
+                                       value="managerName">
+                                <label class="nhsuk-label nhsuk-radios__label" for="managerName">Manager Name</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="name">Name</label>
+                <input class="nhsuk-label" id="name" name="name" type="text">
+            </div>
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Refine search
+            </button>
+        </form>
+
+        <h2 class="nhsuk-u-margin-top-5" id="skip-to-table"> Staff Members </h2>
+
+        {{ actionLink({
+          "text": "Add New Staff Member",
+          "href": "/apps/all-staff-amender/edit/details?add=true"
+        }) }}
+
+        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+            <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        User Name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        User Email
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Manager
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body" id="staff-table">
+            </tbody>
+        </table>
+
+        <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" onclick="staffSelectAll()">
+            Select All
+        </button>
+
+        <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" onclick="staffSelectNone()">
+            Select None
+        </button>
+
+        <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="/apps/all-staff-amender/bulk-action/form">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                </svg>
+                <span class="nhsuk-action-link__text">Perform Bulk Action on Selected Staff</span>
+            </a>
+        </div>
+
+        <script>
+            window['all-staff-amender-home'] = true;
+        </script>
+
+        <!-- End of content -->
+    </div>
+</div>
+{% endblock %}

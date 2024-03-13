@@ -1,0 +1,200 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+All Staff Amender - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">All Staff Amender</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <span class="add-box">Edit Selected User</span>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Change the page title here -->
+        <h1>
+            <span class="add-box">Edit Selected User</span>
+        </h1>
+
+        <h2>
+            Current Streams
+        </h2>
+
+        <!-- Add your content here -->
+        <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+        <div class="nhsuk-grid-column-one-third" style="height: fit-content; padding-left: 0;">
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="generic-stream">
+                    Generic Stream Profile
+                </label>
+                <select class="nhsuk-select stream-select" id="generic-stream" name="generic-stream" multiple>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="nhsuk-grid-column-one-third" style="height: fit-content; padding-left: 0;">
+
+        </div>
+
+        <div class="nhsuk-grid-column-one-third" style="height: fit-content; padding-left: 0;">
+
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="stream-categories">
+                    Available Stream Categories
+                </label>
+                <select class="nhsuk-select stream-select" id="stream-categories" name="stream-categories" multiple>
+                    <option value="production">Production</option>
+                    <option value="prescription-scanning">Prescription Scanning</option>
+                    <option value="legacy">Legacy</option>
+                    <option value="portering">Portering</option>
+                    <option value="student-services">Student Services</option>
+                    <option value="scanning-services">Scanning Services</option>
+                    <option value="organisational-data">Organisational Data</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="nhsuk-grid-column-full nhsuk-inset-text" style="margin-top: 20px;">
+            <h3>Stream Profile</h3>
+            <p>Assigned Stream Count: <span id="stream-count">0</span></p>
+
+            <div class="nhsuk-grid-column-one-third" style="height: fit-content; padding-left: 0;">
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="available-streams">
+                        Available Streams
+                    </label>
+                    <select class="nhsuk-select stream-select" id="available-streams" name="available-streams" multiple>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="nhsuk-grid-column-one-third" style="height: fit-content; padding-left: 0;">
+
+                <div style="with: 100%; text-align: center">
+
+                    <p class="stream-change-paragraph">
+                        <br>
+                        <br>
+                    </p>
+
+                    <p class="stream-change-paragraph">
+                        <button class="nhsuk-button nhsuk-button--secondary stream-change-button" onclick="transferStream(true, true)">
+                            >>
+                        </button>
+                    </p>
+
+                    <p class="stream-change-paragraph">
+                        <button class="nhsuk-button nhsuk-button--secondary stream-change-button" onclick="transferStream(true, false)">
+                            >
+                        </button>
+                    </p>
+
+                    <p class="stream-change-paragraph">
+                        <br>
+                    </p>
+
+                    <p class="stream-change-paragraph">
+                        <button class="nhsuk-button nhsuk-button--secondary stream-change-button" onclick="transferStream(false, false)">
+                            <
+                        </button>
+                    </p>
+
+                    <p class="stream-change-paragraph">
+                        <button class="nhsuk-button nhsuk-button--secondary stream-change-button " onclick="transferStream(false, true)">
+                            <<
+                        </button>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="nhsuk-grid-column-one-third" style="height: fit-content; padding-left: 0;">
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="current-streams">
+                        Current Streams
+                    </label>
+                    <select class="nhsuk-select stream-select" id="current-streams" name="current-streams" multiple>
+                        <option value="item-confirmation">Item Confirmation</option>
+                        <option value="submission-correction">Submission Correction</option>
+                        <option value="multiple-hits">Multiple Hits</option>
+                        <option value="errors">Errors</option>
+                        <option value="quantity-validation">Quantity Validation</option>
+                        <option value="pecs">PECS</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="nhsuk-grid-column-full" style="margin-top: 20px;">
+
+            <a class="nhsuk-button" type="submit" id="edit-staff-button" href="/apps/all-staff-amender/details">
+                <span class="save-box">Save</span>
+                <span class="nhsuk-u-visually-hidden"><span class="save-box">Save</span></span>
+            </a>
+
+            <div class="nhsuk-back-link">
+                <a class="nhsuk-back-link__link" href="#" onclick="window.history.back()">
+                    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+                    </svg>
+                    Go back</a>
+            </div>
+
+        </div>
+
+        <script>
+            window['all-staff-amender-edit'] = true;
+            window['add-next-page'] = '/apps/all-staff-amender';
+            window['add-action'] = 'Create User';
+            window['bulk-action'] = 'current-streams';
+        </script>
+
+        <!-- End of content -->
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,131 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+All Staff Amender - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">All Staff Amender</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <span class="add-box">Edit Selected User</span>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Change the page title here -->
+        <h1>
+            <span class="add-box">Edit Selected User</span>
+        </h1>
+
+        <h2>
+            Working Pattern
+        </h2>
+
+        <!-- Add your content here -->
+        <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+        <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" onclick="setStandardWorkingPattern()">
+            Use Standard Working Pattern
+        </button>
+
+        <form>
+
+            <div class="staff-details-section">
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="monday">Monday</label>
+                    <input class="nhsuk-label" id="monday" name="monday" type="number">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="tuesday">Tuesday</label>
+                    <input class="nhsuk-label" id="tuesday" name="tuesday" type="number">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="wednesday">Wednesday</label>
+                    <input class="nhsuk-label" id="wednesday" name="wednesday" type="number">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="thursday">Thursday</label>
+                    <input class="nhsuk-label" id="thursday" name="thursday" type="number">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="friday">Friday</label>
+                    <input class="nhsuk-label" id="friday" name="friday" type="number">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="saturday">Saturday</label>
+                    <input class="nhsuk-label" id="saturday" name="saturday" type="number">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="sunday">Sunday</label>
+                    <input class="nhsuk-label" id="sunday" name="sunday" type="number">
+                </div>
+
+            </div>
+
+            <a class="nhsuk-button" type="submit" id="edit-staff-button" href="/apps/all-staff-amender/details">
+                <span class="save-box">Save</span>
+                <span class="nhsuk-u-visually-hidden"><span class="save-box">Save</span></span>
+            </a>
+
+        </form>
+
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="#" onclick="window.history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                    <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+                </svg>
+                Go back</a>
+        </div>
+
+        <script>
+            window['all-staff-amender-edit'] = true;
+            window['add-next-page'] = '/apps/all-staff-amender/edit/current-streams?add=true';
+            window['add-action'] = 'Continue';
+            window['bulk-action'] = 'working-pattern';
+        </script>
+
+        <!-- End of content -->
+    </div>
+</div>
+{% endblock %}

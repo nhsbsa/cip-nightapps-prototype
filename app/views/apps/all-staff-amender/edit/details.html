@@ -1,0 +1,121 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+All Staff Amender - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">All Staff Amender</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <span class="add-box">Edit Selected User</span>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Change the page title here -->
+        <h1>
+            <span class="add-box">Edit Selected User</span>
+        </h1>
+
+        <h2>
+            Details
+        </h2>
+
+        <!-- Add your content here -->
+        <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+        <form>
+
+            <div class="staff-details-section">
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="email">E-mail</label>
+                    <input class="nhsuk-label" id="email" name="email" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="cipher">Cipher</label>
+                    <input class="nhsuk-label" id="cipher" name="cipher" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="payroll-number">Payroll Number</label>
+                    <input class="nhsuk-label" id="payroll-number" name="payroll-number" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="forename">Forename(s)</label>
+                    <input class="nhsuk-label" id="forename" name="forename" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="surname">Surname</label>
+                    <input class="nhsuk-label" id="surname" name="surname" type="text">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="type">Type</label>
+                    <input class="nhsuk-label" id="type" name="type" type="text">
+                </div>
+
+            </div>
+
+            <a class="nhsuk-button" type="submit" id="edit-staff-button" href="/apps/all-staff-amender/details">
+                <span class="save-box">Save</span>
+                <span class="nhsuk-u-visually-hidden"><span class="save-box">Save</span></span>
+            </a>
+
+        </form>
+
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="#" onclick="window.history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                    <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+                </svg>
+                Go back</a>
+        </div>
+
+        <script>
+            window['all-staff-amender-edit'] = true;
+            window['add-next-page'] = '/apps/all-staff-amender/edit/management?add=true';
+            window['add-action'] = 'Continue';
+        </script>
+
+        <!-- End of content -->
+    </div>
+</div>
+{% endblock %}

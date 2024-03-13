@@ -1,0 +1,103 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+All Staff - Prescription Service Applications
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">All Staff Amender</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                Bulk Action
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<h2>Perform bulk action</h2>
+
+<p>Edit or report on multiple staff members together.</p> </br>
+
+<p>Select what action you wish to perform on the selected users:</p>
+
+<div class="nhsuk-form-group">
+
+    <div>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="download">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1"> Download details </label>
+        </div>
+    </div>
+
+    <div>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="edit-management">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-3">Edit Management </label>
+        </div>
+    </div>
+    <div>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-4" name="example" type="radio" value="edit-role">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-4">Edit role </label>
+        </div>
+    </div>
+    <div>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-5" name="example" type="radio" value="edit-working-patterns">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-5">Edit working patterns </label>
+        </div>
+    </div>
+    <div>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-6" name="example" type="radio" value="edit-streams">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-6">Edit Streams </label>
+        </div>
+    </div>
+    <div>
+        <div class="nhsuk-radios__item bulk-action-option">
+            <input class="nhsuk-radios__input" id="example-7" name="example" type="radio" value="disable">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-7">Disable </label>
+        </div>
+    </div>
+
+    <button class="nhsuk-button nhsuk-u-margin-bottom-7 nhsuk-u-margin-top-3" id="continue-button" onclick="bulkActionRedirect()">
+        Continue
+        <span class="nhsuk-u-visually-hidden">Continue</span>
+    </button>
+
+    <p>
+        <a href="/apps/all-staff-amender"> < Back to All Staff Amender Home </a>
+    </p>
+
+    <script>
+        localStorage.clear();
+        window['all-staff-amender-bulk-action-form'] = true;
+    </script>
+
+</div>
+
+{% endblock %}

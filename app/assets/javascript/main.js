@@ -105,7 +105,7 @@ if (currentPart && document.getElementById('current-part')) {
     document.getElementById('current-part').innerHTML = currentPart;
 }
 if (checkedToday && document.getElementById('checked-today')) {
-    document.getElementById('checked-today').innerHTML = checkedToday + " Checked Today";
+    document.getElementById('checked-today').innerHTML = checkedToday + ' Checked Today';
 }
 
 
@@ -124,7 +124,7 @@ function isNextEPS() {
  * Redirect to corrections view.
  */
 function showCorrections() {
-    window.location.href = '/apps/50k/check/corrections?part=' + currentPart + "&checkedToday=" + checkedToday;
+    window.location.href = '/apps/50k/check/corrections?part=' + currentPart + '&checkedToday=' + checkedToday;
 }
 
 /**
@@ -132,9 +132,9 @@ function showCorrections() {
  */
 function redirectToCheck() {
     if (currentPart === '2' || currentPart == '3') {
-        window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart+ "&checkedToday=" + checkedToday;
+        window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart+ '&checkedToday=' + checkedToday;
     } else {
-        window.location.href = '/apps/50k/check?part=' + currentPart + "&checkedToday=" + checkedToday;
+        window.location.href = '/apps/50k/check?part=' + currentPart + '&checkedToday=' + checkedToday;
     }
 }
 
@@ -142,7 +142,7 @@ function redirectToCheck() {
  * Redirect to corrections view. (For EPS).
  */
 function showEPSCorrections() {
-    window.location.href = '/apps/50k/check/eps/corrections?part=' + currentPart + "&checkedToday=" + checkedToday;
+    window.location.href = '/apps/50k/check/eps/corrections?part=' + currentPart + '&checkedToday=' + checkedToday;
 }
 
 /**
@@ -150,9 +150,9 @@ function showEPSCorrections() {
  */
 function redirectToEPS() {
     if (currentPart === '2' || currentPart === '3') {
-        window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
+        window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + '&checkedToday=' + checkedToday;
     } else {
-        window.location.href = '/apps/50k/check/eps?part=' + currentPart + "&checkedToday=" + checkedToday;
+        window.location.href = '/apps/50k/check/eps?part=' + currentPart + '&checkedToday=' + checkedToday;
     }
 }
 
@@ -168,15 +168,15 @@ function processNextCheck() {
 
     if (isEPS) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + '&checkedToday=' + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check/eps?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/eps?part=' + currentPart + '&checkedToday=' + checkedToday;
         }
     } else {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + '&checkedToday=' + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check?part=' + currentPart + '&checkedToday=' + checkedToday;
         }
     }
 }
@@ -187,9 +187,9 @@ function processNextCheck() {
 function backCheck() {
     if (currentPart && checkedToday) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/checkpart2-3?part=' + currentPart + '&checkedToday=' + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check?part=' + currentPart + '&checkedToday=' + checkedToday;
         }
     }
 }
@@ -200,9 +200,9 @@ function backCheck() {
 function backEPS() {
     if (currentPart && checkedToday) {
         if (currentPart === '2' || currentPart === '3') {
-            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/eps/checkpart2-3?part=' + currentPart + '&checkedToday=' + checkedToday;
         } else {
-            window.location.href = '/apps/50k/check/eps?part=' + currentPart + "&checkedToday=" + checkedToday;
+            window.location.href = '/apps/50k/check/eps?part=' + currentPart + '&checkedToday=' + checkedToday;
         }
     }
 }
@@ -211,7 +211,7 @@ function backEPS() {
  * Redirect to confirmation screen.
  */
 function redirectToConfirmation() {
-    window.location.href = '/apps/50k/check/confirmation?part=' + currentPart + "&checkedToday=" + checkedToday;
+    window.location.href = '/apps/50k/check/confirmation?part=' + currentPart + '&checkedToday=' + checkedToday;
 }
 
 
@@ -232,7 +232,7 @@ if (errorCategory !== null && hiddenFields !== null) {
 // Function to update the hidden fields
 function updateHiddenFields() {
     // Check if the correct item is selected.
-    if (errorCategory.value === "System: Alphanumeric Code Error Generates Incorrect Direct Hit") {
+    if (errorCategory.value === 'System: Alphanumeric Code Error Generates Incorrect Direct Hit') {
         // Show the hidden fields to both the browser and to screen readers.
         hiddenFields.removeAttribute('hidden');
         hiddenFields.removeAttribute('aria-hidden');
@@ -369,10 +369,10 @@ if (window['50k-dashboard']) {
         var periodParam = urlParameters.get('period');
         var usersParam = urlParameters.get('users');
         if (!usersParam) {
-            usersParam = "all";
+            usersParam = 'all';
         }
         if (!periodParam) {
-            periodParam = "202212";
+            periodParam = '202212';
         }
 
         // Add user options based on year.
@@ -382,16 +382,16 @@ if (window['50k-dashboard']) {
             opt.innerHTML = display;
             userSelect.appendChild(opt);
         }
-        if (periodParam == "202212") {
-            addUser("adam-azure", "Adam Azure");
-            addUser("bryony-black", "Bryony Black");
-            addUser("charlie-cerulean", "Charlie Cerulean");
-            addUser("david-denim", "David Denim");
-        } else if (periodParam == "202211") {
-            addUser("adam-azure", "Adam Azure");
-            addUser("bryony-black", "Bryony Black");
-            if (usersParam == "charlie-cerulean" || usersParam == "david-denim") {
-                usersParam = "all";
+        if (periodParam == '202212') {
+            addUser('adam-azure', 'Adam Azure');
+            addUser('bryony-black', 'Bryony Black');
+            addUser('charlie-cerulean', 'Charlie Cerulean');
+            addUser('david-denim', 'David Denim');
+        } else if (periodParam == '202211') {
+            addUser('adam-azure', 'Adam Azure');
+            addUser('bryony-black', 'Bryony Black');
+            if (usersParam == 'charlie-cerulean' || usersParam == 'david-denim') {
+                usersParam = 'all';
             }
        }
 
@@ -402,9 +402,9 @@ if (window['50k-dashboard']) {
         // Redirect function.
         var redirect = function(event, individualStats) {
             event.preventDefault();
-            var paramsToSend = "?period=" + periodParam + "&users=" + usersParam;
+            var paramsToSend = '?period=' + periodParam + '&users=' + usersParam;
             if (individualStats) {
-                paramsToSend += "#individual-stats"
+                paramsToSend += '#individual-stats'
             }
             window.location.replace(location.protocol + '//' + location.host + location.pathname + paramsToSend);
        };
@@ -422,13 +422,314 @@ if (window['50k-dashboard']) {
         });
 
         // Show the relevant content.
-        var overallStatsToShow = document.getElementsByClassName(periodParam + "-overall");
+        var overallStatsToShow = document.getElementsByClassName(periodParam + '-overall');
         for (var i = 0; i < overallStatsToShow.length; i++) {
-          overallStatsToShow[i].classList.remove("hide-stats");
+          overallStatsToShow[i].classList.remove('hide-stats');
         }
-        var statsToShow = document.getElementsByClassName(usersParam + "-stats " + periodParam + "-period");
+        var statsToShow = document.getElementsByClassName(usersParam + '-stats ' + periodParam + '-period');
         for (var i = 0; i < statsToShow.length; i++) {
-          statsToShow[i].classList.remove("hide-stats");
+          statsToShow[i].classList.remove('hide-stats');
+        }
+
+    }
+
+}
+
+////////// All Staff Amender Home //////////
+if (window['all-staff-amender-home']) {
+
+    // Establish users.
+    let users = [
+        {
+            id: 'paul-smith',
+            staffName: 'Paul Smith',
+            managerName: 'Ruth Jones',
+            email: 'paul.smith@nhs.net'
+        },
+        {
+            id: 'paul-jones',
+            staffName: 'Paul Jones',
+            managerName: 'Reg Brown',
+            email: 'paul.jones@nhs.net'
+        },
+        {
+            id: 'tony-robinson',
+            staffName: 'Tony Robinson',
+            managerName: 'Paula Davies',
+            email: 'tony.robinson@nhs.net'
+        }
+    ];
+
+    // Filter down users based on search query.
+    const urlParams = new URLSearchParams(window.location.search);
+    let filterParam = urlParams.get('name');
+    const filterType = urlParams.get('filterType');
+    if (filterParam != null && filterParam != '') {
+        filterParam = decodeURIComponent(filterParam);
+        let newUsers = [];
+        for (i = 0; i < users.length; i++) {
+            let user = users[i];
+            let relevantName = user[filterType];
+            if (relevantName.toLowerCase().includes(filterParam.toLowerCase())) {
+                newUsers.push(user);
+            }
+        }
+        users = newUsers;
+        document.getElementById('name').value = filterParam;
+    }
+    let selectByStaff = true;
+    if (filterType != null) {
+        selectByStaff = filterType !== 'managerName';
+    }
+    document.getElementById('managerName').checked = !selectByStaff;
+    document.getElementById('staffName').checked = selectByStaff;
+
+    // Populate table with users.
+    let staffTable = document.getElementById('staff-table');
+    for (let user of users) {
+        const row = document.createElement('tr');
+        row.className = 'nhsuk-table__row';
+        let rowContents = `
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <input class='staff-member' type='checkbox' id='{{id}}' name='scales'/>
+                                <label for='{{id}}'> <span class='nhsuk-table-responsive__heading'>User Name </span> {{staffName}}  </label>
+                            </td>
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading'>User Email </span>{{email}}
+                            </td>
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading'>Manager </span>{{manager}}
+                            </td>
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading select-tag'>Action </span>
+                                <p class='nhsuk-u-margin-bottom-0'><a class='nhsuk-link nhsuk-link--no-visited-state'
+                                                                      href='all-staff-amender/details?staffId={{id}}'>View Details</a></p>
+                            </td>
+        `;
+        rowContents = rowContents.replaceAll('{{id}}', user.id);
+        rowContents = rowContents.replaceAll('{{staffName}}', user.staffName);
+        rowContents = rowContents.replaceAll('{{email}}', user.email);
+        rowContents = rowContents.replaceAll('{{manager}}', user.managerName);
+        row.innerHTML = rowContents;
+        staffTable.appendChild(row);
+    }
+
+    // Function for unchecking all staff boxes.
+    function staffSelectNone() {
+        let checkboxes = document.getElementsByClassName('staff-member');
+        for(let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+        }
+    }
+
+    // Function for checking all staff boxes.
+    function staffSelectAll() {
+        let checkboxes = document.getElementsByClassName('staff-member');
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = true;
+        }
+    }
+
+}
+
+////////// All Staff Amender Edit Page //////////
+if (window['all-staff-amender-edit']) {
+
+    // Get elements to edit.
+    let editStaffButton = document.getElementById('edit-staff-button');
+    let addBoxes = document.getElementsByClassName('add-box');
+    let saveBoxes = document.getElementsByClassName('save-box');
+
+    // Check if add param is present.
+    const urlParams = new URLSearchParams(window.location.search);
+    let addParam = urlParams.get('add');
+    if (addParam != null) {
+
+        // Edit to Add
+        for (let addBox of addBoxes) {
+            addBox.innerHTML = 'Add New User';
+        }
+
+        // Change Save to Continue.
+        for (let saveBox of saveBoxes) {
+            saveBox.innerHTML = window['add-action'];
+        }
+
+        // Change the URL of the button to be the next page (with ?add=true parameter).
+        editStaffButton.href = window['add-next-page'];
+
+    }
+
+    // Change all linked pages to redirect to confirm page when bulk param is set.
+    let bulkParam = urlParams.get('bulk');
+    if (bulkParam != null) {
+
+        // Change instances of 'Selected User' to 'Selected Users'.
+        for (let addBox of addBoxes) {
+            addBox.innerHTML = 'Edit Selected User(s)';
+        }
+
+        // Change the URL of the button to be the bulk confirm page (with the appropriate action parameter).
+        editStaffButton.href = '/apps/all-staff-amender/bulk-action/confirmation?action=' + window['bulk-action'];
+
+    }
+
+    /**
+     * Set the standard working pattern values.
+     */
+    function setStandardWorkingPattern() {
+        let weekDays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+        let weekEndDays = ['saturday', 'sunday'];
+        for (let weekDay of weekDays) {
+            let weekDayEle = document.getElementById(weekDay);
+            weekDayEle.value = 7.5;
+        }
+        for (let weekEndDay of weekEndDays) {
+            let weekEndDayEle = document.getElementById(weekEndDay);
+            weekEndDayEle.value = 0;
+        }
+    }
+
+    /**
+     * Move stream(s) between fields.
+     *
+     * @param leftToRight True if moving streams from left to right.
+     * @param all  True if moving all streams.
+     */
+    function transferStream(leftToRight, all) {
+        let availableStreamsEle = document.getElementById('available-streams');
+        let currentStreamsEle = document.getElementById('current-streams');
+
+        if (leftToRight) {
+            let toTransfer = [];
+            for (let option of availableStreamsEle.options) {
+                if (all || option.selected) {
+                    toTransfer.push(option);
+                }
+            }
+            for (let option of toTransfer) {
+                availableStreamsEle.removeChild(option);
+                currentStreamsEle.appendChild(option);
+            }
+        } else {
+            let toTransfer = [];
+            for (let option of currentStreamsEle.options) {
+                if (all || option.selected) {
+                    toTransfer.push(option);
+                }
+            }
+            for (let option of toTransfer) {
+                currentStreamsEle.removeChild(option);
+                availableStreamsEle.appendChild(option);
+            }
+        }
+
+        updateStreamCount();
+        return false;
+    }
+
+    /**
+     * Update the stream count.
+     */
+    function updateStreamCount() {
+        let availableStreamsEle = document.getElementById('available-streams');
+        if (availableStreamsEle !== null) {
+            let optionsCount = availableStreamsEle.options.length;
+            document.getElementById('stream-count').innerHTML = optionsCount;
+        }
+    }
+    updateStreamCount();
+
+}
+
+////////// All Staff Amender Edit Page //////////
+if (window['all-staff-amender-bulk-action-form']) {
+
+    /**
+     * Redirect to the appropriate bulk action page.
+     */
+    function bulkActionRedirect() {
+
+        // Get selected action.
+        let action = '';
+        let radioButtons = document.getElementsByTagName('input');
+        for (let radioButton of radioButtons){
+            if (radioButton.checked){
+                action = radioButton.value;
+                break;
+            }
+        }
+
+        // Redirect to appropriate page with the correct query.
+        if (action === 'download') {
+            window.location.href = '/apps/all-staff-amender/bulk-action/result?action=download';
+        } else if (action === 'edit-details') {
+            window.location.href = '/apps/all-staff-amender/edit/details?bulk=true';
+        } else if (action === 'edit-management') {
+            window.location.href = '/apps/all-staff-amender/edit/management?bulk=true';
+        } else if (action === 'edit-role') {
+            window.location.href = '/apps/all-staff-amender/edit/role?bulk=true';
+        } else if (action === 'edit-working-patterns') {
+            window.location.href = '/apps/all-staff-amender/edit/working-pattern?bulk=true';
+        } else if (action === 'edit-streams') {
+            window.location.href = '/apps/all-staff-amender/edit/current-streams?bulk=true';
+        } else if (action === 'disable') {
+            window.location.href = '/apps/all-staff-amender/disable?bulk=true';
+        }
+
+    }
+
+}
+
+////////// All Staff Amender Disable Page //////////
+if (window['all-staff-amender-disable']) {
+
+    // Change content if this is a bulk disable.
+    const urlParams = new URLSearchParams(window.location.search);
+    let bulkParam = urlParams.get('bulk');
+    if (bulkParam != null) {
+            
+        // Edit links.
+        let confirmButton = document.getElementById('disable-confirm');
+        confirmButton.href = '/apps/all-staff-amender/bulk-action/result?action=disable';
+
+    }
+
+}
+
+////////// All Staff Amender Bulk Action Confirm or Result Page //////////
+if (window['all-staff-amender-bulk-confirm'] || window['all-staff-amender-bulk-result']) {
+
+    // Get action params.
+    const urlParams = new URLSearchParams(window.location.search);
+    let actionParam = urlParams.get('action');
+
+    // Change content to match bulk action content.
+    if (window['all-staff-amender-bulk-result']) {
+        let sectionDiv;
+        if (actionParam === 'download') {
+            sectionDiv = document.getElementById('download-confirmation');
+        } else if (actionParam === 'disable') {
+            sectionDiv = document.getElementById('disable-confirmation');
+        } else {
+            sectionDiv = document.getElementById('changes-confirmation');
+        }
+        sectionDiv.classList.remove('bulk-hidden');
+    }
+
+    // Reveal appropriate result section.
+    if (actionParam != null) {
+
+        // Show relevant changes.
+        let changeDiv = document.getElementById('changes-' + actionParam);
+        if (changeDiv) {
+            changeDiv.classList.remove('bulk-hidden');
+        }
+
+        // Edit links.
+        if (window['all-staff-amender-bulk-confirm']) {
+            let confirmButton = document.getElementById('bulk-confirm');
+            confirmButton.href = '/apps/all-staff-amender/bulk-action/result?action=' + actionParam;
         }
 
     }
