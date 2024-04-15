@@ -57,21 +57,13 @@ All Staff Amender - Prescription Service Applications
             <p class>Enter the details of the staff member you wish to see information for.</p>
             <div class="nhsuk-form-group">
                 <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
-                    <h3>Search By</h3>
-                    <div class="nhsuk-radios nhsuk-radios--inline">
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="staffName" name="filterType" type="radio"
-                                   value="staffName">
-                            <label class="nhsuk-label nhsuk-radios__label" for="staffName">Staff Name</label>
-                        </div>
-                        <div class="nhsuk-radios nhsuk-radios--inline">
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="managerName" name="filterType" type="radio"
-                                       value="managerName">
-                                <label class="nhsuk-label nhsuk-radios__label" for="managerName">Manager Name</label>
-                            </div>
-                        </div>
-                    </div>
+                    <label class="nhsuk-label" for="filterType">Search By:</label>
+                    <select class="nhsuk-select" name="filterType" id="filterType">
+                        <option value="staffName">Staff Name</option>
+                        <option value="cipher">Staff Cipher</option>
+                        <option value="managerName">Manager Name</option>
+                        <option value="managerCipher">Manager Cipher</option>
+                    </select>
                 </fieldset>
             </div>
             <div class="nhsuk-form-group">

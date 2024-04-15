@@ -445,6 +445,7 @@ if (window['all-staff-amender-home']) {
             cipher: 'pasmi',
             staffName: 'Paul Smith',
             managerName: 'Ruth Jones',
+            managerCipher: 'rujon',
             email: 'paul.smith@nhs.net'
         },
         {
@@ -452,6 +453,7 @@ if (window['all-staff-amender-home']) {
             cipher: 'pajon',
             staffName: 'Paul Jones',
             managerName: 'Reg Brown',
+            managerCipher: 'regbro',
             email: 'paul.jones@nhs.net'
         },
         {
@@ -459,6 +461,7 @@ if (window['all-staff-amender-home']) {
             cipher: 'torob',
             staffName: 'Tony Robinson',
             managerName: 'Paula Davies',
+            managerCipher: 'padav',
             email: 'tony.robinson@nhs.net'
         }
     ];
@@ -467,7 +470,7 @@ if (window['all-staff-amender-home']) {
     const urlParams = new URLSearchParams(window.location.search);
     let filterParam = urlParams.get('name');
     const filterType = urlParams.get('filterType');
-    if (filterParam != null && filterParam != '') {
+    if (filterParam != null && filterParam != '' && filterType != null && filterType != '') {
         filterParam = decodeURIComponent(filterParam);
         let newUsers = [];
         for (i = 0; i < users.length; i++) {
@@ -479,13 +482,8 @@ if (window['all-staff-amender-home']) {
         }
         users = newUsers;
         document.getElementById('name').value = filterParam;
+        document.getElementById('filterType').value = filterType;
     }
-    let selectByStaff = true;
-    if (filterType != null) {
-        selectByStaff = filterType !== 'managerName';
-    }
-    document.getElementById('managerName').checked = !selectByStaff;
-    document.getElementById('staffName').checked = selectByStaff;
 
     // Populate table with users.
     let staffTable = document.getElementById('staff-table');
