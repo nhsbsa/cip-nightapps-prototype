@@ -442,18 +442,21 @@ if (window['all-staff-amender-home']) {
     let users = [
         {
             id: 'paul-smith',
+            cipher: 'pasmi',
             staffName: 'Paul Smith',
             managerName: 'Ruth Jones',
             email: 'paul.smith@nhs.net'
         },
         {
             id: 'paul-jones',
+            cipher: 'pajon',
             staffName: 'Paul Jones',
             managerName: 'Reg Brown',
             email: 'paul.jones@nhs.net'
         },
         {
             id: 'tony-robinson',
+            cipher: 'torob',
             staffName: 'Tony Robinson',
             managerName: 'Paula Davies',
             email: 'tony.robinson@nhs.net'
@@ -492,10 +495,13 @@ if (window['all-staff-amender-home']) {
         let rowContents = `
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
                                 <input class='staff-member' type='checkbox' id='{{id}}' name='scales'/>
-                                <label for='{{id}}'> <span class='nhsuk-table-responsive__heading'>User Name </span> {{staffName}}  </label>
+                                <label for='{{id}}'> <span class='nhsuk-table-responsive__heading'>Name </span> {{staffName}}  </label>
                             </td>
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
-                                <span class='nhsuk-table-responsive__heading'>User Email </span>{{email}}
+                                <span class='nhsuk-table-responsive__heading'>Cipher </span>{{cipher}}
+                            </td>
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading'>Email </span>{{email}}
                             </td>
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
                                 <span class='nhsuk-table-responsive__heading'>Manager </span>{{manager}}
@@ -507,6 +513,7 @@ if (window['all-staff-amender-home']) {
                             </td>
         `;
         rowContents = rowContents.replaceAll('{{id}}', user.id);
+        rowContents = rowContents.replaceAll('{{cipher}}', user.cipher);
         rowContents = rowContents.replaceAll('{{staffName}}', user.staffName);
         rowContents = rowContents.replaceAll('{{email}}', user.email);
         rowContents = rowContents.replaceAll('{{manager}}', user.managerName);
