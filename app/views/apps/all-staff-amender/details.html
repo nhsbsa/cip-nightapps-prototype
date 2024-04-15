@@ -49,25 +49,64 @@ All Staff Amender - Prescription Service Applications
         <!-- Change the page title here -->
         <h1>
             Selected User
-
-            <a class="nhsuk-button nhsuk-button--secondary" id="staff-disable-button" type="submit"
-               href="disable">
-                Disable Staff Member's Account
-                <span class="nhsuk-u-visually-hidden">Disable Staff Member's Account</span>
-            </a>
         </h1>
 
         <!-- Add your content here -->
         <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-        <div class="staff-details-section">
-
-            <h2>
-                Details
+        <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+            <h2 class="nhsuk-tabs__title">
+                Contents
             </h2>
 
-            <table class="nhsuk-table">
-                <tbody class="nhsuk-table__body">
+            <ul class="nhsuk-tabs__list">
+
+                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                    <a class="nhsuk-tabs__tab" href="#details">
+                        Details
+                    </a>
+                </li>
+
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#management">
+                        Management
+                    </a>
+                </li>
+
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#role">
+                        Role
+                    </a>
+                </li>
+
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#working-patterns">
+                        Working Patterns
+                    </a>
+                </li>
+
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#current-streams">
+                        Current Streams
+                    </a>
+                </li>
+
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#admin">
+                        Admin
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="nhsuk-tabs__panel" id="details">
+
+                <h2>
+                    Details
+                </h2>
+
+                <table class="nhsuk-table">
+                    <tbody class="nhsuk-table__body">
                     <tr role="row" class="nhsuk-table__row">
                         <td class="nhsuk-table__cell staff-detail-field-label">Email</td>
                         <td class="nhsuk-table__cell ">selected.user@nhs.net</td>
@@ -92,24 +131,24 @@ All Staff Amender - Prescription Service Applications
                         <td class="nhsuk-table__cell staff-detail-field-label">Type</td>
                         <td class="nhsuk-table__cell ">####</td>
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
-            {{ actionLink({
-            "text": "Edit details",
-            "href": "edit/details"
-            }) }}
+                {{ actionLink({
+                "text": "Edit details",
+                "href": "edit/details"
+                }) }}
 
-        </div>
+            </div>
 
-        <div class="staff-details-section">
+            <div class="nhsuk-tabs__panel" id="management">
 
-            <h2>
-                Management
-            </h2>
+                <h2>
+                    Management
+                </h2>
 
-            <table class="nhsuk-table">
-                <tbody class="nhsuk-table__body">
+                <table class="nhsuk-table">
+                    <tbody class="nhsuk-table__body">
                     <tr role="row" class="nhsuk-table__row">
                         <td class="nhsuk-table__cell staff-detail-field-label">Division</td>
                         <td class="nhsuk-table__cell ">A</td>
@@ -134,24 +173,24 @@ All Staff Amender - Prescription Service Applications
                         <td class="nhsuk-table__cell staff-detail-field-label">Manager Access</td>
                         <td class="nhsuk-table__cell ">Standard</td>
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
-            {{ actionLink({
-            "text": "Edit management",
-            "href": "edit/management"
-            }) }}
+                {{ actionLink({
+                "text": "Edit management",
+                "href": "edit/management"
+                }) }}
 
-        </div>
+            </div>
 
-        <div class="staff-details-section">
+            <div class="nhsuk-tabs__panel" id="role">
 
-            <h2>
-                Role
-            </h2>
+                <h2>
+                    Role
+                </h2>
 
-            <table class="nhsuk-table">
-                <tbody class="nhsuk-table__body">
+                <table class="nhsuk-table">
+                    <tbody class="nhsuk-table__body">
                     <tr role="row" class="nhsuk-table__row">
                         <td class="nhsuk-table__cell staff-detail-field-label">Start Date</td>
                         <td class="nhsuk-table__cell ">01 January 2023</td>
@@ -176,24 +215,24 @@ All Staff Amender - Prescription Service Applications
                         <td class="nhsuk-table__cell staff-detail-field-label">Manager AccessPhone Call Type</td>
                         <td class="nhsuk-table__cell ">No Group</td>
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
-            {{ actionLink({
-            "text": "Edit role",
-            "href": "edit/role"
-            }) }}
+                {{ actionLink({
+                "text": "Edit role",
+                "href": "edit/role"
+                }) }}
 
-        </div>
+            </div>
 
-        <div class="staff-details-section">
+            <div class="nhsuk-tabs__panel" id="working-patterns">
 
-            <h2>
-                Working Patterns
-            </h2>
+                <h2>
+                    Working Patterns
+                </h2>
 
-            <table class="nhsuk-table">
-                <tbody class="nhsuk-table__body">
+                <table class="nhsuk-table">
+                    <tbody class="nhsuk-table__body">
                     <tr role="row" class="nhsuk-table__row">
                         <td class="nhsuk-table__cell staff-detail-field-label">Monday</td>
                         <td class="nhsuk-table__cell ">7.5 hours</td>
@@ -222,24 +261,24 @@ All Staff Amender - Prescription Service Applications
                         <td class="nhsuk-table__cell staff-detail-field-label">Saturday</td>
                         <td class="nhsuk-table__cell ">0 hours</td>
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
-            {{ actionLink({
-            "text": "Edit working pattern",
-            "href": "edit/working-pattern"
-            }) }}
+                {{ actionLink({
+                "text": "Edit working pattern",
+                "href": "edit/working-pattern"
+                }) }}
 
-        </div>
+            </div>
 
-        <div class="staff-details-section">
+            <div class="nhsuk-tabs__panel" id="current-streams">
 
-            <h2>
-                Current Streams
-            </h2>
+                <h2>
+                    Current Streams
+                </h2>
 
-            <table class="nhsuk-table">
-                <tbody class="nhsuk-table__body">
+                <table class="nhsuk-table">
+                    <tbody class="nhsuk-table__body">
                     <tr role="row" class="nhsuk-table__row">
                         <td class="nhsuk-table__cell staff-detail-field-label">Current Streams</td>
                         <td class="nhsuk-table__cell ">
@@ -251,16 +290,30 @@ All Staff Amender - Prescription Service Applications
                             PECS
                         </td>
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
-            {{ actionLink({
-            "text": "Edit current streams",
-            "href": "edit/current-streams"
-            }) }}
+                {{ actionLink({
+                "text": "Edit current streams",
+                "href": "edit/current-streams"
+                }) }}
+
+            </div>
+
+            <div class="nhsuk-tabs__panel" id="admin">
+
+                <h2>
+                    Admin
+                </h2>
+
+                <a class="nhsuk-button nhsuk-button--secondary" id="staff-disable-button" type="submit" href="disable">
+                    Disable Staff Member's Account
+                    <span class="nhsuk-u-visually-hidden">Disable Staff Member's Account</span>
+                </a>
+
+            </div>
 
         </div>
-
 
         <!-- End of content -->
     </div>
