@@ -64,76 +64,93 @@ All Staff Amender - Prescription Service Applications
 
                 <div class="nhsuk-form-group">
                     <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
-                        <div class="nhsuk-label staff-details-prompt">Division</div>
-                        <div class="nhsuk-radios nhsuk-radios--inline">
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="division-a" name="division" type="radio"
-                                       value="a">
-                                <label class="nhsuk-label nhsuk-radios__label" for="division-a">A</label>
-                            </div>
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="division-b" name="division" type="radio"
-                                       value="b">
-                                <label class="nhsuk-label nhsuk-radios__label" for="division-b">B</label>
-                            </div>
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="division-c" name="division" type="radio"
-                                       value="c">
-                                <label class="nhsuk-label nhsuk-radios__label" for="division-c">C</label>
-                            </div>
-                        </div>
+                        <label class="nhsuk-label" for="manager">
+                            <div class="nhsuk-label staff-details-prompt">Manager</div>
+                        </label>
+                        <select class="nhsuk-select" name="manager" id="manager">
+                            <option value="staffName">Ruth Jones (rujon@nhs.net)</option>
+                            <option value="cipher">Reg Brown (rujon@nhs.net)</option>
+                            <option value="managerName">Paula Davies (padav@nhs.net)</option>
+                            <option value="managerName">Tony Brydon (tobry@nhs.net)</option>
+                            <option value="managerName">Rachel McClane (ramcc@nhs.net)</option>
+                        </select>
                     </fieldset>
                 </div>
 
                 <div class="nhsuk-form-group">
                     <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
-                        <div class="nhsuk-label staff-details-prompt">Managed by Division</div>
-                        <div class="nhsuk-radios nhsuk-radios--inline">
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="managed-by-division-a" name="managed-by-division" type="radio"
-                                       value="a">
-                                <label class="nhsuk-label nhsuk-radios__label" for="managed-by-division-a">A</label>
-                            </div>
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="managed-by-division-b" name="managed-by-division" type="radio"
-                                       value="b">
-                                <label class="nhsuk-label nhsuk-radios__label" for="managed-by-division-b">B</label>
-                            </div>
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="managed-by-division-c" name="managed-by-division" type="radio"
-                                       value="c">
-                                <label class="nhsuk-label nhsuk-radios__label" for="managed-by-division-c">C</label>
-                            </div>
-                        </div>
+                        <label class="nhsuk-label" for="division">
+                            <div class="nhsuk-label staff-details-prompt">Division</div>
+                        </label>
+                        <select class="nhsuk-select" name="division" id="division">
+                            <option value="bridge-house">Bridge House</option>
+                            <option value="greenfinsh">Greenfinch</option>
+                            <option value="middlebrook">Middlebrook</option>
+                            <option value="wakefield">Wakefield</option>
+                        </select>
                     </fieldset>
                 </div>
 
                 <div class="nhsuk-form-group">
                     <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
-                        <div class="nhsuk-label staff-details-prompt">Work Group</div>
-                        <div class="nhsuk-radios nhsuk-radios--inline">
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="work-group-standard" name="work-group" type="radio"
-                                       value="standard">
-                                <label class="nhsuk-label nhsuk-radios__label" for="work-group-standard">Standard</label>
-                            </div>
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="work-group-self-managed" name="work-group" type="radio"
-                                       value="self-managed">
-                                <label class="nhsuk-label nhsuk-radios__label" for="work-group-self-managed">Self-managed</label>
-                            </div>
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="work-group-home-working" name="work-group" type="radio"
-                                       value="home-working">
-                                <label class="nhsuk-label nhsuk-radios__label" for="work-group-home-working">Home working</label>
-                            </div>
-                        </div>
+                        <label class="nhsuk-label" for="status-group">
+                            <div class="nhsuk-label staff-details-prompt">Status Group</div>
+                        </label>
+                        <select class="nhsuk-select" name="status-group" id="status-group">
+                            <option value="substantive">Substantive</option>
+                            <option value="probationary-period">Probationary Period</option>
+                            <option value="maternity">Maternity</option>
+                            <option value="career-break">Career Break</option>
+                            <option value="left">Left</option>
+                            <option value="career-pathway">Career Pathway</option>
+                            <option value="seconded">Seconded</option>
+                            <option value="loan">Loan</option>
+                        </select>
                     </fieldset>
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label staff-details-prompt" for="status-group">Status Group</label>
-                    <input class="nhsuk-label" id="status-group" name="status-group" type="text">
+                    <div class="nhsuk-label staff-details-prompt">Status Group Start Date</div>
+                    {{ dateInput({
+                    "id": "leaving-date",
+                    "namePrefix": "leaving-date",
+                    "items": [
+                    {
+                    "name": "day",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "month",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "year",
+                    "classes": "nhsuk-input--width-4"
+                    }
+                    ]
+                    }) }}
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <div class="nhsuk-label staff-details-prompt">Status Group Finish Date</div>
+                    {{ dateInput({
+                    "id": "leaving-date",
+                    "namePrefix": "leaving-date",
+                    "items": [
+                    {
+                    "name": "day",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "month",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "year",
+                    "classes": "nhsuk-input--width-4"
+                    }
+                    ]
+                    }) }}
                 </div>
 
                 <div class="nhsuk-form-group">
@@ -149,24 +166,6 @@ All Staff Amender - Prescription Service Applications
                                 <input class="nhsuk-radios__input" id="shift-pattern-evening" name="shift-pattern" type="radio"
                                        value="self-managed">
                                 <label class="nhsuk-label nhsuk-radios__label" for="shift-pattern-evening">Evening</label>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-
-                <div class="nhsuk-form-group">
-                    <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
-                        <div class="nhsuk-label staff-details-prompt">Manager Access</div>
-                        <div class="nhsuk-radios nhsuk-radios--inline">
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="manager-access-standard" name="manager-access" type="radio"
-                                       value="standard">
-                                <label class="nhsuk-label nhsuk-radios__label" for="manager-access-standard">Standard</label>
-                            </div>
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="manager-access-admin" name="manager-access" type="radio"
-                                       value="self-managed">
-                                <label class="nhsuk-label nhsuk-radios__label" for="manager-access-admin">Admin</label>
                             </div>
                         </div>
                     </fieldset>
