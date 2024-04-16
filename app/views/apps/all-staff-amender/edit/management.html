@@ -110,10 +110,10 @@ All Staff Amender - Prescription Service Applications
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <div class="nhsuk-label staff-details-prompt">Status Group Start Date</div>
+                    <div class="nhsuk-label staff-details-prompt">Status Group - Start Date</div>
                     {{ dateInput({
-                    "id": "leaving-date",
-                    "namePrefix": "leaving-date",
+                    "id": "status-group-start-date",
+                    "namePrefix": "status-group-start-date",
                     "items": [
                     {
                     "name": "day",
@@ -132,10 +132,10 @@ All Staff Amender - Prescription Service Applications
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <div class="nhsuk-label staff-details-prompt">Status Group Finish Date</div>
+                    <div class="nhsuk-label staff-details-prompt">Status Group - Finish Date</div>
                     {{ dateInput({
-                    "id": "leaving-date",
-                    "namePrefix": "leaving-date",
+                    "id": "status-group-finish-date",
+                    "namePrefix": "status-group-finish-date",
                     "items": [
                     {
                     "name": "day",
@@ -151,6 +151,11 @@ All Staff Amender - Prescription Service Applications
                     }
                     ]
                     }) }}
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="status-group-moved-to">Status Group - Moved To</label>
+                    <input class="nhsuk-label" id="status-group-moved-to" name="status-group-moved-to" type="text">
                 </div>
 
                 <div class="nhsuk-form-group">
