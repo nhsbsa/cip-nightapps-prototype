@@ -674,6 +674,8 @@ if (window['all-staff-amender-bulk-action-form']) {
             window.location.href = '/apps/all-staff-amender/edit/management?bulk=true';
         } else if (action === 'edit-role') {
             window.location.href = '/apps/all-staff-amender/edit/role?bulk=true';
+        } else if (action === 'edit-status') {
+            window.location.href = '/apps/all-staff-amender/edit/status?bulk=true';
         } else if (action === 'edit-working-patterns') {
             window.location.href = '/apps/all-staff-amender/edit/working-pattern?bulk=true';
         } else if (action === 'edit-streams') {

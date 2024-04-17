@@ -63,19 +63,25 @@ All Staff Amender - Prescription Service Applications
 
                 <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
                     <a class="nhsuk-tabs__tab" href="#details">
-                        Individual Details
+                        Individual
                     </a>
                 </li>
 
                 <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#management">
-                        Manager Details
+                        Manager
                     </a>
                 </li>
 
                 <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#role">
                         Role
+                    </a>
+                </li>
+
+                <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#status">
+                        Status
                     </a>
                 </li>
 
@@ -87,7 +93,7 @@ All Staff Amender - Prescription Service Applications
 
                 <li class="nhsuk-tabs__list-item">
                     <a class="nhsuk-tabs__tab" href="#current-streams">
-                        Current Streams
+                        Streams
                     </a>
                 </li>
 
@@ -215,7 +221,25 @@ All Staff Amender - Prescription Service Applications
                         <td class="nhsuk-table__cell staff-detail-field-label">Quality Checker</td>
                         <td class="nhsuk-table__cell">Yes</td>
                     </tr>
-                    <tr role="row" class="nhsuk-table__row">
+                    </tbody>
+                </table>
+
+                {{ actionLink({
+                "text": "Edit role",
+                "href": "edit/role"
+                }) }}
+
+            </div>
+
+            <div class="nhsuk-tabs__panel" id="status">
+
+                <h2>
+                    Status
+                </h2>
+
+                <table class="nhsuk-table">
+                    <tbody class="nhsuk-table__body">
+                                        <tr role="row" class="nhsuk-table__row">
                         <td class="nhsuk-table__cell staff-detail-field-label">Status Group</td>
                         <td class="nhsuk-table__cell">Substantive</td>
                     </tr>
@@ -231,16 +255,12 @@ All Staff Amender - Prescription Service Applications
                         <td class="nhsuk-table__cell staff-detail-field-label">Status Group - Moved To</td>
                         <td class="nhsuk-table__cell"></td>
                     </tr>
-                    <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell staff-detail-field-label">Is a manager?</td>
-                        <td class="nhsuk-table__cell">Yes</td>
-                    </tr>
                     </tbody>
                 </table>
 
                 {{ actionLink({
-                "text": "Edit role",
-                "href": "edit/role"
+                "text": "Edit status",
+                "href": "edit/status"
                 }) }}
 
             </div>
