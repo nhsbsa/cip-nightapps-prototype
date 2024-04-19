@@ -599,34 +599,26 @@ if (window['all-staff-amender-edit']) {
      * Move stream(s) between fields.
      *
      * @param leftToRight True if moving streams from left to right.
-     * @param all  True if moving all streams.
      */
-    function transferStream(leftToRight, all) {
-        let availableStreamsEle = document.getElementById('available-streams');
-        let currentStreamsEle = document.getElementById('current-streams');
+    function transferStream(leftToRight) {
+        let source = leftToRight ? 'available' : 'current';
+        let target = leftToRight ? 'current' : 'available';
 
-        if (leftToRight) {
-            let toTransfer = [];
-            for (let option of availableStreamsEle.options) {
-                if (all || option.selected) {
-                    toTransfer.push(option);
-                }
+        let sourceEle = document.getElementById(source + '-streams');
+        let targetEle = document.getElementById(target + '-streams');
+
+        let toRemove = [];
+        for (let option of sourceEle.options) {
+            if (option.selected) {
+                let targetCat = document.getElementById(option.parentElement.id.replace(source, target));
+                let newOpt = document.createElement('option');
+                newOpt.label = option.label;
+                targetCat.appendChild(newOpt);
+                toRemove.push(option);
             }
-            for (let option of toTransfer) {
-                availableStreamsEle.removeChild(option);
-                currentStreamsEle.appendChild(option);
-            }
-        } else {
-            let toTransfer = [];
-            for (let option of currentStreamsEle.options) {
-                if (all || option.selected) {
-                    toTransfer.push(option);
-                }
-            }
-            for (let option of toTransfer) {
-                currentStreamsEle.removeChild(option);
-                availableStreamsEle.appendChild(option);
-            }
+        }
+        for (let option of toRemove) {
+            option.parentElement.removeChild(option);
         }
 
         updateStreamCount();
@@ -637,9 +629,9 @@ if (window['all-staff-amender-edit']) {
      * Update the stream count.
      */
     function updateStreamCount() {
-        let availableStreamsEle = document.getElementById('available-streams');
-        if (availableStreamsEle !== null) {
-            let optionsCount = availableStreamsEle.options.length;
+        let currentStreamsEle = document.getElementById('current-streams');
+        if (currentStreamsEle !== null) {
+            let optionsCount = currentStreamsEle.options.length;
             document.getElementById('stream-count').innerHTML = optionsCount;
         }
     }

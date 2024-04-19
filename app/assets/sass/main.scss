@@ -242,21 +242,13 @@ th:last-child, td:last-child {
 }
 
 .stream-select {
-    height: 200px;
-    width: 250px;
+    height: 500px;
+    width: 100%;
     max-width: unset;
 }
 
 .stream-change-button {
-    margin: unset;
-    height: 5px;
-    line-height: 5px;
-}
-
-.stream-change-paragraph {
-    margin: unset;
-    height: 37px;
-    padding-left: 50px;
+    margin: 20px;
 }
 
 .bulk-action-option {
@@ -265,4 +257,12 @@ th:last-child, td:last-child {
 
 .bulk-hidden {
     display: none;
+}
+
+.stream-select-controls {
+    width: 100%;
+    height: 500px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
