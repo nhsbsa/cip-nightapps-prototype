@@ -35,7 +35,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.0.0",
     "keypather": "^3.0.0",
-    "nhsuk-frontend": "^6.1.0",
+    "nhsuk-frontend": "^8.1.1",
     "nunjucks": "^3.2.3",
     "path": "^0.12.7",
     "sass": "^1.44.0"

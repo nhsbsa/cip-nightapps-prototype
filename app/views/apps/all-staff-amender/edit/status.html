@@ -52,7 +52,7 @@ All Staff Amender - Prescription Service Applications
         </h1>
 
         <h2>
-            Manager Details
+            Status
         </h2>
 
         <!-- Add your content here -->
@@ -64,35 +64,69 @@ All Staff Amender - Prescription Service Applications
 
                 <div class="nhsuk-form-group">
                     <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
-                        <label class="nhsuk-label" for="manager">
-                            <div class="nhsuk-label staff-details-prompt">Manager</div>
+                        <label class="nhsuk-label" for="status-group">
+                            <div class="nhsuk-label staff-details-prompt">Status Group</div>
                         </label>
-                        <select class="nhsuk-select" name="manager" id="manager">
-                            <option value="staffName">Ruth Jones (rujon@nhs.net)</option>
-                            <option value="cipher">Reg Brown (rujon@nhs.net)</option>
-                            <option value="managerName">Paula Davies (padav@nhs.net)</option>
-                            <option value="managerName">Tony Brydon (tobry@nhs.net)</option>
-                            <option value="managerName">Rachel McClane (ramcc@nhs.net)</option>
+                        <select class="nhsuk-select" name="status-group" id="status-group">
+                            <option value="substantive">Substantive</option>
+                            <option value="probationary-period">Probationary Period</option>
+                            <option value="maternity">Maternity</option>
+                            <option value="career-break">Career Break</option>
+                            <option value="left">Left</option>
+                            <option value="career-pathway">Career Pathway</option>
+                            <option value="seconded">Seconded</option>
+                            <option value="loan">Loan</option>
                         </select>
                     </fieldset>
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
-                        <div class="nhsuk-label staff-details-prompt">Shift Pattern</div>
-                        <div class="nhsuk-radios nhsuk-radios--inline">
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="shift-pattern-day" name="shift-pattern" type="radio"
-                                       value="standard">
-                                <label class="nhsuk-label nhsuk-radios__label" for="shift-pattern-day">Day</label>
-                            </div>
-                            <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="shift-pattern-evening" name="shift-pattern" type="radio"
-                                       value="self-managed">
-                                <label class="nhsuk-label nhsuk-radios__label" for="shift-pattern-evening">Evening</label>
-                            </div>
-                        </div>
-                    </fieldset>
+                    <div class="nhsuk-label staff-details-prompt">Status Group - Start Date</div>
+                    {{ dateInput({
+                    "id": "status-group-start-date",
+                    "namePrefix": "status-group-start-date",
+                    "items": [
+                    {
+                    "name": "day",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "month",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "year",
+                    "classes": "nhsuk-input--width-4"
+                    }
+                    ]
+                    }) }}
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <div class="nhsuk-label staff-details-prompt">Status Group - Finish Date</div>
+                    {{ dateInput({
+                    "id": "status-group-finish-date",
+                    "namePrefix": "status-group-finish-date",
+                    "items": [
+                    {
+                    "name": "day",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "month",
+                    "classes": "nhsuk-input--width-2"
+                    },
+                    {
+                    "name": "year",
+                    "classes": "nhsuk-input--width-4"
+                    }
+                    ]
+                    }) }}
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="status-group-moved-to">Status Group - Moved To</label>
+                    <input class="nhsuk-label" id="status-group-moved-to" name="status-group-moved-to" type="text">
                 </div>
 
             </div>
@@ -114,9 +148,9 @@ All Staff Amender - Prescription Service Applications
 
         <script>
             window['all-staff-amender-edit'] = true;
-            window['add-next-page'] = '/apps/all-staff-amender/edit/role?add=true';
+            window['add-next-page'] = '/apps/all-staff-amender/edit/working-pattern?add=true';
             window['add-action'] = 'Continue';
-            window['bulk-action'] = 'management';
+            window['bulk-action'] = 'status';
         </script>
 
         <!-- End of content -->

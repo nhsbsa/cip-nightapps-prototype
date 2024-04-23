@@ -442,20 +442,26 @@ if (window['all-staff-amender-home']) {
     let users = [
         {
             id: 'paul-smith',
+            cipher: 'pasmi',
             staffName: 'Paul Smith',
             managerName: 'Ruth Jones',
+            managerCipher: 'rujon',
             email: 'paul.smith@nhs.net'
         },
         {
             id: 'paul-jones',
+            cipher: 'pajon',
             staffName: 'Paul Jones',
             managerName: 'Reg Brown',
+            managerCipher: 'regbro',
             email: 'paul.jones@nhs.net'
         },
         {
             id: 'tony-robinson',
+            cipher: 'torob',
             staffName: 'Tony Robinson',
             managerName: 'Paula Davies',
+            managerCipher: 'padav',
             email: 'tony.robinson@nhs.net'
         }
     ];
@@ -464,7 +470,7 @@ if (window['all-staff-amender-home']) {
     const urlParams = new URLSearchParams(window.location.search);
     let filterParam = urlParams.get('name');
     const filterType = urlParams.get('filterType');
-    if (filterParam != null && filterParam != '') {
+    if (filterParam != null && filterParam != '' && filterType != null && filterType != '') {
         filterParam = decodeURIComponent(filterParam);
         let newUsers = [];
         for (i = 0; i < users.length; i++) {
@@ -476,13 +482,8 @@ if (window['all-staff-amender-home']) {
         }
         users = newUsers;
         document.getElementById('name').value = filterParam;
+        document.getElementById('filterType').value = filterType;
     }
-    let selectByStaff = true;
-    if (filterType != null) {
-        selectByStaff = filterType !== 'managerName';
-    }
-    document.getElementById('managerName').checked = !selectByStaff;
-    document.getElementById('staffName').checked = selectByStaff;
 
     // Populate table with users.
     let staffTable = document.getElementById('staff-table');
@@ -492,10 +493,13 @@ if (window['all-staff-amender-home']) {
         let rowContents = `
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
                                 <input class='staff-member' type='checkbox' id='{{id}}' name='scales'/>
-                                <label for='{{id}}'> <span class='nhsuk-table-responsive__heading'>User Name </span> {{staffName}}  </label>
+                                <label for='{{id}}'> <span class='nhsuk-table-responsive__heading'>Name </span> {{staffName}}  </label>
                             </td>
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
-                                <span class='nhsuk-table-responsive__heading'>User Email </span>{{email}}
+                                <span class='nhsuk-table-responsive__heading'>Cipher </span>{{cipher}}
+                            </td>
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading'>Email </span>{{email}}
                             </td>
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
                                 <span class='nhsuk-table-responsive__heading'>Manager </span>{{manager}}
@@ -507,6 +511,7 @@ if (window['all-staff-amender-home']) {
                             </td>
         `;
         rowContents = rowContents.replaceAll('{{id}}', user.id);
+        rowContents = rowContents.replaceAll('{{cipher}}', user.cipher);
         rowContents = rowContents.replaceAll('{{staffName}}', user.staffName);
         rowContents = rowContents.replaceAll('{{email}}', user.email);
         rowContents = rowContents.replaceAll('{{manager}}', user.managerName);
@@ -594,34 +599,26 @@ if (window['all-staff-amender-edit']) {
      * Move stream(s) between fields.
      *
      * @param leftToRight True if moving streams from left to right.
-     * @param all  True if moving all streams.
      */
-    function transferStream(leftToRight, all) {
-        let availableStreamsEle = document.getElementById('available-streams');
-        let currentStreamsEle = document.getElementById('current-streams');
+    function transferStream(leftToRight) {
+        let source = leftToRight ? 'available' : 'current';
+        let target = leftToRight ? 'current' : 'available';
 
-        if (leftToRight) {
-            let toTransfer = [];
-            for (let option of availableStreamsEle.options) {
-                if (all || option.selected) {
-                    toTransfer.push(option);
-                }
+        let sourceEle = document.getElementById(source + '-streams');
+        let targetEle = document.getElementById(target + '-streams');
+
+        let toRemove = [];
+        for (let option of sourceEle.options) {
+            if (option.selected) {
+                let targetCat = document.getElementById(option.parentElement.id.replace(source, target));
+                let newOpt = document.createElement('option');
+                newOpt.label = option.label;
+                targetCat.appendChild(newOpt);
+                toRemove.push(option);
             }
-            for (let option of toTransfer) {
-                availableStreamsEle.removeChild(option);
-                currentStreamsEle.appendChild(option);
-            }
-        } else {
-            let toTransfer = [];
-            for (let option of currentStreamsEle.options) {
-                if (all || option.selected) {
-                    toTransfer.push(option);
-                }
-            }
-            for (let option of toTransfer) {
-                currentStreamsEle.removeChild(option);
-                availableStreamsEle.appendChild(option);
-            }
+        }
+        for (let option of toRemove) {
+            option.parentElement.removeChild(option);
         }
 
         updateStreamCount();
@@ -632,9 +629,9 @@ if (window['all-staff-amender-edit']) {
      * Update the stream count.
      */
     function updateStreamCount() {
-        let availableStreamsEle = document.getElementById('available-streams');
-        if (availableStreamsEle !== null) {
-            let optionsCount = availableStreamsEle.options.length;
+        let currentStreamsEle = document.getElementById('current-streams');
+        if (currentStreamsEle !== null) {
+            let optionsCount = currentStreamsEle.options.length;
             document.getElementById('stream-count').innerHTML = optionsCount;
         }
     }
@@ -669,6 +666,8 @@ if (window['all-staff-amender-bulk-action-form']) {
             window.location.href = '/apps/all-staff-amender/edit/management?bulk=true';
         } else if (action === 'edit-role') {
             window.location.href = '/apps/all-staff-amender/edit/role?bulk=true';
+        } else if (action === 'edit-status') {
+            window.location.href = '/apps/all-staff-amender/edit/status?bulk=true';
         } else if (action === 'edit-working-patterns') {
             window.location.href = '/apps/all-staff-amender/edit/working-pattern?bulk=true';
         } else if (action === 'edit-streams') {
