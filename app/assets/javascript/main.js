@@ -444,6 +444,7 @@ if (window['all-staff-amender-home']) {
             id: 'paul-smith',
             cipher: 'pasmi',
             staffName: 'Paul Smith',
+            jobTitle: 'Admin',
             managerName: 'Ruth Jones',
             managerCipher: 'rujon',
             email: 'paul.smith@nhs.net'
@@ -452,6 +453,7 @@ if (window['all-staff-amender-home']) {
             id: 'paul-jones',
             cipher: 'pajon',
             staffName: 'Paul Jones',
+            jobTitle: 'Reporting Lead',
             managerName: 'Reg Brown',
             managerCipher: 'regbro',
             email: 'paul.jones@nhs.net'
@@ -460,6 +462,7 @@ if (window['all-staff-amender-home']) {
             id: 'tony-robinson',
             cipher: 'torob',
             staffName: 'Tony Robinson',
+            jobTitle: 'Team Manager',
             managerName: 'Paula Davies',
             managerCipher: 'padav',
             email: 'tony.robinson@nhs.net'
@@ -502,6 +505,9 @@ if (window['all-staff-amender-home']) {
                                 <span class='nhsuk-table-responsive__heading'>Email </span>{{email}}
                             </td>
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading'>Job Title </span>{{jobTitle}}
+                            </td>
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
                                 <span class='nhsuk-table-responsive__heading'>Manager </span>{{manager}}
                             </td>
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
@@ -512,6 +518,7 @@ if (window['all-staff-amender-home']) {
         `;
         rowContents = rowContents.replaceAll('{{id}}', user.id);
         rowContents = rowContents.replaceAll('{{cipher}}', user.cipher);
+        rowContents = rowContents.replaceAll('{{jobTitle}}', user.jobTitle);
         rowContents = rowContents.replaceAll('{{staffName}}', user.staffName);
         rowContents = rowContents.replaceAll('{{email}}', user.email);
         rowContents = rowContents.replaceAll('{{manager}}', user.managerName);
