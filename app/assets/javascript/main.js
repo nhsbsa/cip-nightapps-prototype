@@ -510,7 +510,7 @@ if (window['all-staff-amender-home']) {
         row.className = 'nhsuk-table__row';
         let rowContents = `
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
-                                <input class='staff-member' type='checkbox' id='{{id}}' name='scales'/>
+                                <input class='staff-member staff-select-box' type='checkbox' id='{{id}}' name='scales' onchange='updateStaffCount()'/>
                                 <label for='{{id}}'> <span class='nhsuk-table-responsive__heading'>Name </span> {{staffName}}  </label>
                             </td>
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
@@ -541,12 +541,31 @@ if (window['all-staff-amender-home']) {
         staffTable.appendChild(row);
     }
 
+    // Function for updating staff coumt/
+    function updateStaffCount() {
+
+        // Count all the selected staff checkboxes.
+        let count = 0;
+        let selectBoxes = document.getElementsByClassName('staff-select-box');
+        for (let selectBox of selectBoxes) {
+            if (selectBox.checked) {
+                count++;
+            }
+        }
+
+        // Update the staff count details.
+        let staffSelectedEle = document.getElementById('staff-selected');
+        staffSelectedEle.innerHTML = count;
+
+    }
+
     // Function for unchecking all staff boxes.
     function staffSelectNone() {
         let checkboxes = document.getElementsByClassName('staff-member');
         for(let i = 0; i < checkboxes.length; i++) {
             checkboxes[i].checked = false;
         }
+        updateStaffCount();
     }
 
     // Function for checking all staff boxes.
@@ -555,6 +574,7 @@ if (window['all-staff-amender-home']) {
         for (let i = 0; i < checkboxes.length; i++) {
             checkboxes[i].checked = true;
         }
+        updateStaffCount();
     }
 
 }

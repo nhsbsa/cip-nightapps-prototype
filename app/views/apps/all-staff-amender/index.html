@@ -109,7 +109,7 @@ All Staff Amender - Prescription Service Applications
             </tbody>
         </table>
 
-        <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+        <nav class="nhsuk-pagination staff-select-buttons" role="navigation" aria-label="Pagination">
             <ul class="nhsuk-list nhsuk-pagination__list">
                 <li class="nhsuk-pagination-item--previous">
                     <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" id="staff-prev" href="?page=1">
@@ -136,13 +136,17 @@ All Staff Amender - Prescription Service Applications
 
         <!-- TODO Pagination links -->
 
-        <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" onclick="staffSelectAll()">
+        <button class="nhsuk-button nhsuk-u-margin-top-4 staff-select-buttons" data-module="nhsuk-button" onclick="staffSelectAll()">
             Select All
         </button>
 
-        <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" onclick="staffSelectNone()">
+        <button class="nhsuk-button nhsuk-u-margin-top-4 staff-select-buttons" data-module="nhsuk-button" onclick="staffSelectNone()">
             Select None
         </button>
+
+        <div class="nhsuk-hint">
+            Number of staff members selected: <span id="staff-selected">0</span>
+        </div>
 
         <div class="nhsuk-action-link">
             <a class="nhsuk-action-link__link" href="/apps/all-staff-amender/bulk-action/form">
