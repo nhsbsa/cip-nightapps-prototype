@@ -438,39 +438,54 @@ if (window['50k-dashboard']) {
 ////////// All Staff Amender Home //////////
 if (window['all-staff-amender-home']) {
 
+    // Constant
+    const pageSize = 10;
+    const maxPages = 3;
+    const urlParams = new URLSearchParams(window.location.search);
+
     // Establish users.
-    let users = [
-        {
-            id: 'paul-smith',
-            cipher: 'pasmi',
-            staffName: 'Paul Smith',
-            jobTitle: 'Admin',
-            managerName: 'Ruth Jones',
-            managerCipher: 'rujon',
-            email: 'paul.smith@nhs.net'
-        },
-        {
-            id: 'paul-jones',
-            cipher: 'pajon',
-            staffName: 'Paul Jones',
-            jobTitle: 'Reporting Lead',
-            managerName: 'Reg Brown',
-            managerCipher: 'regbro',
-            email: 'paul.jones@nhs.net'
-        },
-        {
-            id: 'tony-robinson',
-            cipher: 'torob',
-            staffName: 'Tony Robinson',
-            jobTitle: 'Team Manager',
-            managerName: 'Paula Davies',
-            managerCipher: 'padav',
-            email: 'tony.robinson@nhs.net'
-        }
-    ];
+    let page = 1;
+    let pageParam = urlParams.get('page');
+    if (pageParam != null) {
+        page = Number(pageParam);
+    }
+    let users = [];
+    for (let i = ((page - 1) * pageSize) + 1; i <= page * pageSize; i++) {
+        users.push(
+            {
+                id: '' + i,
+                cipher: 'use' + i,
+                staffName: 'User ' + i,
+                jobTitle: 'Demo role',
+                managerName: 'Demo Manager',
+                managerCipher: 'deman',
+                email: 'user.' + i + '@nhsbsa.nhs.uk'
+            }
+        );
+    }
+
+    // Set up pagination buttons for staff details.
+    let prevButton = document.getElementById('staff-prev');
+    let nextButton = document.getElementById('staff-next');
+    if (page === 1) {
+        prevButton.classList.add('bulk-hidden');
+    } else {
+        let prevPage = page - 1;
+        prevButton.href = '?page=' + prevPage;
+        let prevButtonContent = document.getElementById('staff-prev-content');
+        prevButtonContent.innerHTML = prevPage + ' of ' + maxPages;
+
+    }
+    if (page === maxPages) {
+        nextButton.classList.add('bulk-hidden');
+    } else {
+        let nextPage = page + 1;
+        nextButton.href = '?page=' + nextPage;
+        let nextButtonContent = document.getElementById('staff-next-content');
+        nextButtonContent.innerHTML = nextPage + ' of ' + maxPages;
+    }
 
     // Filter down users based on search query.
-    const urlParams = new URLSearchParams(window.location.search);
     let filterParam = urlParams.get('name');
     const filterType = urlParams.get('filterType');
     if (filterParam != null && filterParam != '' && filterType != null && filterType != '') {
