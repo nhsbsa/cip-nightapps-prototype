@@ -594,13 +594,34 @@ if (window['all-staff-amender-edit']) {
         let weekEndDays = ['saturday', 'sunday'];
         for (let weekDay of weekDays) {
             let weekDayEle = document.getElementById(weekDay);
-            weekDayEle.value = 7.5;
+            weekDayEle.value = 450;
         }
         for (let weekEndDay of weekEndDays) {
             let weekEndDayEle = document.getElementById(weekEndDay);
             weekEndDayEle.value = 0;
         }
+        updatingWorkingHours();
     }
+
+    let workingHoursEle = document.getElementById('working-hours');
+    /**
+     * Add together all the working minutes in the working patterns form,
+     * calculate total working hours and display
+     */
+    function updatingWorkingHours() {
+        let workingMinutesEles = document.getElementsByClassName('working-minutes');
+        let workingMinutes = 0;
+        for (let workingMinutesEle of workingMinutesEles) {
+            workingMinutes += Number(workingMinutesEle.value);
+        }
+        let workingHours = workingMinutes / 60;
+        workingHoursEle.innerHTML = workingHours.toFixed(2);
+    }
+    document.addEventListener("onLoad", () => {
+        if (workingHoursEle != null) {
+            updatingWorkingHours();
+        }
+    });
 
     /**
      * Move stream(s) between fields.
