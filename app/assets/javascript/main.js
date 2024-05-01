@@ -645,18 +645,360 @@ if (window['all-staff-amender-edit']) {
      */
     function updatingWorkingHours() {
         let workingMinutesEles = document.getElementsByClassName('working-minutes');
-        let workingMinutes = 0;
-        for (let workingMinutesEle of workingMinutesEles) {
-            workingMinutes += Number(workingMinutesEle.value);
+        if (workingMinutesEles.length > 0) {
+            let workingMinutes = 0;
+            for (let workingMinutesEle of workingMinutesEles) {
+                workingMinutes += Number(workingMinutesEle.value);
+            }
+            let workingHours = workingMinutes / 60;
+            workingHoursEle.innerHTML = workingHours.toFixed(2);
         }
-        let workingHours = workingMinutes / 60;
-        workingHoursEle.innerHTML = workingHours.toFixed(2);
     }
-    document.addEventListener("onLoad", () => {
-        if (workingHoursEle != null) {
-            updatingWorkingHours();
+    updatingWorkingHours();
+
+    // Establish stream category to show.
+    let streamCategory = 'production';
+    let streamCategoryDisplay;
+
+    /**
+     * Refresh the stream category currently being shown.
+     */
+    function updateStreamCategory() {
+        let streamCategoryEle = document.getElementById('streamCategory');
+        if (streamCategoryEle) {
+            let availableStreamsEle = document.getElementById('available-streams');
+            let options = [...availableStreamsEle.children];
+            for (let option of options) {
+                availableStreamsEle.removeChild(option);
+            }
+            streamCategory = streamCategoryEle.value;
+            let streams = [];
+            switch (streamCategory) {
+                case 'production':
+                    streamCategoryDisplay = 'Production';
+                    streams = [
+                        '5% Calls',
+                        '50K Checking - First Check',
+                        '50K Checking - Part One',
+                        '50K Checking - Second Check',
+                        'Acc Rec - Digital RBs',
+                        'Account Reconciliation',
+                        'Bad Batch Calls',
+                        'Bereavements',
+                        'CEP',
+                        'Charge Status',
+                        'Data Capture',
+                        'DD KFP',
+                        'Dental Contractor Capture',
+                        'Dental Contractor Rekey',
+                        'Docketing',
+                        'EPS Calls',
+                        'Errors',
+                        'Fleetwood Back Scanning',
+                        'GMP',
+                        'Guernsey - Header',
+                        'Header Capture',
+                        'Header Correction',
+                        'Image Finder Batch Checks',
+                        'Islands Accounts',
+                        'Islands Reconciliation',
+                        'Item Confirmation',
+                        'Jersey - Header',
+                        'KFP',
+                        'KFP - Archived Forms',
+                        'KFP - Digital RBs',
+                        'KFP - ETP Failures',
+                        'KFP - Image Requests - Month End',
+                        'KFP - KFP+1 forms',
+                        'KFP - Phone Calls - Month End',
+                        'KFP (SSP items)',
+                        'Manufactured and Endorsed Less ALA Checking',
+                        'MDA Capture',
+                        'MoD Account Reconciliation',
+                        'MoD Data Capture',
+                        'MoD Header Capture',
+                        'Multiple Hits',
+                        'Multiple Hits (Type 2)',
+                        'MUR Evidence Capture',
+                        'NCSO',
+                        'OPEX Scanning',
+                        'Pack Selection',
+                        'Pack Size Capture',
+                        'PADM KFP',
+                        'PECS',
+                        'PEM',
+                        'Pensioner Admin Change of Details',
+                        'Pensions Processing',
+                        'Pensions Scan (Non Valuables)',
+                        'Pensions Scan (Scan & Leave)',
+                        'Pensions Scan (State Scheme)',
+                        'Pensions Scan (Valuables)',
+                        'Pensions Scan Post In',
+                        'Pensions Scan Post Out',
+                        'Pensions Scan Prep (State Scheme)',
+                        'Pensions Scan Prep (Valuables)',
+                        'Pensions Scan Sorting',
+                        'Pensions Work Allocation',
+                        'Pensions Work Allocation (Emails)',
+                        'Pensions Work Allocation (Mail Merge)',
+                        'Pensions Work Allocation (TUO)',
+                        'Pharmacist Calls',
+                        'PPV Pharmacy Phonecalls',
+                        'Process Capture',
+                        'Process Capture Account Selection',
+                        'Quantity Validation',
+                        'Scanning',
+                        'Specialist Accounts',
+                        'Submission Correction',
+                        'Submission Correction Re Key',
+                        'Submission Correction Skipped Forms',
+                        'Support Services Training',
+                        'Switching Reports',
+                        'Tagged',
+                        'UIP 2',
+                        'Unidentified Prescribers',
+                        'Unspec Code',
+                        'Unspec Code Checking',
+                        'Verification',
+                        'zero'
+                    ];
+                    break;
+                case 'prescription-scanning':
+                    streamCategoryDisplay = 'Prescription Scanning';
+                    streams = [
+                        'Appliances - Docketing',
+                        'Appliances - Scanning',
+                        'CD Requisition - Docketing',
+                        'CD Requisition - Scanning',
+                        'Dental FP17 - Docketing',
+                        'Dental FP17 - Scanning',
+                        'Dental Keying',
+                        'Dental Ortho - Docketing',
+                        'Dental Ortho - Scanning',
+                        'Dental Qs - Docketing',
+                        'Dental Qs - Scanning',
+                        'Doctors - Docketing',
+                        'Doctors - Scanning',
+                        'DRescan - Docketing',
+                        'DRescan - Scanning',
+                        'DReturn - Docketing',
+                        'DReturn - Scanning',
+                        'Flu PPV Scanning',
+                        'Guernsey - Docketing',
+                        'Guernsey - Scanning',
+                        'HBD - Docketing',
+                        'HBD - Scanning',
+                        'Isle Of Man - Docketing',
+                        'Isle Of Man - Scanning',
+                        'Jersey - Docketing',
+                        'Jersey - Scanning',
+                        'Local Pharmacy - Docketing',
+                        'Local Pharmacy - Scanning',
+                        'MoD - Docketing',
+                        'MoD - Scanning',
+                        'Out Of Hours - Docketing',
+                        'Out Of Hours - Scanning',
+                        'PADM - Docketing',
+                        'PADM - Scanning',
+                        'Pharmacy - Docketing',
+                        'Pharmacy - Scanning',
+                        'SBU - Docketing',
+                        'SBU - Scanning',
+                        'SGU - Docketing',
+                        'SGU - Scanning'
+                    ];
+                    break;
+                case 'scs':
+                    streamCategoryDisplay = 'SCS';
+                    streams = [
+                        'Appliances',
+                        'BTST',
+                        'CBPM',
+                        'Guernsey',
+                        'IOM',
+                        'IOM - Header',
+                        'Jersey',
+                        'Lates',
+                        'Lates - Header',
+                        'OOH Reconciliation',
+                        'OOH/LPS',
+                        'OOH/LPS - Header',
+                        'Private Reqs Data Capture',
+                        'Private Reqs Header Capture',
+                        'Privates',
+                        'Privates - Header',
+                        'Privates Reconciliation'
+                    ];
+                    break;
+                case 'portering':
+                    streamCategoryDisplay = 'Portering';
+                    streams = [
+                        'Bailing',
+                        'Image Retrieval',
+                        'Locating',
+                        'Maintenance (bread trays)',
+                        'Pensions Post',
+                        'Post',
+                        'SBU Post',
+                        'SBU PPE Post',
+                        'Work movement (cages, bread trays etc)'
+                    ];
+                    break;
+                case 'student-services':
+                    streamCategoryDisplay = 'Student Services';
+                    streams = [
+                        '6 Zeroes',
+                        'BOSS Application Coversheets',
+                        'BOSS CCR Coversheets',
+                        'BOSS Envelope Requests',
+                        'BOSS Post Out',
+                        'Damaged Post',
+                        'Fleetwood Scan',
+                        'LSF 6 Zeroes',
+                        'LSF CDA Scan',
+                        'LSF Damaged Post',
+                        'LSF ESF Scan',
+                        'LSF Post In',
+                        'LSF Post Out',
+                        'LSF Post Out Books',
+                        'LSF Prep',
+                        'LSF Queries',
+                        'LSF Return to Sender',
+                        'LSF Searches',
+                        'LSF System Checks',
+                        'LSF System Coversheets',
+                        'LSF System Envelopes',
+                        'LSF TDAE Scan',
+                        'LSF Underpaid Post',
+                        'Post Out',
+                        'Post Out Books',
+                        'PPE Processing',
+                        'Prepare and Scan',
+                        'Prepare Applications',
+                        'Queries',
+                        'Return to Sender',
+                        'SB Processing',
+                        'Scan Applications',
+                        'Scan CCR',
+                        'Scan PPE',
+                        'Searches',
+                        'Underpaid Post'
+                    ];
+                    break;
+                case 'scanning-services':
+                    streamCategoryDisplay = 'Scanning Services';
+                    streams = [
+                        'Beacon View',
+                        'Benfield Park',
+                        'Betts Ave',
+                        'Bewick Road',
+                        'Birtley',
+                        'Blackpool',
+                        'Brunton Park',
+                        'BUCKS A&E',
+                        'Carleton Clinic',
+                        'CCG Rescans',
+                        'CDS Scanning',
+                        'Central Gateshead',
+                        'Chopwell',
+                        'Cranbrook Surgeries',
+                        'Crawcrook',
+                        'CTGs Scanning',
+                        'DCC - Bereavement',
+                        'DCC - Memorial Apps',
+                        'Dental',
+                        'Dewey Road',
+                        'Dilston',
+                        'Dr Stephenson & Partners',
+                        'Durham Bridges',
+                        'Durham CC',
+                        'Durham CC - Rescan',
+                        'East Kent Maternity',
+                        'East Kent Medical',
+                        'Eastern Avenue',
+                        'EIBSS',
+                        'Fell Cottage',
+                        'Fell Tower',
+                        'Fulwell Cross',
+                        'Glenpark',
+                        'Gosforth',
+                        'GP Flu scanning  ',
+                        'Grange Road',
+                        'GWH',
+                        'HC1',
+                        'HC5',
+                        'Heathcote',
+                        'Heaton Road',
+                        'Holmside',
+                        'HRA',
+                        'IJ Healthcare',
+                        'Injury Benefits',
+                        'Kenwood',
+                        'KFP - Document Scanning',
+                        'Margin Survey',
+                        'Mathukia',
+                        'MoD (Scanning Services)',
+                        'MUR Scanning',
+                        'NBHT - Emergency Scanning',
+                        'NBHT - Rescan',
+                        'NBHT - Scanning',
+                        'NBT Admissions',
+                        'NBT Apprenticeships',
+                        'NBT Gen',
+                        'NBT Training',
+                        'NEAS Training',
+                        'Newburn',
+                        'Newbury',
+                        'NGCCG',
+                        'NHS England',
+                        'NMS Scanning',
+                        'North Street',
+                        'NTW',
+                        'OHS',
+                        'OOH',
+                        'Oval Road',
+                        'Palmers Hospital',
+                        'Park Medical Group',
+                        'Private Accounts',
+                        'Rawling Road',
+                        'Roseworth Surgery',
+                        'Scanning Services Prep/Assistance',
+                        'Second Street',
+                        'Shrewsbury Maternity',
+                        'Shrewsbury Medical',
+                        'St Albans',
+                        'St. Anthonys',
+                        'Teams',
+                        'The Medical Centre Rowlands Gill',
+                        'Thornfield',
+                        'VDPS Scanning',
+                        'West Road Medical Group',
+                        'Westerhope',
+                        'Whickham',
+                        'Wrekenton'
+                    ];
+                    break;
+            }
+            for (let stream of streams) {
+                let isCurrentStream = false;
+                let currentStreamsEle = document.getElementById('current-stream-' + streamCategory);
+                if (currentStreamsEle) {
+                    for (let currentStream of currentStreamsEle.children) {
+                        if (currentStream.label === stream) {
+                            isCurrentStream = true;
+                            break;
+                        }
+                    }
+                }
+                if (!isCurrentStream) {
+                    let option = document.createElement('option');
+                    option.label = stream;
+                    availableStreamsEle.appendChild(option);
+                }
+            }
         }
-    });
+    }
+    updateStreamCategory();
 
     /**
      * Move stream(s) between fields.
@@ -670,18 +1012,48 @@ if (window['all-staff-amender-edit']) {
         let sourceEle = document.getElementById(source + '-streams');
         let targetEle = document.getElementById(target + '-streams');
 
+        // Add to target input.
         let toRemove = [];
         for (let option of sourceEle.options) {
             if (option.selected) {
-                let targetCat = document.getElementById(option.parentElement.id.replace(source, target));
                 let newOpt = document.createElement('option');
                 newOpt.label = option.label;
-                targetCat.appendChild(newOpt);
+
+                // Add to category if needed (generating the category on the fly as required).
+                if (leftToRight) {
+                    let targetCatEle = document.getElementById('current-stream-' + streamCategory);
+                    if (targetCatEle == null) {
+                        targetCatEle = document.createElement('optgroup');
+                        targetCatEle.id = 'current-stream-' + streamCategory;
+                        targetCatEle.label = streamCategoryDisplay;
+                        targetEle.appendChild(targetCatEle);
+                    }
+                    targetCatEle.appendChild(newOpt);
+                } else {
+                    if (option.parentElement.id === 'current-stream-' + streamCategory) {
+                        targetEle.appendChild(newOpt);
+                    }
+                }
                 toRemove.push(option);
             }
         }
+
+        // Remove from source input.
         for (let option of toRemove) {
             option.parentElement.removeChild(option);
+        }
+
+        // Tidy away empty categories.
+        if (!leftToRight) {
+            let catsToRemove = [];
+            for (let catEle of sourceEle.children) {
+                if (catEle.children.length === 0) {
+                    catsToRemove.push(catEle);
+                }
+            }
+            for (let catToRemove of catsToRemove) {
+                sourceEle.removeChild(catToRemove);
+            }
         }
 
         updateStreamCount();
