@@ -1094,7 +1094,7 @@ if (window['all-staff-amender-bulk-action-form']) {
 
         // Redirect to appropriate page with the correct query.
         if (action === 'download') {
-            window.location.href = '/apps/all-staff-amender/bulk-action/result?action=download';
+            window.location.href = '/apps/all-staff-amender/bulk-action/download';
         } else if (action === 'edit-details') {
             window.location.href = '/apps/all-staff-amender/edit/details?bulk=true';
         } else if (action === 'edit-management') {
@@ -1115,57 +1115,15 @@ if (window['all-staff-amender-bulk-action-form']) {
 
 }
 
-////////// All Staff Amender Disable Page //////////
-if (window['all-staff-amender-disable']) {
 
-    // Change content if this is a bulk disable.
-    const urlParams = new URLSearchParams(window.location.search);
-    let bulkParam = urlParams.get('bulk');
-    if (bulkParam != null) {
-            
-        // Edit links.
-        let confirmButton = document.getElementById('disable-confirm');
-        confirmButton.href = '/apps/all-staff-amender/bulk-action/result?action=disable';
-
-    }
-
-}
-
-////////// All Staff Amender Bulk Action Confirm or Result Page //////////
-if (window['all-staff-amender-bulk-confirm'] || window['all-staff-amender-bulk-result']) {
-
-    // Get action params.
+////////// All Staff Amender Bulk Action Confirm Page //////////
+if (window['all-staff-amender-bulk-confirm']) {
     const urlParams = new URLSearchParams(window.location.search);
     let actionParam = urlParams.get('action');
-
-    // Change content to match bulk action content.
-    if (window['all-staff-amender-bulk-result']) {
-        let sectionDiv;
-        if (actionParam === 'download') {
-            sectionDiv = document.getElementById('download-confirmation');
-        } else if (actionParam === 'disable') {
-            sectionDiv = document.getElementById('disable-confirmation');
-        } else {
-            sectionDiv = document.getElementById('changes-confirmation');
-        }
-        sectionDiv.classList.remove('bulk-hidden');
-    }
-
-    // Reveal appropriate result section.
     if (actionParam != null) {
-
-        // Show relevant changes.
         let changeDiv = document.getElementById('changes-' + actionParam);
         if (changeDiv) {
             changeDiv.classList.remove('bulk-hidden');
         }
-
-        // Edit links.
-        if (window['all-staff-amender-bulk-confirm']) {
-            let confirmButton = document.getElementById('bulk-confirm');
-            confirmButton.href = '/apps/all-staff-amender/bulk-action/result?action=' + actionParam;
-        }
-
     }
-
 }
