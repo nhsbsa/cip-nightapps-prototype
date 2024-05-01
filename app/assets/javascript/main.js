@@ -443,23 +443,23 @@ if (window['all-staff-amender-home']) {
     const maxPages = 3;
     const urlParams = new URLSearchParams(window.location.search);
 
-    // Establish users.
+    // Establish staff members.
     let page = 1;
     let pageParam = urlParams.get('page');
     if (pageParam != null) {
         page = Number(pageParam);
     }
-    let users = [];
+    let staff = [];
     for (let i = ((page - 1) * pageSize) + 1; i <= page * pageSize; i++) {
-        users.push(
+        staff.push(
             {
                 id: '' + i,
                 cipher: 'use' + i,
-                staffName: 'User ' + i,
+                staffName: 'Demo Staff Member ' + i,
                 jobTitle: 'Demo role',
                 managerName: 'Demo Manager',
                 managerCipher: 'deman',
-                email: 'user.' + i + '@nhsbsa.nhs.uk'
+                email: 'demo.staff' + i + '@nhsbsa.nhs.uk'
             }
         );
     }
@@ -485,27 +485,27 @@ if (window['all-staff-amender-home']) {
         nextButtonContent.innerHTML = nextPage + ' of ' + maxPages;
     }
 
-    // Filter down users based on search query.
+    // Filter down staff based on search query.
     let filterParam = urlParams.get('name');
     const filterType = urlParams.get('filterType');
     if (filterParam != null && filterParam != '' && filterType != null && filterType != '') {
         filterParam = decodeURIComponent(filterParam);
-        let newUsers = [];
-        for (i = 0; i < users.length; i++) {
-            let user = users[i];
-            let relevantName = user[filterType];
+        let newStaffMember = [];
+        for (i = 0; i < staff.length; i++) {
+            let staffMember = staff[i];
+            let relevantName = staffMember[filterType];
             if (relevantName.toLowerCase().includes(filterParam.toLowerCase())) {
-                newUsers.push(user);
+                newStaffMember.push(staffMember);
             }
         }
-        users = newUsers;
+        staff = newStaffMember;
         document.getElementById('name').value = filterParam;
         document.getElementById('filterType').value = filterType;
     }
 
-    // Populate table with users.
+    // Populate table with staff.
     let staffTable = document.getElementById('staff-table');
-    for (let user of users) {
+    for (let staffMember of staff) {
         const row = document.createElement('tr');
         row.className = 'nhsuk-table__row';
         let rowContents = `
@@ -531,12 +531,12 @@ if (window['all-staff-amender-home']) {
                                                                       href='all-staff-amender/details?staffId={{id}}'>View Details</a></p>
                             </td>
         `;
-        rowContents = rowContents.replaceAll('{{id}}', user.id);
-        rowContents = rowContents.replaceAll('{{cipher}}', user.cipher);
-        rowContents = rowContents.replaceAll('{{jobTitle}}', user.jobTitle);
-        rowContents = rowContents.replaceAll('{{staffName}}', user.staffName);
-        rowContents = rowContents.replaceAll('{{email}}', user.email);
-        rowContents = rowContents.replaceAll('{{manager}}', user.managerName);
+        rowContents = rowContents.replaceAll('{{id}}', staffMember.id);
+        rowContents = rowContents.replaceAll('{{cipher}}', staffMember.cipher);
+        rowContents = rowContents.replaceAll('{{jobTitle}}', staffMember.jobTitle);
+        rowContents = rowContents.replaceAll('{{staffName}}', staffMember.staffName);
+        rowContents = rowContents.replaceAll('{{email}}', staffMember.email);
+        rowContents = rowContents.replaceAll('{{manager}}', staffMember.managerName);
         row.innerHTML = rowContents;
         staffTable.appendChild(row);
     }
@@ -594,7 +594,7 @@ if (window['all-staff-amender-edit']) {
 
         // Edit to Add
         for (let addBox of addBoxes) {
-            addBox.innerHTML = 'Add New User';
+            addBox.innerHTML = 'Add New Staff Member';
         }
 
         // Change Save to Continue.
@@ -611,9 +611,9 @@ if (window['all-staff-amender-edit']) {
     let bulkParam = urlParams.get('bulk');
     if (bulkParam != null) {
 
-        // Change instances of 'Selected User' to 'Selected Users'.
+        // Change instances of 'Selected Staff Member' to 'Selected Staff Members'.
         for (let addBox of addBoxes) {
-            addBox.innerHTML = 'Edit Selected User(s)';
+            addBox.innerHTML = 'Edit Selected Staff Members';
         }
 
         // Change the URL of the button to be the bulk confirm page (with the appropriate action parameter).
