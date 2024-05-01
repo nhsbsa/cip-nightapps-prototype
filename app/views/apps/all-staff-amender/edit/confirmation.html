@@ -17,7 +17,7 @@ All Staff Amender - Prescription Service Applications
                 <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">All Staff Amender</a>
             </li>
             <li class="nhsuk-breadcrumb__item">
-                Bulk Action
+                <span class="add-box">Edit Staff Member</span>
             </li>
         </ul>
     </div>
@@ -38,10 +38,39 @@ All Staff Amender - Prescription Service Applications
 
         <!-- Change the page title here -->
         <h2>
-            Confirm bulk action
+            Confirm edit to Demo Staff Member 1
         </h2>
 
         <h3>Changes to be made</h3>
+
+        <div id="changes-details" class="bulk-hidden">
+            <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Forename
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Adam
+                    </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Middle Name(s)
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Bob Charlie
+                    </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Surname
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Davidson
+                    </dd>
+                </div>
+            </dl>
+        </div>
 
         <div id="changes-management" class="bulk-hidden">
             <dl class="nhsuk-summary-list">
@@ -134,16 +163,8 @@ All Staff Amender - Prescription Service Applications
             </dl>
         </div>
 
-        <h3>Staff members to be affected</h3>
-
-        <ul>
-            <li>Paul Smith (paul.smith@nhs.net)</li>
-            <li>Paul Jones (paul.jones@nhs.net)</li>
-            <li>Tony Robinson (tony.robinson@nhs.net)</li>
-        </ul>
-
         <div>
-            <a class="nhsuk-button nhsuk-u-margin-top-4" id="bulk-confirm" href="/apps/all-staff-amender">
+            <a class="nhsuk-button nhsuk-u-margin-top-4" id="bulk-confirm" href="/apps/all-staff-amender/details">
                 Confirm
             </a>
         </div>
@@ -157,7 +178,7 @@ All Staff Amender - Prescription Service Applications
         </div>
 
         <script>
-            window['all-staff-amender-bulk-confirm'] = true;
+            window['all-staff-amender-edit-confirm'] = true;
         </script>
 
     </div>

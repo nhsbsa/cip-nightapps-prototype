@@ -1,0 +1,232 @@
+{% extends 'layout.html' %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+All Staff Amender - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/public">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">All Staff Amender</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <span class="add-box">Add New Staff Member</span>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Change the page title here -->
+        <h2>
+            Confirm creation of new staff member
+        </h2>
+
+        <h3>Details</h3>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Email</dt>
+                <dd class="nhsuk-summary-list__value">demo.staff1@nhs.net</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Cipher</dt>
+                <dd class="nhsuk-summary-list__value">desta1</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Payroll Number</dt>
+                <dd class="nhsuk-summary-list__value">00001</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Forename</dt>
+                <dd class="nhsuk-summary-list__value">Demo</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Middle Name(s)</dt>
+                <dd class="nhsuk-summary-list__value">Staff</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Surname</dt>
+                <dd class="nhsuk-summary-list__value">Member</dd>
+            </div>
+        </dl>
+
+        <h3>Manager Details</h3>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Manager Name</dt>
+                <dd class="nhsuk-summary-list__value">Demo Manager</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Manager Cipher</dt>
+                <dd class="nhsuk-summary-list__value">deman</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Manager E-mail</dt>
+                <dd class="nhsuk-summary-list__value">demo.manager@nhs.net</dd>
+            </div>
+        </dl>
+
+        <h3>Role</h3>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Job Title</dt>
+                <dd class="nhsuk-summary-list__value">Administrator</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Location</dt>
+                <dd class="nhsuk-summary-list__value">Bridge House</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Contract Type</dt>
+                <dd class="nhsuk-summary-list__value">Home Worker</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Start Date</dt>
+                <dd class="nhsuk-summary-list__value">01 January 2023</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">WTE</dt>
+                <dd class="nhsuk-summary-list__value">1.0</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Leaving Date</dt>
+                <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Quality Check Required?</dt>
+                <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Quality Checker</dt>
+                <dd class="nhsuk-summary-list__value">Yes</dd>
+            </div>
+        </dl>
+
+        <h3>Status</h3>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Group</dt>
+                <dd class="nhsuk-summary-list__value">Substantive</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Start Date</dt>
+                <dd class="nhsuk-summary-list__value">01 January 2024</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Finish Date</dt>
+                <dd class="nhsuk-summary-list__value">01 January 2024</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Start Date</dt>
+                <dd class="nhsuk-summary-list__value">01 January 2023</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Moved To</dt>
+                <dd class="nhsuk-summary-list__value"></dd>
+            </div>
+        </dl>
+
+        <h3>Working Patterns</h3>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Shift Pattern</dt>
+                <dd class="nhsuk-summary-list__value">Day</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Monday</dt>
+                <dd class="nhsuk-summary-list__value">450 minutes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Tuesday</dt>
+                <dd class="nhsuk-summary-list__value">450 minutes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Wednesday</dt>
+                <dd class="nhsuk-summary-list__value">450 minutes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Thursday</dt>
+                <dd class="nhsuk-summary-list__value">450 minutes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Friday</dt>
+                <dd class="nhsuk-summary-list__value">450 minutes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Saturday</dt>
+                <dd class="nhsuk-summary-list__value">0 minutes</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Sunday</dt>
+                <dd class="nhsuk-summary-list__value">0 minutes</dd>
+            </div>
+        </dl>
+
+        <h3>Current Streams</h3>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Production</dt>
+                <dd class="nhsuk-summary-list__value">
+                    Islands Accounts<br>
+                    Islands Reconciliation<br>
+                    Item Confirmation
+                </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Portering</dt>
+                <dd class="nhsuk-summary-list__value">
+                    Bailing
+                </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Student Services</dt>
+                <dd class="nhsuk-summary-list__value">
+                    Scan Applications<br>
+                    Scan CCR
+                </dd>
+            </div>
+        </dl>
+
+        <div>
+            <a class="nhsuk-button nhsuk-u-margin-top-4" id="bulk-confirm" href="/apps/all-staff-amender/details">
+                Confirm
+            </a>
+        </div>
+
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="#" onclick="window.history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                    <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+                </svg>
+                Go back</a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

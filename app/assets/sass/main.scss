@@ -233,7 +233,7 @@ th:last-child, td:last-child {
 }
 
 .staff-details-section {
-    top: 50px;
+    max-width: 500px;
     padding-bottom: 75px;
 }
 
@@ -265,4 +265,14 @@ th:last-child, td:last-child {
     align-items: center;
     display: flex;
     justify-content: center;
+}
+
+.staff-select-buttons {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.stream-count {
+    text-align: right;
+    padding-right: 35px;
 }

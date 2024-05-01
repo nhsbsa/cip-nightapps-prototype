@@ -28,7 +28,7 @@ All Staff Amender - Prescription Service Applications
                 <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">All Staff Amender</a>
             </li>
             <li class="nhsuk-breadcrumb__item">
-                <span class="add-box">Edit Selected User</span>
+                <span class="add-box">Edit Staff Member</span>
             </li>
         </ul>
     </div>
@@ -48,7 +48,7 @@ All Staff Amender - Prescription Service Applications
 
         <!-- Change the page title here -->
         <h1>
-            <span class="add-box">Edit Selected User</span>
+            <span class="add-box">Edit Demo Staff Member 1</span>
         </h1>
 
         <h2>
@@ -58,52 +58,74 @@ All Staff Amender - Prescription Service Applications
         <!-- Add your content here -->
         <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-        <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" onclick="setStandardWorkingPattern()">
-            Use Standard Working Pattern
-        </button>
-
         <form>
 
             <div class="staff-details-section">
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label staff-details-prompt" for="monday">Monday</label>
-                    <input class="nhsuk-label" id="monday" name="monday" type="number">
+                    <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
+                        <div class="nhsuk-label staff-details-prompt">Shift Pattern</div>
+                        <div class="nhsuk-radios nhsuk-radios--inline">
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="shift-pattern-day" name="shift-pattern" type="radio"
+                                       value="standard">
+                                <label class="nhsuk-label nhsuk-radios__label" for="shift-pattern-day">Day</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="shift-pattern-evening" name="shift-pattern" type="radio"
+                                       value="self-managed">
+                                <label class="nhsuk-label nhsuk-radios__label" for="shift-pattern-evening">Evening</label>
+                            </div>
+                        </div>
+                    </fieldset>
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label staff-details-prompt" for="tuesday">Tuesday</label>
-                    <input class="nhsuk-label" id="tuesday" name="tuesday" type="number">
+                    <label class="nhsuk-label staff-details-prompt" for="monday">Monday (minutes)</label>
+                    <input class="nhsuk-input working-minutes" id="monday" name="monday" type="number" step="0.01" onkeyup="updatingWorkingHours()">
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label staff-details-prompt" for="wednesday">Wednesday</label>
-                    <input class="nhsuk-label" id="wednesday" name="wednesday" type="number">
+                    <label class="nhsuk-label staff-details-prompt" for="tuesday">Tuesday (minutes)</label>
+                    <input class="nhsuk-input working-minutes" id="tuesday" name="tuesday" type="number" step="0.01" onkeyup="updatingWorkingHours()">
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label staff-details-prompt" for="thursday">Thursday</label>
-                    <input class="nhsuk-label" id="thursday" name="thursday" type="number">
+                    <label class="nhsuk-label staff-details-prompt" for="wednesday">Wednesday (minutes)</label>
+                    <input class="nhsuk-input working-minutes" id="wednesday" name="wednesday" type="number" step="0.01" onkeyup="updatingWorkingHours()">
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label staff-details-prompt" for="friday">Friday</label>
-                    <input class="nhsuk-label" id="friday" name="friday" type="number">
+                    <label class="nhsuk-label staff-details-prompt" for="thursday">Thursday (minutes)</label>
+                    <input class="nhsuk-input working-minutes" id="thursday" name="thursday" type="number" step="0.01" onkeyup="updatingWorkingHours()">
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label staff-details-prompt" for="saturday">Saturday</label>
-                    <input class="nhsuk-label" id="saturday" name="saturday" type="number">
+                    <label class="nhsuk-label staff-details-prompt" for="friday">Friday (minutes)</label>
+                    <input class="nhsuk-input working-minutes" id="friday" name="friday" type="number" step="0.01" onkeyup="updatingWorkingHours()">
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label staff-details-prompt" for="sunday">Sunday</label>
-                    <input class="nhsuk-label" id="sunday" name="sunday" type="number">
+                    <label class="nhsuk-label staff-details-prompt" for="saturday">Saturday (minutes)</label>
+                    <input class="nhsuk-input working-minutes" id="saturday" name="saturday" type="number" step="0.01" onkeyup="updatingWorkingHours()">
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label staff-details-prompt" for="sunday">Sunday (minutes)</label>
+                    <input class="nhsuk-input working-minutes" id="sunday" name="sunday" type="number" step="0.01" onkeyup="updatingWorkingHours()">
+                </div>
+
+                <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" onclick="setStandardWorkingPattern(); return false;">
+                    Use Standard Working Pattern
+                </button>
+
+                <div class="nhsuk-hint" id="contact-hint">
+                    Total working hours: <span id="working-hours">0</span>
                 </div>
 
             </div>
 
-            <a class="nhsuk-button" type="submit" id="edit-staff-button" href="/apps/all-staff-amender/details">
+            <a class="nhsuk-button" type="submit" id="edit-staff-button" href="/apps/all-staff-amender/edit/confirmation?action=working-pattern">
                 <span class="save-box">Save</span>
                 <span class="nhsuk-u-visually-hidden"><span class="save-box">Save</span></span>
             </a>

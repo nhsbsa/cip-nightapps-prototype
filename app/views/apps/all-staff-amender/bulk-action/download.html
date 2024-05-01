@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+All Staff Amender - Prescription Service Applications
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+        <ul class="nhsuk-breadcrumb__list">
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/">Home</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">All Staff Amender</a>
+            </li>
+            <li class="nhsuk-breadcrumb__item">
+                Bulk Action
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Change the page title here -->
+        <h2>
+            Workbook Created
+        </h2>
+
+        <div id="download-confirmation">
+
+            <p>
+                A workbook has been successfully prepared for download.
+                This workbook contains the details of the following staff members:
+            </p>
+
+            <ul>
+                <li>Paul Smith (paul.smith@nhs.net)</li>
+                <li>Paul Jones (paul.jones@nhs.net)</li>
+                <li>Tony Robinson (tony.robinson@nhs.net)</li>
+            </ul>
+
+            <a class="nhsuk-button nhsuk-u-margin-top-4" href="/data/staff-details.xlsx">Download Workbook </a>
+
+        </div>
+
+        <p>
+            <a href="/apps/all-staff-amender"> < Back to All Staff Amender Home </a>
+        </p>
+
+    </div>
+</div>
+
+{% endblock %}
