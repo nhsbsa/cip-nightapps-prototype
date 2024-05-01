@@ -1115,6 +1115,17 @@ if (window['all-staff-amender-bulk-action-form']) {
 
 }
 
+////////// All Staff Amender Edit Confirm Page //////////
+if (window['all-staff-amender-edit-confirm']) {
+    const urlParams = new URLSearchParams(window.location.search);
+    let actionParam = urlParams.get('action');
+    if (actionParam != null) {
+        let changeDiv = document.getElementById('changes-' + actionParam);
+        if (changeDiv) {
+            changeDiv.classList.remove('bulk-hidden');
+        }
+    }
+}
 
 ////////// All Staff Amender Bulk Action Confirm Page //////////
 if (window['all-staff-amender-bulk-confirm']) {
