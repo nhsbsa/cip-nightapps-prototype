@@ -510,8 +510,13 @@ if (window['all-staff-amender-home']) {
         row.className = 'nhsuk-table__row';
         let rowContents = `
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
-                                <input class='staff-member staff-select-box' type='checkbox' id='{{id}}' name='scales' onchange='updateStaffCount()'/>
-                                <label for='{{id}}'> <span class='nhsuk-table-responsive__heading'>Name </span> {{staffName}}  </label>
+                                <div class="nhsuk-checkboxes__item">
+                                    <input class='staff-member staff-select-box nhsuk-checkboxes__input' type='checkbox' id='check-{{id}}' name='check-{{id}}' onchange='updateStaffCount()'></input>
+                                    <label class='nhsuk-label nhsuk-checkboxes__label' for='check-{{id}}'></label>
+                                </div>
+                            </td>
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading'>Name </span>{{staffName}}
                             </td>
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
                                 <span class='nhsuk-table-responsive__heading'>Cipher </span>{{cipher}}
@@ -572,21 +577,16 @@ if (window['all-staff-amender-home']) {
 
     }
 
-    // Function for unchecking all staff boxes.
-    function staffSelectNone() {
+    // Function for checking or unchecking all staff boxes.
+    let allSelected = false;
+    function staffSelectToggle() {
+        let selectStaffEle = document.getElementById('staff-select-toggle');
         let checkboxes = document.getElementsByClassName('staff-member');
+        allSelected = !allSelected;
         for(let i = 0; i < checkboxes.length; i++) {
-            checkboxes[i].checked = false;
+            checkboxes[i].checked = allSelected;
         }
-        updateStaffCount();
-    }
-
-    // Function for checking all staff boxes.
-    function staffSelectAll() {
-        let checkboxes = document.getElementsByClassName('staff-member');
-        for (let i = 0; i < checkboxes.length; i++) {
-            checkboxes[i].checked = true;
-        }
+        selectStaffEle.innerHTML = allSelected ? 'Select<br>None' : 'Select<br>All';
         updateStaffCount();
     }
 

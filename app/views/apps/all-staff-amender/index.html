@@ -92,22 +92,25 @@ All Staff Amender - Prescription Service Applications
         <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
             <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
-                    <th role="columnheader" class="" scope="col">
+                    <th role="columnheader" class="center-table-row" scope="col">
+                        <a id="staff-select-toggle" href="#0" onclick="staffSelectToggle();">Select<br>All</a>
+                    </th>
+                    <th role="columnheader" class="center-table-row" scope="col">
                         Name
                     </th>
-                    <th role="columnheader" class="" scope="col">
+                    <th role="columnheader" class="center-table-row" scope="col">
                         Cipher
                     </th>
-                    <th role="columnheader" class="" scope="col">
+                    <th role="columnheader" class="center-table-row" scope="col">
                         Email
                     </th>
-                    <th role="columnheader" class="" scope="col">
+                    <th role="columnheader" class="center-table-row" scope="col">
                         Job Title
                     </th>
-                    <th role="columnheader" class="" scope="col">
+                    <th role="columnheader" class="center-table-row" scope="col">
                         Manager
                     </th>
-                    <th role="columnheader" class="" scope="col">
+                    <th role="columnheader" class="center-table-row" scope="col">
 
                     </th>
                 </tr>
@@ -140,14 +143,6 @@ All Staff Amender - Prescription Service Applications
                 </li>
             </ul>
         </nav>
-
-        <button class="nhsuk-button nhsuk-u-margin-top-4 staff-select-buttons" data-module="nhsuk-button" onclick="staffSelectAll()">
-            Select All
-        </button>
-
-        <button class="nhsuk-button nhsuk-u-margin-top-4 staff-select-buttons" data-module="nhsuk-button" onclick="staffSelectNone()">
-            Select None
-        </button>
 
         <div class="nhsuk-hint">
             Number of staff members selected: <span id="staff-selected">0</span>
