@@ -51,6 +51,13 @@ All Staff Amender - Prescription Service Applications
         <!-- Add your content here -->
         <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
+        <h2 class="nhsuk-u-margin-top-5" id="skip-to-table"> Staff Members </h2>
+
+        {{ actionLink({
+        "text": "Add new staff member",
+        "href": "/apps/all-staff-amender/edit/details?add=true"
+        }) }}
+
         <!-- Reload page with staff filter. -->
         <form class="nhsuk-inset-text nhsuk-u-margin-top-5">
             <h2>Filter Staff Members</h2>
@@ -74,13 +81,6 @@ All Staff Amender - Prescription Service Applications
                 Filter Staff
             </button>
         </form>
-
-        <h2 class="nhsuk-u-margin-top-5" id="skip-to-table"> Staff Members </h2>
-
-        {{ actionLink({
-          "text": "Add New Staff Member",
-          "href": "/apps/all-staff-amender/edit/details?add=true"
-        }) }}
 
         <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
             <thead role="rowgroup" class="nhsuk-table__head">
