@@ -58,8 +58,13 @@ All Staff Amender - Prescription Service Applications
         "href": "/apps/all-staff-amender/edit/details?add=true"
         }) }}
 
+
+        <button class="nhsuk-button remove-space-after" data-module="nhsuk-button" id="toggle-staff-filter" onclick="toggleStaffFilter();">
+            Show Staff Filter
+        </button>
+
         <!-- Reload page with staff filter. -->
-        <form class="nhsuk-inset-text nhsuk-u-margin-top-5">
+        <form class="nhsuk-inset-text nhsuk-u-margin-top-5 bulk-hidden remove-space-after" id="staff-filter">
             <h2>Filter Staff Members</h2>
             <p class>Enter the details of the staff members you wish to see information for.</p>
             <div class="nhsuk-form-group">
@@ -81,6 +86,8 @@ All Staff Amender - Prescription Service Applications
                 Filter Staff
             </button>
         </form>
+
+        <p> </p>
 
         <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
             <thead role="rowgroup" class="nhsuk-table__head">
