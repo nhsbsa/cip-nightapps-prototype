@@ -632,6 +632,12 @@ if (window['all-staff-amender-edit']) {
         // Change the URL of the button to be the bulk confirm page (with the appropriate action parameter).
         editStaffButton.href = '/apps/all-staff-amender/bulk-action/confirmation?action=' + window['bulk-action'];
 
+        // Hide elements not intended for bulk edits.
+        let elementsToHide = document.getElementsByClassName('non-bulk');
+        for (let elementToHide of elementsToHide) {
+            elementToHide.classList.add('bulk-hidden');
+        }
+
     }
 
     /**
@@ -1116,8 +1122,6 @@ if (window['all-staff-amender-bulk-action-form']) {
             window.location.href = '/apps/all-staff-amender/edit/role?bulk=true';
         } else if (action === 'edit-status') {
             window.location.href = '/apps/all-staff-amender/edit/status?bulk=true';
-        } else if (action === 'edit-working-patterns') {
-            window.location.href = '/apps/all-staff-amender/edit/working-pattern?bulk=true';
         } else if (action === 'edit-streams') {
             window.location.href = '/apps/all-staff-amender/edit/current-streams?bulk=true';
         } else if (action === 'disable') {
