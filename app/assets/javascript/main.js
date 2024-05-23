@@ -732,6 +732,7 @@ if (window['all-staff-amender-edit']) {
 
         // Clear the stream selector.
         streamsEle.value = '';
+        noStreamsCheck();
 
     }
 
@@ -753,8 +754,25 @@ if (window['all-staff-amender-edit']) {
 
         // Remove from the assigned streams map.
         assignedStreams[id] = null;
+        noStreamsCheck();
 
     }
+
+    /**
+     * Display the no streams assigned message if there are none.
+     */
+    function noStreamsCheck() {
+        let currentStreams = document.getElementById('current-streams');
+        if (currentStreams) {
+            let noStreamsEle = document.getElementById('no-streams');
+            if (currentStreams.children.length <= 1) {
+                noStreamsEle.innerHTML = 'This staff member has no streams assigned.';
+            } else {
+                noStreamsEle.innerHTML = '';
+            }
+        }
+    }
+    noStreamsCheck();
 
 }
 

@@ -261,3 +261,12 @@ th:last-child, td:last-child {
 .center-table-row {
     vertical-align: middle;
 }
+
+.stream-select {
+    max-width: 500px;
+    padding-bottom: 25px;
+}
+
+#current-streams {
+    padding-bottom: 20px;
+}

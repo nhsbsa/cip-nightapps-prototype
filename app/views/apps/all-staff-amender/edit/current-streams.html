@@ -55,12 +55,16 @@ All Staff Amender - Prescription Service Applications
             Current Streams
         </h2>
 
-        <div class="staff-details-section">
+        <h3>
+            Available Streams
+        </h3>
+
+        <div class="stream-select">
 
             <div class="nhsuk-form-group">
                 <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
                     <label class="nhsuk-label" for="streams">
-                        Select streams to assign
+                        Select a streams to assign it to the staff member
                     </label>
                     <input class="nhsuk-select max-width-select" id="streams" name="streams" type="text" list="stream-titles" onchange="assignStream()">
                     <datalist id="stream-titles">
@@ -343,7 +347,13 @@ All Staff Amender - Prescription Service Applications
             </div>
         </div>
 
-        <div id="current-streams"></div>
+        <h3>
+            Assigned Streams
+        </h3>
+
+        <div id="current-streams">
+            <p id="no-streams"></p>
+        </div>
 
         <div class="nhsuk-grid-column-full" style="margin-top: 20px;">
 
