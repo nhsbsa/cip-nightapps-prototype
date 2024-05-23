@@ -675,83 +675,86 @@ if (window['all-staff-amender-edit']) {
     }
     updatingWorkingHours();
 
-    // Establish stream category to show.
-    let streamCategory = 'production';
-    let streamCategoryDisplay;
-
-    // TODO Function to handle assigning streams (include "None assigned.").
+    // Map for holding assigned streams.
+    let assignedStreams = {};
 
     /**
-     * Move stream(s) between fields.
+     * Assign a selected stream to the staff member.
+     */
+    function assignStream() {
+
+        // Get the value selected.
+        let streamsEle = document.getElementById('streams');
+        let selectedValue = streamsEle.value;
+
+        // Check value is in the datalist.
+        let streamsData = document.getElementById('stream-titles');
+        let present = false;
+        let id = 0;
+        for (let possibleValue of streamsData.options) {
+            if (possibleValue.value == selectedValue) {
+                present = true;
+                break;
+            }
+            id++;
+        }
+        if (!present) {
+            return false;
+        }
+
+        // Check value is not already selected.
+        if (assignedStreams[id]) {
+            streamsEle.value = '';
+            return false;
+        }
+
+        // Create element for selected value.
+        let streamEle = document.createElement('div');
+        streamEle.id = 'assigned-stream-' + id;
+        let streamaEleHtml = `
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">
+              ${selectedValue}       
+            </h3>
+            <p class="nhsuk-card__description"><a href="#0" onclick="removeStream(${id})">Remove</a></p>        
+          </div>
+        </div>
+        `;
+        streamaEleHtml = streamaEleHtml.replaceAll('${selectedValue}', selectedValue);
+        streamaEleHtml = streamaEleHtml.replaceAll('${id}', id);
+        streamEle.innerHTML = streamaEleHtml;
+
+        // Add the new stream element to the current streams element.
+        let currentStreams = document.getElementById('current-streams');
+        currentStreams.appendChild(streamEle);
+        assignedStreams[id] = selectedValue;
+
+        // Clear the stream selector.
+        streamsEle.value = '';
+
+    }
+
+    /**
      *
-     * @param leftToRight True if moving streams from left to right.
+     *
+     * @param id The ID number used in the stream's element.
      */
-    function transferStream(leftToRight) {
-        let source = leftToRight ? 'available' : 'current';
-        let target = leftToRight ? 'current' : 'available';
+    function removeStream(id) {
 
-        let sourceEle = document.getElementById(source + '-streams');
-        let targetEle = document.getElementById(target + '-streams');
+        // Get ID of element to remove.
+        let elementId = 'assigned-stream-' + id;
 
-        // Add to target input.
-        let toRemove = [];
-        for (let option of sourceEle.options) {
-            if (option.selected) {
-                let newOpt = document.createElement('option');
-                newOpt.label = option.label;
+        // Remove stream's element.
+        let currentStreams = document.getElementById('current-streams');
+        let eleToRemove = document.getElementById(elementId);
+        currentStreams.removeChild(eleToRemove);
+        eleToRemove = null;
 
-                // Add to category if needed (generating the category on the fly as required).
-                if (leftToRight) {
-                    let targetCatEle = document.getElementById('current-stream-' + streamCategory);
-                    if (targetCatEle == null) {
-                        targetCatEle = document.createElement('optgroup');
-                        targetCatEle.id = 'current-stream-' + streamCategory;
-                        targetCatEle.label = streamCategoryDisplay;
-                        targetEle.appendChild(targetCatEle);
-                    }
-                    targetCatEle.appendChild(newOpt);
-                } else {
-                    if (option.parentElement.id === 'current-stream-' + streamCategory) {
-                        targetEle.appendChild(newOpt);
-                    }
-                }
-                toRemove.push(option);
-            }
-        }
+        // Remove from the assigned streams map.
+        assignedStreams[id] = null;
 
-        // Remove from source input.
-        for (let option of toRemove) {
-            option.parentElement.removeChild(option);
-        }
-
-        // Tidy away empty categories.
-        if (!leftToRight) {
-            let catsToRemove = [];
-            for (let catEle of sourceEle.children) {
-                if (catEle.children.length === 0) {
-                    catsToRemove.push(catEle);
-                }
-            }
-            for (let catToRemove of catsToRemove) {
-                sourceEle.removeChild(catToRemove);
-            }
-        }
-
-        updateStreamCount();
-        return false;
     }
-
-    /**
-     * Update the stream count.
-     */
-    function updateStreamCount() {
-        let currentStreamsEle = document.getElementById('current-streams');
-        if (currentStreamsEle !== null) {
-            let optionsCount = currentStreamsEle.options.length;
-            document.getElementById('stream-count').innerHTML = optionsCount;
-        }
-    }
-    updateStreamCount();
 
 }
 

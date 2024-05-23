@@ -62,7 +62,7 @@ All Staff Amender - Prescription Service Applications
                     <label class="nhsuk-label" for="streams">
                         Select streams to assign
                     </label>
-                    <input class="nhsuk-select max-width-select" id="streams" name="streams" type="text" list="stream-titles">
+                    <input class="nhsuk-select max-width-select" id="streams" name="streams" type="text" list="stream-titles" onchange="assignStream()">
                     <datalist id="stream-titles">
                         <option>Production > 5% Calls</option>
                         <option>Production > 50K Checking - First Check</option>
