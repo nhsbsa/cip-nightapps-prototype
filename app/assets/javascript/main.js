@@ -544,19 +544,19 @@ if (window['all-staff-amender-home']) {
         rowContents = rowContents.replaceAll('{{manager}}', staffMember.managerName);
         row.innerHTML = rowContents;
         staffTable.appendChild(row);
+    }
 
-        function toggleStaffFilter() {
-            let filterEle = document.getElementById('staff-filter');
-            let toggleFilterEle = document.getElementById('toggle-staff-filter');
-            if (filterEle.classList.contains('bulk-hidden')) {
-                filterEle.classList.remove('bulk-hidden')
-                toggleFilterEle.innerHTML = 'Hide Staff Filter';
-            } else {
-                filterEle.classList.add('bulk-hidden');
-                toggleFilterEle.innerHTML = 'Show Staff Filter';
-            }
+    // Function for controlling toggling the visibility of the staff filter.
+    function toggleStaffFilter() {
+        let filterEle = document.getElementById('staff-filter');
+        let toggleFilterEle = document.getElementById('toggle-staff-filter');
+        if (filterEle.classList.contains('bulk-hidden')) {
+            filterEle.classList.remove('bulk-hidden')
+            toggleFilterEle.innerHTML = 'Hide Staff Filter';
+        } else {
+            filterEle.classList.add('bulk-hidden');
+            toggleFilterEle.innerHTML = 'Show Staff Filter';
         }
-
     }
 
     // Function for updating staff coumt/
