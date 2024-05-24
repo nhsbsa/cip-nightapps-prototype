@@ -510,8 +510,13 @@ if (window['all-staff-amender-home']) {
         row.className = 'nhsuk-table__row';
         let rowContents = `
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
-                                <input class='staff-member staff-select-box' type='checkbox' id='{{id}}' name='scales' onchange='updateStaffCount()'/>
-                                <label for='{{id}}'> <span class='nhsuk-table-responsive__heading'>Name </span> {{staffName}}  </label>
+                                <div class="nhsuk-checkboxes__item">
+                                    <input class='staff-member staff-select-box nhsuk-checkboxes__input' type='checkbox' id='check-{{id}}' name='check-{{id}}' onchange='updateStaffCount()'></input>
+                                    <label class='nhsuk-label nhsuk-checkboxes__label' for='check-{{id}}'></label>
+                                </div>
+                            </td>
+                            <td role='cell' class='nhsuk-table__cell center-table-row'>
+                                <span class='nhsuk-table-responsive__heading'>Name </span>{{staffName}}
                             </td>
                             <td role='cell' class='nhsuk-table__cell center-table-row'>
                                 <span class='nhsuk-table-responsive__heading'>Cipher </span>{{cipher}}
@@ -539,6 +544,19 @@ if (window['all-staff-amender-home']) {
         rowContents = rowContents.replaceAll('{{manager}}', staffMember.managerName);
         row.innerHTML = rowContents;
         staffTable.appendChild(row);
+
+        function toggleStaffFilter() {
+            let filterEle = document.getElementById('staff-filter');
+            let toggleFilterEle = document.getElementById('toggle-staff-filter');
+            if (filterEle.classList.contains('bulk-hidden')) {
+                filterEle.classList.remove('bulk-hidden')
+                toggleFilterEle.innerHTML = 'Hide Staff Filter';
+            } else {
+                filterEle.classList.add('bulk-hidden');
+                toggleFilterEle.innerHTML = 'Show Staff Filter';
+            }
+        }
+
     }
 
     // Function for updating staff coumt/
@@ -559,21 +577,16 @@ if (window['all-staff-amender-home']) {
 
     }
 
-    // Function for unchecking all staff boxes.
-    function staffSelectNone() {
+    // Function for checking or unchecking all staff boxes.
+    let allSelected = false;
+    function staffSelectToggle() {
+        let selectStaffEle = document.getElementById('staff-select-toggle');
         let checkboxes = document.getElementsByClassName('staff-member');
+        allSelected = !allSelected;
         for(let i = 0; i < checkboxes.length; i++) {
-            checkboxes[i].checked = false;
+            checkboxes[i].checked = allSelected;
         }
-        updateStaffCount();
-    }
-
-    // Function for checking all staff boxes.
-    function staffSelectAll() {
-        let checkboxes = document.getElementsByClassName('staff-member');
-        for (let i = 0; i < checkboxes.length; i++) {
-            checkboxes[i].checked = true;
-        }
+        selectStaffEle.innerHTML = allSelected ? 'Select<br>None' : 'Select<br>All';
         updateStaffCount();
     }
 
@@ -619,6 +632,12 @@ if (window['all-staff-amender-edit']) {
         // Change the URL of the button to be the bulk confirm page (with the appropriate action parameter).
         editStaffButton.href = '/apps/all-staff-amender/bulk-action/confirmation?action=' + window['bulk-action'];
 
+        // Hide elements not intended for bulk edits.
+        let elementsToHide = document.getElementsByClassName('non-bulk');
+        for (let elementToHide of elementsToHide) {
+            elementToHide.classList.add('bulk-hidden');
+        }
+
     }
 
     /**
@@ -656,421 +675,104 @@ if (window['all-staff-amender-edit']) {
     }
     updatingWorkingHours();
 
-    // Establish stream category to show.
-    let streamCategory = 'production';
-    let streamCategoryDisplay;
+    // Map for holding assigned streams.
+    let assignedStreams = {};
 
     /**
-     * Refresh the stream category currently being shown.
+     * Assign a selected stream to the staff member.
      */
-    function updateStreamCategory() {
-        let streamCategoryEle = document.getElementById('streamCategory');
-        if (streamCategoryEle) {
-            let availableStreamsEle = document.getElementById('available-streams');
-            let options = [...availableStreamsEle.children];
-            for (let option of options) {
-                availableStreamsEle.removeChild(option);
+    function assignStream() {
+
+        // Get the value selected.
+        let streamsEle = document.getElementById('streams');
+        let selectedValue = streamsEle.value;
+
+        // Check value is in the datalist.
+        let streamsData = document.getElementById('stream-titles');
+        let present = false;
+        let id = 0;
+        for (let possibleValue of streamsData.options) {
+            if (possibleValue.value == selectedValue) {
+                present = true;
+                break;
             }
-            streamCategory = streamCategoryEle.value;
-            let streams = [];
-            switch (streamCategory) {
-                case 'production':
-                    streamCategoryDisplay = 'Production';
-                    streams = [
-                        '5% Calls',
-                        '50K Checking - First Check',
-                        '50K Checking - Part One',
-                        '50K Checking - Second Check',
-                        'Acc Rec - Digital RBs',
-                        'Account Reconciliation',
-                        'Bad Batch Calls',
-                        'Bereavements',
-                        'CEP',
-                        'Charge Status',
-                        'Data Capture',
-                        'DD KFP',
-                        'Dental Contractor Capture',
-                        'Dental Contractor Rekey',
-                        'Docketing',
-                        'EPS Calls',
-                        'Errors',
-                        'Fleetwood Back Scanning',
-                        'GMP',
-                        'Guernsey - Header',
-                        'Header Capture',
-                        'Header Correction',
-                        'Image Finder Batch Checks',
-                        'Islands Accounts',
-                        'Islands Reconciliation',
-                        'Item Confirmation',
-                        'Jersey - Header',
-                        'KFP',
-                        'KFP - Archived Forms',
-                        'KFP - Digital RBs',
-                        'KFP - ETP Failures',
-                        'KFP - Image Requests - Month End',
-                        'KFP - KFP+1 forms',
-                        'KFP - Phone Calls - Month End',
-                        'KFP (SSP items)',
-                        'Manufactured and Endorsed Less ALA Checking',
-                        'MDA Capture',
-                        'MoD Account Reconciliation',
-                        'MoD Data Capture',
-                        'MoD Header Capture',
-                        'Multiple Hits',
-                        'Multiple Hits (Type 2)',
-                        'MUR Evidence Capture',
-                        'NCSO',
-                        'OPEX Scanning',
-                        'Pack Selection',
-                        'Pack Size Capture',
-                        'PADM KFP',
-                        'PECS',
-                        'PEM',
-                        'Pensioner Admin Change of Details',
-                        'Pensions Processing',
-                        'Pensions Scan (Non Valuables)',
-                        'Pensions Scan (Scan & Leave)',
-                        'Pensions Scan (State Scheme)',
-                        'Pensions Scan (Valuables)',
-                        'Pensions Scan Post In',
-                        'Pensions Scan Post Out',
-                        'Pensions Scan Prep (State Scheme)',
-                        'Pensions Scan Prep (Valuables)',
-                        'Pensions Scan Sorting',
-                        'Pensions Work Allocation',
-                        'Pensions Work Allocation (Emails)',
-                        'Pensions Work Allocation (Mail Merge)',
-                        'Pensions Work Allocation (TUO)',
-                        'Pharmacist Calls',
-                        'PPV Pharmacy Phonecalls',
-                        'Process Capture',
-                        'Process Capture Account Selection',
-                        'Quantity Validation',
-                        'Scanning',
-                        'Specialist Accounts',
-                        'Submission Correction',
-                        'Submission Correction Re Key',
-                        'Submission Correction Skipped Forms',
-                        'Support Services Training',
-                        'Switching Reports',
-                        'Tagged',
-                        'UIP 2',
-                        'Unidentified Prescribers',
-                        'Unspec Code',
-                        'Unspec Code Checking',
-                        'Verification',
-                        'zero'
-                    ];
-                    break;
-                case 'prescription-scanning':
-                    streamCategoryDisplay = 'Prescription Scanning';
-                    streams = [
-                        'Appliances - Docketing',
-                        'Appliances - Scanning',
-                        'CD Requisition - Docketing',
-                        'CD Requisition - Scanning',
-                        'Dental FP17 - Docketing',
-                        'Dental FP17 - Scanning',
-                        'Dental Keying',
-                        'Dental Ortho - Docketing',
-                        'Dental Ortho - Scanning',
-                        'Dental Qs - Docketing',
-                        'Dental Qs - Scanning',
-                        'Doctors - Docketing',
-                        'Doctors - Scanning',
-                        'DRescan - Docketing',
-                        'DRescan - Scanning',
-                        'DReturn - Docketing',
-                        'DReturn - Scanning',
-                        'Flu PPV Scanning',
-                        'Guernsey - Docketing',
-                        'Guernsey - Scanning',
-                        'HBD - Docketing',
-                        'HBD - Scanning',
-                        'Isle Of Man - Docketing',
-                        'Isle Of Man - Scanning',
-                        'Jersey - Docketing',
-                        'Jersey - Scanning',
-                        'Local Pharmacy - Docketing',
-                        'Local Pharmacy - Scanning',
-                        'MoD - Docketing',
-                        'MoD - Scanning',
-                        'Out Of Hours - Docketing',
-                        'Out Of Hours - Scanning',
-                        'PADM - Docketing',
-                        'PADM - Scanning',
-                        'Pharmacy - Docketing',
-                        'Pharmacy - Scanning',
-                        'SBU - Docketing',
-                        'SBU - Scanning',
-                        'SGU - Docketing',
-                        'SGU - Scanning'
-                    ];
-                    break;
-                case 'scs':
-                    streamCategoryDisplay = 'SCS';
-                    streams = [
-                        'Appliances',
-                        'BTST',
-                        'CBPM',
-                        'Guernsey',
-                        'IOM',
-                        'IOM - Header',
-                        'Jersey',
-                        'Lates',
-                        'Lates - Header',
-                        'OOH Reconciliation',
-                        'OOH/LPS',
-                        'OOH/LPS - Header',
-                        'Private Reqs Data Capture',
-                        'Private Reqs Header Capture',
-                        'Privates',
-                        'Privates - Header',
-                        'Privates Reconciliation'
-                    ];
-                    break;
-                case 'portering':
-                    streamCategoryDisplay = 'Portering';
-                    streams = [
-                        'Bailing',
-                        'Image Retrieval',
-                        'Locating',
-                        'Maintenance (bread trays)',
-                        'Pensions Post',
-                        'Post',
-                        'SBU Post',
-                        'SBU PPE Post',
-                        'Work movement (cages, bread trays etc)'
-                    ];
-                    break;
-                case 'student-services':
-                    streamCategoryDisplay = 'Student Services';
-                    streams = [
-                        '6 Zeroes',
-                        'BOSS Application Coversheets',
-                        'BOSS CCR Coversheets',
-                        'BOSS Envelope Requests',
-                        'BOSS Post Out',
-                        'Damaged Post',
-                        'Fleetwood Scan',
-                        'LSF 6 Zeroes',
-                        'LSF CDA Scan',
-                        'LSF Damaged Post',
-                        'LSF ESF Scan',
-                        'LSF Post In',
-                        'LSF Post Out',
-                        'LSF Post Out Books',
-                        'LSF Prep',
-                        'LSF Queries',
-                        'LSF Return to Sender',
-                        'LSF Searches',
-                        'LSF System Checks',
-                        'LSF System Coversheets',
-                        'LSF System Envelopes',
-                        'LSF TDAE Scan',
-                        'LSF Underpaid Post',
-                        'Post Out',
-                        'Post Out Books',
-                        'PPE Processing',
-                        'Prepare and Scan',
-                        'Prepare Applications',
-                        'Queries',
-                        'Return to Sender',
-                        'SB Processing',
-                        'Scan Applications',
-                        'Scan CCR',
-                        'Scan PPE',
-                        'Searches',
-                        'Underpaid Post'
-                    ];
-                    break;
-                case 'scanning-services':
-                    streamCategoryDisplay = 'Scanning Services';
-                    streams = [
-                        'Beacon View',
-                        'Benfield Park',
-                        'Betts Ave',
-                        'Bewick Road',
-                        'Birtley',
-                        'Blackpool',
-                        'Brunton Park',
-                        'BUCKS A&E',
-                        'Carleton Clinic',
-                        'CCG Rescans',
-                        'CDS Scanning',
-                        'Central Gateshead',
-                        'Chopwell',
-                        'Cranbrook Surgeries',
-                        'Crawcrook',
-                        'CTGs Scanning',
-                        'DCC - Bereavement',
-                        'DCC - Memorial Apps',
-                        'Dental',
-                        'Dewey Road',
-                        'Dilston',
-                        'Dr Stephenson & Partners',
-                        'Durham Bridges',
-                        'Durham CC',
-                        'Durham CC - Rescan',
-                        'East Kent Maternity',
-                        'East Kent Medical',
-                        'Eastern Avenue',
-                        'EIBSS',
-                        'Fell Cottage',
-                        'Fell Tower',
-                        'Fulwell Cross',
-                        'Glenpark',
-                        'Gosforth',
-                        'GP Flu scanning  ',
-                        'Grange Road',
-                        'GWH',
-                        'HC1',
-                        'HC5',
-                        'Heathcote',
-                        'Heaton Road',
-                        'Holmside',
-                        'HRA',
-                        'IJ Healthcare',
-                        'Injury Benefits',
-                        'Kenwood',
-                        'KFP - Document Scanning',
-                        'Margin Survey',
-                        'Mathukia',
-                        'MoD (Scanning Services)',
-                        'MUR Scanning',
-                        'NBHT - Emergency Scanning',
-                        'NBHT - Rescan',
-                        'NBHT - Scanning',
-                        'NBT Admissions',
-                        'NBT Apprenticeships',
-                        'NBT Gen',
-                        'NBT Training',
-                        'NEAS Training',
-                        'Newburn',
-                        'Newbury',
-                        'NGCCG',
-                        'NHS England',
-                        'NMS Scanning',
-                        'North Street',
-                        'NTW',
-                        'OHS',
-                        'OOH',
-                        'Oval Road',
-                        'Palmers Hospital',
-                        'Park Medical Group',
-                        'Private Accounts',
-                        'Rawling Road',
-                        'Roseworth Surgery',
-                        'Scanning Services Prep/Assistance',
-                        'Second Street',
-                        'Shrewsbury Maternity',
-                        'Shrewsbury Medical',
-                        'St Albans',
-                        'St. Anthonys',
-                        'Teams',
-                        'The Medical Centre Rowlands Gill',
-                        'Thornfield',
-                        'VDPS Scanning',
-                        'West Road Medical Group',
-                        'Westerhope',
-                        'Whickham',
-                        'Wrekenton'
-                    ];
-                    break;
-            }
-            for (let stream of streams) {
-                let isCurrentStream = false;
-                let currentStreamsEle = document.getElementById('current-stream-' + streamCategory);
-                if (currentStreamsEle) {
-                    for (let currentStream of currentStreamsEle.children) {
-                        if (currentStream.label === stream) {
-                            isCurrentStream = true;
-                            break;
-                        }
-                    }
-                }
-                if (!isCurrentStream) {
-                    let option = document.createElement('option');
-                    option.label = stream;
-                    availableStreamsEle.appendChild(option);
-                }
-            }
+            id++;
         }
+        if (!present) {
+            return false;
+        }
+
+        // Check value is not already selected.
+        if (assignedStreams[id]) {
+            streamsEle.value = '';
+            return false;
+        }
+
+        // Create element for selected value.
+        let streamEle = document.createElement('div');
+        streamEle.id = 'assigned-stream-' + id;
+        let streamaEleHtml = `
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h3 class="nhsuk-card__heading">
+              ${selectedValue}       
+            </h3>
+            <p class="nhsuk-card__description"><a href="#0" onclick="removeStream(${id})">Remove</a></p>        
+          </div>
+        </div>
+        `;
+        streamaEleHtml = streamaEleHtml.replaceAll('${selectedValue}', selectedValue);
+        streamaEleHtml = streamaEleHtml.replaceAll('${id}', id);
+        streamEle.innerHTML = streamaEleHtml;
+
+        // Add the new stream element to the current streams element.
+        let currentStreams = document.getElementById('current-streams');
+        currentStreams.appendChild(streamEle);
+        assignedStreams[id] = selectedValue;
+
+        // Clear the stream selector.
+        streamsEle.value = '';
+        noStreamsCheck();
+
     }
-    updateStreamCategory();
 
     /**
-     * Move stream(s) between fields.
      *
-     * @param leftToRight True if moving streams from left to right.
+     *
+     * @param id The ID number used in the stream's element.
      */
-    function transferStream(leftToRight) {
-        let source = leftToRight ? 'available' : 'current';
-        let target = leftToRight ? 'current' : 'available';
+    function removeStream(id) {
 
-        let sourceEle = document.getElementById(source + '-streams');
-        let targetEle = document.getElementById(target + '-streams');
+        // Get ID of element to remove.
+        let elementId = 'assigned-stream-' + id;
 
-        // Add to target input.
-        let toRemove = [];
-        for (let option of sourceEle.options) {
-            if (option.selected) {
-                let newOpt = document.createElement('option');
-                newOpt.label = option.label;
+        // Remove stream's element.
+        let currentStreams = document.getElementById('current-streams');
+        let eleToRemove = document.getElementById(elementId);
+        currentStreams.removeChild(eleToRemove);
+        eleToRemove = null;
 
-                // Add to category if needed (generating the category on the fly as required).
-                if (leftToRight) {
-                    let targetCatEle = document.getElementById('current-stream-' + streamCategory);
-                    if (targetCatEle == null) {
-                        targetCatEle = document.createElement('optgroup');
-                        targetCatEle.id = 'current-stream-' + streamCategory;
-                        targetCatEle.label = streamCategoryDisplay;
-                        targetEle.appendChild(targetCatEle);
-                    }
-                    targetCatEle.appendChild(newOpt);
-                } else {
-                    if (option.parentElement.id === 'current-stream-' + streamCategory) {
-                        targetEle.appendChild(newOpt);
-                    }
-                }
-                toRemove.push(option);
-            }
-        }
+        // Remove from the assigned streams map.
+        assignedStreams[id] = null;
+        noStreamsCheck();
 
-        // Remove from source input.
-        for (let option of toRemove) {
-            option.parentElement.removeChild(option);
-        }
-
-        // Tidy away empty categories.
-        if (!leftToRight) {
-            let catsToRemove = [];
-            for (let catEle of sourceEle.children) {
-                if (catEle.children.length === 0) {
-                    catsToRemove.push(catEle);
-                }
-            }
-            for (let catToRemove of catsToRemove) {
-                sourceEle.removeChild(catToRemove);
-            }
-        }
-
-        updateStreamCount();
-        return false;
     }
 
     /**
-     * Update the stream count.
+     * Display the no streams assigned message if there are none.
      */
-    function updateStreamCount() {
-        let currentStreamsEle = document.getElementById('current-streams');
-        if (currentStreamsEle !== null) {
-            let optionsCount = currentStreamsEle.options.length;
-            document.getElementById('stream-count').innerHTML = optionsCount;
+    function noStreamsCheck() {
+        let currentStreams = document.getElementById('current-streams');
+        if (currentStreams) {
+            let noStreamsEle = document.getElementById('no-streams');
+            if (currentStreams.children.length <= 1) {
+                noStreamsEle.innerHTML = 'This staff member has no streams assigned.';
+            } else {
+                noStreamsEle.innerHTML = '';
+            }
         }
     }
-    updateStreamCount();
+    noStreamsCheck();
 
 }
 
@@ -1103,8 +805,6 @@ if (window['all-staff-amender-bulk-action-form']) {
             window.location.href = '/apps/all-staff-amender/edit/role?bulk=true';
         } else if (action === 'edit-status') {
             window.location.href = '/apps/all-staff-amender/edit/status?bulk=true';
-        } else if (action === 'edit-working-patterns') {
-            window.location.href = '/apps/all-staff-amender/edit/working-pattern?bulk=true';
         } else if (action === 'edit-streams') {
             window.location.href = '/apps/all-staff-amender/edit/current-streams?bulk=true';
         } else if (action === 'disable') {

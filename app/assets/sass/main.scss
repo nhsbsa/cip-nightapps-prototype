@@ -241,16 +241,6 @@ th:last-child, td:last-child {
     font-weight: bold;
 }
 
-.stream-select {
-    height: 500px;
-    width: 100%;
-    max-width: unset;
-}
-
-.stream-change-button {
-    margin: 20px;
-}
-
 .bulk-action-option {
     padding-bottom: 15px;
 }
@@ -259,20 +249,24 @@ th:last-child, td:last-child {
     display: none;
 }
 
-.stream-select-controls {
-    width: 100%;
-    height: 500px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
 .staff-select-buttons {
     margin-top: 0px;
     margin-bottom: 10px;
 }
 
-.stream-count {
-    text-align: right;
-    padding-right: 35px;
+.remove-space-after {
+    margin-bottom: 0px;
+}
+
+.center-table-row {
+    vertical-align: middle;
+}
+
+.stream-select {
+    max-width: 500px;
+    padding-bottom: 25px;
+}
+
+#current-streams {
+    padding-bottom: 20px;
 }
