@@ -551,7 +551,7 @@ if (window['all-staff-amender-home']) {
         let filterEle = document.getElementById('staff-filter');
         let toggleFilterEle = document.getElementById('toggle-staff-filter');
         if (filterEle.classList.contains('bulk-hidden')) {
-            filterEle.classList.remove('bulk-hidden')
+            filterEle.classList.remove('bulk-hidden');
             toggleFilterEle.innerHTML = 'Hide Staff Filter';
         } else {
             filterEle.classList.add('bulk-hidden');
@@ -773,6 +773,22 @@ if (window['all-staff-amender-edit']) {
         }
     }
     noStreamsCheck();
+
+    /**
+     * Hide or display the date prompt for scheduled changes accordingly.
+     */
+    function toggleScheduledChangeDate() {
+        let nowEle = document.getElementById('now');
+        if (nowEle) {
+            let scheduledDateEle = document.getElementById('scheduled-date')
+            if (nowEle.checked) {
+                scheduledDateEle.classList.add('bulk-hidden');
+            } else {
+                scheduledDateEle.classList.remove('bulk-hidden');
+            }
+        }
+    }
+    toggleScheduledChangeDate();
 
 }
 

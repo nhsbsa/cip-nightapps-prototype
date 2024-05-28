@@ -59,317 +59,320 @@ All Staff Amender - Prescription Service Applications
             Available Streams
         </h3>
 
-        <div class="stream-select">
+        <div class="staff-details-section">
 
-            <div class="nhsuk-form-group">
-                <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
-                    <label class="nhsuk-label" for="streams">
-                        Select a stream to assign it to the staff member
-                    </label>
-                    <input class="nhsuk-select max-width-select" id="streams" name="streams" type="text" list="stream-titles" onchange="assignStream()">
-                    <datalist id="stream-titles">
-                        <option>Production > 5% Calls</option>
-                        <option>Production > 50K Checking - First Check</option>
-                        <option>Production > 50K Checking - Part One</option>
-                        <option>Production > 50K Checking - Second Check</option>
-                        <option>Production > Acc Rec - Digital RBs</option>
-                        <option>Production > Account Reconciliation</option>
-                        <option>Production > Bad Batch Calls</option>
-                        <option>Production > Bereavements</option>
-                        <option>Production > CEP</option>
-                        <option>Production > Charge Status</option>
-                        <option>Production > Data Capture</option>
-                        <option>Production > DD KFP</option>
-                        <option>Production > Dental Contractor Capture</option>
-                        <option>Production > Dental Contractor Rekey</option>
-                        <option>Production > Docketing</option>
-                        <option>Production > EPS Calls</option>
-                        <option>Production > Errors</option>
-                        <option>Production > Fleetwood Back Scanning</option>
-                        <option>Production > GMP</option>
-                        <option>Production > Guernsey - Header</option>
-                        <option>Production > Header Capture</option>
-                        <option>Production > Header Correction</option>
-                        <option>Production > Image Finder Batch Checks</option>
-                        <option>Production > Islands Accounts</option>
-                        <option>Production > Islands Reconciliation</option>
-                        <option>Production > Item Confirmation</option>
-                        <option>Production > Jersey - Header</option>
-                        <option>Production > KFP</option>
-                        <option>Production > KFP - Archived Forms</option>
-                        <option>Production > KFP - Digital RBs</option>
-                        <option>Production > KFP - ETP Failures</option>
-                        <option>Production > KFP - Image Requests - Month End</option>
-                        <option>Production > KFP - KFP+1 forms</option>
-                        <option>Production > KFP - Phone Calls - Month End</option>
-                        <option>Production > KFP (SSP items)</option>
-                        <option>Production > Manufactured and Endorsed Less ALA Checking</option>
-                        <option>Production > MDA Capture</option>
-                        <option>Production > MoD Account Reconciliation</option>
-                        <option>Production > MoD Data Capture</option>
-                        <option>Production > MoD Header Capture</option>
-                        <option>Production > Multiple Hits</option>
-                        <option>Production > Multiple Hits (Type 2)</option>
-                        <option>Production > MUR Evidence Capture</option>
-                        <option>Production > NCSO</option>
-                        <option>Production > OPEX Scanning</option>
-                        <option>Production > Pack Selection</option>
-                        <option>Production > Pack Size Capture</option>
-                        <option>Production > PADM KFP</option>
-                        <option>Production > PECS</option>
-                        <option>Production > PEM</option>
-                        <option>Production > Pensioner Admin Change of Details</option>
-                        <option>Production > Pensions Processing</option>
-                        <option>Production > Pensions Scan (Non Valuables)</option>
-                        <option>Production > Pensions Scan (Scan & Leave)</option>
-                        <option>Production > Pensions Scan (State Scheme)</option>
-                        <option>Production > Pensions Scan (Valuables)</option>
-                        <option>Production > Pensions Scan Post In</option>
-                        <option>Production > Pensions Scan Post Out</option>
-                        <option>Production > Pensions Scan Prep (State Scheme)</option>
-                        <option>Production > Pensions Scan Prep (Valuables)</option>
-                        <option>Production > Pensions Scan Sorting</option>
-                        <option>Production > Pensions Work Allocation</option>
-                        <option>Production > Pensions Work Allocation (Emails)</option>
-                        <option>Production > Pensions Work Allocation (Mail Merge)</option>
-                        <option>Production > Pensions Work Allocation (TUO)</option>
-                        <option>Production > Pharmacist Calls</option>
-                        <option>Production > PPV Pharmacy Phonecalls</option>
-                        <option>Production > Process Capture</option>
-                        <option>Production > Process Capture Account Selection</option>
-                        <option>Production > Quantity Validation</option>
-                        <option>Production > Scanning</option>
-                        <option>Production > Specialist Accounts</option>
-                        <option>Production > Submission Correction</option>
-                        <option>Production > Submission Correction Re Key</option>
-                        <option>Production > Submission Correction Skipped Forms</option>
-                        <option>Production > Support Services Training</option>
-                        <option>Production > Switching Reports</option>
-                        <option>Production > Tagged</option>
-                        <option>Production > UIP 2</option>
-                        <option>Production > Unidentified Prescribers</option>
-                        <option>Production > Unspec Code</option>
-                        <option>Production > Unspec Code Checking</option>
-                        <option>Production > Verification</option>
-                        <option>Production > zero</option>
-                        <option>Prescription Scanning > Appliances - Docketing</option>
-                        <option>Prescription Scanning > Appliances - Scanning</option>
-                        <option>Prescription Scanning > CD Requisition - Docketing</option>
-                        <option>Prescription Scanning > CD Requisition - Scanning</option>
-                        <option>Prescription Scanning > Dental FP17 - Docketing</option>
-                        <option>Prescription Scanning > Dental FP17 - Scanning</option>
-                        <option>Prescription Scanning > Dental Keying</option>
-                        <option>Prescription Scanning > Dental Ortho - Docketing</option>
-                        <option>Prescription Scanning > Dental Ortho - Scanning</option>
-                        <option>Prescription Scanning > Dental Qs - Docketing</option>
-                        <option>Prescription Scanning > Dental Qs - Scanning</option>
-                        <option>Prescription Scanning > Doctors - Docketing</option>
-                        <option>Prescription Scanning > Doctors - Scanning</option>
-                        <option>Prescription Scanning > DRescan - Docketing</option>
-                        <option>Prescription Scanning > DRescan - Scanning</option>
-                        <option>Prescription Scanning > DReturn - Docketing</option>
-                        <option>Prescription Scanning > DReturn - Scanning</option>
-                        <option>Prescription Scanning > Flu PPV Scanning</option>
-                        <option>Prescription Scanning > Guernsey - Docketing</option>
-                        <option>Prescription Scanning > Guernsey - Scanning</option>
-                        <option>Prescription Scanning > HBD - Docketing</option>
-                        <option>Prescription Scanning > HBD - Scanning</option>
-                        <option>Prescription Scanning > Isle Of Man - Docketing</option>
-                        <option>Prescription Scanning > Isle Of Man - Scanning</option>
-                        <option>Prescription Scanning > Jersey - Docketing</option>
-                        <option>Prescription Scanning > Jersey - Scanning</option>
-                        <option>Prescription Scanning > Local Pharmacy - Docketing</option>
-                        <option>Prescription Scanning > Local Pharmacy - Scanning</option>
-                        <option>Prescription Scanning > MoD - Docketing</option>
-                        <option>Prescription Scanning > MoD - Scanning</option>
-                        <option>Prescription Scanning > Out Of Hours - Docketing</option>
-                        <option>Prescription Scanning > Out Of Hours - Scanning</option>
-                        <option>Prescription Scanning > PADM - Docketing</option>
-                        <option>Prescription Scanning > PADM - Scanning</option>
-                        <option>Prescription Scanning > Pharmacy - Docketing</option>
-                        <option>Prescription Scanning > Pharmacy - Scanning</option>
-                        <option>Prescription Scanning > SBU - Docketing</option>
-                        <option>Prescription Scanning > SBU - Scanning</option>
-                        <option>Prescription Scanning > SGU - Docketing</option>
-                        <option>Prescription Scanning > SGU - Scanning</option>
-                        <option>SCS > Appliances</option>
-                        <option>SCS > BTST</option>
-                        <option>SCS > CBPM</option>
-                        <option>SCS > Guernsey</option>
-                        <option>SCS > IOM</option>
-                        <option>SCS > IOM - Header</option>
-                        <option>SCS > Jersey</option>
-                        <option>SCS > Lates</option>
-                        <option>SCS > Lates - Header</option>
-                        <option>SCS > OOH Reconciliation</option>
-                        <option>SCS > OOH/LPS</option>
-                        <option>SCS > OOH/LPS - Header</option>
-                        <option>SCS > Private Reqs Data Capture</option>
-                        <option>SCS > Private Reqs Header Capture</option>
-                        <option>SCS > Privates</option>
-                        <option>SCS > Privates - Header</option>
-                        <option>SCS > Privates Reconciliation</option>
-                        <option>Portering > Bailing</option>
-                        <option>Portering > Image Retrieval</option>
-                        <option>Portering > Locating</option>
-                        <option>Portering > Maintenance (bread trays)</option>
-                        <option>Portering > Pensions Post</option>
-                        <option>Portering > Post</option>
-                        <option>Portering > SBU Post</option>
-                        <option>Portering > SBU PPE Post</option>
-                        <option>Portering > Work movement (cages, bread trays etc)</option>
-                        <option>Student Services > 6 Zeroes</option>
-                        <option>Student Services > BOSS Application Coversheets</option>
-                        <option>Student Services > BOSS CCR Coversheets</option>
-                        <option>Student Services > BOSS Envelope Requests</option>
-                        <option>Student Services > BOSS Post Out</option>
-                        <option>Student Services > Damaged Post</option>
-                        <option>Student Services > Fleetwood Scan</option>
-                        <option>Student Services > LSF 6 Zeroes</option>
-                        <option>Student Services > LSF CDA Scan</option>
-                        <option>Student Services > LSF Damaged Post</option>
-                        <option>Student Services > LSF ESF Scan</option>
-                        <option>Student Services > LSF Post In</option>
-                        <option>Student Services > LSF Post Out</option>
-                        <option>Student Services > LSF Post Out Books</option>
-                        <option>Student Services > LSF Prep</option>
-                        <option>Student Services > LSF Queries</option>
-                        <option>Student Services > LSF Return to Sender</option>
-                        <option>Student Services > LSF Searches</option>
-                        <option>Student Services > LSF System Checks</option>
-                        <option>Student Services > LSF System Coversheets</option>
-                        <option>Student Services > LSF System Envelopes</option>
-                        <option>Student Services > LSF TDAE Scan</option>
-                        <option>Student Services > LSF Underpaid Post</option>
-                        <option>Student Services > Post Out</option>
-                        <option>Student Services > Post Out Books</option>
-                        <option>Student Services > PPE Processing</option>
-                        <option>Student Services > Prepare and Scan</option>
-                        <option>Student Services > Prepare Applications</option>
-                        <option>Student Services > Queries</option>
-                        <option>Student Services > Return to Sender</option>
-                        <option>Student Services > SB Processing</option>
-                        <option>Student Services > Scan Applications</option>
-                        <option>Student Services > Scan CCR</option>
-                        <option>Student Services > Scan PPE</option>
-                        <option>Student Services > Searches</option>
-                        <option>Student Services > Underpaid Post</option>
-                        <option>Scanning Services > Beacon View</option>
-                        <option>Scanning Services > Benfield Park</option>
-                        <option>Scanning Services > Betts Ave</option>
-                        <option>Scanning Services > Bewick Road</option>
-                        <option>Scanning Services > Birtley</option>
-                        <option>Scanning Services > Blackpool</option>
-                        <option>Scanning Services > Brunton Park</option>
-                        <option>Scanning Services > BUCKS A&E</option>
-                        <option>Scanning Services > Carleton Clinic</option>
-                        <option>Scanning Services > CCG Rescans</option>
-                        <option>Scanning Services > CDS Scanning</option>
-                        <option>Scanning Services > Central Gateshead</option>
-                        <option>Scanning Services > Chopwell</option>
-                        <option>Scanning Services > Cranbrook Surgeries</option>
-                        <option>Scanning Services > Crawcrook</option>
-                        <option>Scanning Services > CTGs Scanning</option>
-                        <option>Scanning Services > DCC - Bereavement</option>
-                        <option>Scanning Services > DCC - Memorial Apps</option>
-                        <option>Scanning Services > Dental</option>
-                        <option>Scanning Services > Dewey Road</option>
-                        <option>Scanning Services > Dilston</option>
-                        <option>Scanning Services > Dr Stephenson & Partners</option>
-                        <option>Scanning Services > Durham Bridges</option>
-                        <option>Scanning Services > Durham CC</option>
-                        <option>Scanning Services > Durham CC - Rescan</option>
-                        <option>Scanning Services > East Kent Maternity</option>
-                        <option>Scanning Services > East Kent Medical</option>
-                        <option>Scanning Services > Eastern Avenue</option>
-                        <option>Scanning Services > EIBSS</option>
-                        <option>Scanning Services > Fell Cottage</option>
-                        <option>Scanning Services > Fell Tower</option>
-                        <option>Scanning Services > Fulwell Cross</option>
-                        <option>Scanning Services > Glenpark</option>
-                        <option>Scanning Services > Gosforth</option>
-                        <option>Scanning Services > GP Flu scanning  </option>
-                        <option>Scanning Services > Grange Road</option>
-                        <option>Scanning Services > GWH</option>
-                        <option>Scanning Services > HC1</option>
-                        <option>Scanning Services > HC5</option>
-                        <option>Scanning Services > Heathcote</option>
-                        <option>Scanning Services > Heaton Road</option>
-                        <option>Scanning Services > Holmside</option>
-                        <option>Scanning Services > HRA</option>
-                        <option>Scanning Services > IJ Healthcare</option>
-                        <option>Scanning Services > Injury Benefits</option>
-                        <option>Scanning Services > Kenwood</option>
-                        <option>Scanning Services > KFP - Document Scanning</option>
-                        <option>Scanning Services > Margin Survey</option>
-                        <option>Scanning Services > Mathukia</option>
-                        <option>Scanning Services > MoD (Scanning Services)</option>
-                        <option>Scanning Services > MUR Scanning</option>
-                        <option>Scanning Services > NBHT - Emergency Scanning</option>
-                        <option>Scanning Services > NBHT - Rescan</option>
-                        <option>Scanning Services > NBHT - Scanning</option>
-                        <option>Scanning Services > NBT Admissions</option>
-                        <option>Scanning Services > NBT Apprenticeships</option>
-                        <option>Scanning Services > NBT Gen</option>
-                        <option>Scanning Services > NBT Training</option>
-                        <option>Scanning Services > NEAS Training</option>
-                        <option>Scanning Services > Newburn</option>
-                        <option>Scanning Services > Newbury</option>
-                        <option>Scanning Services > NGCCG</option>
-                        <option>Scanning Services > NHS England</option>
-                        <option>Scanning Services > NMS Scanning</option>
-                        <option>Scanning Services > North Street</option>
-                        <option>Scanning Services > NTW</option>
-                        <option>Scanning Services > OHS</option>
-                        <option>Scanning Services > OOH</option>
-                        <option>Scanning Services > Oval Road</option>
-                        <option>Scanning Services > Palmers Hospital</option>
-                        <option>Scanning Services > Park Medical Group</option>
-                        <option>Scanning Services > Private Accounts</option>
-                        <option>Scanning Services > Rawling Road</option>
-                        <option>Scanning Services > Roseworth Surgery</option>
-                        <option>Scanning Services > Scanning Services Prep/Assistance</option>
-                        <option>Scanning Services > Second Street</option>
-                        <option>Scanning Services > Shrewsbury Maternity</option>
-                        <option>Scanning Services > Shrewsbury Medical</option>
-                        <option>Scanning Services > St Albans</option>
-                        <option>Scanning Services > St. Anthonys</option>
-                        <option>Scanning Services > Teams</option>
-                        <option>Scanning Services > The Medical Centre Rowlands Gill</option>
-                        <option>Scanning Services > Thornfield</option>
-                        <option>Scanning Services > VDPS Scanning</option>
-                        <option>Scanning Services > West Road Medical Group</option>
-                        <option>Scanning Services > Westerhope</option>
-                        <option>Scanning Services > Whickham</option>
-                        <option>Scanning Services > Wrekenton</option>
-                    </datalist>
-                </fieldset>
-            </div>
-        </div>
+            <div class="stream-select">
 
-        <h3>
-            Assigned Streams
-        </h3>
-
-        <div id="current-streams">
-            <p id="no-streams"></p>
-        </div>
-
-        <div class="nhsuk-grid-column-full" style="margin-top: 20px;">
-
-            <a class="nhsuk-button" type="submit" id="edit-staff-button" href="/apps/all-staff-amender/edit/confirmation?action=current-streams">
-                <span class="save-box">Save</span>
-                <span class="nhsuk-u-visually-hidden"><span class="save-box">Save</span></span>
-            </a>
-
-            <div class="nhsuk-back-link">
-                <a class="nhsuk-back-link__link" href="#" onclick="window.history.back()">
-                    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-                        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-                    </svg>
-                    Go back</a>
+                <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
+                        <label class="nhsuk-label" for="streams">
+                            Select a stream to assign it to the staff member
+                        </label>
+                        <input class="nhsuk-select max-width-select" id="streams" name="streams" type="text" list="stream-titles" onchange="assignStream()">
+                        <datalist id="stream-titles">
+                            <option>Production > 5% Calls</option>
+                            <option>Production > 50K Checking - First Check</option>
+                            <option>Production > 50K Checking - Part One</option>
+                            <option>Production > 50K Checking - Second Check</option>
+                            <option>Production > Acc Rec - Digital RBs</option>
+                            <option>Production > Account Reconciliation</option>
+                            <option>Production > Bad Batch Calls</option>
+                            <option>Production > Bereavements</option>
+                            <option>Production > CEP</option>
+                            <option>Production > Charge Status</option>
+                            <option>Production > Data Capture</option>
+                            <option>Production > DD KFP</option>
+                            <option>Production > Dental Contractor Capture</option>
+                            <option>Production > Dental Contractor Rekey</option>
+                            <option>Production > Docketing</option>
+                            <option>Production > EPS Calls</option>
+                            <option>Production > Errors</option>
+                            <option>Production > Fleetwood Back Scanning</option>
+                            <option>Production > GMP</option>
+                            <option>Production > Guernsey - Header</option>
+                            <option>Production > Header Capture</option>
+                            <option>Production > Header Correction</option>
+                            <option>Production > Image Finder Batch Checks</option>
+                            <option>Production > Islands Accounts</option>
+                            <option>Production > Islands Reconciliation</option>
+                            <option>Production > Item Confirmation</option>
+                            <option>Production > Jersey - Header</option>
+                            <option>Production > KFP</option>
+                            <option>Production > KFP - Archived Forms</option>
+                            <option>Production > KFP - Digital RBs</option>
+                            <option>Production > KFP - ETP Failures</option>
+                            <option>Production > KFP - Image Requests - Month End</option>
+                            <option>Production > KFP - KFP+1 forms</option>
+                            <option>Production > KFP - Phone Calls - Month End</option>
+                            <option>Production > KFP (SSP items)</option>
+                            <option>Production > Manufactured and Endorsed Less ALA Checking</option>
+                            <option>Production > MDA Capture</option>
+                            <option>Production > MoD Account Reconciliation</option>
+                            <option>Production > MoD Data Capture</option>
+                            <option>Production > MoD Header Capture</option>
+                            <option>Production > Multiple Hits</option>
+                            <option>Production > Multiple Hits (Type 2)</option>
+                            <option>Production > MUR Evidence Capture</option>
+                            <option>Production > NCSO</option>
+                            <option>Production > OPEX Scanning</option>
+                            <option>Production > Pack Selection</option>
+                            <option>Production > Pack Size Capture</option>
+                            <option>Production > PADM KFP</option>
+                            <option>Production > PECS</option>
+                            <option>Production > PEM</option>
+                            <option>Production > Pensioner Admin Change of Details</option>
+                            <option>Production > Pensions Processing</option>
+                            <option>Production > Pensions Scan (Non Valuables)</option>
+                            <option>Production > Pensions Scan (Scan & Leave)</option>
+                            <option>Production > Pensions Scan (State Scheme)</option>
+                            <option>Production > Pensions Scan (Valuables)</option>
+                            <option>Production > Pensions Scan Post In</option>
+                            <option>Production > Pensions Scan Post Out</option>
+                            <option>Production > Pensions Scan Prep (State Scheme)</option>
+                            <option>Production > Pensions Scan Prep (Valuables)</option>
+                            <option>Production > Pensions Scan Sorting</option>
+                            <option>Production > Pensions Work Allocation</option>
+                            <option>Production > Pensions Work Allocation (Emails)</option>
+                            <option>Production > Pensions Work Allocation (Mail Merge)</option>
+                            <option>Production > Pensions Work Allocation (TUO)</option>
+                            <option>Production > Pharmacist Calls</option>
+                            <option>Production > PPV Pharmacy Phonecalls</option>
+                            <option>Production > Process Capture</option>
+                            <option>Production > Process Capture Account Selection</option>
+                            <option>Production > Quantity Validation</option>
+                            <option>Production > Scanning</option>
+                            <option>Production > Specialist Accounts</option>
+                            <option>Production > Submission Correction</option>
+                            <option>Production > Submission Correction Re Key</option>
+                            <option>Production > Submission Correction Skipped Forms</option>
+                            <option>Production > Support Services Training</option>
+                            <option>Production > Switching Reports</option>
+                            <option>Production > Tagged</option>
+                            <option>Production > UIP 2</option>
+                            <option>Production > Unidentified Prescribers</option>
+                            <option>Production > Unspec Code</option>
+                            <option>Production > Unspec Code Checking</option>
+                            <option>Production > Verification</option>
+                            <option>Production > zero</option>
+                            <option>Prescription Scanning > Appliances - Docketing</option>
+                            <option>Prescription Scanning > Appliances - Scanning</option>
+                            <option>Prescription Scanning > CD Requisition - Docketing</option>
+                            <option>Prescription Scanning > CD Requisition - Scanning</option>
+                            <option>Prescription Scanning > Dental FP17 - Docketing</option>
+                            <option>Prescription Scanning > Dental FP17 - Scanning</option>
+                            <option>Prescription Scanning > Dental Keying</option>
+                            <option>Prescription Scanning > Dental Ortho - Docketing</option>
+                            <option>Prescription Scanning > Dental Ortho - Scanning</option>
+                            <option>Prescription Scanning > Dental Qs - Docketing</option>
+                            <option>Prescription Scanning > Dental Qs - Scanning</option>
+                            <option>Prescription Scanning > Doctors - Docketing</option>
+                            <option>Prescription Scanning > Doctors - Scanning</option>
+                            <option>Prescription Scanning > DRescan - Docketing</option>
+                            <option>Prescription Scanning > DRescan - Scanning</option>
+                            <option>Prescription Scanning > DReturn - Docketing</option>
+                            <option>Prescription Scanning > DReturn - Scanning</option>
+                            <option>Prescription Scanning > Flu PPV Scanning</option>
+                            <option>Prescription Scanning > Guernsey - Docketing</option>
+                            <option>Prescription Scanning > Guernsey - Scanning</option>
+                            <option>Prescription Scanning > HBD - Docketing</option>
+                            <option>Prescription Scanning > HBD - Scanning</option>
+                            <option>Prescription Scanning > Isle Of Man - Docketing</option>
+                            <option>Prescription Scanning > Isle Of Man - Scanning</option>
+                            <option>Prescription Scanning > Jersey - Docketing</option>
+                            <option>Prescription Scanning > Jersey - Scanning</option>
+                            <option>Prescription Scanning > Local Pharmacy - Docketing</option>
+                            <option>Prescription Scanning > Local Pharmacy - Scanning</option>
+                            <option>Prescription Scanning > MoD - Docketing</option>
+                            <option>Prescription Scanning > MoD - Scanning</option>
+                            <option>Prescription Scanning > Out Of Hours - Docketing</option>
+                            <option>Prescription Scanning > Out Of Hours - Scanning</option>
+                            <option>Prescription Scanning > PADM - Docketing</option>
+                            <option>Prescription Scanning > PADM - Scanning</option>
+                            <option>Prescription Scanning > Pharmacy - Docketing</option>
+                            <option>Prescription Scanning > Pharmacy - Scanning</option>
+                            <option>Prescription Scanning > SBU - Docketing</option>
+                            <option>Prescription Scanning > SBU - Scanning</option>
+                            <option>Prescription Scanning > SGU - Docketing</option>
+                            <option>Prescription Scanning > SGU - Scanning</option>
+                            <option>SCS > Appliances</option>
+                            <option>SCS > BTST</option>
+                            <option>SCS > CBPM</option>
+                            <option>SCS > Guernsey</option>
+                            <option>SCS > IOM</option>
+                            <option>SCS > IOM - Header</option>
+                            <option>SCS > Jersey</option>
+                            <option>SCS > Lates</option>
+                            <option>SCS > Lates - Header</option>
+                            <option>SCS > OOH Reconciliation</option>
+                            <option>SCS > OOH/LPS</option>
+                            <option>SCS > OOH/LPS - Header</option>
+                            <option>SCS > Private Reqs Data Capture</option>
+                            <option>SCS > Private Reqs Header Capture</option>
+                            <option>SCS > Privates</option>
+                            <option>SCS > Privates - Header</option>
+                            <option>SCS > Privates Reconciliation</option>
+                            <option>Portering > Bailing</option>
+                            <option>Portering > Image Retrieval</option>
+                            <option>Portering > Locating</option>
+                            <option>Portering > Maintenance (bread trays)</option>
+                            <option>Portering > Pensions Post</option>
+                            <option>Portering > Post</option>
+                            <option>Portering > SBU Post</option>
+                            <option>Portering > SBU PPE Post</option>
+                            <option>Portering > Work movement (cages, bread trays etc)</option>
+                            <option>Student Services > 6 Zeroes</option>
+                            <option>Student Services > BOSS Application Coversheets</option>
+                            <option>Student Services > BOSS CCR Coversheets</option>
+                            <option>Student Services > BOSS Envelope Requests</option>
+                            <option>Student Services > BOSS Post Out</option>
+                            <option>Student Services > Damaged Post</option>
+                            <option>Student Services > Fleetwood Scan</option>
+                            <option>Student Services > LSF 6 Zeroes</option>
+                            <option>Student Services > LSF CDA Scan</option>
+                            <option>Student Services > LSF Damaged Post</option>
+                            <option>Student Services > LSF ESF Scan</option>
+                            <option>Student Services > LSF Post In</option>
+                            <option>Student Services > LSF Post Out</option>
+                            <option>Student Services > LSF Post Out Books</option>
+                            <option>Student Services > LSF Prep</option>
+                            <option>Student Services > LSF Queries</option>
+                            <option>Student Services > LSF Return to Sender</option>
+                            <option>Student Services > LSF Searches</option>
+                            <option>Student Services > LSF System Checks</option>
+                            <option>Student Services > LSF System Coversheets</option>
+                            <option>Student Services > LSF System Envelopes</option>
+                            <option>Student Services > LSF TDAE Scan</option>
+                            <option>Student Services > LSF Underpaid Post</option>
+                            <option>Student Services > Post Out</option>
+                            <option>Student Services > Post Out Books</option>
+                            <option>Student Services > PPE Processing</option>
+                            <option>Student Services > Prepare and Scan</option>
+                            <option>Student Services > Prepare Applications</option>
+                            <option>Student Services > Queries</option>
+                            <option>Student Services > Return to Sender</option>
+                            <option>Student Services > SB Processing</option>
+                            <option>Student Services > Scan Applications</option>
+                            <option>Student Services > Scan CCR</option>
+                            <option>Student Services > Scan PPE</option>
+                            <option>Student Services > Searches</option>
+                            <option>Student Services > Underpaid Post</option>
+                            <option>Scanning Services > Beacon View</option>
+                            <option>Scanning Services > Benfield Park</option>
+                            <option>Scanning Services > Betts Ave</option>
+                            <option>Scanning Services > Bewick Road</option>
+                            <option>Scanning Services > Birtley</option>
+                            <option>Scanning Services > Blackpool</option>
+                            <option>Scanning Services > Brunton Park</option>
+                            <option>Scanning Services > BUCKS A&E</option>
+                            <option>Scanning Services > Carleton Clinic</option>
+                            <option>Scanning Services > CCG Rescans</option>
+                            <option>Scanning Services > CDS Scanning</option>
+                            <option>Scanning Services > Central Gateshead</option>
+                            <option>Scanning Services > Chopwell</option>
+                            <option>Scanning Services > Cranbrook Surgeries</option>
+                            <option>Scanning Services > Crawcrook</option>
+                            <option>Scanning Services > CTGs Scanning</option>
+                            <option>Scanning Services > DCC - Bereavement</option>
+                            <option>Scanning Services > DCC - Memorial Apps</option>
+                            <option>Scanning Services > Dental</option>
+                            <option>Scanning Services > Dewey Road</option>
+                            <option>Scanning Services > Dilston</option>
+                            <option>Scanning Services > Dr Stephenson & Partners</option>
+                            <option>Scanning Services > Durham Bridges</option>
+                            <option>Scanning Services > Durham CC</option>
+                            <option>Scanning Services > Durham CC - Rescan</option>
+                            <option>Scanning Services > East Kent Maternity</option>
+                            <option>Scanning Services > East Kent Medical</option>
+                            <option>Scanning Services > Eastern Avenue</option>
+                            <option>Scanning Services > EIBSS</option>
+                            <option>Scanning Services > Fell Cottage</option>
+                            <option>Scanning Services > Fell Tower</option>
+                            <option>Scanning Services > Fulwell Cross</option>
+                            <option>Scanning Services > Glenpark</option>
+                            <option>Scanning Services > Gosforth</option>
+                            <option>Scanning Services > GP Flu scanning  </option>
+                            <option>Scanning Services > Grange Road</option>
+                            <option>Scanning Services > GWH</option>
+                            <option>Scanning Services > HC1</option>
+                            <option>Scanning Services > HC5</option>
+                            <option>Scanning Services > Heathcote</option>
+                            <option>Scanning Services > Heaton Road</option>
+                            <option>Scanning Services > Holmside</option>
+                            <option>Scanning Services > HRA</option>
+                            <option>Scanning Services > IJ Healthcare</option>
+                            <option>Scanning Services > Injury Benefits</option>
+                            <option>Scanning Services > Kenwood</option>
+                            <option>Scanning Services > KFP - Document Scanning</option>
+                            <option>Scanning Services > Margin Survey</option>
+                            <option>Scanning Services > Mathukia</option>
+                            <option>Scanning Services > MoD (Scanning Services)</option>
+                            <option>Scanning Services > MUR Scanning</option>
+                            <option>Scanning Services > NBHT - Emergency Scanning</option>
+                            <option>Scanning Services > NBHT - Rescan</option>
+                            <option>Scanning Services > NBHT - Scanning</option>
+                            <option>Scanning Services > NBT Admissions</option>
+                            <option>Scanning Services > NBT Apprenticeships</option>
+                            <option>Scanning Services > NBT Gen</option>
+                            <option>Scanning Services > NBT Training</option>
+                            <option>Scanning Services > NEAS Training</option>
+                            <option>Scanning Services > Newburn</option>
+                            <option>Scanning Services > Newbury</option>
+                            <option>Scanning Services > NGCCG</option>
+                            <option>Scanning Services > NHS England</option>
+                            <option>Scanning Services > NMS Scanning</option>
+                            <option>Scanning Services > North Street</option>
+                            <option>Scanning Services > NTW</option>
+                            <option>Scanning Services > OHS</option>
+                            <option>Scanning Services > OOH</option>
+                            <option>Scanning Services > Oval Road</option>
+                            <option>Scanning Services > Palmers Hospital</option>
+                            <option>Scanning Services > Park Medical Group</option>
+                            <option>Scanning Services > Private Accounts</option>
+                            <option>Scanning Services > Rawling Road</option>
+                            <option>Scanning Services > Roseworth Surgery</option>
+                            <option>Scanning Services > Scanning Services Prep/Assistance</option>
+                            <option>Scanning Services > Second Street</option>
+                            <option>Scanning Services > Shrewsbury Maternity</option>
+                            <option>Scanning Services > Shrewsbury Medical</option>
+                            <option>Scanning Services > St Albans</option>
+                            <option>Scanning Services > St. Anthonys</option>
+                            <option>Scanning Services > Teams</option>
+                            <option>Scanning Services > The Medical Centre Rowlands Gill</option>
+                            <option>Scanning Services > Thornfield</option>
+                            <option>Scanning Services > VDPS Scanning</option>
+                            <option>Scanning Services > West Road Medical Group</option>
+                            <option>Scanning Services > Westerhope</option>
+                            <option>Scanning Services > Whickham</option>
+                            <option>Scanning Services > Wrekenton</option>
+                        </datalist>
+                    </fieldset>
+                </div>
             </div>
 
+            <h3>
+                Assigned Streams
+            </h3>
+
+            <div id="current-streams">
+                <p id="no-streams"></p>
+            </div>
+
+            {% from 'scheduled-change.njk' import scheduledChange %}
+            {{ scheduledChange() }}
+
+        </div>
+
+        <a class="nhsuk-button" type="submit" id="edit-staff-button" href="/apps/all-staff-amender/edit/confirmation?action=current-streams">
+            <span class="save-box">Save</span>
+            <span class="nhsuk-u-visually-hidden"><span class="save-box">Save</span></span>
+        </a>
+
+        <div class="nhsuk-back-link">
+            <a class="nhsuk-back-link__link" href="#" onclick="window.history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                    <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+                </svg>
+                Go back</a>
         </div>
 
         <script>

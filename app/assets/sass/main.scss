@@ -283,7 +283,6 @@ th:last-child, td:last-child {
 }
 
 .stream-select {
-    max-width: 500px;
     padding-bottom: 25px;
 }
 
@@ -309,4 +308,8 @@ th:last-child, td:last-child {
         padding-bottom: 20px;
     }
 
+}
+
+.schedule-changes-entry {
+    padding-top: 25px;
 }

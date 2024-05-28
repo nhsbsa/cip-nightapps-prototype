@@ -158,14 +158,16 @@ All Staff Amender - Prescription Service Applications
 
                 <div class="nhsuk-form-group">
                     <fieldset class="nhsuk-fieldset nhsuk-u-mergin--5 nhsuk-u-margin-top-5">
-                        <div class="nhsuk-label staff-details-prompt">Contract Type</div>
+                        <legend>
+                            <div class="nhsuk-label staff-details-prompt">Contract Type</div>
+                        </legend>
                         <div class="nhsuk-radios nhsuk-radios--inline">
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="office-worker" name="office-worker" type="radio" value="standard">
+                                <input class="nhsuk-radios__input" id="office-worker" name="contract-type" type="radio" value="office-worker">
                                 <label class="nhsuk-label nhsuk-radios__label" for="office-worker">Office Worker</label>
                             </div>
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="home-worker" name="home-worker" type="radio" value="standard">
+                                <input class="nhsuk-radios__input" id="home-worker" name="contract-type" type="radio" value="home-worker">
                                 <label class="nhsuk-label nhsuk-radios__label" for="home-worker">Home Worker</label>
                             </div>
                         </div>
@@ -173,7 +175,7 @@ All Staff Amender - Prescription Service Applications
                 </div>
 
                 <div class="nhsuk-form-group non-bulk">
-                    <div class="nhsuk-label staff-details-prompt">Start Date</div>
+                <div class="nhsuk-label staff-details-prompt">Start Date</div>
                     {{ dateInput({
                     "id": "start-date",
                     "namePrefix": "start-date",
@@ -256,6 +258,9 @@ All Staff Amender - Prescription Service Applications
                         </div>
                     </fieldset>
                 </div>
+
+                {% from 'scheduled-change.njk' import scheduledChange %}
+                {{ scheduledChange() }}
 
             </div>
 
