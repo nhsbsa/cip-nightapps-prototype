@@ -712,14 +712,14 @@ if (window['all-staff-amender-edit']) {
         let streamEle = document.createElement('div');
         streamEle.id = 'assigned-stream-' + id;
         let streamaEleHtml = `
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-            <h3 class="nhsuk-card__heading">
-              ${selectedValue}       
-            </h3>
-            <p class="nhsuk-card__description"><a href="#0" onclick="removeStream(${id})">Remove</a></p>        
-          </div>
-        </div>
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h3 class="nhsuk-card__heading">
+                  ${selectedValue}       
+                </h3>
+                <p class="nhsuk-card__description"><a href="#0" onclick="removeStream(${id})">Remove</a></p>        
+              </div>
+            </div>
         `;
         streamaEleHtml = streamaEleHtml.replaceAll('${selectedValue}', selectedValue);
         streamaEleHtml = streamaEleHtml.replaceAll('${id}', id);
