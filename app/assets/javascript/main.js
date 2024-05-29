@@ -708,20 +708,27 @@ if (window['all-staff-amender-edit']) {
             return false;
         }
 
+        // Get category from selected value.
+        let selectedValueParts = selectedValue.split('] ');
+        let category = selectedValueParts[0].replace('[', '');
+        let displayValue = selectedValueParts[1];
+
         // Create element for selected value.
         let streamEle = document.createElement('div');
         streamEle.id = 'assigned-stream-' + id;
         let streamaEleHtml = `
-            <div class="nhsuk-card">
+            <div class="nhsuk-card stream-card">
               <div class="nhsuk-card__content">
                 <h3 class="nhsuk-card__heading">
-                  ${selectedValue}       
+                  <strong class="nhsuk-tag nhsuk-tag--blue stream-tag">${category}</strong><br>
+                    ${displayValue}       
                 </h3>
                 <p class="nhsuk-card__description"><a href="#0" onclick="removeStream(${id})">Remove</a></p>        
               </div>
             </div>
         `;
-        streamaEleHtml = streamaEleHtml.replaceAll('${selectedValue}', selectedValue);
+        streamaEleHtml = streamaEleHtml.replaceAll('${category}', category);
+        streamaEleHtml = streamaEleHtml.replaceAll('${displayValue}', displayValue);
         streamaEleHtml = streamaEleHtml.replaceAll('${id}', id);
         streamEle.innerHTML = streamaEleHtml;
 
