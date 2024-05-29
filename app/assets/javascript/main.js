@@ -781,21 +781,33 @@ if (window['all-staff-amender-edit']) {
     }
     noStreamsCheck();
 
-    /**
-     * Hide or display the date prompt for scheduled changes accordingly.
-     */
-    function toggleScheduledChangeDate() {
-        let nowEle = document.getElementById('now');
-        if (nowEle) {
-            let scheduledDateEle = document.getElementById('scheduled-date')
-            if (nowEle.checked) {
-                scheduledDateEle.classList.add('bulk-hidden');
-            } else {
-                scheduledDateEle.classList.remove('bulk-hidden');
+    // Handle schedule change entry form.
+    let scheduledChangeEntryEle = document.getElementById('schedule-changes-entry');
+    if (scheduledChangeEntryEle) {
+
+        // Hide scheduled change entry if adding a new staff member.
+        if (addParam != null) {
+            scheduledChangeEntryEle.classList.add('bulk-hidden');
+        } else {
+
+            /**
+             * Hide or display the date prompt for scheduled changes accordingly.
+             */
+            function toggleScheduledChangeDate() {
+                let nowEle = document.getElementById('now');
+                let scheduledDateEle = document.getElementById('scheduled-date')
+                if (nowEle.checked) {
+                    scheduledDateEle.classList.add('bulk-hidden');
+                } else {
+                    scheduledDateEle.classList.remove('bulk-hidden');
+                }
             }
+
+            toggleScheduledChangeDate();
+
         }
+
     }
-    toggleScheduledChangeDate();
 
 }
 
