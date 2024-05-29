@@ -551,7 +551,7 @@ if (window['all-staff-amender-home']) {
         let filterEle = document.getElementById('staff-filter');
         let toggleFilterEle = document.getElementById('toggle-staff-filter');
         if (filterEle.classList.contains('bulk-hidden')) {
-            filterEle.classList.remove('bulk-hidden')
+            filterEle.classList.remove('bulk-hidden');
             toggleFilterEle.innerHTML = 'Hide Staff Filter';
         } else {
             filterEle.classList.add('bulk-hidden');
@@ -708,20 +708,27 @@ if (window['all-staff-amender-edit']) {
             return false;
         }
 
+        // Get category from selected value.
+        let selectedValueParts = selectedValue.split('] ');
+        let category = selectedValueParts[0].replace('[', '');
+        let displayValue = selectedValueParts[1];
+
         // Create element for selected value.
         let streamEle = document.createElement('div');
         streamEle.id = 'assigned-stream-' + id;
         let streamaEleHtml = `
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-            <h3 class="nhsuk-card__heading">
-              ${selectedValue}       
-            </h3>
-            <p class="nhsuk-card__description"><a href="#0" onclick="removeStream(${id})">Remove</a></p>        
-          </div>
-        </div>
+            <div class="nhsuk-card stream-card">
+              <div class="nhsuk-card__content">
+                <h3 class="nhsuk-card__heading">
+                  <strong class="nhsuk-tag nhsuk-tag--blue stream-tag">${category}</strong><br>
+                    ${displayValue}       
+                </h3>
+                <p class="nhsuk-card__description"><a href="#0" onclick="removeStream(${id})">Remove</a></p>        
+              </div>
+            </div>
         `;
-        streamaEleHtml = streamaEleHtml.replaceAll('${selectedValue}', selectedValue);
+        streamaEleHtml = streamaEleHtml.replaceAll('${category}', category);
+        streamaEleHtml = streamaEleHtml.replaceAll('${displayValue}', displayValue);
         streamaEleHtml = streamaEleHtml.replaceAll('${id}', id);
         streamEle.innerHTML = streamaEleHtml;
 
@@ -773,6 +780,34 @@ if (window['all-staff-amender-edit']) {
         }
     }
     noStreamsCheck();
+
+    // Handle schedule change entry form.
+    let scheduledChangeEntryEle = document.getElementById('schedule-changes-entry');
+    if (scheduledChangeEntryEle) {
+
+        // Hide scheduled change entry if adding a new staff member.
+        if (addParam != null) {
+            scheduledChangeEntryEle.classList.add('bulk-hidden');
+        } else {
+
+            /**
+             * Hide or display the date prompt for scheduled changes accordingly.
+             */
+            function toggleScheduledChangeDate() {
+                let nowEle = document.getElementById('now');
+                let scheduledDateEle = document.getElementById('scheduled-date')
+                if (nowEle.checked) {
+                    scheduledDateEle.classList.add('bulk-hidden');
+                } else {
+                    scheduledDateEle.classList.remove('bulk-hidden');
+                }
+            }
+
+            toggleScheduledChangeDate();
+
+        }
+
+    }
 
 }
 

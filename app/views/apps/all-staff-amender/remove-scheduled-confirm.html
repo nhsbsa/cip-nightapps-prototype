@@ -11,13 +11,13 @@ All Staff Amender - Prescription Service Applications
     <div class="nhsuk-width-container">
         <ul class="nhsuk-breadcrumb__list">
             <li class="nhsuk-breadcrumb__item">
-                <a class="nhsuk-breadcrumb__link" href="/">Home</a>
+                <a class="nhsuk-breadcrumb__link" href="/public">Home</a>
             </li>
             <li class="nhsuk-breadcrumb__item">
                 <a class="nhsuk-breadcrumb__link" href="/apps/all-staff-amender">All Staff Amender</a>
             </li>
             <li class="nhsuk-breadcrumb__item">
-                Bulk Action
+                <span class="add-box">Remove Scheduled Changes</span>
             </li>
         </ul>
     </div>
@@ -29,7 +29,6 @@ All Staff Amender - Prescription Service Applications
 {% block outerContent %}
 {% endblock %}
 
-
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
@@ -38,10 +37,39 @@ All Staff Amender - Prescription Service Applications
 
         <!-- Change the page title here -->
         <h2>
-            Confirm bulk action
+            Confirm removal of scheduled changes
         </h2>
 
-        <h3>Changes to be made</h3>
+        <h3>01 January 2024</h3>
+
+        <div id="changes-details" class="bulk-hidden">
+            <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Forename
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Adam
+                    </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Middle Name(s)
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Bob Charlie
+                    </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Surname
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Davidson
+                    </dd>
+                </div>
+            </dl>
+        </div>
 
         <div id="changes-management" class="bulk-hidden">
             <dl class="nhsuk-summary-list">
@@ -122,34 +150,22 @@ All Staff Amender - Prescription Service Applications
         <div id="changes-current-streams" class="bulk-hidden">
             <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                        Assigned Streams
-                    </dt>
+                    <dt class="nhsuk-summary-list__key">Assigned Streams</dt>
                     <dd class="nhsuk-summary-list__value">
-                        <strong class="nhsuk-tag nhsuk-tag--blue">Production</strong> Item confirmation</br>
-                        <strong class="nhsuk-tag nhsuk-tag--blue">Production</strong> Multiple Hits</br>
-                        <strong class="nhsuk-tag nhsuk-tag--blue">Production</strong> Errors
+                        <strong class="nhsuk-tag nhsuk-tag--blue">Production</strong> Islands Accounts<br>
+                        <strong class="nhsuk-tag nhsuk-tag--blue">Production</strong> Islands Reconciliation<br>
+                        <strong class="nhsuk-tag nhsuk-tag--blue">Production</strong> Item Confirmation<br>
+                        <strong class="nhsuk-tag nhsuk-tag--blue">Portering</strong> Bailing<br>
+                        <strong class="nhsuk-tag nhsuk-tag--blue">Student Services</strong> Scan Applications<br>
+                        <strong class="nhsuk-tag nhsuk-tag--blue">Student Services</strong> Scan CCR
                     </dd>
                 </div>
             </dl>
         </div>
 
-        <h3>Staff members to be affected</h3>
-
-        <ul>
-            <li>User One (user.one@nhs.net)</li>
-            <li>User Two (user.two@nhs.net)</li>
-            <li>User Three (user.three@nhs.net)</li>
-        </ul>
-
-        <div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">When these changes will be enacted.</span>
-            <p>These changes will be enacted <strong>immediately</strong>.</p>
-        </div>
-
         <div>
-            <a class="nhsuk-button nhsuk-u-margin-top-4" id="bulk-confirm" href="/apps/all-staff-amender">
-                Confirm
+            <a class="nhsuk-button nhsuk-button--red" id="bulk-confirm" href="/apps/all-staff-amender/details">
+                Remove
             </a>
         </div>
 
@@ -162,7 +178,7 @@ All Staff Amender - Prescription Service Applications
         </div>
 
         <script>
-            window['all-staff-amender-bulk-confirm'] = true;
+            window['all-staff-amender-edit-confirm'] = true;
         </script>
 
     </div>

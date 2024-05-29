@@ -77,6 +77,9 @@ All Staff Amender - Prescription Service Applications
                     </fieldset>
                 </div>
 
+                {% from 'scheduled-change.njk' import scheduledChange %}
+                {{ scheduledChange() }}
+
             </div>
 
             <a class="nhsuk-button" type="submit" id="edit-staff-button" href="/apps/all-staff-amender/edit/confirmation?action=management">

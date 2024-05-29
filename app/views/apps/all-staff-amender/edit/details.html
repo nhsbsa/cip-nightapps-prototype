@@ -92,6 +92,9 @@ All Staff Amender - Prescription Service Applications
                     <input class="nhsuk-input" id="surname" name="surname" type="text">
                 </div>
 
+                {% from 'scheduled-change.njk' import scheduledChange %}
+                {{ scheduledChange() }}
+
             </div>
 
             <a class="nhsuk-button" type="submit" id="edit-staff-button" href="/apps/all-staff-amender/edit/confirmation?action=details">

@@ -8,7 +8,27 @@
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
-  
+
+/* Colour Buttons */
+.nhsuk-button--red {
+    background-color: #d5281b;
+}
+.nhsuk-button--red:hover {
+    background-color: #bf2318;
+}
+.nhsuk-button--red:focus {
+    background: #ffeb3b;
+    box-shadow: 0 4px 0 #212b32;
+    color: #212b32;
+    outline: 4px solid transparent;
+}
+.nhsuk-button--red:active {
+    background: #bf2318;
+    box-shadow: none;
+    color: #fff;
+    top: 4px;
+}
+
 progress {
     width: 0;
     min-width: 100%;
@@ -263,10 +283,48 @@ th:last-child, td:last-child {
 }
 
 .stream-select {
-    max-width: 500px;
     padding-bottom: 25px;
 }
 
 #current-streams {
-    padding-bottom: 20px;
+    padding-bottom: 25px;
+}
+
+.scheduled-summary {
+    margin-bottom: 20px;
+}
+
+.scheduled-changes-title {
+    padding-top: 30px;
+}
+
+.scheduled-change-card {
+    margin-bottom: 25px;
+    border: 2px solid #dddddd;
+    border-radius: 10px;
+
+    .nhsuk-card__content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+}
+
+#schedule-changes-entry {
+    padding-top: 25px;
+}
+
+.stream-card {
+    margin-bottom: 15px;
+
+    .nhsuk-card__content {
+        padding: 20px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+
+}
+
+.stream-tag {
+    margin-bottom: 5px;
 }
