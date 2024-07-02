@@ -28,8 +28,17 @@ module.exports = function (req, res, next) { /* eslint-disable-line consistent-r
     const user = basicAuth(req);
 
     if (!user || user.name !== username || user.pass !== password) {
+
+      // Try alternative auth from supplied parameters.
+      if (req.query.username && req.query.password) {
+        if (req.query.username === username && req.query.password === password) {
+          next();
+        }
+      }
+
       res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
       return res.sendStatus(401);
+
     }
   }
   next();
