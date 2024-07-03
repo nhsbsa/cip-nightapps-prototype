@@ -25,6 +25,11 @@ module.exports = function (req, res, next) { /* eslint-disable-line consistent-r
       return res.send('<p>Username or password not set in environment variables.</p>');
     }
 
+    if (req.session.signedIn) {
+      next();
+      return;
+    }
+
     const user = basicAuth(req);
 
     if (!user || user.name !== username || user.pass !== password) {
@@ -32,7 +37,9 @@ module.exports = function (req, res, next) { /* eslint-disable-line consistent-r
       // Try alternative auth from supplied parameters.
       if (req.query.username && req.query.password) {
         if (req.query.username === username && req.query.password === password) {
+          req.session.signedIn = true;
           next();
+          return;
         }
       }
 
